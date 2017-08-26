@@ -22,6 +22,7 @@ var translations={
     "Watch a battle":"观看对战",
     "Find a user":"查找用户",
     "Choice Scarf":"专爱围巾",
+    "Choice Scarf":"专爱头巾",
     "Did you have a good day?":"你今天过的还好吗?",
     "Lucario":"路卡利欧",
     "Lucarionite":"M路卡利欧石",
