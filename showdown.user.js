@@ -2,7 +2,7 @@
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  test script
+// @description  Pokemon showdown 国服汉化
 // @author       ceca3
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
