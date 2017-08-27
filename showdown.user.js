@@ -12,7 +12,7 @@
 // ==/UserScript==
 var translations={
     "[Gen 7] Random Battle":"[第七世代] 随机对战",
-    "Add game":"寻找新对战",
+    "Add game":"新对战",
     "Format:":"分级",
     "Team:":"队伍",
     "Battle!":"战斗！",
@@ -54,13 +54,27 @@ var translations={
     "Import/Export":"导入/导出",
     "Move":"移动",
     "Delete":"删除",
-    "Team":"队伍",
+    "Team":" 队伍",
     "Validate":"确认是否合法",
     "Add Pokémon":"添加宝可梦",
     "New Team":"新的队伍",
     "Male":"雄性",
     "Female":"磁性",
     "Random":"随机",
+    "Format List":" 分级列表",
+    "List":" 列表",
+    "Edit":"编辑",
+    "Save":"保存",
+    "Switch":"交换",
+    "It's super effective!":"这非常有效！",
+    "It's not very effective...":"这不是很有效...",
+    "lost":"失去了 ",
+    "of its health!":" 的生命值!",
+    ", come back!":"，回来吧！",
+    "(exists)":"(存在)",
+    "Go!":"去吧！",
+    "withdrew":"收回了",
+    "sent out":"放出了",
     //Abilities Translation
     
     "Stench":"恶臭",
@@ -535,6 +549,23 @@ var translations={
     "Synthesis":"光合作用",
     "Moonlight":"月光",
     "Hidden Power":"觉醒力量",
+    "Hidden Power Bug":"觉醒力量-虫",
+    "Hidden Power Dark":"觉醒力量-恶",
+    "Hidden Power Dragon":"觉醒力量-龙",
+    "Hidden Power Electric":"觉醒力量-电",
+    "Hidden Power Fairy":"觉醒力量-妖精",
+    "Hidden Power Fighting":"觉醒力量-格斗",
+    "Hidden Power Fire":"觉醒力量-火",
+    "Hidden Power Flying":"觉醒力量-飞行",
+    "Hidden Power Ghost":"觉醒力量-幽灵",
+    "Hidden Power Grass":"觉醒力量-草",
+    "Hidden Power Ground":"觉醒力量-地面",
+    "Hidden Power Ice":"觉醒力量-冰",
+    "Hidden Power Poison":"觉醒力量-毒",
+    "Hidden Power Psychic":"觉醒力量-超能",
+    "Hidden Power Rock":"觉醒力量-岩石",
+    "Hidden Power Steel":"觉醒力量-钢",
+    "Hidden Power Water":"觉醒力量-水",
     "Cross Chop":"十字劈",
     "Twister":"龙卷风",
     "Rain Dance":"求雨",
@@ -1540,23 +1571,62 @@ var translations={
 };
 var QQ=$.noConflict();
 function translate(originalStr){
+    console.log(originalStr);
     var tmp=originalStr.trim();
-    console.log(tmp);
     if(translations[tmp])
         return translations[tmp];
-    else 
+    var regex_Ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])/);
+    
+    if(originalStr.match(regex_Ability)){
+        originalStr=originalStr.replace(regex_Ability,"特性: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
         return originalStr;
+    }
+    var regex_Possible_Ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])/);
+    if(originalStr.match(regex_Possible_Ability)){
+        originalStr=originalStr.replace(regex_Possible_Ability,"可能的特性: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
+    var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])/);
+    
+    if(originalStr.match(regex_Item)){
+        originalStr=originalStr.replace(regex_Item,"道具: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
+    return originalStr
+    //else 
+    //    return originalStr
+            .replace(/lost ([0-9]+)% of its health!/,"失去了$1%的生命值!")
+            //.replace(/Ability: ([A-za-z ]+)/,"特性: "+translate(RegExp.$1))
+            //.replace(/Ability: \/ Item: ([A-za-z ]+)/,"特性: "++"/ 道具:"+translate("$2"))
+    ;
         
-}
-function test(){
-    console.log("123");
 }
 function translateElement(element){
     var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
     var node=null;
     while((node=elTW.nextNode())!=null){
         if(node.nodeValue){
-            node.nodeValue=translate(node.nodeValue);
+            //console.log(QQ(node).text());
+            //QQ(node).text(transl)
+            //console.log(node.nodeValue+" "+node.parentNode.getAttribute("class"));
+            //console.log();
+            var value=node.nodeValue;
+            if(value.indexOf('•')!=-1){     //技能名在鼠标移入的状态
+                value=value.replace('•',"");
+                value=translate(value);
+                node.nodeValue="• "+value;
+            }
+            else
+                node.nodeValue=translate(node.nodeValue);
             //node=elTW.previousNode();
             //QQ(t).remove();
         }
