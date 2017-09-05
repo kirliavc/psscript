@@ -57,7 +57,7 @@ var translations={
     "Add Pokémon":"添加宝可梦",
     "New Team":"新的队伍",
     "Male":"雄性",
-    "Female":"磁性",
+    "Female":"雌性",
     "Random":"随机",
     "Format List":" 分级列表",
     "List":" 列表",
@@ -2084,7 +2084,7 @@ var translations={
     "Shieldon":"盾甲龙",
     "Bastiodon":"护城龙",
     "Burmy":"结草儿",
-    "Wormadam":"结草贵妇-草木蓑衣",
+    "Wormadam":"结草贵妇",
     "Wormadam-Sandy":"结草贵妇-砂土蓑衣",
     "Wormadam-Trash":"结草贵妇-垃圾蓑衣",
     "Mothim":"绅士蛾",
@@ -2351,14 +2351,14 @@ var translations={
     "Cobalion":"勾帕路翁",
     "Terrakion":"代拉基翁",
     "Virizion":"毕力吉翁",
-    "Tornadus":"龙卷云-化身形态",
-    "Thundurus":"雷电云-化身形态",
+    "Tornadus":"龙卷云",
+    "Thundurus":"雷电云",
     "Tornadus-Therian":"龙卷云-灵兽形态",
     "Thundurus-Therian":"雷电云-灵兽形态",
 
     "Reshiram":"莱希拉姆",
     "Zekrom":"捷克罗姆",
-    "Landorus":"土地云-化身形态",
+    "Landorus":"土地云",
     "Landorus-Therian":"土地云-灵兽形态",
 
     "Kyurem":"酋雷姆",
@@ -2478,16 +2478,16 @@ var translations={
     "Vikavolt":"锹农炮虫",
     "Crabrawler":"好胜蟹",
     "Crabominable":"好胜毛蟹",
-    "Oricorio":"花舞鸟-热辣热辣风格",
+    "Oricorio":"花舞鸟",
     "Oricorio-Pa'u":"花舞鸟-呼拉呼拉风格",
     "Oricorio-Pom-Pom":"花舞鸟-啪滋啪滋风格",
     "Oricorio-Sensu":"花舞鸟-轻盈轻盈风格",
     "Cutiefly":"萌虻",
     "Ribombee":"蝶结萌虻",
     "Rockruff":"岩狗狗",
-    "Lycanroc":"鬃岩狼人-白天的样子",
+    "Lycanroc":"鬃岩狼人",
     "Lycanroc-Midnight":"鬃岩狼人-夜晚的样子",
-    "Wishiwashi":"弱丁鱼-单独的样子",
+    "Wishiwashi":"弱丁鱼",
     "Wishiwashi-School":"弱丁鱼-鱼群的样子",
     "Mareanie":"好坏星",
     "Toxapex":"超坏星",
@@ -2566,6 +2566,67 @@ var translations={
     "Magearna-Original":"玛机雅娜",
     "Marshadow":"玛夏多",
     
+    
+    //Extra PM Names
+    
+    "-Rainy":"-雨水的样子",
+    "-Snowy":"-雪云的样子",
+    "-Sunny":"-太阳的样子",
+    "-Attack":"-攻击形态",
+    "-Defense":"-防御形态",
+    "-Speed":"-速度形态",
+    "-Fan":"-电风扇",
+    "-Wash":"-冲洗",
+    "-Mow":"-除草机",
+    "-Heat":"-烤箱",
+    "-Frost":"-冰箱",
+    "-Origin":"-原始形态",
+    "-Sky":"-天空形态",
+    "-Bug":"-虫",
+    "-Dark":"-恶",
+    "-Dragon":"-龙",
+    "-Electric":"-电",
+    "-Fairy":"-妖精",
+    "-Fighting":"-格斗",
+    "-Fire":"-火",
+    "-Flying":"-飞",
+    "-Ghost":"-鬼",
+    "-Grass":"-草",
+    "-Ground":"-地面",
+    "-Ice":"-冰",
+    "-Poison":"-毒",
+    "-Psychic":"-超能",
+    "-Rock":"-岩石",
+    "-Steel":"-钢",
+    "-Water":"-水",
+    "-Zen":"-达摩模式",
+    "-Resolute":"-觉悟",
+    "-Pirouette":"-舞步形态",
+    "-Burn":"-火焰卡带",
+    "-Chill":"-冰冻卡带",
+    "-Douse":"-水流卡带",
+    "-Shock":"-闪电卡带",
+    "-Ash":"-小智",
+    "-Eternal":"-永恒",
+    "-Large":"-大尺寸",
+    "-Small":"-小尺寸",
+    "-Super":"-特大尺寸",
+    "-Unbound":"-解放",
+    "-Busted":"-现形的样子",
+    "-Primal":"原始",
+    "-Sandy":"-沙土蓑衣",
+    "-Trash":"-垃圾蓑衣",
+    "-Sunshine":"-晴天形态",
+    "-Blue-Striped":"",
+    "-Therian":"-灵兽形态",
+    "-Black":"黑色",
+    "-White":"白色",
+    "-Pa'u":"呼啦呼啦风格",
+    "-Pom-Pom":"-啪滋啪滋风格",
+    "-Sensu":"-轻盈轻盈风格",
+    "-Midnight":"-夜晚的样子",
+    "-School":"-鱼群的样子",
+
     // Item Desc
     
         "If holder is an Abomasnow, this item allows it to Mega Evolve in battle.":"暴雪王携带可进行超级进化",
@@ -3900,7 +3961,7 @@ var translations={
     "snatched" :"抢夺了",
     "'s move!":"的技能",
     "lost all of its PP due to the grudge!":"因为怨恨失去了所有的PP",
-    "'s Substitute blocked":"替身消失了",
+    "'s substitute faded!":"替身消失了！",
     "is in love with":"爱上了",
     "is protected by the mist!":"受到了白雾的保护",
     "is protected by Safeguard!":"收到了神秘守护的保护",
@@ -3913,7 +3974,7 @@ var translations={
     "protections!":"保护",
     "s attack!":"的攻击",
     "is being withdrawn!":"准备回来",
-    "It broke through " :"突破了",
+    "It broke through" :"突破了",
     "'s protection!":"的保护",
     "fell for the feint!":"摔倒了",
     "It reduced the PP of":"减少了PP",
@@ -3955,30 +4016,42 @@ var translations={
     "You sense the presence of many!":"你感受到了一股强大力量的存在！",
     "The mysterious strong winds weakened the attack!":"神秘的乱流减弱了攻击！",
     "is already preparing its next move!":"已经准备好了下轮行动！",
-    "It broke through":"打破了",
 
-    "Aurora Veil made":"极光幕使得",
-    "stronger against physical and special moves!":"在面对物理和特殊攻击时更强了!",
-    "Reflect made":"反射盾使得",
-    "stronger against physical moves!":"在面对物理攻击时更强了!",
-    "Light Screen made":"光墙使得",
-    "stronger against special moves!":"在面对特殊攻击时更强了!",
+    "Aurora Veil made your team stronger against physical and special moves!":"极光幕使得你的队伍在面对物理和特殊攻击时更强了!",
+    "Aurora Veil made the opposing team stronger against physical and special moves!":"极光幕使得对方的队伍在面对物理和特殊攻击时更强了!",
+    "Reflect made your team stronger against physical moves!":"反射盾使得你的队伍在面对物理攻击时更强了!",
+    "Reflect made the opposing team stronger against physical moves!":"反射盾使得对方的队伍在面对物理攻击时更强了!",
+    "Light Screen made your team stronger against special moves!":"光墙使得你的队伍在面对特殊攻击时更强了!",
+    "Light Screen made the opposing team stronger against special moves!":"光墙使得对方的队伍在面对特殊攻击时更强了!",
+    
 
-    "cloaked itself in a mystical veil!":"将自己包围在神秘的守护之中!",
-    "became shrouded in mist!":"被包围在了白雾之中!",
-    "Lucky Chant shielded":"幸运咒语保护",
-    "from critical hits!":"不会受到会心一击!",
-    "A sea of fire enveloped":"一片火海包围了",
-    "A rainbow appeared in the sky on":"彩虹出现在了",
-    "'s side!":"的一边",
-    "A swamp enveloped":"一片沼泽包围了",
-    "'s Tailwind petered out!":"的顺风停止了!",
-    "'s Aurora Veil wore off!":"的极光幕消失了!",
-    "'s Reflect wore off!":"的反射盾消失了!",
-    "'s Light Screen wore off!":"的光墙消失了!",
-    " is no longer protected by Safeguard!":"不再受神秘守护的保护",
-    " is no longer protected by mist!":"不再受白雾的保护",
-    "'s Lucky Chant wore off!":"的幸运咒语结束了!",
+    "Your team cloaked itself in a mystical veil!":"你的队伍将自己包围在神秘的守护之中!",
+    "Your team became shrouded in mist!":"你的队伍被包围在了白雾之中!",
+    "Lucky Chant shielded your team from critical hits!":"幸运咒语保护你的队伍不会受到会心一击！",
+    "A sea of fire enveloped your team!":"一片火海包围了你的队伍！",
+    "A rainbow appeared in the sky on your team's side!":"彩虹出现在了你队伍的一边！",
+    "A swamp enveloped your team!":"一片沼泽包围了你的队伍！",
+    "Your team's Tailwind petered out!":"你队伍的顺风停止了!",
+    "Your team's Aurora Veil wore off!":"你队伍的极光幕消失了!",
+    "Your team's Reflect wore off!":"你队伍的反射盾消失了!",
+    "Your team's Light Screen wore off!":"你队伍的光墙消失了!",
+    "Your team is no longer protected by Safeguard!":"你的队伍不再受神秘守护的保护！",
+    "Your team is no longer protected by mist!":"你的队伍不再受白雾的保护！",
+    "Your team's Lucky Chant wore off!":"你队伍的幸运咒语结束了!",
+    
+    "The opposing team cloaked itself in a mystical veil!":"对方的队伍将自己包围在神秘的守护之中!",
+    "The opposing team became shrouded in mist!":"对方的队伍被包围在了白雾之中!",
+    "Lucky Chant shielded the opposing team from critical hits!":"幸运咒语保护对方的队伍不会受到会心一击！",
+    "A sea of fire enveloped the opposing team!":"一片火海包围了对方的队伍！",
+    "A rainbow appeared in the sky on the opposing team's side!":"彩虹出现在了对方队伍的一边！",
+    "A swamp enveloped the opposing team!":"一片沼泽包围了对方的队伍！",
+    "The opposing team's Tailwind petered out!":"对方队伍的顺风停止了!",
+    "The opposing team's Aurora Veil wore off!":"对方队伍的极光幕消失了!",
+    "The opposing team's Reflect wore off!":"对方队伍的反射盾消失了!",
+    "The opposing team's Light Screen wore off!":"对方队伍的光墙消失了!",
+    "The opposing team is no longer protected by Safeguard!":"对方的队伍不再受神秘守护的保护！",
+    "The opposing team is no longer protected by mist!":"对方的队伍不再受白雾的保护！",
+    "The opposing team's Lucky Chant wore off!":"对方队伍的幸运咒语结束了!",
 
     "disappeared!":"消失了!",
 
@@ -4009,7 +4082,25 @@ var translations={
     // Extra
     
     "[Opposing":"[对手",
-
+    "Pointed stones float in the air around your team!":"尖锐的岩石漂浮在了你的队伍周围！",
+    "Pointed stones float in the air around the opposing team!":"尖锐的岩石漂浮在了对方的队伍周围！",
+    "Spikes were scattered on the ground all around your team!":"地菱布满在了你的队伍周围！",
+    "Spikes were scattered on the ground all around the opposing team!":"地菱布满在了对方的队伍周围！",
+    "Poison spikes were scattered on the ground all around your team!":"毒菱布满在了你的队伍周围！",
+    "Poison spikes were scattered on the ground all around the opposing team!":"毒菱布满在了对方的队伍周围！",
+    "A sticky web spreads out on the ground around your team!":"一张黏网展开在了你的队伍周围！",
+    "A sticky web spreads out on the ground around the opposing team!":"一张黏网展开在了对方的队伍场地周围！",
+    "The Tailwind blew from behind your team!":"顺风在你的队伍身后展开了！", 
+    "The pointed stones disappeared from around your team!":"尖锐的岩石从你的队伍场地周围消失了！",  
+    "The spikes disappeared from the ground around your team!":"地菱从你的队伍周围消失了！",  
+    "The poison spikes disappeared from the ground around your team!":"毒菱从你的队伍周围消失了！",  
+    "The sticky web has disappeared from the ground around your team!":"黏网从你的队伍周围消失了！",  
+    "The Tailwind blew from behind the opposing team!":"顺风在对方的队伍身后展开了！", 
+    "The pointed stones disappeared from around the opposing team!":"尖锐的岩石从对方的队伍场地周围消失了！",  
+    "The spikes disappeared from the ground around the opposing team!":"地菱从对方的队伍周围消失了！",  
+    "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",  
+    "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",  
+    "Waiting for opponent...":"等待对手行动...",
 };
 var QQ=$.noConflict();
 function translate(originalStr){
@@ -4017,6 +4108,17 @@ function translate(originalStr){
     var tmp=originalStr.trim();
     if(translations[tmp])
         return translations[tmp];
+    if(tmp.indexOf("'s ")!=-1&&tmp.indexOf("!]")!=-1){
+        tmp=tmp.replace("'s ","").replace("!]","");
+        return "的"+translations[tmp]+"!]";
+    }
+    if(tmp.indexOf("sent out")!=-1){
+        var splitted=tmp.split(" sent out ");
+        return splitted[0]+"放出了"+translations[splitted[1].replace("!","")]+"！";
+    }
+    if(tmp.indexOf("Go!")!=-1){
+        return "去吧，"+translations[tmp.replace("Go! ","").replace("!","")]+"！";
+    }
     var regex=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
     
     if(originalStr.match(regex)){
@@ -4075,6 +4177,7 @@ function translateElement(element){
                 value=value.replace('•',"");
                 value=translate(value);
                 node.nodeValue="• "+value;
+                continue;
             }
             else
                 node.nodeValue=translate(node.nodeValue
