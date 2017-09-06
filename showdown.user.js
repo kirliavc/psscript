@@ -4137,7 +4137,7 @@ var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
 var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
 var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
 var regex_uturn=new RegExp(/went back to (.*)!/);
-var regex_hurtby=new RegExp(/is hurt by([A-za-z- ]+)!/);
+var regex_hurtby=new RegExp(/is hurt by ([A-za-z- ]+)!/);
 function translate(originalStr){
     console.log(originalStr);
     var tmp=originalStr.trim();
