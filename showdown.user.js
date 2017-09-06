@@ -4120,7 +4120,7 @@ var translations={
     "became Ash-Greninja!":"变成了小智-甲贺忍蛙！",
     "It's super effective! The opposing":"这非常有效！对手的",
     "restored a little HP using its Black Sludge!":"使用黑色淤泥恢复了少量HP！",
-    "restored a little HP using its Grassy Terrain!":"因为青草场地恢复了少量HP！",
+    "restored HP using its Grassy Terrain!":"因为青草场地恢复了少量HP！",
     "Instant replay":" 即时回放",
     "Download replay":" 下载回放",
     "Switch sides":" 切换视角",
