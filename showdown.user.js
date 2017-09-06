@@ -3828,7 +3828,7 @@ var translations={
     "became fully charged due to its Power Herb!":"因为它的强力香草充满了力量!",
     "returned its status to normal using its White Herb!":"使用它的白色香草回复了它的能力!",
     "is switched out with the Eject Button!":"因为逃脱按键被换下了!",
-    "activated!":"被触发了!",
+    "activated":"被触发了",
     "traced":"复制了",
     "was taken over!":"被继承了!",
     "copied":"复制了",
@@ -4165,6 +4165,7 @@ function translate(originalStr){
         var str2=splitted[pos--];
         while(!translations[str2]){
             str2=splitted[pos--]+" "+str2;
+            if(pos==0)break;
         }
         var str1=splitted[pos--];
         if(pos>=0)
