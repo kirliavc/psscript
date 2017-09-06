@@ -4135,7 +4135,7 @@ var regex_ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
 var regex_possible_ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
 var regex_possible_ability2=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]), ([A-za-z- ]+[A-za-z])$/);
 var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
-var regex_stat_change=new RegExp(/^'s ([A-za-z ]+)!/);
+var regex_stat_change=new RegExp(/'s ([A-za-z ]+)!/);
 var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
 var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
 var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
@@ -4162,7 +4162,7 @@ function translate(originalStr){
     }
     //var regex=new RegExp(/(/)
     if(originalStr.match(regex_stat_change)){
-        console.log(RegExp.$1);
+        console.log(originalStr);
         var splitted=RegExp.$1.split(' ');
         var pos=splitted.length-1;
         var str2=splitted[pos--];
@@ -4174,7 +4174,7 @@ function translate(originalStr){
         if(pos>=0)
             str1=splitted[pos--]+" "+str1;
         var ret="的"+translations[str1]+translations[str2]+"！";
-        if(originalStr.indexOf("The Opposing")!=-1)
+        if(originalStr.indexOf("The opposing")!=-1)
             ret+=" 对手的";
         return ret;
     }
@@ -4243,11 +4243,11 @@ function translate(originalStr){
     if(originalStr.match(regex_magic_bounce)){
         return "把"+translations[RegExp.$1]+"反弹回去了！";
     }
-    if(originalStr.match(/can't use ([A-za-z- ]) after the taunt!/)){
+    if(originalStr.match(/can't use ([A-za-z- ]+) after the taunt!/)){
         return "因为挑拨不能使用"+translations[RegExp.$1];
     }
     //else 
-    //    return originalStr
+        return originalStr
             .replace(/lost ([0-9]+)% of its health!/,"失去了$1%的生命值!")
             .replace(" sent out ","放出了 ")
             .replace("won the battle","获得了胜利")
