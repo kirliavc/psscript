@@ -4168,7 +4168,7 @@ function translate(originalStr){
         var str2=splitted[pos--];
         while(!translations[str2]){
             str2=splitted[pos--]+" "+str2;
-            if(pos==0)break;
+            if(pos<=0)break;
         }
         var str1=splitted[pos--];
         if(pos>=0)
@@ -4244,7 +4244,7 @@ function translate(originalStr){
         return "把"+translations[RegExp.$1]+"反弹回去了！";
     }
     if(originalStr.match(/can't use ([A-za-z- ]+) after the taunt!/)){
-        return "因为挑拨不能使用"+translations[RegExp.$1];
+        return "因为挑拨不能使用"+translations[RegExp.$1]+"！";
     }
     //else 
         return originalStr
