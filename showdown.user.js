@@ -7,6 +7,7 @@
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
 // @match        http://replay.pokemonshowdown.com/*
+// @match        http://play.pokemonshowdown.com/*
 // @grant        none
 // @require      https://code.jQuery.com/jquery-2.1.4.min.js
 // @run-at       document-end
@@ -4141,7 +4142,8 @@ var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
 var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
 var regex_uturn=new RegExp(/went back to (.*)!/);
 var regex_hurtby=new RegExp(/is hurt by ([A-za-z- ]+)!/);
-function translate(originalStr){
+var t_= function(a){return a;}
+var t= function(originalStr){
     var tmp=originalStr.trim();
     if(translations[tmp])
         return translations[tmp];
@@ -4261,6 +4263,7 @@ function translate(originalStr){
 function translateElement(element){
     var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
     var node=null;
+    var translate=(QQ("[href='/chinese']").text().indexOf("中文")==-1)?t:t_;
     while((node=elTW.nextNode())!=null){
         if(node.nodeValue){
             //console.log(QQ(node).text());
