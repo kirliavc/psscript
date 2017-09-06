@@ -1,9 +1,9 @@
 ﻿// ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      1.0
 // @description  PSChina Server Translation
-// @author       ceca3
+// @author       Ceca3
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
 // @match        http://replay.pokemonshowdown.com/*
@@ -779,7 +779,7 @@ var translations={
     "Shadow Sneak":"影子偷袭",
     "Mud Bomb":"泥巴炸弹",
     "Psycho Cut":"精神利刃",
-    "Zen Headbutt":"意念头槌",
+    "Zen Headbutt":"意念头锤",
     "Mirror Shot":"镜光射击",
     "Flash Cannon":"加农光炮",
     "Rock Climb":"攀岩",
@@ -2626,7 +2626,12 @@ var translations={
     "-Sensu":"-轻盈轻盈风格",
     "-Midnight":"-夜晚的样子",
     "-School":"-鱼群的样子",
-
+    "-Alola":"-阿罗拉的样子",
+    "-Hoenn":"-丰缘帽子",
+    "-Kalos":"-卡洛斯帽子",
+    "-Original":"-初始帽子",
+    "-Sinnoh":"-神奥帽子",
+    "-Unova":"-合众帽子",
     // Item Desc
     
         "If holder is an Abomasnow, this item allows it to Mega Evolve in battle.":"暴雪王携带可进行超级进化",
@@ -3721,17 +3726,11 @@ var translations={
     "restored its HP using its Z-Power!":"通过Z技能回复了它的HP！",
     "The battlers shared their pain!":"战斗者分担了他们的痛楚！",
     "won't go any higher!":"不能变得更高了！",
-    "sharply":"大幅",
-    "drastically":"巨幅",
-    "rose":"提升",
     "raised":"提升了",
     "boosted its stats":"提升了它的能力",
     "using its Z-Power!":"通过Z技能！",
     "boosted its":"提升了它的",
     "won't go any lower!":"不能变得更低了！",
-    "harshly":"大幅",
-    "severely":"巨幅",
-    "fell":"下降",
     "lowered":"下降了",
     "cut its own HP and maximized its Attack!":"舍弃了自己的HP并最大化了它的攻击！",
     "'s Anger Point!":"的愤怒穴位！",
@@ -3782,8 +3781,8 @@ var translations={
     "The two moves have become one! It's a combined move!":"这两个招式合并为了一个招式!这是一个合体招式!",
     "surrounded itself with its Z-Power!":"用Z力量包裹了全身!",
     "by the":"由于",
-    "was burned!":"被灼伤了",
-    "was badly poisoned!":"中了剧毒",
+    "was burned!":"被灼伤了！",
+    "was badly poisoned!":"中了剧毒！",
     "was poisoned!":"中毒了!",
     "slept and became healthy!":"睡着了并恢复了健康!",
     "fell asleep!":"睡着了!",
@@ -4101,8 +4100,44 @@ var translations={
     "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",  
     "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",  
     "Waiting for opponent...":"等待对手行动...",
+    "Pointed stones dug into the opposing":"锋利的岩石扎进了对手的",
+    "It's super effective! A critical hit!":"这非常有效！会心一击！",
+    "It's not very effective... A critical hit!":"这非常有效！会心一击！",
+    "evasiveness":"回避率",
+    "Attack":"攻击",
+    "Defense":"防御",
+    "Special Attack":"特攻",
+    "Special Defense":"特防",
+    "Speed":"速度",
+    "accuracy":"命中率",
+    "fell":"下降了",
+    "rose":"提升了",
+    "fell harshly":"大幅下降了",
+    "fell severely":"巨幅下降了",
+    "rose sharply":"大幅提升了",
+    "rose drastically":"巨幅提升了",
+    "is reacting to the Key Stone":"对钥石起了反应",
+    "became Ash-Greninja!":"变成了小智-甲贺忍蛙！",
+    "It's super effective! The opposing":"这非常有效！对手的",
+    "restored a little HP using its Black Sludge!":"使用黑色淤泥恢复了少量HP！",
+    "restored a little HP using its Grassy Terrain!":"因为青草场地恢复了少量HP！",
+    "Instant replay":" 即时回放",
+    "Download replay":" 下载回放",
+    "Switch sides":" 切换视角",
+    "Upload and share replay":" 上传并分享回放",
 };
+
 var QQ=$.noConflict();
+var regex_ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
+var regex_possible_ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
+var regex_possible_ability2=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]), ([A-za-z- ]+[A-za-z])$/);
+var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
+var regex_stat_change=new RegExp(/'s ([A-za-z ]+)!/);
+var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
+var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
+var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
+var regex_uturn=new RegExp(/went back to (.*)!/);
+var regex_hurtby=new RegExp(/is hurt by([A-za-z- ]+)!/);
 function translate(originalStr){
     console.log(originalStr);
     var tmp=originalStr.trim();
@@ -4112,40 +4147,58 @@ function translate(originalStr){
         tmp=tmp.replace("'s ","").replace("!]","");
         return "的"+translations[tmp]+"!]";
     }
-    if(tmp.indexOf("sent out")!=-1){
+    if(tmp.indexOf("sent out ")!=-1){
         var splitted=tmp.split(" sent out ");
         return splitted[0]+"放出了"+translations[splitted[1].replace("!","")]+"！";
+    }
+    if(tmp.indexOf(" withdrew ")!=-1){
+        var splitted=tmp.split(" withdrew ");
+        return splitted[0]+"收回了"+translations[splitted[1].replace("!","")]+"！";
     }
     if(tmp.indexOf("Go!")!=-1){
         return "去吧，"+translations[tmp.replace("Go! ","").replace("!","")]+"！";
     }
-    var regex=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
+    //var regex=new RegExp(/(/)
+    if(originalStr.match(regex_stat_change)){
+        var splitted=RegExp.$1.split(' ');
+        var pos=splitted.length-1;
+        var str2=splitted[pos--];
+        while(!translations[str2]){
+            str2=splitted[pos--]+" "+str2;
+        }
+        var str1=splitted[pos--];
+        if(pos>=0)
+            str1=splitted[pos--]+" "+str1;
+        var ret="的"+translations[str1]+translations[str2]+"！";
+        if(originalStr.indexOf("The Opposing")!=-1)
+            ret+=" 对手的";
+        return ret;
+    }
+    if(originalStr.match(regex_ability)){
+        originalStr=originalStr.replace(regex_ability,"特性: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
     
-    if(originalStr.match(regex)){
-        originalStr=originalStr.replace(regex,"特性: ");
+    if(originalStr.match(regex_possible_ability)){
+        originalStr=originalStr.replace(regex_possible_ability,"可能的特性: ");
         if(translations[RegExp.$1]){
             originalStr+=translations[RegExp.$1];
         }
         return originalStr;
     }
-    regex=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
-    if(originalStr.match(regex)){
-        originalStr=originalStr.replace(regex,"可能的特性: ");
-        if(translations[RegExp.$1]){
-            originalStr+=translations[RegExp.$1];
-        }
-        return originalStr;
-    }
-    regex=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]),([A-za-z- ]+[A-za-z])$/);
-    if(originalStr.match(regex)){
-        originalStr=originalStr.replace(regex,"可能的特性: ");
+    
+    if(originalStr.match(regex_possible_ability2)){
+        originalStr=originalStr.replace(regex_possible_ability2,"可能的特性: ");
         if(translations[RegExp.$1]&&translations[RegExp.$2]){
-            originalStr=originalStr+translations[RegExp.$1]+","+translations[RegExp.$2];
+            originalStr=originalStr+translations[RegExp.$1]+"，"+translations[RegExp.$2];
         }
         return originalStr;
     }
 
-    var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
+    
     
     if(originalStr.match(regex_Item)){
         originalStr=originalStr.replace(regex_Item,"道具: ");
@@ -4154,10 +4207,44 @@ function translate(originalStr){
         }
         return originalStr;
     }
+    if(originalStr.match(regex_preview)){
+        var pokes=originalStr.split(" / ");
+        var ret=translations[pokes[0]];
+        var pos=1;
+        while(pokes[pos]){
+            ret+=" / "+translations[pokes[pos]];
+            pos++;
+        }
+        return ret;
+    }
+    if(originalStr.match(regex_start_battle)){
+        return RegExp.$1+" 与 "+RegExp.$2+" 的对战开始了！";
+    } 
+    if(originalStr.match(/^\((.*)\)$/)){
+        if(translations[RegExp.$1])
+            return "("+translations[RegExp.$1]+")";
+    }
+    if(originalStr.match(/has Mega Evolved into Mega ([A-za-z -]+)!/)){
+        return "超级进化为Mega"+translations[RegExp.$1]+"！";
+    }
+    if(originalStr.match(regex_uturn)){
+        return "回到了"+RegExp.$1+"的身边！";
+    }
+    if(originalStr.match(regex_hurtby)){
+        return "因为"+translations[RegExp.$1]+"而受到了伤害！";
+    }
+    if(originalStr.match(regex_magic_bounce)){
+        return "把"+translations[RegExp.$1]+"反弹回去了！";
+    }
+    
     return originalStr
     //else 
     //    return originalStr
             .replace(/lost ([0-9]+)% of its health!/,"失去了$1%的生命值!")
+            .replace(" sent out ","放出了 ")
+            .replace("won the battle","获得了胜利")
+            .replace(" withdrew ","收回了 ")
+            .replace("forfeited","认输了")
             //.replace(/Ability: ([A-za-z ]+)/,"特性: "+translate(RegExp.$1))
             //.replace(/Ability: \/ Item: ([A-za-z ]+)/,"特性: "++"/ 道具:"+translate("$2"))
     ;
@@ -4190,7 +4277,8 @@ function translateElement(element){
 }
 (function() {
     'use strict';
-    translateElement(document.getElementById('room-'));
+    if(document.getElementById('room-'))
+        translateElement(document.getElementById('room-'));
     QQ(document).on('DOMNodeInserted',function(e){
         translateElement(e.target);
     });
