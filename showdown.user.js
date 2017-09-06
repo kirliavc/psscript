@@ -4125,6 +4125,7 @@ var translations={
     "Download replay":" 下载回放",
     "Switch sides":" 切换视角",
     "Upload and share replay":" 上传并分享回放",
+    "knocked off the opposing":"打落了对手的",
 };
 
 var QQ=$.noConflict();
@@ -4132,7 +4133,7 @@ var regex_ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
 var regex_possible_ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
 var regex_possible_ability2=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]), ([A-za-z- ]+[A-za-z])$/);
 var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
-var regex_stat_change=new RegExp(/'s ([A-za-z ]+)!/);
+var regex_stat_change=new RegExp(/^'s ([A-za-z ]+)!$/);
 var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
 var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
 var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
@@ -4181,7 +4182,6 @@ function translate(originalStr){
         }
         return originalStr;
     }
-    
     if(originalStr.match(regex_possible_ability)){
         originalStr=originalStr.replace(regex_possible_ability,"可能的特性: ");
         if(translations[RegExp.$1]){
@@ -4214,6 +4214,7 @@ function translate(originalStr){
         while(pokes[pos]){
             ret+=" / "+translations[pokes[pos]];
             pos++;
+            if(pos>=6)break;
         }
         return ret;
     }
@@ -4259,10 +4260,6 @@ function translateElement(element){
             //QQ(node).text(transl)
             //console.log(node.nodeValue+" "+node.parentNode.getAttribute("class"));
             //console.log();
-            //if(node.getAttribute("name").indexOf("refresh")!=-1){
-            //    node.nodeValue=" 刷新";
-            //    continue;
-            //}
             var value=node.nodeValue;
             if(value.indexOf('•')!=-1){     //技能名在鼠标移入的状态
                 value=value.replace('•',"");
@@ -4279,6 +4276,7 @@ function translateElement(element){
         }
     }
 }
+
 (function() {
     'use strict';
     if(document.getElementById('room-'))
