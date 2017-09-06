@@ -4139,7 +4139,6 @@ var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
 var regex_uturn=new RegExp(/went back to (.*)!/);
 var regex_hurtby=new RegExp(/is hurt by ([A-za-z- ]+)!/);
 function translate(originalStr){
-    console.log(originalStr);
     var tmp=originalStr.trim();
     if(translations[tmp])
         return translations[tmp];
@@ -4260,6 +4259,10 @@ function translateElement(element){
             //QQ(node).text(transl)
             //console.log(node.nodeValue+" "+node.parentNode.getAttribute("class"));
             //console.log();
+            //if(node.getAttribute("name").indexOf("refresh")!=-1){
+            //    node.nodeValue=" 刷新";
+            //    continue;
+            //}
             var value=node.nodeValue;
             if(value.indexOf('•')!=-1){     //技能名在鼠标移入的状态
                 value=value.replace('•',"");
