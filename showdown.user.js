@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  PSChina Server Translation
 // @author       Ceca3
 // @match        http://china.psim.us/*
@@ -3748,6 +3748,7 @@ var translations={
     "A critical hit!":"击中了要害！",
     "doesn't become confused!":"并没有混乱!",
     "It doesn't affect":"这并没有影响到",
+    "It doesn't affect the opposing":"这并没有影响到对手的",
     "It had no effect!":"这没有任何效果!",
     "avoided the attack!":"回避了攻击!",
     "'s attack missed!":"的攻击没有命中!",
