@@ -1438,7 +1438,7 @@ var translations={
     "Charizardite X":"M喷火龙石X",
     "Charizardite Y":"M喷火龙石Y",
     "Blastoisinite":"M水箭龟石",
-    "Alakazite":"M胡帝石",
+    "Alakazite":"M胡地石",
     "Gengarite":"M耿鬼石",
     "Kangaskhanite":"M袋龙石",
     "Pinsirite":"M大甲石",
@@ -2094,7 +2094,7 @@ var translations={
     "Buizel":"泳圈鼬",
     "Floatzel":"浮潜鼬",
     "Cherubi":"樱花宝",
-    "Cherrim":"樱花儿-阴天形态",
+    "Cherrim":"樱花儿",
     "Cherrim-Sunshine":"樱花儿-晴天形态",
     "Shellos":"无壳海兔",
     "Gastrodon":"海兔兽",
@@ -2172,7 +2172,7 @@ var translations={
     "Heatran":"席多蓝恩",
     "Regigigas":"雷吉奇卡斯",
     "Giratina":"骑拉帝纳",
-    "Giratina-Origin":"骑拉帝纳-原始形态",
+    "Giratina-Origin":"骑拉帝纳-原始",
     "Cresselia":"克雷色利亚",
     "Phione":"霏欧纳",
     "Manaphy":"玛纳霏",
@@ -2181,23 +2181,23 @@ var translations={
     "Shaymin-Sky":"谢米-天空形态",
     "Arceus":"阿尔宙斯",
 
-    "Arceus-Bug":"阿尔宙斯-属性：虫",
-    "Arceus-Dark":"阿尔宙斯-属性：恶",
-    "Arceus-Dragon":"阿尔宙斯-属性：龙",
-    "Arceus-Electric":"阿尔宙斯-属性：电",
-    "Arceus-Fairy":"阿尔宙斯-属性：仙",
-    "Arceus-Fighting":"阿尔宙斯-属性：格斗",
-    "Arceus-Fire":"阿尔宙斯-属性：火",
-    "Arceus-Flying":"阿尔宙斯-属性：飞",
-    "Arceus-Ghost":"阿尔宙斯-属性：鬼",
-    "Arceus-Grass":"阿尔宙斯-属性：草",
-    "Arceus-Ground":"阿尔宙斯-属性：地面",
-    "Arceus-Ice":"阿尔宙斯-属性：冰",
-    "Arceus-Poison":"阿尔宙斯-属性：毒",
-    "Arceus-Psychic":"阿尔宙斯-属性：超能",
-    "Arceus-Rock":"阿尔宙斯-属性：岩",
-    "Arceus-Steel":"阿尔宙斯-属性：钢",
-    "Arceus-Water":"阿尔宙斯-属性：水",
+    "Arceus-Bug":"阿尔宙斯-虫",
+    "Arceus-Dark":"阿尔宙斯-恶",
+    "Arceus-Dragon":"阿尔宙斯-龙",
+    "Arceus-Electric":"阿尔宙斯-电",
+    "Arceus-Fairy":"阿尔宙斯-仙",
+    "Arceus-Fighting":"阿尔宙斯-格斗",
+    "Arceus-Fire":"阿尔宙斯-火",
+    "Arceus-Flying":"阿尔宙斯-飞",
+    "Arceus-Ghost":"阿尔宙斯-鬼",
+    "Arceus-Grass":"阿尔宙斯-草",
+    "Arceus-Ground":"阿尔宙斯-地面",
+    "Arceus-Ice":"阿尔宙斯-冰",
+    "Arceus-Poison":"阿尔宙斯-毒",
+    "Arceus-Psychic":"阿尔宙斯-超能",
+    "Arceus-Rock":"阿尔宙斯-岩",
+    "Arceus-Steel":"阿尔宙斯-钢",
+    "Arceus-Water":"阿尔宙斯-水",
 
 
 
@@ -2906,7 +2906,7 @@ var translations={
     "If holder is a Snorlax with Giga Impact, it can use Pulverizing Pancake.":"卡比兽携带后可以将超级冲击转化成Z招式：认真起来大爆击",
     "Raises holder's Attack by 1 if hit by an Ice-type attack. Single use.":"受到冰属性招式攻击时攻击提升一级，使用后消失",
     "Holder's Ground-type attacks have 1.2x power.":"地面属性招式威力提升20%",
-    "If holder's a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.":"拉帝亚斯/拉帝欧斯携带后龙属性和超能力属性招式威力提升20%",
+    "If holder is a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.":"拉帝亚斯/拉帝欧斯携带后龙属性和超能力属性招式威力提升20%",
     "Holder's Ghost-type attacks have 1.2x power.":"幽灵属性招式威力提升20%",
     "Holder's Water-type attacks have 1.2x power. Judgment is Water type.":"水属性招式威力提升20%，制裁光砾变为水属性",
     "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type.":"幽灵属性招式威力提升20%，制裁光砾变为幽灵属性",
@@ -3675,8 +3675,8 @@ var translations={
     "The effects of Throat Chop prevent":"地狱突刺的效果阻止了",
     "from using certain moves!":"使用特定的技能",
     "is paralyzed! It can't move!":"麻痹了！它不能行动！",
-    "is frozen solid!":"被结实地冰冻着",
-    "is fast asleep.":"正在熟睡",
+    "is frozen solid!":"被结实地冰冻着。",
+    "is fast asleep.":"正在熟睡。",
     "Sky Drop won't let":"自由落体不放开",
     "go!":"！",
     "cannot use":"不能使用",
@@ -3964,7 +3964,7 @@ var translations={
     "is in love with":"爱上了",
     "is protected by the mist!":"受到了白雾的保护",
     "is protected by Safeguard!":"收到了神秘守护的保护",
-    "can no longer escape!":"不能逃脱",
+    "can no longer escape!":"不能逃脱！",
     "was caught in a sticky web!":"陷入了粘网",
     "Everyone is caught up in the happy atmosphere!":"大家被欢乐的气氛包围了",
     "Congratulations,":"祝贺",
@@ -4102,7 +4102,7 @@ var translations={
     "Waiting for opponent...":"等待对手行动...",
     "Pointed stones dug into the opposing":"锋利的岩石扎进了对手的",
     "It's super effective! A critical hit!":"这非常有效！会心一击！",
-    "It's not very effective... A critical hit!":"这非常有效！会心一击！",
+    "It's not very effective... A critical hit!":"这不是很有效...会心一击！",
     "evasiveness":"回避率",
     "Attack":"攻击",
     "Defense":"防御",
@@ -4127,7 +4127,32 @@ var translations={
     "Upload and share replay":" 上传并分享回放",
     "knocked off the opposing":"打落了对手的",
     "taunt":"挑拨",
-    "wore off":"无效了"
+    "wore off":"无效了",
+    "Arceus-*":"阿尔宙斯",
+    "is hurt by the opposing":"受到了伤害来自对手",
+    "All Pokémon that heard the song will faint in three turns!":"所有听到歌声的宝可梦将在3回合后倒下！",
+    "was badly poisoned by the Toxic Orb!":"因为剧毒珠中了剧毒！",
+    "the Normal type":"普通属性",
+    "the Fighting type":"格斗属性",
+    "the Flying type":"飞行属性",
+    "the Poison type":"毒属性",
+    "the Ground type":"地面属性",
+    "the Rock type":"岩石属性",
+    "the Bug type":"虫属性",
+    "the Ghost type":"幽灵属性",
+    "the Steel type":"钢属性",
+    "the Fire type":"火属性",
+    "the Water type":"水属性",
+    "the Grass type":"草属性",
+    "the Psychic type":"超能属性",
+    "the Dragon type":"龙属性",
+    "the Ice type":"冰属性",
+    "the Dark type":"恶属性",
+    "the Fairy type":"妖精属性",
+    
+    "Fairy Gem":"妖精珠宝",
+    "BrightPowder":"光粉",
+    "SilverPowder":"银粉",
 };
 
 var QQ=$.noConflict();
@@ -4137,7 +4162,7 @@ var regex_possible_ability2=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]
 var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
 var regex_stat_change=new RegExp(/'s ([A-za-z ]+)!/);
 var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
-var regex_preview=new RegExp(/^([A-za-z -]+ \/ )+([A-za-z -]+)$/);
+var regex_preview=new RegExp(/^([A-za-z* -]+ \/ )+([A-za-z* -]+)$/);
 var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
 var regex_uturn=new RegExp(/went back to (.*)!/);
 var regex_hurtby=new RegExp(/is hurt by ([A-za-z- ]+)!/);
@@ -4174,7 +4199,14 @@ var t= function(originalStr){
         var str1=splitted[pos--];
         if(pos>=0)
             str1=splitted[pos--]+" "+str1;
-        var ret="的"+translations[str1]+translations[str2]+"！";
+        var ret="的";
+        var trans1=translations[str1];
+        var trans2=translations[str2];
+        if(trans1)
+            ret+=trans1;
+        if(trans2)
+            ret+=trans2;
+        ret+="！";
         if(originalStr.indexOf("The opposing")!=-1)
             ret+=" 对手的";
         return ret;
@@ -4232,10 +4264,15 @@ var t= function(originalStr){
     if(originalStr.match(/has Mega Evolved into Mega ([A-za-z -]+)!/)){
         return "超级进化为Mega"+translations[RegExp.$1]+"！";
     }
+    if(originalStr.match(/transformed into ([A-za-z -]+)!/)){
+        return "变成了"+translations[RegExp.$1]+"！";
+    }
     if(originalStr.match(regex_uturn)){
         return "回到了"+RegExp.$1+"的身边！";
     }
     if(originalStr.match(regex_hurtby)){
+        var str1="因为";
+        if(originalStr.indexOf("opposing"))
         return "因为"+translations[RegExp.$1]+"而受到了伤害！";
     }
     if(originalStr.match(regex_magic_bounce)){
