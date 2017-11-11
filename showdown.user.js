@@ -97,7 +97,8 @@ var translations={
     "You can choose to display formatted text as normal text":"你可以选择显示文字的布局为普通布局",
     "Change name":"更改用户名",
     "Log out":"退出",
-    //Abilities Translation
+    
+    // Abilities Translation
     
     "Stench":"恶臭",
     "Drizzle":"降雨",
@@ -331,6 +332,7 @@ var translations={
     "Power of Alchemy":"化学之力",
     "Beast Boost":"异兽提升",
     "Prism Armor":"棱镜装甲",
+    "Neuroforce":"脑核之力",
     
     // Moves Translation
     
@@ -1052,10 +1054,18 @@ var translations={
     "Oceanic Operetta":"海神庄严交响乐",
     "Soul-Stealing 7-Star Strike":"七星夺魂腿",
     "10,000,Volt Thunderbolt":"千万伏特",
-    
+    "Mind Blown":"惊爆大头",
+    "Plasma Fists":"等离子闪电拳",
+    "Photon Geyser":"光子喷涌",
+    "Light That Burns the Sky":"焚天灭世炽光爆",
+    "Searing Sunraze Smash":"日光回旋下苍穹",
+    "Menacing Moonraze Maelstrom":"月华飞溅落灵霄"
+    "Let’s Snuggle Forever":"亲密无间大乱揍",
+    "Splintered Stormshards":"狼啸石牙飓风暴",
+    "Clangorous Soulblaze":"炽魂热舞烈音爆",
     // Items Translation
     
-    	"Repel":"除虫喷雾",
+    "Repel":"除虫喷雾",
 	"Super Repel":"白银喷雾",
 	"Max Repel":"黄金喷雾",
 	"Escape Rope":"离洞绳",
@@ -1545,6 +1555,12 @@ var translations={
 	"Eevium Z":"伊布Z",
 	"Mewnium Z":"梦幻Z",
 	"Pikashunium Z":"智皮卡Z",
+    "Mimikium Z":"谜拟ＱＺ",
+    "Lycanium Z":"鬃岩狼人Ｚ",
+    "Kommonium Z":"杖尾鳞甲龙Ｚ",
+    "Solganium Z":"索尔迦雷欧Ｚ",
+    "Lunalium Z":"露奈雅拉Ｚ",
+    "Ultranecrozium Z":"究极奈克洛Ｚ",
 	"Berry":"树果",
 	"Gold Berry":"黄金的果实",
 	"PRZCureBerry":"消除麻痹的果实",
@@ -2613,7 +2629,11 @@ var translations={
     "Magearna":"玛机雅娜",
     "Magearna-Original":"玛机雅娜",
     "Marshadow":"玛夏多",
-    
+    "Poipole":"毒贝比",
+    "Naganadel":"四颚针龙",
+    "Stakataka":"垒磊石",
+    "Blacephalon":"砰头小丑",
+    "Zeraora":"捷拉奥拉",
     
     //Extra PM Names
     
@@ -2681,8 +2701,8 @@ var translations={
     "-Sinnoh":"-神奥帽子",
     "-Unova":"-合众帽子",
     // Item Desc
-    "If holder is an Altaria, this item allows it to Mega Evolve in battle.":"七夕青鸟携带可进行超级进化",
     
+    "If holder is an Altaria, this item allows it to Mega Evolve in battle.":"七夕青鸟携带可进行超级进化",
     "If holder is an Abomasnow, this item allows it to Mega Evolve in battle.":"暴雪王携带可进行超级进化",
     "If holder is an Absol, this item allows it to Mega Evolve in battle.":"阿勃梭鲁携带可进行超级进化",
     "Raises holder's Sp. Atk by 1 stage if hit by a Water-type attack. Single use.":"受到水属性招式攻击时特攻提升一级，使用后消失",
@@ -3439,10 +3459,9 @@ var translations={
     "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
     "20% chance to lower the target's Attack by 1.":"20%使目标的攻击下降一级。",
     
-    
     // Ability Desc
     
-        "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.":"因接触类招式被击倒时，对方宝可梦损失最大HP的1/4",
+    "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.":"因接触类招式被击倒时，对方宝可梦损失最大HP的1/4",
     "This Pokemon's Normal-type moves become Flying type and have 1.2x power.":"一般属性招式变为飞行属性招式，威力提升20%",
     "While this Pokemon is active, the effects of weather conditions are disabled.":"无视场上天气带来的影响",
     "This Pokemon's attacks have 1.3x power if it is the last to move in a turn.":"回合最后行动的话威力提升30%",
