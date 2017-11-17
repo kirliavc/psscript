@@ -1059,7 +1059,7 @@ var translations={
     "Photon Geyser":"光子喷涌",
     "Light That Burns the Sky":"焚天灭世炽光爆",
     "Searing Sunraze Smash":"日光回旋下苍穹",
-    "Menacing Moonraze Maelstrom":"月华飞溅落灵霄"
+    "Menacing Moonraze Maelstrom":"月华飞溅落灵霄",
     "Let’s Snuggle Forever":"亲密无间大乱揍",
     "Splintered Stormshards":"狼啸石牙飓风暴",
     "Clangorous Soulblaze":"炽魂热舞烈音爆",
@@ -3027,7 +3027,7 @@ var translations={
     "(Gen 2) Holder's Normal-type attacks have 1.1x power.":"（第二世代限定）一般属性技能威力提升10%",
     "(Gen 2) Holder cures itself if it is paralyzed. Single use.":"（第二世代限定）解除麻痹状态，使用后消失",
     "(Gen 2) Holder is cured if it is poisoned. Single use.":"（第二世代限定），解除中毒状态，使用后消失",
-    "Necrozma-Dusk-Mane/Dawn-Wings: Ultra Burst. W/ Photon Geyser: can use Z-Move.":"奈克洛兹玛--黃昏之鬃/拂曉之翼可以究极爆发。配合光子喷涌使用Z技能。"
+    "Necrozma-Dusk-Mane/Dawn-Wings: Ultra Burst. W/ Photon Geyser: can use Z-Move.":"奈克洛兹玛--黃昏之鬃/拂曉之翼可以究极爆发。配合光子喷涌使用Z技能。",
     
     // Moves Desc Translation
     
