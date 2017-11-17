@@ -4157,6 +4157,7 @@ var translations={
     "All Pok&#xE9;mon that heard the song will faint in three turns!":"所有听见歌声的宝可梦都将在三回合后倒下!",
     "Coins were scattered everywhere!":"金币撒得到处都是!",
     "A deluge of ions showers the battlefield!":"离子风暴正在肆虐!",
+    "regained its true power through Ultra Burst!":"通过究极爆发出现了新的样子!",
     
     
     // Extra
