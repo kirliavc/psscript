@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
 // @version      1.1
@@ -2700,6 +2700,10 @@ var translations={
     "-Original":"-初始帽子",
     "-Sinnoh":"-神奥帽子",
     "-Unova":"-合众帽子",
+    "-Dawn-Wings":"-拂曉之翼",
+    "-Dusk-Mane":"-黃昏之鬃",
+    "-Ultra":"究极",
+    
     // Item Desc
     
     "If holder is an Altaria, this item allows it to Mega Evolve in battle.":"七夕青鸟携带可进行超级进化",
@@ -3023,10 +3027,11 @@ var translations={
     "(Gen 2) Holder's Normal-type attacks have 1.1x power.":"（第二世代限定）一般属性技能威力提升10%",
     "(Gen 2) Holder cures itself if it is paralyzed. Single use.":"（第二世代限定）解除麻痹状态，使用后消失",
     "(Gen 2) Holder is cured if it is poisoned. Single use.":"（第二世代限定），解除中毒状态，使用后消失",
+    "Necrozma-Dusk-Mane/Dawn-Wings: Ultra Burst. W/ Photon Geyser: can use Z-Move.":"奈克洛兹玛--黃昏之鬃/拂曉之翼可以究极爆发。配合光子喷涌使用Z技能。"
     
     // Moves Desc Translation
     
-        "Very high critical hit ratio":"十分容易击中要害。",
+    "Very high critical hit ratio.":"十分容易击中要害。",
     "User recovers 50% of the damage dealt.":"使用者将造成伤害的50%转化为自身的HP。",
     "Usually goes first.":"一定能先发制人进行攻击。",
     "10% chance to lower the foe(s) Sp. Def by 1.":"10%几率令目标的特防降低1级。",
@@ -3458,6 +3463,12 @@ var translations={
     "The target's Ability becomes Insomnia.":"目标的特性变为不眠。",
     "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
     "20% chance to lower the target's Attack by 1.":"20%使目标的攻击下降一级。",
+    "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失最大HP的50%，攻击周围全体宝可梦。",
+    "Normal moves become Electric type this turn.":"使得该回合场上的普通系技能变为电系。",
+    "Uses higher attacking stat in damage calculation.":"使用自己物理和特殊攻击中更高的一项计算伤害。",
+    "Uses higher attacking stat for DMG. Ignores ability.":"使用自己物理和特殊攻击中更高的一项计算伤害。无视目标的特性。",
+    "Boosts all stats 1 stage. Hits adjacent foes.":"全能力提升一级，攻击邻近的对手全体。",
+    "Clears terrains.":"清除场上的场地。",
     
     // Ability Desc
     
@@ -3673,7 +3684,7 @@ var translations={
     "This Pokemon can only be damaged by supereffective moves and indirect damage.":"只会受到效果绝佳招式的攻击伤害，天气、异常状态、能力阶级及附加效果依然有效",
     "Status moves with accuracy checks are 50% accurate when used on this Pokemon.":"变化招式对该特性的宝可梦命中率减半",
     "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.":"HP不足一半时转变为达摩形态",
-    
+    "Super effective moves used by this Pokemon will do 1.2x damage.":"该精灵使用的技能如果非常有效，则威力提示20%",
     
     //battle.js start
     
