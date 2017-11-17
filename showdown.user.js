@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  PSChina Server Translation
 // @author       Ceca3
 // @match        http://china.psim.us/*
