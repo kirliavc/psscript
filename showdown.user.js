@@ -2700,8 +2700,9 @@ var translations={
     "-Original":"-初始帽子",
     "-Sinnoh":"-神奥帽子",
     "-Unova":"-合众帽子",
-    "-Dawn-Wings":"-拂曉之翼",
-    "-Dusk-Mane":"-黃昏之鬃",
+    "-Dusk":"黄昏的样子",
+    "-Dawn-Wings":"-拂晓之翼",
+    "-Dusk-Mane":"-黄昏之鬃",
     "-Ultra":"究极",
     
     // Item Desc
@@ -3027,7 +3028,13 @@ var translations={
     "(Gen 2) Holder's Normal-type attacks have 1.1x power.":"（第二世代限定）一般属性技能威力提升10%",
     "(Gen 2) Holder cures itself if it is paralyzed. Single use.":"（第二世代限定）解除麻痹状态，使用后消失",
     "(Gen 2) Holder is cured if it is poisoned. Single use.":"（第二世代限定），解除中毒状态，使用后消失",
-    "Necrozma-Dusk-Mane/Dawn-Wings: Ultra Burst. W/ Photon Geyser: can use Z-Move.":"奈克洛兹玛--黃昏之鬃/拂曉之翼可以究极爆发。配合光子喷涌使用Z技能。",
+    
+    "If held by a Lycanroc forme with Stone Edge, it can use Splintered Stormshards.":"习得尖石攻击的鬃岩狼人可以使用狼啸石牙飓风暴。",
+    "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.":"习得嬉闹的谜拟Q可以使用亲密无间大乱揍。",
+    "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.":"习得鳞片噪音的杖尾鳞甲龙可以使用炽魂热舞烈音爆。",
+    "Solgaleo or Dusk Mane Necrozma with Sunsteel Strike can use a special Z-Move.":"习得流星闪冲的索尔迦雷欧或奈克洛兹玛-黃昏之鬃可以发动特殊Z技能。",
+    "Lunala or Dawn Wings Necrozma with Moongeist Beam can use a special Z-Move.":"习得暗影之光的露奈雅拉或奈克洛兹玛-可以发动特殊Z技能。",
+    "Dusk Mane/Dawn Wings Necrozma: Ultra Burst, then Z-Move w/ Photon Geyser.":"让奈克洛兹玛-黄昏之鬃/拂晓之翼究极爆发再配合光子喷涌使用Z技能。",
     
     // Moves Desc Translation
     
@@ -3463,12 +3470,13 @@ var translations={
     "The target's Ability becomes Insomnia.":"目标的特性变为不眠。",
     "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
     "20% chance to lower the target's Attack by 1.":"20%使目标的攻击下降一级。",
+    
     "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失最大HP的50%，攻击周围全体宝可梦。",
     "Normal moves become Electric type this turn.":"使得该回合场上的普通系技能变为电系。",
-    "Uses higher attacking stat in damage calculation.":"使用自己物理和特殊攻击中更高的一项计算伤害。",
-    "Uses higher attacking stat for DMG. Ignores ability.":"使用自己物理和特殊攻击中更高的一项计算伤害。无视目标的特性。",
-    "Boosts all stats 1 stage. Hits adjacent foes.":"全能力提升一级，攻击邻近的对手全体。",
-    "Clears terrains.":"清除场上的场地。",
+    "Calculates damage with user's higher attack stat.":"使用自己物理和特殊攻击中更高的一项计算伤害。",
+    "Uses user's best attacking stat. Ignores Abilities.":"使用自己物理和特殊攻击中更高的一项计算伤害,无视目标的特性。",
+    "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.":"使用者全能力提升一级。",
+    "Ends the effects of Terrain.":"清除场上的场地。",
     
     // Ability Desc
     
@@ -3684,7 +3692,7 @@ var translations={
     "This Pokemon can only be damaged by supereffective moves and indirect damage.":"只会受到效果绝佳招式的攻击伤害，天气、异常状态、能力阶级及附加效果依然有效",
     "Status moves with accuracy checks are 50% accurate when used on this Pokemon.":"变化招式对该特性的宝可梦命中率减半",
     "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.":"HP不足一半时转变为达摩形态",
-    "Super effective moves used by this Pokemon will do 1.2x damage.":"该精灵使用的技能如果非常有效，则威力提示20%",
+    "This Pokemon's attacks that are super effective against the target do 1.2x damage.":"该精灵使用的技能如果对目标非常有效，则威力提示20%",
     
     //battle.js start
     
