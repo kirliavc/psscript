@@ -7,6 +7,7 @@
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
 // @match        http://replay.pokemonshowdown.com/*
+// @match        https://replay.pokemonshowdown.com/*
 // @grant        none
 // @require      https://code.jQuery.com/jquery-2.1.4.min.js
 // @run-at       document-end
