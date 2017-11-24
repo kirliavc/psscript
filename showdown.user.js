@@ -2704,7 +2704,8 @@ var translations={
     "-Dusk":"黄昏的样子",
     "-Dawn-Wings":"-拂晓之翼",
     "-Dusk-Mane":"-黄昏之鬃",
-    "-Ultra":"究极",
+    "-Ultra":"-究极",
+    "-Totem":"-霸主",
     
     // Item Desc
     
@@ -3474,7 +3475,6 @@ var translations={
     
     "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失最大HP的50%，攻击周围全体宝可梦。",
     "Normal moves become Electric type this turn.":"使得该回合场上的普通系技能变为电系。",
-    "Calculates damage with user's higher attack stat.":"使用自己物理和特殊攻击中更高的一项计算伤害。",
     "Uses user's best attacking stat. Ignores Abilities.":"使用自己物理和特殊攻击中更高的一项计算伤害,无视目标的特性。",
     "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.":"使用者全能力提升一级。",
     "Ends the effects of Terrain.":"清除场上的场地。",
