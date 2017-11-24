@@ -1061,7 +1061,7 @@ var translations={
     "Light That Burns the Sky":"焚天灭世炽光爆",
     "Searing Sunraze Smash":"日光回旋下苍穹",
     "Menacing Moonraze Maelstrom":"月华飞溅落灵霄",
-    "Let’s Snuggle Forever":"亲密无间大乱揍",
+    "Let's Snuggle Forever":"亲密无间大乱揍",
     "Splintered Stormshards":"狼啸石牙飓风暴",
     "Clangorous Soulblaze":"炽魂热舞烈音爆",
     // Items Translation
