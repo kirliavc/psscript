@@ -8,6 +8,7 @@
 // @match        http://47.94.147.145.psim.us/*
 // @match        http://replay.pokemonshowdown.com/*
 // @match        https://replay.pokemonshowdown.com/*
+// @match        https://play.pokemonshowdown.com/*
 // @grant        none
 // @require      https://code.jQuery.com/jquery-2.1.4.min.js
 // @run-at       document-end
@@ -4405,7 +4406,7 @@ var t= function(originalStr){
 function translateElement(element){
     var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
     var node=null;
-    var translate=(QQ("[href='/chinese']").text().indexOf("中文")==-1)?t:t_;
+    var translate=t;
     while((node=elTW.nextNode())!=null){
         if(node.nodeValue){
             //console.log(QQ(node).text());
