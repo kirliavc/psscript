@@ -14,6 +14,10 @@
 // @run-at       document-end
 // ==/UserScript==
 var translations={
+    "The name you chose is registered.":"你选择的用户名已经被注册了。",
+    "If this is your account:":"如果这是你的账号：",
+    "If this is someone else's account:":"如果这是别人的账号：",
+    "Choose another name":"选择另一个名字",
     "[Gen 7] Random Battle":"[第七世代] 随机对战",
     "Add game":"新对战",
     "Format:":"分级",
