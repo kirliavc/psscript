@@ -24,6 +24,7 @@ var translations={
     "Ladder":"排行榜",
     "Watch a battle":"观看对战",
     "Find a user":"查找用户",
+    "Choose name":"输入用户名",
     "Did you have a good day?":"你今天过的还好吗?",
     "[Gen 7] OU battle started between":"[第七世代] OU比赛开始：",
     "and":" 和",
