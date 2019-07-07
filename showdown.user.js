@@ -23,7 +23,7 @@ var translations={
     "Format:":"分级",
     "Team:":"队伍",
     "Battle!":"战斗！",
-    "Find a random opponent":"寻找一位随机对手",
+    "Find a random opponent":"随机寻找一位对手",
     "Teambuilder":"队伍编辑器",
     "Ladder":"排行榜",
     "Watch a battle":"观看对战",
@@ -78,6 +78,187 @@ var translations={
     "(exists)":"(存在)",
     "Go!":"去吧！",
     "withdrew":"收回了",
+    "sent out":"放出了",
+    "Change avatar":"更改头像",
+    "Password change":"更改密码",
+    "Graphics":"界面:",
+    "Layout:":"布局:",
+    "◫ Left and right panels":"◫ 双面板",
+    "◻ Single panel":"◻ 单面板",
+    "Background:":"背景:",
+    "Change background":"更改背景",
+    "Disable animations":"禁止战斗动画",
+    "Use BW sprites instead of XY models":"使用黑白精灵图像替代XY精灵图像",
+    "Use modern sprites for past generations":"当进行战斗分级为旧世代时，使用最新精灵图",
+    "Chat":"聊天",
+    "Ignore tournaments":"忽略联赛（信息）",
+    "Show PMs in chat rooms":"在聊天室显示私聊信息",
+    "Highlight when your name is said in chat":"当你的名字出现在聊天窗口时，你的名字颜色会高亮",
+    "Notifications disappear automatically":"通知自动消失",
+    "Timestamps in chat rooms:":"聊天室中的时间显示:",
+    "Off":"不显示时间",
+    "Timestamps in PMs:":"私聊中的时间显示:",
+    "Chat preferences:":"聊天偏好:",
+    "Edit formatting":"改变格式",
+    "You can choose to display formatted text as normal text":"你可以选择显示文字的布局为普通布局",
+    "Change name":"更改用户名",
+    "Log out":"退出",
+    "News":"新闻",
+    "Join chat":"加入聊天室",
+    "Ground":"地面",
+    "Poison":"毒",
+    "Rock":"岩",
+    "Steel":"钢",
+    "Water":"水",
+    "Hi":"嗨！",
+    "All teams":"所有队伍",
+    "Sp. Def.":"特防",
+    "Sp. Atk.":"特攻",
+    "Details":"概况",
+    "Stats":"能力",
+    "Challenge":"挑战",
+    "Work offline":"离线模式",
+    "You have been disconnected – possibly because the server was restarted.":"您已断开连接-可能是因为服务器已重启。",
+    "Username":"用户名",
+    "Open":"查找",
+    "Battles":"观战",
+    "Couldn't connect to server!":"无法连接服务器!",
+    "Retry":"重试",
+    "Retry with HTTP":"以HTTP方式重试",
+    "Normal":"一般",
+    "Stealth Rock":"隐形岩",
+    "Log in":"登录",
+    "The server is restarting soon.":"服务器即将重新启动。",
+    "Please finish your battles quickly. No new battles can be started until the server resets in a few minutes.":"请尽快结束战斗。在服务器几分钟重启之前，无法启动任何新的战斗。",
+    "Fairy":"妖精",
+    "joined.":"加入了。",
+    "Official chat rooms":"官方聊天室",
+    "Chat rooms":"聊天室",
+    "Lobby":"大厅",
+    "Help":"帮助",
+    "Tournaments":"锦标赛",
+    "users online":"在线用户",
+    "active battles":"正在对局",
+    "Home":"主页",
+    "Bug":"虫",
+    "Dark":"恶",
+    "Dragon":"龙",
+    "Electric":"电",
+    "Fighting":"格斗",
+    "Fire":"火",
+    "Flying":"飞行",
+    "Ghost":"幽灵",
+    "Grass":"草",
+    "Ice":"冰",
+    "Ignore":"忽略",
+    "Report":"举报",
+    "Main menu":"返回主页",
+    "Rematch":"重新挑战",
+    "closes this battle":"关闭这场战斗",
+   "Pause":"暂停",
+    "Play":"继续",
+    "Last turn":"前一回合",
+    "Skip turn":"后一回合",
+    "First turn":"第一回合",
+    "Skip to end":"最后一回合",
+    "users":"位用户",
+    "PLEASE DON'T USE ONLINE TRANSLATORS":"请不要使用在线翻译",
+    "Welcome To Lobby!":"欢迎来到大厅！",
+    "PS! Help Room":"PS!帮助室",
+    "For PS and Smogon help only.":"仅用于PS和Smogon帮助",
+    "Welcome to Tournaments!":"欢迎参加锦标赛！",
+    "Smogon University - Official Server":"Smogon大学 - 官方服务器",
+    "A UNO game is currently in progress.":"目前在举行一个UNO游戏。",
+        "A new game of":"一个新的",
+    "is starting!":"游戏开始了!",
+"Game messages will be shown to only players.":"游戏信息将只显示给玩家。",
+    "Or use":"或者使用",
+    "to join the game.":"加入游戏。",
+    "The game of UNO has ended.":"UNO的游戏已经结束。",
+    "The game of UNO has started.":"UMO的游戏已经开始。",
+    "All formats":"全部分级",
+    "Sleep Clause Mod:":"催眠条款：",
+    "Limit one foe put to sleep":"限制对手一只宝可梦进入睡眠状态",
+    "Species Clause:":"物种条款：",
+    "Limit one of each Pokémon":"限制使用相同宝可梦",
+    "OHKO Clause:":"一击必杀条款：",
+    "OHKO moves are banned":"限制使用一击濒死技能",
+    "Moody Clause:":"心情不定条款：",
+    "Moody is banned":"限制使用心情不定特性",
+    "Evasion Moves Clause:":"闪避技能条款：",
+    "Evasion moves are banned":"限制使用提升闪避率技能",
+    "Endless Battle Clause:":"无限战斗条款：",
+    "Forcing endless battles is banned":"限制无休止战斗",
+    "HP Percentage Mod:":"血量百分比模式：",
+    "HP is shown in percentages":"HP以百分比显示",
+    "Mega Rayquaza Clause:":"Mega烈空坐禁止使用条款：",
+    "You cannot mega evolve Rayquaza":"禁止使用Mega烈空坐",
+    "Swagger Clause:":"虚张声势条款：",
+    "Swagger is banned":"限制使用虚张声势技能",
+    "Same Type Clause:":"同系条款：",
+    "Pokémon in a team must share a type":"在队伍中的宝可梦必须拥有某个相同的属性",
+    "Accuracy Moves Clause:":"命中条款：",
+    "Accuracy-lowering moves are banned":"限制使用降低命中的技能",
+    "Item Clause:":"物品条款：",
+    "Limit one of each item":"限制使用重复道具",
+    "Evasion Abilities Clause:":"闪避条款：",
+    "Evasion abilities are banned":"限制使用提高闪避率的技能",
+    "CFZ Clause:":"CFZ条款：",
+    "Crystal-free Z-Moves are banned":"限制不携带Z纯晶使用Z技能",
+    "Freeze Clause Mod:":"冻结条款模式：",
+    "Limit one foe frozen":"限制对手一只宝可梦进入冰冻状态",
+    "Ability Clause:":"特性条款：",
+    "Limit two of each ability":"限制队伍最多有两个相同特性",
+    "Switch Priority Clause Mod:":"交换条款模式：",
+    "Faster Pokémon switch first":"速度快的宝可梦优先执行交换",
+    "Baton Pass Clause:":"接力棒条款：",
+    "Limit one Baton Passer, can't pass Spe and other stats simultaneously":"限制只可携带一只习得接力棒技能的宝可梦，不可将速度以及其他能力等级传递给其他宝可梦，不能同时将速度和其他强化属性通过接力棒接走",
+    "and":" 和",
+    "used":"使用了",
+    "The opposing":"对手的",
+    "restored a little HP using its Leftovers!":"通过剩饭恢复了一点HP！",
+    "forfeited":"认输了",
+    "fainted!":"倒下了！",
+    "Random team":"随机队伍",
+    "Abilities":"特性",
+    "Hidden Ability":"隐藏特性",
+    "Will be":"Mega进化之后，特性将会变为",
+    "after Mega Evolving.":"。",
+    "Nickname":"昵称",
+    "Item":"道具",
+    "Ability":"特性",
+    "Level":"等级",
+    "Gender":"性别",
+    "Happiness":"亲密度",
+    "Shiny":"闪光",
+    "Level:":"等级:",
+    "Gender:":"性别:",
+    "Happiness:":"亲密度:",
+    "Shiny:":"闪光:",
+    "Moves":"技能",
+    "Copy":"复制",
+    "Import/Export":"导入/导出",
+    "Move":"移动",
+    "Delete":"删除",
+    "Team":" 队伍",
+    "Validate":"确认是否合法",
+    "Add Pokémon":"添加宝可梦",
+    "New Team":"新的队伍",
+    "Male":"雄性",
+    "Female":"雌性",
+    "Random":"随机",
+    "Format List":" 分级列表",
+    "List":" 列表",
+    "Edit":"编辑",
+    "Save":"保存",
+    "Switch":"交换",
+    "It's super effective!":"这非常有效！",
+    "It's not very effective...":"这不是很有效...",
+    "lost":"失去了 ",
+    "of its health!":" 的生命值!",
+    ", come back!":",回来吧！",
+    "(exists)":"(存在)",
+    "Go!":"去吧！",
     "sent out":"放出了",
     "Change avatar":"更改头像",
     "Password change":"更改密码",
@@ -4260,7 +4441,11 @@ var translations={
     "Disconnected":"已断开连接",
     "Reconnect":"重新连接",
 };
-
+function trans_from_dict(a){
+    var b=translations[a];
+    if(b)return b;
+    return a;
+}
 var QQ=$.noConflict();
 var regex_ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
 var regex_possible_ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
@@ -4269,7 +4454,7 @@ var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
 var regex_stat_change=new RegExp(/^'s ([A-za-z ]+)!/);
 var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
 var regex_preview=new RegExp(/^([A-za-z* -]+ \/ )+([A-za-z* -]+)$/);
-var regex_start_battle=new RegExp(/Battle between (.+) and (.+) started!/);
+var regex_start_battle=new RegExp(/Battle started between (.+) and (.+)!/);
 var regex_uturn=new RegExp(/went back to (.*)!/);
 var regex_hurtby=new RegExp(/is hurt by ([A-Za-z- ]+)!/);
 var regex_gems=new RegExp(/The ([A-za-z ]+) strengthened ([A-za-z- ]+)'s power!/);
@@ -4284,16 +4469,9 @@ var t= function(originalStr){
         tmp=tmp.replace("'s ","").replace("!]","");
         return "的"+translations[tmp]+"!]";
     }
-    if(tmp.indexOf("sent out ")!=-1){
-        var splitted=tmp.split(" sent out ");
-        return splitted[0]+"放出了"+translations[splitted[1].replace("!","")]+"！";
-    }
     if(tmp.indexOf(" withdrew ")!=-1){
         var splitted=tmp.split(" withdrew ");
-        return splitted[0]+"收回了"+translations[splitted[1].replace("!","")]+"！";
-    }
-    if(tmp.indexOf("Go!")!=-1){
-        return "去吧，"+translations[tmp.replace("Go! ","").replace("!","")]+"！";
+        return splitted[0]+"收回了"+trans_from_dict(splitted[1].replace("!",""))+"！";
     }
     //var regex=new RegExp(/(/)
     if(originalStr.match(regex_stat_change)){
@@ -4403,10 +4581,550 @@ var t= function(originalStr){
             .replace("won the battle","获得了胜利")
             .replace(" withdrew ","收回了 ")
             .replace("forfeited","认输了")
+            .replace(" restored its HP","恢复了生命值")
+            .replace ("Random Battles","随机对战")
+            .replace("fainted","倒下了")
+            .replace("'s team","的队伍")
+            .replace("Battle timer is ON:","战斗计时器打开:")
+            .replace("inactive players will automatically lose when time's up.","当时间到了，不活跃的玩家会自动投降。")
+            .replace("requested by","要求人")
+            .replace("'s rating","的分数")
+            .replace("lost due to inactivity.","因为不活跃而失败了")
+            .replace("come back!","回来!")
+            .replace("Go!","去吧!")
+            .replace("knocked off","打落了")
+            .replace("avoided the attack!","躲避了攻击")
+            .replace("Challenge","挑战")
+            .replace("absorbed light!","吸收了阳光!")
+            .replace("'s evasiveness fell!","的回避率下降了!")
+            .replace("'s evasiveness rose!","的回避率提升了!")
+            .replace("'s evasiveness fell harshly!","的回避率大幅下降了!")
+            .replace("'s evasiveness rose sharply!","的回避率大幅提升了!")
+            .replace("'s evasiveness fell severely!","的回避率巨幅下降了!")
+            .replace("'s evasiveness rose drastically!","的回避率巨幅提升了!")
+            .replace("'s Attack fell!","的攻击下降了!")
+            .replace("'s Attack rose!","的攻击提升了!")
+            .replace("'s Attack fell harshly!","的攻击大幅下降了!")
+            .replace("'s Attack rose sharply!","的攻击大幅提升了!")
+            .replace("'s Attack fell severely!","的攻击巨幅下降了!")
+            .replace("'s Attack rose drastically!","是攻击巨幅提升了!")
+            .replace("'s Defense fell!","的物防下降了!")
+            .replace("'s Defense rose!","的物防提升了!")
+            .replace("'s Defense fell harshly!","的物防大幅下降了!")
+            .replace("'s Defense rose sharply!","的物防大幅提升了!")
+            .replace("'s Defense fell severely!","的物防巨幅下降了!")
+            .replace("'s Defense rose drastically!","的物防巨幅提升了!")
+            .replace("'s Special Attack fell!","的特攻下降了!")
+            .replace("'s Special Attack rose!","的特攻提升了!")
+            .replace("'s Special Attack fell harshly!","的特攻大幅下降了!")
+            .replace("'s Special Attack rose sharply!","的特攻大幅提升了!")
+            .replace("'s Special Attack fell severely!","的特攻巨幅下降了!")
+            .replace("'s Special Attack rose drastically!","的特攻巨幅提升了!")
+            .replace("'s Special Defense fell!","的特防下降了!")
+            .replace("'s Special Defense rose!","的特防提升了!")
+            .replace("'s Special Defense fell harshly!","的特防大幅下降了!")
+            .replace("'s Special Defense rose sharply!","的特防大幅提升了!")
+            .replace("'s Special Defense fell severely!","的特防巨幅下降了!")
+            .replace("'s Special Defense rose drastically!","的特防巨幅提升了!")
+            .replace("'s Speed fell!","的速度下降了!")
+            .replace("'s Speed rose!","的速度提升了!")
+            .replace("'s Speed fell harshly!","的速度大幅下降了!")
+            .replace("'s Speed rose sharply!","的速度大幅提升了!")
+            .replace("'s Speed fell severely!","的速度巨幅下降了!")
+            .replace("'s Speed rose drastically!","的速度巨幅提升了!")
+            .replace("'s accuracy fell!","的命中率下降了!")
+            .replace("'s accuracy rose!","的命中率提升了!")
+            .replace("'s accuracy fell harshly!","的命中率大幅下降了!")
+            .replace("'s accuracy rose sharply!","的命中率大幅提升了!")
+            .replace("'s accuracy fell severely!","的命中率巨幅下降了!")
+            .replace("'s accuracy rose drastically!","的命中率巨幅提升了!")
+            .replace("The sunlight turned harsh!","阳光变得刺眼了!")
+            .replace("s Drought intensified the sun's rays!","的日照加强了太阳的光芒!")
+            .replace("The sunlight faded.","阳光减弱了。")
+            .replace("The sunlight turned extremely harsh!","样本变得异常刺眼了!")
+            .replace("The harsh sunlight faded.","刺眼的阳光减弱了。")
+            .replace("The sunlight is strong!","阳光很强烈!")
+            .replace("It started to rain!","开始下雨了!")
+            .replace("s Drizzle made it rain!","的降雨引起了下雨!")
+            .replace("The rain stopped.","雨停了。")
+            .replace("A heavy rain began to fall!","开始下大雨了!")
+            .replace("The heavy rain has lifted!","大雨停了!")
+            .replace("A sandstorm kicked up!","刮起了沙暴!")
+            .replace("s Sand Stream whipped up a sandstorm!","的扬沙引起了沙暴!")
+            .replace("The sandstorm is raging.","沙暴正在肆虐。")
+            .replace("The sandstorm subsided.","沙暴平息了。")
+            .replace("It started to hail!","开始下冰雹了!")
+            .replace("s Snow Warning whipped up a hailstorm!","的降雪引起了冰雹")
+            .replace("The hail is crashing down.","冰雹正在砸落。")
+            .replace("The hail stopped.","冰雹停止了。")
+            .replace("surrounded itself with its Z-Power!","用Z力量包裹了全身!")
+            .replace("No battles are going on right now.","没有正在进行的对战。")
+            .replace("Turn","回合")
+            .replace("Hide","返回")
+            .replace("The substitute took damage for the opposing ","对手的替身为它低挡了伤害")
+            .replace("Dark mode","夜间模式")
+            .replace(" transformed!","转化了！")
+            .replace("Join other room","加入其他房间")
+            .replace("Chatrooms","聊天室")
+            .replace("Private rooms","隐藏房间")
+            .replace("Battles","战斗")
+            .replace("Congratulations to","恭喜")
+            .replace("for winning the game of UNO!","在本次UNO比赛获得了胜利")
+            .replace("Players","玩家")
+            .replace("Player","玩家")
+            .replace("Searching","匹配中")
+            .replace("Connecting","正在连接")
+            .replace("Join lobby chat","加入聊天室")
+            .replace("active battle","正在对局")
+            .replace(" woke up!","苏醒了！")
+            .replace("is hurt!","受伤了！")
+            .replace(" ate its ","吃了它的")
+            .replace("reversed all other Pokémon's auras!","反转了所有其它宝可梦的气场!")
+            .replace("is drowsing!","正在打瞌睡!")
+            .replace("is radiating a dark aura!","正在释放暗黑气场!",)
+            .replace("is radiating a fairy aura!","正在释放妖精气场!",)
+            .replace("breaks the mold!","打破了常规!")
+            .replace("team is too nervous to eat Berries!","队伍太紧张了，无法食用树果！")
+            .replace(" was seeded!","被种子寄生了！")
+            .replace(" slept and became healthy!","因为睡觉，它身体恢复了健康！")
+            .replace(" harvested one ","收获了一个")
+            .replace(" Pidgeot loses Flying type this turn.","在本回合失去了飞行系。")
+            .replace(" is damaged by the recoil!","受到了反冲的伤害！")
+            .replace(" Air Balloon popped!","气球爆了！")
+            .replace(" became confused due to fatigue!","因为疲劳而陷入了混乱！")
+            .replace(" snapped out of its confusion!","从混乱中振作了起来！")
+            .replace(" is exerting its pressure!","正在施加压力！")
+            .replace(" floats in the air with its Air Balloon!","用气球漂浮在了空中！")
+            .replace(" was dragged out!","被拉了出来！")
+            .replace("Bright light is about to burst out of Necrozma!","奈克洛兹玛的身上开始溢出耀眼的光芒！")
+            .replace("Necrozma regained its true power through Ultra Burst!","奈克洛兹玛通过究极爆发现出了新的样子！")
+            .replace("The challenge was cancelled.","挑战被取消。")
+            .replace("Select a format","选择一种分级")
+               .replace(" switched items with its target!","与对方交换了持有物！")
+            .replace("s Quick Claw let it move first!","先制之爪让他优先行动了")
+            .replace("I hope playing on Pokémon Showdown today can help cheer you up!","我希望今天在Pokémon Showdown上的比赛能让你振作起来！")
+            .replace("empty team","无队伍")
+            .replace(" grew drowsy!","变得昏昏欲睡！")
+            .replace("Untitled","无标题")
+            .replace("returned its status to normal using its White Herb!","使用白色药草使下降的能力恢复了正常！")
+            .replace("Copy of","复制一份")
+            .replace("See a user's ranking with","查看用户排名")
+            .replace("User lookup","查找用户")
+            .replace("You are disconnected and cannot chat.","你已断开连接，无法聊天。")
+            .replace("Import from text","从文本导入")
+            .replace("You joined","你加入了")
+            .replace(" joined","加入")
+             .replace("disconnected and has no disconnection time left","断开且没有断开时间")
+            .replace("reconnected and has ([0-9]+) seconds left","重新连接，还剩$1秒")
+            .replace("has ([0-9]+) seconds to reconnect!","有$1秒的时间重新连接！")
+            .replace("All players are inactive.","所有玩家都不活跃。")
+            .replace("has ([0-9]+) seconds left.","还有$1秒。")
+            .replace(" left","退出")
+            .replace(" used ","使用了")
+            .replace("'s Primal Reversion! It reverted to its primal state!","回归原始！它回到了最初的样子！")
+             .replace(" to challenge you.","挑战你。")
+            .replace("disconnected and has a minute to reconnect!","断开连接，有一分钟时间重新连接")
+            .replace("The opposing ","对手的")
+            .replace("reconnected.","重新连接")
+            .replace("muted","静音")
+            .replace(" obtained one ","获得一个")
+            .replace("Music volume","音乐音量")
+            .replace("Effect volume","叫声音量")
+            .replace("Notification volume","通知音量")
+            .replace("Mute sounds","全部静音")
+            .replace("Battle Options","战斗选项")
+            .replace("In this battle","在这场战斗中")
+            .replace("Ignore Spectators","忽略观战")
+            .replace("Ignore Opponent","忽略对手")
+            .replace("All battles","在所有战斗中")
+            .replace("Ignore nicknames","忽略昵称")
+            .replace("Hardcore mode","硬核模式")
+            .replace("hide info not shown in-game","隐藏游戏中未显示的信息")
+            .replace("beta","测试")
+            .replace("How will you start the battle?","你将如何战斗？")
+            .replace(" restored a little HP using its Leftovers!","通过吃剩的东西回复了一点HP！")
+            .replace("Pointed stones dug into the opposing ","尖锐的岩石扎进了对手的")
+            .replace("Pointed stones dug into ","尖锐的岩石扎进了")
+            .replace(" is paralyzed! It can't move!","麻痹了！不能动弹！")
+            .replace("restored HP using its Grassy Terrain!","通过青草场地回复了一点HP！")
+            .replace("This room is expired","这个房间过期了")
+            .replace("'s Magic Guard","的魔法防守特性")
+            .replace(" traced the opposing ","复制了对手")
+             .replace("search teams","搜索队伍")
+            .replace("Undo Delete","撤销删除")
+            .replace("Locked","锁定")
+            .replace(" is being withdrawn...","正在撤退…")
+            .replace(" twisted the dimensions!","扭曲了时空！")
+            .replace(" lost ","失去了")
+            .replace(" was badly poisoned!","中毒了！")
+            .replace(" was hurt by poison!","受到了毒素的伤害！")
+            .replace(" protected itself!","保护了自己！")
+            .replace("Your searches and challenges have been cancelled because you changed your username.","您的搜索和挑战已被取消，因为您更改了用户名。")
+            .replace(" of its health!","的生命值！")
+            .replace("was hurt by its burn!","被灼伤造成了伤害！")
+            .replace(" was burned!","被灼伤了")
+            .replace(" fell asleep!","睡着了！")
+            .replace(" is fast asleep.","睡得很熟")
+            .replace(" is tightening its focus!","正在蓄力！")
+            .replace(" put in a substitute!","制造了一个替身！")
+            .replace("'s substitute faded!","的替身消失了！")
+            .replace(" had its energy drained!","被吸收了能量！")
+            .replace("Rain continues to fall!","雨还在下！")
+            .replace(" was caught in a sticky web!","被粘在了一张网上！")
+            .replace("is paralyzed! It may be unable to move!","麻痹了！它可能无法行动！")
+            .replace("Battle timer is now OFF.","战斗计时器现在已经关闭。")
+            .replace(" is buffeted by the sandstorm!","受到了沙暴的攻击！")
+            .replace(" flinched and couldn't move!","害怕了，不能动弹！")
+            .replace("some of its HP!","它的一些HP")
+            .replace("'s Water Absorb","的储水")
+             .replace(" was poisoned!","中毒了！")
+            .replace("'s perish count fell to ([0-9]).","的灭亡还剩$1回合。")
+            .replace("Offline","离线")
+            .replace("Accept","接受")
+            .replace("Reject","拒绝")
+            .replace(" restored a little HP using its Black Sludge!","使用黑色淤泥恢复了少量HP！")
+            .replace(" wants to battle!","想战斗！")
+            .replace("Waiting for ","等待")
+            .replace(" was cured of paralysis.","它的麻痹被治愈了。")
+            .replace(" was cured of its poisoning.","它的中毒被治愈了。")
+            .replace(" was cures of Freeze.","它的冰冻被治愈了。")
+            .replace(" was cures of Burn.","它的烧伤被治愈了。")
+            .replace(" was cures of Sleep","它的睡眠被治愈了。")
+            .replace(" is hurt by Magma Storm!","受到了熔岩风暴的伤害！")
+            .replace(" was freed from Magma Storm!","摆脱了熔岩风暴！")
+            .replace(" is buffeted by the hail!","被冰雹打击了！")
+            .replace(" became trapped by swirling magma!","被旋转的岩浆困住了！")
+            .replace(" was frozen solid!","被冰冻了！")
+            .replace(" is hoping to take its attacker down with it!","想要和对手同归于尽了！")
+            .replace("'s health is sapped by Leech Seed!","受到了寄生种子的伤害！")
+            .replace(" is frozen solid!","被结实的冰冻着")
+            .replace("'s taunt wore off!","的挑衅消失了！")
+            .replace(" fell for the taunt!","被挑衅了")
+            .replace("'s stats were not lowered!","的能力没有被降低")
+             .replace("It doesn't affect","这没有影响到")
+            .replace("its Electric Seed!","它的电气种子")
+            .replace(" the opposing ","对方的")
+            .replace(" will use ","将使用")
+            .replace("Online","在线")
+            .replace("Forfeiting makes you lose the battle. Are you sure?","这样做会使你输掉战斗。你确定吗？")
+            .replace("Replace Player","更换玩家")
+            .replace("Forfeit","投降")
+            .replace("Replace Player","投降后并关闭")
+            .replace(" was hurt!","受到了伤害")
+            .replace(" loses Flying type this turn.","本回合失去飞行系。")
+            .replace("is hurt by the spikes!","受到了撒菱的伤害！")
+            .replace("Away","离开")
+            .replace("In gen 7, Dark is immune to Prankster moves.","在第七世代中，恶作剧之心的效果对恶系无效。")
+            .replace("already has a burn.","已经灼伤了.")
+            .replace("is already poisoned.","已经中毒了.")
+            .replace("can't sleep in an uproar!","在吵闹状态下无法陷入睡眠状态!",)
+            .replace("But the uproar kept","但是吵闹使得")
+            .replace("is already asleep!","已经睡着了!")
+            .replace("is already paralyzed.","已经被麻痹了.")
+            .replace("is already frozen solid!","已经被冻住了!")
+            .replace("Close after forfeiting","投降后关闭")
+            .replace("Forfeiting makes you lose the battle. Are you sure?","你确定要向对方投降吗?")
+            .replace(" will switch in, replacing ","将进场，替换掉场上的")
+            .replace(" cut its own HP to power up its move!","以自己的HP为代价强化了技能威力！")
+            .replace(" is cured by its Natural Cure!","由于自然回复特性它异常状态被治愈了！")
+            .replace(" wish came true!","的愿望实现了！")
+            .replace(" was hurt by the Rocky Helmet!","受到了凸凸头盔的伤害！")
+             .replace(" is radiating a bursting aura!","正在释放溅射气场")
+            .replace("Timer","计时器")
+            .replace("Start timer","开启计时器")
+            .replace("Stop timer","关闭计时器")
+            .replace("Forfeiting makes you lose the battle. Are you sure?","这样做会使你输掉战斗。你确定吗？")
+            .replace(" hung on using its Focus Sash!","使用气息腰带撑住了！")
+            .replace("Replace player","投降后关闭")
+            .replace("Ladder (probably) updated, but score could not be retrieved (Response not received).","天梯（可能）已更新，但无法找到分数（未收到响应）。")
+            .replace("Your replay has been uploaded! It's available at:","您的战斗回放已上传！可从以下网址获取：")
+            .replace("'s Charizardite X is reacting to the Key Stone!","的喷火龙进化石X对钥石有反应！")
+            .replace("'s Charizardite Y is reacting to the Key Stone!","的喷火龙进化石Y对钥石有反应！")
+            .replace("'s Blastoisinite is reacting to the Key Stone!","的水箭龟进化石对钥石有反应！")
+            .replace("'s Beedrillite is reacting to the Key Stone!","的大针蜂进化石对钥石有反应！")
+            .replace("'s Pidgeotite is reacting to the Key Stone!","的大比鸟进化石对钥石有反应！")
+            .replace("'s Alakazite is reacting to the Key Stone!","的胡地进化石对钥石有反应！")
+            .replace("'s Slowbronite is reacting to the Key Stone!","的呆壳兽进化石对钥石有反应！")
+            .replace("'s Gengarite is reacting to the Key Stone!","的耿鬼进化石对钥石有反应！")
+            .replace("'s Kangaskhanite is reacting to the Key Stone!","的袋兽进化石对钥石有反应！")
+            .replace("'s Pinsirite is reacting to the Key Stone!","的凯罗斯进化石对钥石有反应！")
+            .replace("'s Gyaradosite is reacting to the Key Stone!","的暴鲤龙进化石对钥石有反应！")
+            .replace("'s Aerodactylite is reacting to the Key Stone!","的化石翼龙进化石对钥石有反应！")
+            .replace("'s Mewtwonite X is reacting to the Key Stone!","的超梦进化石X对钥石有反应！")
+            .replace("'s Mewtwonite Y is reacting to the Key Stone!","的超梦进化石Y对钥石有反应！")
+            .replace("'s Ampharosite is reacting to the Key Stone!","的电龙进化石对钥石有反应！")
+            .replace("'s Steelixite is reacting to the Key Stone!","的大钢蛇进化石对钥石有反应！")
+            .replace("'s Scizorite is reacting to the Key Stone!","的巨钳螳螂进化石对钥石有反应！")
+            .replace("'s Heracronite is reacting to the Key Stone!","的赫拉克罗斯进化石对钥石有反应！")
+            .replace("'s Houndoominite is reacting to the Key Stone!","的黑鲁加进化石对钥石有反应！")
+            .replace("'s Tyranitarite is reacting to the Key Stone!","的班基拉斯进化石对钥石有反应！")
+            .replace("'s Sceptilite is reacting to the Key Stone!","的蜥蜴王进化石对钥石有反应！")
+            .replace("'s Blazikenite is reacting to the Key Stone!","的火焰鸡进化石对钥石有反应！")
+            .replace("'s Swampertite is reacting to the Key Stone!","的巨沼怪进化石对钥石有反应！")
+            .replace("'s Gardevoirite is reacting to the Key Stone!","的沙奈朵进化石对钥石有反应！")
+            .replace("'s Sablenite is reacting to the Key Stone!","的勾魂眼进化石对钥石有反应！")
+            .replace("'s Mawilite is reacting to the Key Stone!","的大嘴娃进化石对钥石有反应！")
+            .replace("'s Aggronite is reacting to the Key Stone!","的波士可多拉进化石对钥石有反应！")
+            .replace("'s Medichamite is reacting to the Key Stone!","的恰雷姆进化石对钥石有反应！")
+            .replace("'s Manectite is reacting to the Key Stone!","的雷电兽进化石对钥石有反应！")
+            .replace("'s Sharpedonite is reacting to the Key Stone!","的巨牙鲨进化石对钥石有反应！")
+            .replace("'s Cameruptite is reacting to the Key Stone!","的喷火驼进化石对钥石有反应！")
+            .replace("'s Altarianite is reacting to the Key Stone!","的七夕青鸟进化石对钥石有反应！")
+            .replace("'s Banettite is reacting to the Key Stone!","的诅咒娃娃进化石对钥石有反应！")
+            .replace("'s Absolite is reacting to the Key Stone!","的阿勃梭鲁进化石对钥石有反应！")
+            .replace("'s Glalitite is reacting to the Key Stone!","的冰鬼护进化石对钥石有反应！")
+            .replace("'s Salamencite is reacting to the Key Stone!","的暴飞龙进化石对钥石有反应！")
+            .replace("'s Metagrossite is reacting to the Key Stone!","的巨金怪进化石对钥石有反应！")
+            .replace("'s Latiasite is reacting to the Key Stone!","的拉帝亚斯进化石对钥石有反应！")
+            .replace("'s Latiosite is reacting to the Key Stone!","的拉帝欧斯进化石对钥石有反应！")
+            .replace("'s Lopunnite is reacting to the Key Stone!","的长耳兔进化石对钥石有反应！")
+            .replace("'s Garchompite is reacting to the Key Stone!","的烈咬陆鲨进化石对钥石有反应！")
+            .replace("'s Lucarionite is reacting to the Key Stone!","的路卡利欧进化石对钥石有反应！")
+            .replace("'s Abomasite is reacting to the Key Stone!","的暴雪王进化石对钥石有反应！")
+            .replace("'s Galladite is reacting to the Key Stone!","的艾路雷朵进化石对钥石有反应！")
+             .replace("'s Audinite is reacting to the Key Stone!","的差不多娃娃进化石对钥石有反应！")
+            .replace("'s Diancite is reacting to the Key Stone!","的蒂安希进化石对钥石有反应！")
+            .replace("'s Stench","的恶臭")
+            .replace("'s Drizzle","的降雨")
+            .replace("'s Speed Boost","的加速")
+            .replace("'s Battle Armor","的战斗盔甲")
+            .replace("'s Sturdy","的结实")
+            .replace("'s Damp","的湿气")
+            .replace("'s Limber","的柔软")
+            .replace("'s Sand Veil","的沙隐")
+            .replace("'s Static","的静电")
+            .replace("'s Volt Absorb","的蓄电")
+            .replace("'s Water Absorb","的储水")
+            .replace("'s Oblivious","的迟钝")
+            .replace("'s Cloud Nine","的无关天气")
+            .replace("'s Compound Eyes","的复眼")
+            .replace("'s Insomnia","的不眠")
+            .replace("'s Color Change","的变色")
+            .replace("'s Immunity","的免疫")
+            .replace("'s Flash Fire","的引火")
+            .replace("'s Shield Dust","的鳞粉")
+            .replace("'s Own Tempo","的我行我素")
+            .replace("'s Suction Cups","的吸盘")
+            .replace("'s Intimidate","的威吓")
+            .replace("'s Shadow Tag","的踩影")
+            .replace("'s Rough Skin","的粗燥皮肤")
+            .replace("'s Wonder Guard","的神秘守护")
+            .replace("'s Levitate","的漂浮")
+              .replace("'s Effect Spore","的孢子")
+            .replace("'s Synchronize","的同步")
+            .replace("'s Clear Body","的恒净之躯")
+            .replace("'s Natural Cure","的自然回复")
+            .replace("'s Lightning Rod","的避雷针")
+            .replace("'s Serene Grace","的天恩")
+            .replace("'s Swift Swim","的悠游自如")
+            .replace("'s Chlorophyll","的叶绿素")
+            .replace("'s Illuminate","的发光")
+            .replace("'s Trace","的复制")
+            .replace("'s Huge Power","的大力士")
+            .replace("'s Poison Point","的毒刺")
+            .replace("'s Inner Focus","的精神力")
+            .replace("'s Magma Armor","的熔岩铠甲")
+            .replace("'s Water Veil","的水幕")
+            .replace("'s Magnet Pull","的磁力")
+            .replace("'s Soundproof","的隔音")
+            .replace("'s Rain Dish","的雨盘")
+            .replace("'s Sand Stream","的扬沙")
+            .replace("'s Pressure","的压迫感")
+            .replace("'s Thick Fat","的厚脂肪")
+            .replace("'s Early Bird","的早起")
+            .replace("'s Flame Body","的火焰之躯")
+            .replace("'s Run Away","的逃跑")
+            .replace("'s Keen Eye","的锐利目光")
+            .replace("'s Hyper Cutter","的怪力钳")
+            .replace("'s Pickup","的捡拾")
+            .replace("'s Truant","的懒惰")
+            .replace("'s Hustle","的活力")
+            .replace("'s Cute Charm","的迷人之躯")
+            .replace("'s Plus","的正电")
+            .replace("'s Minus","的负电")
+            .replace("'s Forecast","的阴晴不定")
+            .replace("'s Sticky Hold","的粘着")
+            .replace("'s Shed Skin","的蜕皮")
+            .replace("'s Guts","的毅力")
+            .replace("'s Marvel Scale","的神奇鳞片")
+            .replace("'s Liquid Ooze","的污泥浆")
+            .replace("'s Overgrow","的茂盛")
+            .replace("'s Blaze","的猛火")
+            .replace("'s Torrent","的激流")
+            .replace("'s Swarm","的虫之预感")
+            .replace("'s Rock Head","的坚硬脑袋")
+            .replace("'s Drought","的日照")
+            .replace("'s Arena Trap","的沙穴")
+            .replace("'s Vital Spirit","的干劲")
+            .replace("'s White Smoke","的白色烟雾")
+            .replace("'s Pure Power","的瑜伽之力")
+            .replace("'s Shell Armor","的硬壳盔甲")
+            .replace("'s Air Lock","的气闸")
+            .replace("'s Tangled Feet","的蹒跚")
+            .replace("'s Motor Drive","的电气引擎")
+            .replace("'s Rivalry","的斗争心")
+            .replace("'s Steadfast","的不屈之心")
+            .replace("'s Snow Cloak","的雪隐")
+            .replace("'s Gluttony","的贪吃鬼")
+            .replace("'s Anger Point","的愤怒穴位")
+            .replace("'s Unburden","的轻装")
+            .replace("'s Heatprot","的耐热")
+            .replace("'s Simple","的单纯")
+            .replace("'s Dry Skin","的干燥皮肤")
+            .replace("'s Download","的下载")
+            .replace("'s Iron Fist","的铁拳")
+            .replace("'s Poison Heal","的毒疗")
+            .replace("'s Adaptability","的适应力")
+            .replace("'s Skill Link","的连续攻击")
+            .replace("'s Hydration","的湿润之躯")
+            .replace("'s Solar Power","的太阳之力")
+            .replace("'s Quick Feet","的飞毛腿")
+            .replace("'s Normalize","的一般皮肤")
+            .replace("'s Sniper","的狙击手")
+            .replace("'s Magic Guard","的魔法防守")
+            .replace("'s No Guard","的无防守")
+            .replace("'s Stall","的慢出")
+            .replace("'s Technician","的技术高手")
+            .replace("'s Leaf Guard","的叶子防守")
+            .replace("'s Klutz","的笨拙")
+            .replace("'s Mold Breaker","的破格")
+            .replace("'s Super Luck","的超幸运")
+            .replace("'s Aftermath","的引爆")
+            .replace("'s Anticipation","的危险预知")
+            .replace("'s Forewarn","的预知梦")
+            .replace("'s Unaware","的纯朴")
+             .replace("'s Tinted Lens","的有色眼镜")
+            .replace("'s Filter","的过滤")
+            .replace("'s Slow Start","的慢启动")
+            .replace("'s Scrappy","的胆量")
+            .replace("'s Storm Drain","的引水")
+            .replace("'s Ics Body","的冰冻之躯")
+            .replace("'s Solid Rock","的坚硬岩石")
+            .replace("'s Snow Warning","的降雪")
+            .replace("'s Honey Gather","的采蜜")
+            .replace("'s Frisk","的察觉")
+            .replace("'s Reckless","的舍身")
+            .replace("'s Multitype","的多属性")
+            .replace("'s Flower Gift","的花之礼")
+            .replace("'s Bad Dreams","的梦魇")
+            .replace("'s Pickpocket","的顺手牵羊")
+            .replace("'s Sheer Force","的强行")
+            .replace("'s Contrary","的唱反调")
+            .replace("'s Unnerve","的紧张感")
+            .replace("'s Defiant","的不服输")
+            .replace("'s Defeatist","的软弱")
+            .replace("'s Cursed Body","的诅咒之躯")
+            .replace("'s Healer","的治愈之心")
+            .replace("'s Friend Guard","的友情防守")
+            .replace("'s Weak Armor","的破裂铠甲")
+            .replace("'s Heavy Metal","的重金属")
+            .replace("'s Light Metal","的轻金属")
+            .replace("'s Multiscale","的多重鳞片")
+            .replace("'s Toxic Boost","的中毒激升")
+             .replace("'s Flare Boost","的受热激升")
+            .replace("'s Harvest","的收获")
+            .replace("'s Telepathy","的心灵感应")
+            .replace("'s Moody","的心情不定")
+            .replace("'s Overcoat","的防尘")
+            .replace("'s Poison Touch","的毒手")
+            .replace("'s Regenerator","的再生力")
+            .replace("'s BigPecks","的健壮胸肌")
+            .replace("'s Sand Rush","的泼沙")
+            .replace("'s Wonder Skin","的奇迹皮肤")
+            .replace("'s Analytic","的分析")
+            .replace("'s Illusion","的幻觉")
+            .replace("'s Imposter","的变身者")
+            .replace("'s Infiltrator","的穿透")
+            .replace("'s Mummy","的木乃伊")
+            .replace("'s Moxie","的自信过度")
+            .replace("'s Justified","的正义之心")
+            .replace("'s Rattled","的胆怯")
+            .replace("'s Magic Bounce","的魔法镜")
+            .replace("'s Sap Sipper","的食草")
+            .replace("'s Prankster","的恶作剧之心")
+            .replace("'s Sand Force","的沙之力")
+            .replace("'s Iron Barbs","的铁刺")
+            .replace("'s Zen Mode","的达摩模式")
+            .replace("'s Victory Star","的胜利之星")
+            .replace("'s Turboblaze","的涡轮火焰")
+            .replace("'s Teravolt","的兆级电压")
+            .replace("'s Fairy Aura","的妖精气场")
+            .replace("'s Dark Aura","的黑暗气场")
+            .replace("'s Aura Break","的气场破坏")
+            .replace("'s Sweet Veil","的甜幕")
+            .replace("'s Cheek Pouch","的颊囊")
+            .replace("'s Parental Bond","的亲子爱")
+            .replace("'s Mega Launcher","的超级发射器")
+            .replace("'s Fur Coat","的毛皮大衣")
+            .replace("'s Strong Jaw","的强壮之颚")
+            .replace("'s Refrigerate","的冰冻皮肤")
+            .replace("'s Tough Claws","的硬爪")
+            .replace("'s Bulletproof","的防弹")
+            .replace("'s Magician","的魔术师")
+            .replace("'s Protean","的变幻自如")
+            .replace("'s Gale Wings","的疾风之翼")
+            .replace("'s Flower Veil","的花幕")
+            .replace("'s Aroma Veil","的芳香幕")
+            .replace("'s Symbiosis","的共生")
+            .replace("'s Grass Pelt","的草之毛皮")
+            .replace("'s Competitive","的好胜")
+            .replace("'s Pixilate","的妖精皮肤")
+            .replace("'s Gooey","的黏滑")
+            .replace("'s Stance Change","的战斗切换")
+            .replace("'s Aerilate","的飞行皮肤")
+            .replace("'s Primordial Sea","的始源之海")
+            .replace("'s Desolate Land","的终结大地")
+            .replace("'s Delta Stream","的德尔塔气流")
+            .replace("'s Stamina","的持久力")
+            .replace("'s Wimp Out","的跃跃欲逃")
+             .replace("'s Emergency Exit","的危险回避")
+            .replace("'s Water Compaction","的遇水凝固")
+            .replace("'s Merciless","的不仁不义")
+            .replace("'s Shields Down","的界限盾壳")
+            .replace("'s Stakeout","的蹲守")
+            .replace("'s Water Bubble","的水泡")
+            .replace("'s Steelworker","的钢能力者")
+            .replace("'s Berserk","的怒火冲天")
+            .replace("'s Slush Rush","的拨雪")
+            .replace("'s Long Reach","的远隔")
+            .replace("'s Liquid Voice","的湿润之声")
+            .replace("'s Triage","的先行治疗")
+            .replace("'s Galvanize","的电气皮肤")
+            .replace("'s Surge Surfer","的冲浪之尾")
+            .replace("'s Schooling","的鱼群")
+            .replace("'s Disguise","的画皮")
+            .replace("'s Battle Bond","的牵绊变身")
+            .replace("'s Power Construct","的群聚变形")
+            .replace("'s Corrosion","的腐蚀")
+            .replace("'s Comatose","的绝对睡眠")
+            .replace("'s Queenly Majesty","的女王的威严")
+            .replace("'s Innards Out","的飞出的内在物")
+            .replace("'s Dancer","的舞者")
+            .replace("'s Battery","的蓄电池")
+            .replace("'s Fluffy","的毛茸茸")
+            .replace("'s Dazzling","的鲜艳之躯")
+            .replace("'s Soul-Heart","的魂心")
+            .replace("'s Tangling Hair","的卷发")
+             .replace("'s Receiver","的接球手")
+            .replace("'s Power of Alchemy","的化学之力")
+            .replace("'s Beast Boost","的异兽提升")
+            .replace("'s RKS Systeam","的AR系统")
+            .replace("'s Electric Surge","的的电气制造者")
+            .replace("'s Psychic Surge","的精神制造者")
+            .replace("'s Misty Surge","的薄雾制造者")
+            .replace("'s Grassy Surge","的青草制造者")
+            .replace("'s Full Metal Body","的金属防护")
+            .replace("'s Shadow Shield","的幻影防守")
+            .replace("'s Prism Armor","的棱镜装甲")
+            .replace("'s Neuroforce","的脑核之力")
+            .replace(" became fully charged due to its bond with its Trainer!","借助与训练家的羁绊而变身了！")
+             .replace(" became ","变成了")
+             .replace(" took the Future Sight attack!","发动了预知未来攻击")
+             .replace(" cut its own HP and maximized its Attack!","舍弃了自己的HP并最大化了它的攻击！")
             //.replace(/Ability: ([A-za-z ]+)/,"特性: "+translate(RegExp.$1))
             //.replace(/Ability: \/ Item: ([A-za-z ]+)/,"特性: "++"/ 道具:"+translate("$2"))
-    ;
-        
+
+        ;
 }
 function translateElement(element){
     var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
