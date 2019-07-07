@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.2
-// @description  PSChina Server Translation
+// @version      1.3
+// @description  PSChina Server Translation新版汉化脚本已发布，感谢Northumberland完成了大量内容，对汉化内容有疑问请联系圣光(QQ:964323779)
 // @author       Ceca3
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
@@ -44,6 +44,8 @@ var translations={
     "after Mega Evolving.":"。",
     "Nickname":"昵称",
     "Item":"道具",
+    "The opposing ":"对手的",
+    "the opposing ":"对手的",
     "Ability":"特性",
     "Level":"等级",
     "Gender":"性别",
@@ -285,9 +287,9 @@ var translations={
     "You can choose to display formatted text as normal text":"你可以选择显示文字的布局为普通布局",
     "Change name":"更改用户名",
     "Log out":"退出",
-    
+
     // Abilities Translation
-    
+
     "Stench":"恶臭",
     "Drizzle":"降雨",
     "Speed Boost":"加速",
@@ -521,9 +523,9 @@ var translations={
     "Beast Boost":"异兽提升",
     "Prism Armor":"棱镜装甲",
     "Neuroforce":"脑核之力",
-    
+
     // Moves Translation
-    
+
     "Pound":"拍击",
     "Karate Chop":"空手劈",
     "Double Slap":"连环巴掌",
@@ -1252,7 +1254,7 @@ var translations={
     "Splintered Stormshards":"狼啸石牙飓风暴",
     "Clangorous Soulblaze":"炽魂热舞烈音爆",
     // Items Translation
-    
+
     "Repel":"除虫喷雾",
 	"Super Repel":"白银喷雾",
 	"Max Repel":"黄金喷雾",
@@ -1840,7 +1842,7 @@ var translations={
 	"Maranga Berry":"香罗果",
 
 
-    
+
     // Pokemon Translation
     "Bulbasaur":"妙蛙种子",
     "Ivysaur":"妙蛙草",
@@ -1887,7 +1889,7 @@ var translations={
     "Pikachu-PhD":"博士皮卡丘",
     "Pikachu-Pop-Star":"偶像皮卡丘",
     "Pikachu-Rock-Star":"重摇滚皮卡丘",
-    
+
     "Raichu":"雷丘",
     "Raichu-Alola":"雷丘-阿罗拉的样子",
     "Sandshrew":"穿山鼠",
@@ -1952,7 +1954,7 @@ var translations={
     "Geodude-Alola":"小拳石-阿罗拉的样子",
     "Graveler-Alola":"隆隆石-阿罗拉的样子",
     "Golem-Alola":"隆隆岩-阿罗拉的样子",
-    
+
     "Ponyta":"小火马",
     "Rapidash":"烈焰马",
     "Slowpoke":"呆呆兽",
@@ -2704,7 +2706,7 @@ var translations={
     "Yveltal":"伊裴尔塔尔",
     "Zygarde":"基格尔德",
     "Zygarde-10%":"基格尔德",
-     
+
     "Zygarde-Complete":"基格尔德",
     "Diancie":"蒂安希",
     "Diancie-Mega":"Mega蒂安希",
@@ -2822,9 +2824,9 @@ var translations={
     "Stakataka":"垒磊石",
     "Blacephalon":"砰头小丑",
     "Zeraora":"捷拉奥拉",
-    
+
     //Extra PM Names
-    
+
     "-Rainy":"-雨水的样子",
     "-Snowy":"-雪云的样子",
     "-Sunny":"-太阳的样子",
@@ -2893,9 +2895,9 @@ var translations={
     "-Dusk-Mane":"-黄昏之鬃",
     "-Ultra":"-究极",
     "-Totem":"-霸主",
-    
+
     // Item Desc
-    
+
     "If holder is an Altaria, this item allows it to Mega Evolve in battle.":"七夕青鸟携带可进行超级进化",
     "If holder is an Abomasnow, this item allows it to Mega Evolve in battle.":"暴雪王携带可进行超级进化",
     "If holder is an Absol, this item allows it to Mega Evolve in battle.":"阿勃梭鲁携带可进行超级进化",
@@ -3217,16 +3219,16 @@ var translations={
     "(Gen 2) Holder's Normal-type attacks have 1.1x power.":"（第二世代限定）一般属性技能威力提升10%",
     "(Gen 2) Holder cures itself if it is paralyzed. Single use.":"（第二世代限定）解除麻痹状态，使用后消失",
     "(Gen 2) Holder is cured if it is poisoned. Single use.":"（第二世代限定），解除中毒状态，使用后消失",
-    
+
     "If held by a Lycanroc forme with Stone Edge, it can use Splintered Stormshards.":"习得尖石攻击的鬃岩狼人可以使用狼啸石牙飓风暴。",
     "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.":"习得嬉闹的谜拟Q可以使用亲密无间大乱揍。",
     "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.":"习得鳞片噪音的杖尾鳞甲龙可以使用炽魂热舞烈音爆。",
     "Solgaleo or Dusk Mane Necrozma with Sunsteel Strike can use a special Z-Move.":"习得流星闪冲的索尔迦雷欧或奈克洛兹玛-黃昏之鬃可以发动特殊Z技能。",
     "Lunala or Dawn Wings Necrozma with Moongeist Beam can use a special Z-Move.":"习得暗影之光的露奈雅拉或奈克洛兹玛-可以发动特殊Z技能。",
     "Dusk Mane/Dawn Wings Necrozma: Ultra Burst, then Z-Move w/ Photon Geyser.":"让奈克洛兹玛-黄昏之鬃/拂晓之翼究极爆发再配合光子喷涌使用Z技能。",
-    
+
     // Moves Desc Translation
-    
+
     "Very high critical hit ratio.":"十分容易击中要害。",
     "User recovers 50% of the damage dealt.":"使用者将造成伤害的50%转化为自身的HP。",
     "Usually goes first.":"一定能先发制人进行攻击。",
@@ -3659,15 +3661,15 @@ var translations={
     "The target's Ability becomes Insomnia.":"目标的特性变为不眠。",
     "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
     "20% chance to lower the target's Attack by 1.":"20%使目标的攻击下降一级。",
-    
+
     "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失最大HP的50%，攻击周围全体宝可梦。",
     "Normal moves become Electric type this turn.":"使得该回合场上的普通系技能变为电系。",
     "Physical if user's Atk > Sp. Atk. Ignores Abilities.":"使用者物攻数值高于特攻时，变为物理技能。无视目标的特性。",
     "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.":"使用者全能力提升一级。",
     "Ends the effects of Terrain.":"清除场上的场地。",
-    
+
     // Ability Desc
-    
+
     "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.":"因接触类招式被击倒时，对方宝可梦损失最大HP的1/4",
     "This Pokemon's Normal-type moves become Flying type and have 1.2x power.":"一般属性招式变为飞行属性招式，威力提升20%",
     "While this Pokemon is active, the effects of weather conditions are disabled.":"无视场上天气带来的影响",
@@ -3881,10 +3883,10 @@ var translations={
     "Status moves with accuracy checks are 50% accurate when used on this Pokemon.":"变化招式对该特性的宝可梦命中率减半",
     "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.":"HP不足一半时转变为达摩形态",
     "This Pokemon's attacks that are super effective against the target do 1.2x damage.":"该精灵使用的技能如果对目标非常有效，则威力提示20%",
-    
+
     //battle.js start
-    
-    
+
+
     "The sunlight turned harsh!":"阳光变得刺眼了！",
     "s Drought intensified the sun's rays!":"的日照加强了太阳的光芒！",
     "The sunlight faded.":"阳光减弱了。",
@@ -4016,7 +4018,7 @@ var translations={
     "switched all changes to its Attack and Sp. Atk with its target!":"交换了它和目标间的所有攻击和特攻变化！",
     "stole the target's boosted stats!":"偷取了目标提升了的能力！",
     "returned its decreased stats to normal using its Z-Power!":"通过Z技能将被降低的能力阶级恢复原状！",
-    
+
     "'s stat changes!":"的能力阶级变化了!",
     "'s stat changes were removed!":"的能力阶级变化被重置了!",
     "'s stat changes were inverted!":"的能力阶级变化被反转了!",
@@ -4091,7 +4093,7 @@ var translations={
     "obtained one":"得到了一个",
     "floats in the air with its Air Balloon!":"靠着气球浮在了空中!",
     "ate its":"吃掉了它的",
-    
+
     "flung its":"投掷了它的",
     "knocked off":"拍落了",
     "stole and ate its target\'s":"偷走并吃掉了对手的",
@@ -4299,7 +4301,7 @@ var translations={
     "Reflect made the opposing team stronger against physical moves!":"反射盾使得对方的队伍在面对物理攻击时更强了!",
     "Light Screen made your team stronger against special moves!":"光墙使得你的队伍在面对特殊攻击时更强了!",
     "Light Screen made the opposing team stronger against special moves!":"光墙使得对方的队伍在面对特殊攻击时更强了!",
-    
+
 
     "Your team cloaked itself in a mystical veil!":"你的队伍将自己包围在神秘的守护之中!",
     "Your team became shrouded in mist!":"你的队伍被包围在了白雾之中!",
@@ -4314,7 +4316,7 @@ var translations={
     "Your team is no longer protected by Safeguard!":"你的队伍不再受神秘守护的保护！",
     "Your team is no longer protected by mist!":"你的队伍不再受白雾的保护！",
     "Your team's Lucky Chant wore off!":"你队伍的幸运咒语结束了!",
-    
+
     "The opposing team cloaked itself in a mystical veil!":"对方的队伍将自己包围在神秘的守护之中!",
     "The opposing team became shrouded in mist!":"对方的队伍被包围在了白雾之中!",
     "Lucky Chant shielded the opposing team from critical hits!":"幸运咒语保护对方的队伍不会受到会心一击！",
@@ -4354,10 +4356,10 @@ var translations={
     "Coins were scattered everywhere!":"金币撒得到处都是!",
     "A deluge of ions showers the battlefield!":"离子风暴正在肆虐!",
     "regained its true power through Ultra Burst!":"通过究极爆发出现了新的样子!",
-    
-    
+
+
     // Extra
-    
+
     "[Opposing":"[对手",
     "Pointed stones float in the air around your team!":"尖锐的岩石漂浮在了你的队伍周围！",
     "Pointed stones float in the air around the opposing team!":"尖锐的岩石漂浮在了对方的队伍周围！",
@@ -4367,16 +4369,16 @@ var translations={
     "Poison spikes were scattered on the ground all around the opposing team!":"毒菱布满在了对方的队伍周围！",
     "A sticky web spreads out on the ground around your team!":"一张黏网展开在了你的队伍周围！",
     "A sticky web spreads out on the ground around the opposing team!":"一张黏网展开在了对方的队伍场地周围！",
-    "The Tailwind blew from behind your team!":"顺风在你的队伍身后展开了！", 
-    "The pointed stones disappeared from around your team!":"尖锐的岩石从你的队伍场地周围消失了！",  
-    "The spikes disappeared from the ground around your team!":"地菱从你的队伍周围消失了！",  
-    "The poison spikes disappeared from the ground around your team!":"毒菱从你的队伍周围消失了！",  
-    "The sticky web has disappeared from the ground around your team!":"黏网从你的队伍周围消失了！",  
-    "The Tailwind blew from behind the opposing team!":"顺风在对方的队伍身后展开了！", 
-    "The pointed stones disappeared from around the opposing team!":"尖锐的岩石从对方的队伍场地周围消失了！",  
-    "The spikes disappeared from the ground around the opposing team!":"地菱从对方的队伍周围消失了！",  
-    "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",  
-    "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",  
+    "The Tailwind blew from behind your team!":"顺风在你的队伍身后展开了！",
+    "The pointed stones disappeared from around your team!":"尖锐的岩石从你的队伍场地周围消失了！",
+    "The spikes disappeared from the ground around your team!":"地菱从你的队伍周围消失了！",
+    "The poison spikes disappeared from the ground around your team!":"毒菱从你的队伍周围消失了！",
+    "The sticky web has disappeared from the ground around your team!":"黏网从你的队伍周围消失了！",
+    "The Tailwind blew from behind the opposing team!":"顺风在对方的队伍身后展开了！",
+    "The pointed stones disappeared from around the opposing team!":"尖锐的岩石从对方的队伍场地周围消失了！",
+    "The spikes disappeared from the ground around the opposing team!":"地菱从对方的队伍周围消失了！",
+    "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",
+    "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",
     "Waiting for opponent...":"等待对手行动...",
     "Pointed stones dug into the opposing":"锋利的岩石扎进了对手的",
     "It's super effective! A critical hit!":"这非常有效！会心一击！",
@@ -4427,7 +4429,7 @@ var translations={
     "the Ice type":"冰属性",
     "the Dark type":"恶属性",
     "the Fairy type":"妖精属性",
-    
+
     "Fairy Gem":"妖精珠宝",
     "BrightPowder":"光粉",
     "SilverPowder":"银粉",
@@ -4460,6 +4462,7 @@ var regex_hurtby=new RegExp(/is hurt by ([A-Za-z- ]+)!/);
 var regex_gems=new RegExp(/The ([A-za-z ]+) strengthened ([A-za-z- ]+)'s power!/);
 var regex_eat=new RegExp(/ate its ([A-Za-z ]+)!/);
 var regex_restorehp=new RegExp(/restored HP using its ([A-Za-z ]+)!/);
+var regex_knock=new RegExp(/(The opposing )*(.+) knocked off (the opposing )*(.+)\'s (.+)!/);
 var t_= function(a){return a;}
 var t= function(originalStr){
     var tmp=originalStr.trim();
@@ -4512,7 +4515,10 @@ var t= function(originalStr){
         }
         return originalStr;
     }
-    
+
+    if(originalStr.match(regex_knock)){
+       return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"打落了"+trans_from_dict(RegExp.$3)+trans_from_dict(RegExp.$4)+"的"+trans_from_dict(RegExp.$5)+"!";
+    }
     if(originalStr.match(regex_possible_ability2)){
         originalStr=originalStr.replace(regex_possible_ability2,"可能的特性: ");
         if(translations[RegExp.$1]&&translations[RegExp.$2]){
@@ -4521,8 +4527,8 @@ var t= function(originalStr){
         return originalStr;
     }
 
-    
-    
+
+
     if(originalStr.match(regex_Item)){
         originalStr=originalStr.replace(regex_Item,"道具: ");
         if(translations[RegExp.$1]){
@@ -4543,7 +4549,7 @@ var t= function(originalStr){
     }
     if(originalStr.match(regex_start_battle)){
         return RegExp.$1+" 与 "+RegExp.$2+" 的对战开始了！";
-    } 
+    }
     if(originalStr.match(/^\((.*)\)$/)){
         if(translations[RegExp.$1])
             return "("+translations[RegExp.$1]+")";
@@ -4574,7 +4580,7 @@ var t= function(originalStr){
     if(originalStr.match(regex_gems)){
         return translations[RegExp.$1]+"提升了"+translations[RegExp.$2]+"的威力!";
     }
-    //else 
+    //else
         return originalStr
             .replace(/lost ([0-9]+)% of its health!/,"失去了$1%的生命值!")
             .replace(" sent out ","放出了 ")
@@ -4715,10 +4721,11 @@ var t= function(originalStr){
             .replace("You joined","你加入了")
             .replace(" joined","加入")
              .replace("disconnected and has no disconnection time left","断开且没有断开时间")
-            .replace("reconnected and has ([0-9]+) seconds left","重新连接，还剩$1秒")
-            .replace("has ([0-9]+) seconds to reconnect!","有$1秒的时间重新连接！")
+            .replace(/reconnected and has ([0-9]+) seconds left/,"重新连接，还剩$1秒")
+            .replace(/has ([0-9]+) seconds to reconnect!/,"有$1秒的时间重新连接！")
             .replace("All players are inactive.","所有玩家都不活跃。")
-            .replace("has ([0-9]+) seconds left.","还有$1秒。")
+            .replace(/has ([0-9]+) seconds left\./,"还有$1秒。")
+            .replace(/has ([0-9]+) seconds left this turn\./,"当前回合还有$1秒。")
             .replace(" left","退出")
             .replace(" used ","使用了")
             .replace("'s Primal Reversion! It reverted to its primal state!","回归原始！它回到了最初的样子！")
