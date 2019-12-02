@@ -1,29 +1,21 @@
 // ==UserScript==
 // @name         Showdown Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.3
-// @description  PSChina Server Translation新版汉化脚本已发布，感谢Northumberland完成了大量内容，对汉化内容有疑问请联系圣光(QQ:964323779)
+// @version      1.3.1
+// @description  PSChina Server Translation新版汉化脚本已发布，支持Gen8对战
 // @author       Ceca3
 // @match        http://china.psim.us/*
 // @match        http://47.94.147.145.psim.us/*
 // @match        http://replay.pokemonshowdown.com/*
 // @match        https://replay.pokemonshowdown.com/*
 // @match        https://play.pokemonshowdown.com/*
+// @match        http://localhost:8000/*
 // @grant        none
 // @require      https://code.jQuery.com/jquery-2.1.4.min.js
 // @run-at       document-end
 // ==/UserScript==
 var translations={
-    "Backup/Restore all teams":"备份所有队伍",
-    "Backup all teams from this folder":"备份该文件夹里的所有队伍",
-    "Base":"种族值",
-    "Import":"导入",
-    "Types":"属性",
-    "(automatic type)":"自动对应的属性",
     "EVs":"基础点数",
-    "Hidden Power:":"觉醒力量属性：",
-    "You can also set natures by typing \"+\" and \"-\" next to a stat.":"你可以在基础点数框内输入+和-来设定性格",
-    "Protip:":"提示：",
     "IVs":"个体值",
     "IV spreads":"个体值分配",
     "Remaining:":"剩余点数：",
@@ -42,9 +34,6 @@ var translations={
     "If you wanted to change your name while staying connected, use the 'Change Name' button or the '/nick' command.":"如果你想要在保持连接的情况下更改用户名，点击‘更改用户名’按钮或者使用/nick 命令",
     "Suppressed":"被消除",
     "Possible abilities:":"可能的特性：",
-
-    // New Above
-
     "The name you chose is registered.":"你选择的用户名已经被注册了",
     "If this is your account:":"如果这是你的账号：",
     "If this is someone else's account:":"如果这是别人的账号：",
@@ -63,7 +52,7 @@ var translations={
     "Did you have a good day?":"你今天过的还好吗?",
     "[Gen 7] OU battle started between":"[第七世代] OU比赛开始：",
     "and":" 和",
-    "used":"使用了",
+    "used ":"使用了",
     "The opposing":"对手的",
     "restored a little HP using its Leftovers!":"通过剩饭恢复了一点HP！",
     "forfeited":"认输了",
@@ -86,6 +75,7 @@ var translations={
     "Gender:":"性别:",
     "Happiness:":"亲密度:",
     "Shiny:":"闪光:",
+    "Moves":"招式",
     "Copy":"复制",
     "Import/Export":"导入/导出",
     "Move":"移动",
@@ -103,7 +93,7 @@ var translations={
     "Save":"保存",
     "Switch":"交换",
     "It's super effective!":"这非常有效！",
-    "It's not very effective...":"这不是很有效...",
+    "It's not very effective...":"这不是很有效…",
     "lost":"失去了 ",
     "of its health!":"的生命值!",
     ", come back!":",回来吧！",
@@ -245,10 +235,6 @@ var translations={
     "Faster Pokemon switch first":"速度快的宝可梦优先执行交换",
     "Baton Pass Clause:":"接力棒条款：",
     "Limit one Baton Passer, can't pass Spe and other stats simultaneously":"限制只可携带一只习得接力棒技能的宝可梦，不可将速度以及其他能力等级传递给其他宝可梦，不能同时将速度和其他强化属性通过接力棒接走",
-
-
-    // Abilities Translations
-
     "Stench":"恶臭",
     "Drizzle":"降雨",
     "Speed Boost":"加速",
@@ -507,11 +493,9 @@ var translations={
     "Neutralizing Gas":"化学变化气体",
     "Pastel Veil":"粉彩护幕",
     "Hunger Switch":"饱了又饿",
-    
     "No Ability":"无特性",
-	
-    // Moves Translation
-
+    "Vice Grip":"夹住",
+    "Eterna Beam":"无极光束",
     "Pound":"拍击",
     "Karate Chop":"空手劈",
     "Double Slap":"连环巴掌",
@@ -522,7 +506,6 @@ var translations={
     "Ice Punch":"冰冻拳",
     "Thunder Punch":"雷电拳",
     "Scratch":"抓",
-    "Vise Grip":"夹住",
     "Guillotine":"断头钳",
     "Razor Wind":"旋风刀",
     "Swords Dance":"剑舞",
@@ -629,7 +612,7 @@ var translations={
     "Reflect":"反射壁",
     "Focus Energy":"聚气",
     "Bide":"忍耐",
-    "Metronome":"挥指",
+    "Metronome":"节拍器",
     "Mirror Move":"鹦鹉学舌",
     "Self-Destruct":"自爆",
     "Egg Bomb":"炸蛋",
@@ -1288,10 +1271,7 @@ var translations={
     "Obstruct":"拦堵",
     "False Surrender":"假跪真撞",
     "Meteor Assault":"流星突击",
-    "Eternabeam":"无极光束",
     "Steel Beam":"铁蹄光线",
-    
-    
     "Hidden Power Bug":"觉醒力量-虫",
     "Hidden Power Dark":"觉醒力量-恶",
     "Hidden Power Dragon":"觉醒力量-龙",
@@ -1309,9 +1289,6 @@ var translations={
     "Hidden Power Rock":"觉醒力量-岩石",
     "Hidden Power Steel":"觉醒力量-钢",
     "Hidden Power Water":"觉醒力量-水",
-    
-    // 26 G-Max Moves
-    
     "G-Max Wildfire":"超极巨地狱灭焰",
     "G-Max Befuddle":"超极巨蝶影蛊惑",
     "G-Max Volt Crash":"超极巨万雷轰顶",
@@ -1338,15 +1315,9 @@ var translations={
     "G-Max Steelsurge":"超极巨钢铁阵法",
     "G-Max Depletion":"超极巨劣化衰变",
     "G-Max Stun Shock":"超极巨异毒电场",
-
     "Usually useless moves":"多数情况无用的招式",
     "Sketched moves":"通过写生获得的招式",
-    "Moves":"招式",
-    "Magikarp's Revenge":"鲤鱼王的复仇",
-	
-    // Items Translations
-	
-    "Items":"对战用道具",
+    "Itmes":"对战用道具",
     "Popular items":"常用道具",
     "Pokemon-specific items":"特定宝可梦使用的道具",
     "Usually useless items":"多数情况无用的道具",
@@ -1358,7 +1329,6 @@ var translations={
     "Stick":"大葱",
     "Heavy-Duty Boots":"厚底靴",
     "Leek":"大葱",
-    
     "Abomasite":"暴雪王进化石",
     "Absolite":"阿勃梭鲁进化石",
     "Absorb Bulb":"球根",
@@ -1463,7 +1433,7 @@ var translations={
     "Eviolite":"进化奇石",
     "Expert Belt":"达人带",
     "Fairium Z":"妖精Ｚ",
-    "Fairy Gem":"妖精宝石",
+    "Fairy Gem":"妖精珠宝",
     "Fairy Memory":"妖精存储碟",
     "Fast Ball":"速度球",
     "Fighting Gem":"格斗宝石",
@@ -1573,7 +1543,7 @@ var translations={
     "Manectite":"雷电兽进化石",
     "Maranga Berry":"香罗果",
     "Marshadium Z":"玛夏多Ｚ",
-    ﻿"Master Ball":"大师球",
+    "Master Ball":"大师球",
     "Mawilite":"大嘴娃进化石",
     "Meadow Plate":"碧绿石板",
     "Medichamite":"恰雷姆进化石",
@@ -1581,7 +1551,6 @@ var translations={
     "Metagrossite":"巨金怪进化石",
     "Metal Coat":"金属膜",
     "Metal Powder":"金属粉",
-    "Metronome":"节拍器",
     "Mewnium Z":"梦幻Ｚ",
     "Mewtwonite X":"超梦进化石Ｘ",
     "Mewtwonite Y":"超梦进化石Ｙ",
@@ -1732,7 +1701,6 @@ var translations={
     "Ultra Ball":"高级球",
     "Ultranecrozium Z":"究极奈克洛Ｚ",
     "Up-Grade":"升级数据",
-    "Utility Umbrella":"万能伞",
     "Venusaurite":"妙蛙花进化石",
     "Wacan Berry":"烛木果",
     "Water Gem":"水之宝石",
@@ -1751,11 +1719,20 @@ var translations={
     "Yache Berry":"番荔果",
     "Zap Plate":"雷电石板",
     "Zoom Lens":"对焦镜",
-    
-    "SilverPowder":"银粉",
-	
-    // Pokemon Translations
-       
+    "Berry":"果实",
+    "Gold Berry":"黄金的果实",
+    "PRZ CureBerry":"消除麻痹的果实",
+    "PSN CureBerry":"解毒的果实",
+    "Bitter Berry":"苦涩的果实",
+    "Burnt Berry":"烧烤的果实",
+    "Ice Berry":"冰冻的果实",
+    "Mint Berry":"薄荷的果实",
+    "Miracle Berry":"奇迹的果实",
+    "Mystery Berry":"神奇的果实",
+    "Berserk Gene":"破坏性的遗传因子",
+    "Pink Bow":"粉红色丝带",
+    "Polkadot Bow":"水玉色之带",
+    "Utility Umbrella":"万能伞",
     "Bulbasaur":"妙蛙种子",
     "Ivysaur":"妙蛙草",
     "Venusaur":"妙蛙花",
@@ -2646,98 +2623,2374 @@ var translations={
     "Zacian":"苍响",
     "Zamazenta":"藏玛然特",
     "Eternatus":"无极汰那",
+    "Venusaur-Mega":"超级妙蛙花",
+    "Charizard-Mega-X":"超级喷火龙X",
+    "Charizard-Mega-Y":"超级喷火龙Y",
+    "Charizard-Gmax":"喷火龙-超极巨化",
+    "Blastoise-Mega":"超级水箭龟",
+    "Butterfree-Gmax":"巴大蝶-超极巨化",
+    "Beedrill-Mega":"超级大针蜂",
+    "Pidgeot-Mega":"超级大比鸟",
+    "Rattata-Alola":"小拉达-阿罗拉",
+    "Raticate-Alola":"拉达-阿罗拉",
+    "Raticate-Alola-Totem":"霸主拉达-阿罗拉",
+    "Pikachu-Cosplay":"换装皮卡丘",
+    "Pikachu-Rock-Star":"硬摇滚皮卡丘",
+    "Pikachu-Belle":"贵妇皮卡丘",
+    "Pikachu-Pop-Star":"偶像皮卡丘",
+    "Pikachu-PhD":"博士皮卡丘",
+    "Pikachu-Libre":"面罩摔角手皮卡丘",
+    "Pikachu-Original":"皮卡丘-初始帽子",
+    "Pikachu-Hoenn":"皮卡丘-丰缘帽子",
+    "Pikachu-Sinnoh":"皮卡丘-神奥帽子",
+    "Pikachu-Unova":"皮卡丘-合众帽子",
+    "Pikachu-Kalos":"皮卡丘-卡洛斯帽子",
+    "Pikachu-Alola":"皮卡丘-阿罗拉帽子",
+    "Pikachu-Partner":"皮卡丘-就决定是你了之帽子",
+    "Pikachu-Starter":"搭档皮卡丘",
+    "Pikachu-Gmax":"皮卡丘-超极巨化",
+    "Raichu-Alola":"雷丘-阿罗拉",
+    "Sandshrew-Alola":"穿山鼠-阿罗拉",
+    "Sandslash-Alola":"穿山王-阿罗拉",
+    "Vulpix-Alola":"六尾-阿罗拉",
+    "Ninetales-Alola":"九尾-阿罗拉",
+    "Diglett-Alola":"地鼠-阿罗拉",
+    "Dugtrio-Alola":"三地鼠-阿罗拉",
+    "Meowth-Alola":"喵喵-阿罗拉",
+    "Meowth-Galar":"喵喵-伽勒尔",
+    "Meowth-Gmax":"喵喵-超极巨化",
+    "Persian-Alola":"猫老大-阿罗拉",
+    "Alakazam-Mega":"超级胡地",
+    "Machamp-Gmax":"怪力-超极巨化",
+    "Geodude-Alola":"小拳石-阿罗拉",
+    "Graveler-Alola":"隆隆石-阿罗拉",
+    "Golem-Alola":"隆隆岩-阿罗拉",
+    "Ponyta-Galar":"小火马-伽勒尔",
+    "Rapidash-Galar":"烈焰马-伽勒尔",
+    "Slowbro-Mega":"超级呆壳兽",
+    "Farfetch'd-Galar":"大葱鸭-伽勒尔",
+    "Grimer-Alola":"臭泥-阿罗拉",
+    "Muk-Alola":"臭臭泥-阿罗拉",
+    "Gengar-Mega":"超级耿鬼",
+    "Gengar-Gmax":"耿鬼-超极巨化",
+    "Kingler-Gmax":"巨钳蟹-超极巨化",
+    "Exeggutor-Alola":"椰蛋树-阿罗拉",
+    "Marowak-Alola":"嘎啦嘎啦-阿罗拉",
+    "Marowak-Alola-Totem":"霸主嘎啦嘎啦-阿罗拉",
+    "Weezing-Galar":"双弹瓦斯-伽勒尔",
+    "Kangaskhan-Mega":"超级袋兽",
+    "Mr. Mime-Galar":"魔墙人偶-伽勒尔",
+    "Pinsir-Mega":"超级凯罗斯",
+    "Gyarados-Mega":"超级暴鲤龙",
+    "Lapras-Gmax":"拉普拉斯-超极巨化",
+    "Eevee-Starter":"搭档伊布",
+    "Eevee-Gmax":"伊布-超极巨化",
+    "Aerodactyl-Mega":"超级化石翼龙",
+    "Snorlax-Gmax":"卡比兽-超极巨化",
+    "Mewtwo-Mega-X":"超级超梦X",
+    "Mewtwo-Mega-Y":"超级超梦Y",
+    "Pichu-Spiky-eared":"刺刺耳皮丘",
+    "Ampharos-Mega":"超级电龙",
+    "Steelix-Mega":"超级大钢蛇",
+    "Scizor-Mega":"超级巨钳螳螂",
+    "Heracross-Mega":"超级赫拉克罗斯",
+    "Corsola-Galar":"太阳珊瑚-伽勒尔",
+    "Houndoom-Mega":"超级黑鲁加",
+    "Tyranitar-Mega":"超级班基拉斯",
+    "Sceptile-Mega":"超级蜥蜴王",
+    "Blaziken-Mega":"超级火焰鸡",
+    "Swampert-Mega":"超级巨沼怪",
+    "Zigzagoon-Galar":"蛇纹熊-伽勒尔",
+    "Linoone-Galar":"直冲熊-伽勒尔",
+    "Gardevoir-Mega":"超级沙奈朵",
+    "Sableye-Mega":"超级勾魂眼",
+    "Mawile-Mega":"超级大嘴娃",
+    "Aggron-Mega":"超级波士可多拉",
+    "Medicham-Mega":"超级恰雷姆",
+    "Manectric-Mega":"超级雷电兽",
+    "Sharpedo-Mega":"超级巨牙鲨",
+    "Camerupt-Mega":"超级喷火驼",
+    "Altaria-Mega":"超级七夕青鸟",
+    "Castform-Sunny":"飘浮泡泡-太阳",
+    "Castform-Rainy":"飘浮泡泡-雨水",
+    "Castform-Snowy":"飘浮泡泡-雪云",
+    "Banette-Mega":"超级诅咒娃娃",
+    "Absol-Mega":"超级阿勃梭鲁",
+    "Glalie-Mega":"超级冰鬼护",
+    "Salamence-Mega":"超级暴飞龙",
+    "Metagross-Mega":"超级巨金怪",
+    "Latias-Mega":"超级拉帝亚斯",
+    "Latios-Mega":"超级拉帝欧斯",
+    "Kyogre-Primal":"盖欧卡-原始回归",
+    "Groudon-Primal":"固拉多-原始回归",
+    "Rayquaza-Mega":"超级裂空座",
+    "Deoxys-Attack":"代欧奇希斯-攻击形态",
+    "Deoxys-Defense":"代欧奇希斯-防御形态",
+    "Deoxys-Speed":"代欧奇希斯-速度形态",
+    "Wormadam-Sandy":"结草贵妇-沙土蓑衣",
+    "Wormadam-Trash":"结草贵妇-垃圾蓑衣",
+    "Cherrim-Sunshine":"樱花儿-晴天形态",
+    "Lopunny-Mega":"超级长耳兔",
+    "Garchomp-Mega":"超级烈咬陆鲨",
+    "Lucario-Mega":"超级路卡利欧",
+    "Abomasnow-Mega":"超级暴雪王",
+    "Gallade-Mega":"超级艾路雷朵",
+    "Rotom-Heat":"加热洛托姆",
+    "Rotom-Wash":"清洗洛托姆",
+    "Rotom-Frost":"结冰洛托姆",
+    "Rotom-Fan":"旋转洛托姆",
+    "Rotom-Mow":"切割洛托姆",
+    "Giratina-Origin":"骑拉帝纳-起源形态",
+    "Shaymin-Sky":"谢米-天空形态",
+    "Arceus-Bug":"阿尔宙斯-虫属性",
+    "Arceus-Dark":"阿尔宙斯-恶属性",
+    "Arceus-Dragon":"阿尔宙斯-龙属性",
+    "Arceus-Electric":"阿尔宙斯-电属性",
+    "Arceus-Fairy":"阿尔宙斯-妖精属性",
+    "Arceus-Fighting":"阿尔宙斯-格斗属性",
+    "Arceus-Fire":"阿尔宙斯-火属性",
+    "Arceus-Flying":"阿尔宙斯-飞行属性",
+    "Arceus-Ghost":"阿尔宙斯-幽灵属性",
+    "Arceus-Grass":"阿尔宙斯-草属性",
+    "Arceus-Ground":"阿尔宙斯-地面属性",
+    "Arceus-Ice":"阿尔宙斯-冰属性",
+    "Arceus-Poison":"阿尔宙斯-毒属性",
+    "Arceus-Psychic":"阿尔宙斯-超能力属性",
+    "Arceus-Rock":"阿尔宙斯-岩石属性",
+    "Arceus-Steel":"阿尔宙斯-钢属性",
+    "Arceus-Water":"阿尔宙斯-水属性",
+    "Audino-Mega":"超级差不多娃娃",
+    "Basculin-Blue-Striped":"勇士鲈鱼-蓝条纹",
+    "Darumaka-Galar":"火红不倒翁-伽勒尔",
+    "Darmanitan-Zen":"达摩狒狒-达摩模式",
+    "Darmanitan-Galar":"达摩狒狒-伽勒尔",
+    "Darmanitan-Zen-Galar":"达摩狒狒-达摩模式-伽勒尔",
+    "Yamask-Galar":"哭哭面具-伽勒尔",
+    "Garbodor-Gmax":"灰尘山-超极巨化",
+    "Stunfisk-Galar":"泥巴鱼-超极巨化",
+    "Tornadus-Therian":"龙卷云-灵兽形态",
+    "Thundurus-Therian":"雷电云-灵兽形态",
+    "Landorus-Therian":"土地云-灵兽形态",
+    "Kyurem-Black":"暗黑酋雷姆",
+    "Kyurem-White":"焰白酋雷姆",
+    "Keldeo-Resolute":"凯路迪欧-觉悟",
+    "Meloetta-Pirouette":"美洛耶塔-舞步形态",
+    "Genesect-Douse":"盖诺赛克特-水流卡带",
+    "Genesect-Shock":"盖诺赛克特-闪电卡带",
+    "Genesect-Burn":"盖诺赛克特-火焰卡带",
+    "Genesect-Chill":"盖诺赛克特-冰冻卡带",
+    "Greninja-Ash":"小智版甲贺忍蛙",
+    "Vivillon-Fancy":"彩粉蝶-花纹",
+    "Vivillon-Pokeball":"菜粉蝶-球球花纹",
+    "Floette-Eternal":"花叶蒂-永恒之花",
+    "Meowstic-F":"超能妙喵-雌性",
+    "Aegislash-Blade":"坚盾剑怪-刀剑形态",
+    "Pumpkaboo-Small":"南瓜精-小尺寸",
+    "Pumpkaboo-Large":"南瓜精-大尺寸",
+    "Pumpkaboo-Super":"南瓜精-特大尺寸",
+    "Gourgeist-Small":"南瓜怪人-小尺寸",
+    "Gourgeist-Large":"南瓜怪人-大尺寸",
+    "Gourgeist-Super":"南瓜怪人-特大尺寸",
+    "Zygarde-10%":"基格尔德-10%形态",
+    "Zygarde-Complete":"基格尔德-完全体形态",
+    "Diancie-Mega":"超级蒂安希",
+    "Hoopa-Unbound":"解放胡帕",
+    "Gumshoos-Totem":"霸主猫鼬探长",
+    "Vikavolt-Totem":"霸主锹农炮虫",
+    "Oricorio-Pom-Pom":"花舞鸟-啪滋啪滋风格",
+    "Oricorio-Pa'u":"花舞鸟-呼啦呼啦风格",
+    "Oricorio-Sensu":"花舞鸟-轻盈轻盈风格",
+    "Ribombee-Totem":"霸主蝶结萌虻",
+    "Lycanroc-Midnight":"鬃岩狼人-黑夜",
+    "Lycanroc-Dusk":"鬃岩狼人-黄昏",
+    "Wishiwashi-School":"弱丁鱼-鱼群",
+    "Araquanid-Totem":"霸主滴蛛霸",
+    "Lurantis-Totem":"霸主兰螳花",
+    "Salazzle-Totem":"霸主焰后蜥",
+    "Silvally-Bug":"银伴战兽-虫子",
+    "Silvally-Dark":"银伴战兽-黑暗",
+    "Silvally-Dragon":"银伴战兽-龙",
+    "Silvally-Electric":"银伴战兽-电子",
+    "Silvally-Fairy":"银伴战兽-妖精",
+    "Silvally-Fighting":"银伴战兽-战斗",
+    "Silvally-Fire":"银伴战兽-火焰",
+    "Silvally-Flying":"银伴战兽-飞翔",
+    "Silvally-Ghost":"银伴战兽-幽灵",
+    "Silvally-Grass":"银伴战兽-青草",
+    "Silvally-Ground":"银伴战兽-大地",
+    "Silvally-Ice":"银伴战兽-冰雪",
+    "Silvally-Poison":"银伴战兽-毒",
+    "Silvally-Psychic":"银伴战兽-精神",
+    "Silvally-Rock":"银伴战兽-岩石",
+    "Silvally-Steel":"银伴战兽-钢铁",
+    "Silvally-Water":"银伴战兽-清水",
+    "Minior-Meteor":"小陨星-流星",
+    "Togedemaru-Totem":"霸主托戈德玛尔",
+    "Mimikyu-Busted":"谜拟Ｑ-现形",
+    "Mimikyu-Totem":"霸主谜拟Ｑ",
+    "Mimikyu-Busted-Totem":"霸主谜拟Ｑ-现形",
+    "Kommo-o-Totem":"霸主杖尾鳞甲龙",
+    "Necrozma-Dusk-Mane":"奈克洛兹玛-黄昏之鬃",
+    "Necrozma-Dawn-Wings":"奈克洛兹玛-拂晓之翼",
+    "Necrozma-Ultra":"究极奈克洛兹玛",
+    "Magearna-Original":"玛机雅娜-500年前的颜色",
+    "Melmetal-Gmax":"美录梅塔-超极巨化",
+    "Corviknight-Gmax":"钢铠鸦-超极巨化",
+    "Orbeetle-Gmax":"以欧路普-超极巨化",
+    "Drednaw-Gmax":"暴噬龟-超极巨化",
+    "Coalossal-Gmax":"巨炭山-超极巨化",
+    "Flapple-Gmax":"苹裹龙-超极巨化",
+    "Appletun-Gmax":"丰蜜龙-超极巨化",
+    "Sandaconda-Gmax":"沙螺蟒-超极巨化",
+    "Cramorant-Gulping":"古月鸟-一口吞",
+    "Cramorant-Gorging":"古月鸟-大口吞",
+    "Toxtricity-Low-Key":"颤弦蝾螈-低调",
+    "Toxtricity-Gmax":"颤弦蝾螈-超极巨化",
+    "Centiskorch-Gmax":"焚焰蚣-超极巨化",
+    "Hatterene-Gmax":"布莉姆温-超极巨化",
+    "Grimmsnarl-Gmax":"长毛巨魔-超极巨化",
+    "Alcremie-Gmax":"霜奶仙-超极巨化",
+    "Eiscue-Noice":"冰砌鹅-解冻形态",
+    "Indeedee-F":"爱管侍-雌性",
+    "Morpeko-Hangry":"莫鲁贝可-空腹花纹",
+    "Copperajah-Gmax":"大王铜象-超极巨化",
+    "Duraludon-Gmax":"铝钢龙-超极巨化",
+    "Zacian-Crowned":"苍响-剑之王",
+    "Zamazenta-Crowned":"藏玛然特-盾之王",
+    "-Mega":"-超级进化",
+    "-Mega-X":"-超级进化X",
+    "-Mega-Y":"-超级进化Y",
+    "-Gmax":"-超极巨化",
+    "-Alola":"-阿罗拉",
+    "-Alola-Totem":"-阿罗拉霸主",
+    "-Cosplay":"-换装",
+    "-Rock-Star":"-硬摇滚",
+    "-Belle":"-贵妇",
+    "-Pop-Star":"-偶像",
+    "-PhD":"-博士",
+    "-Libre":"-面罩摔角手",
+    "-Original":"-初始",
+    "-Hoenn":"-丰缘",
+    "-Sinnoh":"-神奥",
+    "-Unova":"-合众",
+    "-Kalos":"-卡洛斯",
+    "-Partner":"-就决定是你了",
+    "-Starter":"-搭档",
+    "-F":"-雌性",
+    "-M":"-雄性",
+    "-Galar":"-伽勒尔",
+    "-Spiky-eared":"-刺刺耳",
+    "-Sunny":"-太阳",
+    "-Rainy":"-雨水",
+    "-Snowy":"-雪云",
+    "-Primal":"-原始回归",
+    "-Attack":"-攻击形态",
+    "-Defense":"-防御形态",
+    "-Speed":"-速度形态",
+    "-Sandy":"-沙土蓑衣",
+    "-Trash":"-垃圾蓑衣",
+    "-Sunshine":"-晴天形态",
+    "-Heat":"-加热",
+    "-Wash":"-清洗",
+    "-Frost":"-结冰",
+    "-Fan":"-旋转",
+    "-Mow":"-切割",
+    "-Origin":"-起源形态",
+    "-Sky":"-天空形态",
+    "-Bug":"-虫",
+    "-Dark":"-恶",
+    "-Dragon":"-龙",
+    "-Electric":"-电",
+    "-Fairy":"-妖精",
+    "-Fighting":"-格斗",
+    "-Fire":"-火",
+    "-Flying":"-飞行",
+    "-Ghost":"-幽灵",
+    "-Grass":"-草",
+    "-Ground":"-地面",
+    "-Ice":"-冰",
+    "-Poison":"-毒",
+    "-Psychic":"-超能力",
+    "-Rock":"-岩石",
+    "-Steel":"-钢",
+    "-Water":"-水",
+    "-Blue-Striped":"-蓝色条纹",
+    "-Zen":"-达摩模式",
+    "-Zen-Galar":"-伽勒尔达摩模式",
+    "-Therian":"-灵兽形态",
+    "-Black":"-暗黑",
+    "-White":"-焰白",
+    "-Resolute":"-觉悟",
+    "-Pirouette":"-舞步形态",
+    "-Douse":"-水流卡带",
+    "-Shock":"-闪电卡带",
+    "-Burn":"-火焰卡带",
+    "-Chill":"-冰冻卡带",
+    "-Ash":"-小智版",
+    "-Fancy":"-花纹",
+    "-Pokeball":"-球球花纹",
+    "-Eternal":"-永恒之花",
+    "-Blade":"-刀剑形态",
+    "-Small":"-小",
+    "-Large":"-大",
+    "-Super":"-特大",
+    "-10%":"-10%形态",
+    "-Complete":"-完全体形态",
+    "-Unbound":"-解放形态",
+    "-Totem":"-霸主",
+    "-Pom-Pom":"-啪滋啪滋风格",
+    "-Pa'u":"-呼啦呼啦风格",
+    "-Sensu":"-轻盈轻盈风格",
+    "-Midnight":"-黑夜",
+    "-Dusk":"-黄昏",
+    "-School":"-鱼群",
+    "-Meteor":"-流星",
+    "-Busted":"-现形",
+    "-Dusk-Mane":"-黄昏之鬃",
+    "-Dawn-Wings":"-拂晓之翼",
+    "-Ultra":"-究极形态",
+    "-Gulping":"-一口吞",
+    "-Gorging":"-大口吞",
+    "-Low-Key":"-低调形态",
+    "-Noice":"-解冻形态",
+    "-Hangry":"-空腹花纹",
+    "-Crowned":"-王形态",
+    "Silvally-*":"银伴战兽-未知属性",
+    "Arceus-*":"阿尔宙斯-未知属性",
+    "Genesect-*":"盖诺赛克特-未知卡带",
+    "If held by an Altaria, this item allows it to Mega Evolve in battle.":"七夕青鸟携带可进行超级进化",
+    "If held by an Abomasnow, this item allows it to Mega Evolve in battle.":"暴雪王携带可进行超级进化",
+    "If held by an Absol, this item allows it to Mega Evolve in battle.":"阿勃梭鲁携带可进行超级进化",
+    "Raises holder's Sp. Atk by 1 stage if hit by a Water-type attack. Single use.":"受到水属性招式攻击时特攻提升一级，使用后消失",
+    "If held by a Dialga, its Steel- and Dragon-type attacks have 1.2x power.":"帝牙卢卡携带后钢属性和龙属性招式威力提升20%",
+    "Raises holder's Speed by 1 stage if it gets affected by Intimidate. Single use.":"受到威吓时速度提升一级，使用后消失",
+    "If held by an Aerodactyl, this item allows it to Mega Evolve in battle.":"化石翼龙携带可进行超级进化",
+    "If held by an Aggron, this item allows it to Mega Evolve in battle.":"波士可多拉携带可进行超级进化",
+    "Holder is immune to Ground-type attacks. Pops when holder is hit.":"免疫地面属性招式攻击，受到伤害则会破裂",
+    "If held by an Alakazam, this item allows it to Mega Evolve in battle.":"胡地携带可进行超级进化",
+    "If held by an Alolan Raichu with Thunderbolt, it can use Stoked Sparksurfer.":"雷丘（阿罗拉的样子）携带后可以将十万伏特转化成Z招式：驾雷驭电戏冲浪",
+    "If held by an Ampharos, this item allows it to Mega Evolve in battle.":"电龙携带可进行超级进化",
+    "Raises holder's Sp. Def by 1 stage when at 1/4 max HP or less. Single use.":"HP低于25%时特防提升一级，使用后消失",
+    "Can be revived into Shieldon.":"可以用来复活盾甲龙",
+    "Holder is cured if it is frozen. Single use.":"解除冰冻状态，使用后消失",
+    "Holder's Sp. Def is 1.5x, but it can only select damaging moves.":"以只能使用攻击招式为代价提升50%的特防",
+    "If held by an Audino, this item allows it to Mega Evolve in battle.":"差不多娃娃携带可进行超级进化",
+    "Halves damage taken from a supereffective Steel-type attack. Single use.":"受到效果绝佳的钢属性招式攻击时伤害减半，使用后消失",
+    "If held by a Banette, this item allows it to Mega Evolve in battle.":"诅咒娃娃携带可进行超级进化",
+    "A special Poke Ball designed to catch Ultra Beasts.":"为捕获究极异兽而制作的特殊精灵球",
+    "If held by a Beedrill, this item allows it to Mega Evolve in battle.":"大针蜂携带可进行超级进化",
+    "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.":"用于制作宝可方块或宝芬，被虫咬或啄食时没有效果",
+    "Restores 20 HP when at 1/2 max HP or less. Single use.":"HP低于一半时回复20HP，使用后消失",
+    "Holder gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.":"使用吸取HP的招式、寄生种子、水流环、扎根和吸取力量时HP回复量提升30%",
+    "Holder's partial-trapping moves deal 1/6 max HP per turn instead of 1/8.":"绑紧招式所造成的束缚伤害从1/8提升至1/6",
+    "Holder's Fighting-type attacks have 1.2x power.":"格斗属性招式威力提升20%",
+    "Each turn, if holder is a Poison type, restores 1/16 max HP; loses 1/8 if not.":"毒属性宝可梦每回合回复1/16最大HP，非毒属性宝可梦每回合失去1/8最大HP",
+    "Holder's Dark-type attacks have 1.2x power.":"恶属性招式威力提升20%",
+    "If held by a Blastoise, this item allows it to Mega Evolve in battle.":"水箭龟携带可进行超级进化",
+    "If held by a Blaziken, this item allows it to Mega Evolve in battle.":"火焰鸡携带可进行超级进化",
+    "If held by a Kyogre, this item triggers its Primal Reversion in battle.":"盖欧卡携带在对战中原始回归为原始盖欧卡",
+    "The accuracy of attacks against the holder is 0.9x.":"对手命中率降低10%",
+    "Holder's first successful Bug-type attack will have 1.3x power. Single use.":"使用虫属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Bug type.":"银伴战兽携带变成虫属性，携带该道具的宝可梦的多属性攻击变为虫属性",
+    "If holder has a Bug move, this item allows it to use a Bug Z-Move.":"拥有虫属性招式的携带者可以使用虫属性Z招式",
+    "Holder's Techno Blast is Fire type.":"携带该道具的宝可梦的高科技光炮变为火属性",
+    "If held by a Camerupt, this item allows it to Mega Evolve in battle.":"喷火驼携带可进行超级进化",
+    "Raises holder's Attack by 1 if hit by an Electric-type attack. Single use.":"受到电属性招式攻击时提升一级攻击，使用后消失",
+    "Holder's Fire-type attacks have 1.2x power.":"火属性招式威力提升20%",
+    "If held by a Charizard, this item allows it to Mega Evolve in battle.":"喷火龙携带可进行超级进化",
+    "Halves damage taken from a supereffective Rock-type attack. Single use.":"受到效果绝佳的岩石属性招式攻击时伤害减半，使用后消失",
+    "Holder cures itself if it is paralyzed. Single use.":"解除麻痹状态，使用后消失",
+    "A rare Poke Ball that has been crafted to commemorate an occasion.":"相当珍贵的球，特制出来的纪念品",
+    "Holder wakes up if it is asleep. Single use.":"解除睡眠状态，使用后消失",
+    "Halves damage taken from a Normal-type attack. Single use.":"受到一般属性招式时伤害减半，使用后消失",
+    "Holder's Techno Blast is Ice type.":"携带该道具的宝可梦的高科技光炮变为冰属性",
+    "Holder's Attack is 1.5x, but it can only select the first move it executes.":"以只能使用上场后使出的第一个招式为代价攻击提升50%",
+    "Holder's Speed is 1.5x, but it can only select the first move it executes.":"以只能使用上场使出的第一个招式为代价速度提升50%",
+    "Holder's Sp. Atk is 1.5x, but it can only select the first move it executes.":"以只能使用上场使出的第一个招式为代价特攻提升50%",
+    "Halves damage taken from a supereffective Fighting-type attack. Single use.":"受到效果绝佳的格斗属性招式攻击时伤害减半，使用后消失",
+    "Can be revived into Anorith.":"可以用来复活太古羽虫",
+    "Halves damage taken from a supereffective Flying-type attack. Single use.":"受到效果绝佳的飞行属性招式攻击时伤害减半，使用后消失",
+    "Halves damage taken from a supereffective Dark-type attack. Single use.":"受到效果绝佳的恶属性招式攻击时伤害减半，使用后消失",
+    "Can be revived into Tirtouga.":"可以用来复活原盖海龟",
+    "Holder moves first in its priority bracket when at 1/4 max HP or less. Single use.":"HP低于25%时能优先攻击一次，使用后消失",
+    "Holder's use of Rain Dance lasts 8 turns instead of 5.":"引起的下雨天气从5回合延长至8回合",
+    "Holder's first successful Dark-type attack will have 1.3x power. Single use.":"使用恶属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Dark type.":"银伴战兽携带变成恶属性，携带该道具的宝可梦的多属性攻击变为恶属性",
+    "If holder has a Dark move, this item allows it to use a Dark Z-Move.":"拥有恶属性招式的携带者可以使用恶属性Z招式",
+    "If held by a Decidueye with Spirit Shackle, it can use Sinister Arrow Raid.":"狙射树枭携带后可以将缝影转化成Z招式：遮天蔽日暗影箭",
+    "If held by a Clamperl, its Sp. Def is doubled.":"珍珠贝携带特防翻倍",
+    "If held by a Clamperl, its Sp. Atk is doubled.":"珍珠贝携带特攻翻倍",
+    "If holder becomes infatuated, the other Pokemon also becomes infatuated.":"携带者陷入着迷时令对手着迷",
+    "If held by a Diancie, this item allows it to Mega Evolve in battle.":"蒂安希携带可进行超级进化",
+    "A Poke Ball that works especially well on Pokemon that live underwater.":"能很容易地捕捉生活在水世界里的宝可梦",
+    "Can be revived into Kabuto.":"可以用来复活化石盔",
+    "Holder's Techno Blast is Water type.":"携带该道具的宝可梦的高科技光炮变为水属性",
+    "Holder's Dragon-type attacks have 1.2x power. Judgment is Dragon type.":"龙属性招式威力提升20%，制裁光砾变为龙属性",
+    "Holder's Dragon-type attacks have 1.2x power.":"龙属性招式威力提升20%",
+    "Holder's first successful Dragon-type attack will have 1.3x power. Single use.":"使用龙属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Dragon type.":"银伴战兽携带变成龙属性，携带该道具的宝可梦的多属性攻击变为龙属性",
+    "If holder has a Dragon move, this item allows it to use a Dragon Z-Move.":"拥有龙属性招式的携带者可以使用龙属性Z招式",
+    "Holder's Dark-type attacks have 1.2x power. Judgment is Dark type.":"恶属性招式威力提升20%，制裁光砾变为恶属性",
+    "A special Poke Ball that appears out of nowhere in a bag at the Entree Forest.":"在连入之森中，不知何时出现在包包里的梦中球",
+    "A Poke Ball that makes it easier to catch wild Pokemon at night or in caves.":"能很容易地在夜晚或洞窟等阴暗的地方捕捉宝可梦",
+    "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type.":"地面属性招式威力提升20%，制裁光砾变为地面属性",
+    "If held by an Eevee with Last Resort, it can use Extreme Evoboost.":"伊布携带后可以将珍藏转化成Z招式：九彩升华齐聚顶",
+    "If holder survives a hit, it immediately switches out to a chosen ally. Single use.":"受到伤害后可立即下场与同伴进行交替，使用后消失",
+    "Holder's first successful Electric-type attack will have 1.3x power. Single use.":"使用电属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Electric type.":"银伴战兽携带变成电属性，携带该道具的宝可梦的多属性攻击变为电属性",
+    "If the terrain is Electric Terrain, raises holder's Defense by 1 stage. Single use.":"当场地为电气场地时防御提升一级，使用后消失",
+    "If holder has an Electric move, this item allows it to use an Electric Z-Move.":"拥有电属性招式的携带者可以使用电属性Z招式",
+    "Restores 50 HP to one Pokemon but lowers Happiness.":"非常苦的药粉，回复60HP",
+    "Restores 1/4 max HP after holder is hit by a supereffective move. Single use.":"受到效果绝佳的攻击时回复1/4最大HP，使用后消失",
+    "If holder's species can evolve, its Defense and Sp. Def are 1.5x.":"还能进化的宝可梦携带后，防御和特防提升50%",
+    "Holder's attacks that are super effective against the target do 1.2x damage.":"招式出现效果绝佳时威力提升20%",
+    "If holder has a Fairy move, this item allows it to use a Fairy Z-Move.":"拥有妖精属性招式的携带者可以使用妖精属性Z招式",
+    "Holder's first successful Fairy-type attack will have 1.3x power. Single use.":"使用妖精属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Fairy type.":"银伴战兽携带变成妖精属性，携带该道具的宝可梦的多属性攻击变为妖精属性",
+    "A Poke Ball that makes it easier to catch Pokemon which are quick to run away.":"能很容易地捕捉逃跑速度很快的宝可梦",
+    "Holder's first successful Fighting-type attack will have 1.3x power. Single use.":"使用格斗属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Fighting type.":"银伴战兽携带变成格斗属性，携带该道具的宝可梦的多属性攻击变为格斗属性",
+    "If holder has a Fighting move, this item allows it to use a Fighting Z-Move.":"拥有格斗属性招式的携带者可以使用格斗属性Z招式",
+    "Holder's first successful Fire-type attack will have 1.3x power. Single use.":"使用火属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Fire type.":"银伴战兽携带变成火属性，携带该道具的宝可梦的多属性攻击变为火属性",
+    "If holder has a Fire move, this item allows it to use a Fire Z-Move.":"拥有火属性招式的携带者可以使用火属性Z招式",
+    "Holder's Fighting-type attacks have 1.2x power. Judgment is Fighting type.":"格斗属性招式威力提升20%，制裁光砾变为格斗属性",
+    "At the end of every turn, this item attempts to burn the holder.":"回合结束时进入灼伤状态",
+    "Holder's Fire-type attacks have 1.2x power. Judgment is Fire type.":"火属性招式威力提升20%，制裁光砾变为火属性",
+    "Holder's weight is halved.":"体重减半",
+    "Holder's first successful Flying-type attack will have 1.3x power. Single use.":"使用飞行属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Flying type.":"银伴战兽携带变成飞行属性，携带该道具的宝可梦的多属性攻击变为飞行属性",
+    "If holder has a Flying move, this item allows it to use a Flying Z-Move.":"拥有飞行属性招式的携带者可以使用飞行属性Z招式",
+    "Holder has a 10% chance to survive an attack that would KO it with 1 HP.":"受到攻击而将陷入濒死状态时，10%几率保留1点HP而不陷入濒死状态",
+    "If holder's HP is full, will survive an attack that would KO it with 1 HP. Single use.":"HP全满时受到攻击而将陷入濒死状态时保留1点HP而不陷入濒死状态，使用后消失",
+    "A Poke Ball that makes caught Pokemon more friendly.":"捉到的野生宝可梦会变得容易和训练家亲密",
+    "Holder moves last in its priority bracket.":"携带者所用招式在相同优先度内必定后出",
+    "If held by a Gallade, this item allows it to Mega Evolve in battle.":"艾路雷朵携带可进行超级进化",
+    "Raises holder's Defense by 1 stage when at 1/4 max HP or less. Single use.":"HP低于25%时提升一级防御，使用后消失",
+    "If held by a Garchomp, this item allows it to Mega Evolve in battle.":"烈咬陆鲨携带可进行超级进化",
+    "If held by a Gardevoir, this item allows it to Mega Evolve in battle.":"沙奈朵携带可进行超级进化",
+    "If held by a Gengar, this item allows it to Mega Evolve in battle.":"耿鬼携带可进行超级进化",
+    "Holder's first successful Ghost-type attack will have 1.3x power. Single use.":"使用幽灵属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Ghost type.":"银伴战兽携带变成幽灵属性，携带该道具的宝可梦的多属性攻击变为幽灵属性",
+    "If holder has a Ghost move, this item allows it to use a Ghost Z-Move.":"拥有幽灵属性招式的携带者可以使用幽灵属性Z招式",
+    "If held by a Glalie, this item allows it to Mega Evolve in battle.":"冰鬼护携带可进行超级进化",
+    "Holder's first successful Grass-type attack will have 1.3x power. Single use.":"使用草属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Grass type.":"银伴战兽携带变成草属性，携带该道具的宝可梦的多属性攻击变为草属性",
+    "If holder has a Grass move, this item allows it to use a Grass Z-Move.":"拥有草属性招式的携带者可以使用草属性Z招式",
+    "If the terrain is Grassy Terrain, raises holder's Defense by 1 stage. Single use.":"当场地为青草场地时防御提升一级，使用后消失",
+    "A high-performance Ball that provides a higher catch rate than a Poke Ball.":"比起精灵球来更容易捉到宝可梦的，性能还算不错的球",
+    "Holder's partial-trapping moves always last 7 turns.":"绑紧招式所造成的束缚状态持续时间固定为7回合",
+    "If held by a Giratina, its Ghost- and Dragon-type attacks have 1.2x power.":"骑拉帝纳携带后形态转换为起源形态，并且龙属性和幽灵属性的招式威力提升20%",
+    "Holder's first successful Ground-type attack will have 1.3x power. Single use.":"使用地面属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Ground type.":"银伴战兽携带变成地面属性，携带该道具的宝可梦的多属性攻击变为地面属性",
+    "If holder has a Ground move, this item allows it to use a Ground Z-Move.":"拥有地面属性招式的携带者可以使用地面属性Z招式",
+    "If held by a Gyarados, this item allows it to Mega Evolve in battle.":"暴鲤龙携带可进行超级进化",
+    "Halves damage taken from a supereffective Dragon-type attack. Single use.":"受到效果绝佳的龙属性招式攻击时伤害减半，使用后消失",
+    "Holder's Rock-type attacks have 1.2x power.":"岩石属性的招式威力提升20%",
+    "A remedial Poke Ball that restores the caught Pokemon's HP and status problem.":"能回复捉到的宝可梦的HP并治愈异常状态",
+    "Holder's use of Sunny Day lasts 8 turns instead of 5.":"引起的大晴天天气从5回合延长至8回合",
+    "A Poke Ball for catching very heavy Pokemon.":"能很容易地捕捉身体沉重的宝可梦",
+    "Can be revived into Omanyte.":"可以用来复活菊石兽",
+    "If held by a Heracross, this item allows it to Mega Evolve in battle.":"赫拉克罗斯携带可进行超级进化",
+    "If held by a Houndoom, this item allows it to Mega Evolve in battle.":"黑鲁加携带可进行超级进化",
+    "Holder's first successful Ice-type attack will have 1.3x power. Single use.":"使用冰属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Ice type.":"银伴战兽携带变成冰属性，携带该道具的宝可梦的多属性攻击变为冰属性",
+    "Holder's Ice-type attacks have 1.2x power. Judgment is Ice type.":"冰属性招式威力提升20%，制裁光砾变为冰属性",
+    "If holder has an Ice move, this item allows it to use an Ice Z-Move.":"拥有冰属性招式的携带者可以使用冰属性Z招式",
+    "Holder's use of Hail lasts 8 turns instead of 5.":"引起的冰雹天气从5回合延长至8回合",
+    "If held by an Incineroar with Darkest Lariat, it can use Malicious Moonsault.":"炽焰咆哮虎携带后可以将DD金钩臂转化成Z招式：极恶飞跃粉碎击",
+    "Holder's Bug-type attacks have 1.2x power. Judgment is Bug type.":"虫属性招式威力提升20%，制裁光砾变为虫属性",
+    "Holder is grounded, Speed halved. If Flying type, takes neutral Ground damage.":"速度降低50%，飞行属性和飘浮特性宝可梦可以受到地面属性招式的伤害",
+    "Holder's Steel-type attacks have 1.2x power. Judgment is Steel type.":"钢属性招式威力提升20%，制裁光砾变为钢属性",
+    "If holder is hit by a physical move, attacker loses 1/8 of its max HP. Single use.":"受到物理招式攻击时对手损伤1/8的HP，使用后消失",
+    "Halves damage taken from a supereffective Ghost-type attack. Single use.":"受到效果绝佳的幽灵属性招式攻击时伤害减半，使用后消失",
+    "Halves damage taken from a supereffective Poison-type attack. Single use.":"受到效果绝佳的毒属性招式攻击时伤害减半，使用后消失",
+    "Raises holder's Defense by 1 stage after it is hit by a physical attack. Single use.":"受到物理招式攻击时，防御提升一级，使用后消失",
+    "If held by a Kangaskhan, this item allows it to Mega Evolve in battle.":"袋兽携带可进行超级进化",
+    "Holder's attacks without a chance to flinch gain a 10% chance to flinch.":"使用不会陷入畏缩状态的攻击招式时有10%的几率使目标进入畏缩状态",
+    "Holder gains the Focus Energy effect when at 1/4 max HP or less. Single use.":"HP低于25%时进入易中要害状态",
+    "If held by a Latias, this item allows it to Mega Evolve in battle.":"拉帝亚斯携带可进行超级进化",
+    "If held by a Latios, this item allows it to Mega Evolve in battle.":"拉帝欧斯携带可进行超级进化",
+    "At the end of every turn, holder restores 1/16 of its max HP.":"回合结束时回复1/16最大HP",
+    "Restores 10 PP to the first of the holder's moves to reach 0 PP. Single use.":"招式的PP降到0时恢复该招式10点PP，使用后消失",
+    "A Poke Ball for catching Pokemon that are a lower level than your own.":"要捕捉的宝可梦比自己宝可梦的等级越低，就会越容易捕捉",
+    "Raises holder's Attack by 1 stage when at 1/4 max HP or less. Single use.":"HP低于25%时攻击提升一级，使用后消失",
+    "Holder's attacks do 1.3x damage, and it loses 1/10 its max HP after the attack.":"以每次损失1/10最大HP为代价提升攻击招式伤害30%",
+    "If held by a Pikachu, its Attack and Sp. Atk are doubled.":"皮卡丘携带后攻击和特攻翻倍",
+    "Holder's use of Aurora Veil, Light Screen, or Reflect lasts 8 turns instead of 5.":"光墙、反射壁和极光幕的有效时间延长至8回合",
+    "If held by a Lopunny, this item allows it to Mega Evolve in battle.":"长耳兔携带可进行超级进化",
+    "Poke Ball for catching Pokemon that are the opposite gender of your Pokemon.":"很容易捕捉和自己宝可梦性别不同的宝可梦",
+    "If held by a Lucario, this item allows it to Mega Evolve in battle.":"路卡利欧携带可进行超级进化",
+    "If held by a Chansey, its critical hit ratio is raised by 2 stages.":"吉利蛋携带后击中要害等级提升两级",
+    "Holder cures itself if it is confused or has a major status condition. Single use.":"解除异常状态和混乱状态，使用后消失",
+    "Raises holder's Sp. Def by 1 stage if hit by a Water-type attack. Single use.":"受到水属性招式攻击时特防提升一级，使用后消失",
+    "A Poke Ball for catching Pokemon hooked by a Rod when fishing.":"能很容易地捕捉用钓竿钓上来的宝可梦",
+    "If held by a Palkia, its Water- and Dragon-type attacks have 1.2x power.":"帕路奇亚携带后龙属性和水属性的招式威力提升20%",
+    "A comfortable Poke Ball that makes a caught wild Pokemon quickly grow friendly.":"捉到的野生宝可梦会立刻变得和训练家亲密起来",
+    "Holder's Speed is halved. The Klutz Ability does not ignore this effect.":"速度减半，笨拙特性不能无视减半效果",
+    "Holder's Electric-type attacks have 1.2x power.":"电属性招式威力提升20%",
+    "Cannot be given to or taken from a Pokemon, except by Covet/Knock Off/Thief.":"对战中不可以给予或从宝可梦身上取下该道具",
+    "If held by a Manectric, this item allows it to Mega Evolve in battle.":"雷电兽携带可进行超级进化",
+    "Raises holder's Sp. Def by 1 stage after it is hit by a special attack. Single use.":"受到特殊攻击时特防提升一级，使用后消失",
+    "If held by Marshadow with Spectral Thief, it can use Soul-Stealing 7-Star Strike.":"玛夏多携带后可以将暗影偷盗转化成Z招式：七星夺魂腿",
+    "The best Ball with the ultimate performance. It will catch any wild Pokemon.":"必定能捉到野生宝可梦的，性能最好的球",
+    "If held by a Mawile, this item allows it to Mega Evolve in battle.":"大嘴娃携带可进行超级进化",
+    "Holder's Grass-type attacks have 1.2x power. Judgment is Grass type.":"草属性招式威力提升20%，制裁光砾变为草属性",
+    "If held by a Medicham, this item allows it to Mega Evolve in battle.":"恰雷姆携带可进行超级进化",
+    "Cures holder of Attract, Disable, Encore, Heal Block, Taunt, Torment. Single use.":"解除着迷、再来一次、挑衅、无理取闹、定身法和回复封锁状态，使用后消失",
+    "If held by a Metagross, this item allows it to Mega Evolve in battle.":"巨金怪携带可进行超级进化",
+    "Holder's Steel-type attacks have 1.2x power.":"钢属性招式威力提升20%",
+    "If held by a Ditto that hasn't Transformed, its Defense is doubled.":"未变身前的百变怪携带后防御翻倍",
+    "Damage of moves used on consecutive turns is increased. Max 2x after 5 turns.":"连续使用相同招式时，每重复使用一次威力提升20%，最高200%",
+    "If held by a Mew with Psychic, it can use Genesis Supernova.":"梦幻携带后可以将精神强念转化成Z招式：起源超新星大爆炸",
+    "If held by a Mewtwo, this item allows it to Mega Evolve in battle.":"超梦携带可进行超级进化",
+    "Holder's next move has 1.2x accuracy when at 1/4 max HP or less. Single use.":"HP低于25%时命中率增加20%，使用后消失",
+    "Holder's Psychic-type attacks have 1.2x power. Judgment is Psychic type.":"超能力属性招式威力提升20%，制裁光砾变为超能力属性",
+    "Holder's Grass-type attacks have 1.2x power.":"草属性招式威力提升20%",
+    "If the terrain is Misty Terrain, raises holder's Sp. Def by 1 stage. Single use.":"当场地为薄雾场地时特防提升一级，使用后消失",
+    "A Poke Ball for catching Pokemon that evolve using the Moon Stone.":"能很容易地捕捉使用月之石进化的宝可梦",
+    "Holder's physical attacks have 1.1x power.":"物理招式威力提升10%",
+    "Holder's Water-type attacks have 1.2x power.":"水属性招式威力提升20%",
+    "A Poke Ball that works especially well on weaker Pokemon in the wild.":"捕捉的野生宝可梦越弱，就会越容易捕捉",
+    "A Poke Ball that works especially well on Water- and Bug-type Pokemon.":"能很容易地捕捉水属性和虫属性的宝可梦",
+    "Holder's Ice-type attacks have 1.2x power.":"冰属性招式威力提升20%",
+    "Holder's first successful Normal-type attack will have 1.3x power. Single use.":"使用一般属性招式时提升本次攻击30%的威力，使用后消失",
+    "If holder has a Normal move, this item allows it to use a Normal Z-Move.":"拥有一般属性招式的携带者可以使用一般属性Z招式",
+    "Halves damage taken from a supereffective Fire-type attack. Single use.":"受到效果绝佳的火属性招式攻击时伤害减半，使用后消失",
+    "Holder's Psychic-type attacks have 1.2x power.":"超能力属性招式威力提升20%",
+    "Can be revived into Aerodactyl.":"可以用来复活化石翼龙",
+    "Restores 10 HP when at 1/2 max HP or less. Single use.":"HP低于50%时回复10HP，使用后消失",
+    "A special Poke Ball for the Pal Park.":"在伙伴公园里使用的特殊的球",
+    "Halves damage taken from a supereffective Water-type attack. Single use.":"受到效果绝佳的水属性招式攻击时伤害减半，使用后消失",
+    "Halves damage taken from a supereffective Psychic-type attack. Single use.":"受到效果绝佳的超能力属性招式攻击时伤害减半，使用后消失",
+    "Holder is cured if it is poisoned. Single use.":"解除中毒状态，使用后消失",
+    "Holder is cured if it is confused. Single use.":"解除混乱状态，使用后消失",
+    "Raises holder's Sp. Atk by 1 stage when at 1/4 max HP or less. Single use.":"HP低于25%时特攻提升一级，使用后消失",
+    "If held by a Pidgeot, this item allows it to Mega Evolve in battle.":"大比鸟携带可进行超级进化",
+    "If held by a Pikachu with Volt Tackle, it can use Catastropika.":"皮卡丘携带后可以将伏特攻击转化成Z招式：皮卡皮卡必杀击",
+    "If held by cap Pikachu with Thunderbolt, it can use 10,000,000 Volt Thunderbolt.":"戴着帽子的皮卡丘携带后可以将十万伏特转化成Z招式：千万伏特",
+    "If held by a Pinsir, this item allows it to Mega Evolve in battle.":"凯罗斯携带可进行超级进化",
+    "Holder's Fairy-type attacks have 1.2x power. Judgment is Fairy type.":"妖精属性招式威力提升20%，制裁光砾变为妖精属性",
+    "Can be revived into Archen.":"可以用来复活始祖小鸟",
+    "Can be revived into Tyrunt.":"可以用来复活宝宝暴龙",
+    "Can be revived into Amaura.":"可以用来复活冰雪龙",
+    "Holder's Poison-type attacks have 1.2x power.":"毒属性招式威力提升20%",
+    "Holder's first successful Poison-type attack will have 1.3x power. Single use.":"使用毒属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Poison type.":"银伴战兽携带变成毒属性，携带该道具的宝可梦的多属性攻击变为毒属性",
+    "If holder has a Poison move, this item allows it to use a Poison Z-Move.":"拥有毒属性招式的携带者可以使用毒属性Z招式",
+    "A device for catching wild Pokemon. It is designed as a capsule system.":"胶囊样式的用于投向野生宝可梦并将其捕捉的球",
+    "Holder's two-turn moves complete in one turn (except Sky Drop). Single use.":"使蓄力招式时消除蓄力回合直接发动效果（自由落体除外），使用后消失",
+    "A rare Poke Ball that has been crafted to commemorate an event.":"为了纪念某些事件的稀有的精灵球",
+    "If held by a Primarina with Sparkling Aria, it can use Oceanic Operetta.":"西施海壬携带后可以将泡影的咏叹调转化成Z招式：海神庄严交响乐",
+    "Holder's moves are protected from adverse contact effects, except Pickpocket.":"使用接触类招式攻击时，不会受到本应受到的效果，对顺手牵羊特性无效",
+    "Holder's first successful Psychic-type attack will have 1.3x power. Single use.":"使用超能力属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Psychic type.":"银伴战兽携带变成超能力属性，携带该道具的宝可梦的多属性攻击变为超能力属性",
+    "If the terrain is Psychic Terrain, raises holder's Sp. Def by 1 stage. Single use.":"当场地为精神场地时特防提升一级，使用后消失",
+    "If holder has a Psychic move, this item allows it to use a Psychic Z-Move.":"拥有超能力属性招式的携带者可以使用超能力属性Z招式",
+    "A Poke Ball that provides a better catch rate at the start of a wild encounter.":"在战斗开始时使用捕获成功率更高的特殊的精灵球",
+    "Each turn, holder has a 20% chance to move first in its priority bracket.":"20%概率优先使用招式",
+    "If held by a Ditto that hasn't Transformed, its Speed is doubled.":"未变身前的百变怪携带后速度翻倍",
+    "No competitive use other than when used with Fling.":"在宝可梦考古学上非常贵重的骨头，可以在商店高价出售",
+    "Holder is cured if it is burned. Single use.":"解除灼伤状态，使用后消失",
+    "Holder's critical hit ratio is raised by 1 stage.":"击中要害等级提升一级",
+    "If holder survives a hit, attacker is forced to switch to a random ally. Single use.":"受到伤害后攻击方随机交换任意宝可梦，使用后消失",
+    "If held by a Groudon, this item triggers its Primal Reversion in battle.":"固拉多携带在对战中原始回归为原始固拉多",
+    "A Poke Ball that works well on Pokemon species that were previously caught.":"对于以前捕获过的宝可梦效果特别好的特殊的球",
+    "Halves damage taken from a supereffective Grass-type attack. Single use.":"受到效果绝佳的草属性招式攻击时伤害减半，使用后消失",
+    "The holder's type immunities granted solely by its typing are negated.":"受到攻击时，不会出现因属性相性引发的没有效果",
+    "Holder's first successful Rock-type attack will have 1.3x power. Single use.":"使用岩石属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Rock type.":"银伴战兽携带变成岩石属性，携带该道具的宝可梦的多属性攻击变为岩石属性",
+    "If holder has a Rock move, this item allows it to use a Rock Z-Move.":"拥有岩石属性招式的携带者可以使用岩石属性Z招式",
+    "If holder is hit by a contact move, the attacker loses 1/6 of its max HP.":"受到接触类招式时对方失去1/6最大HP",
+    "Can be revived into Lileep.":"可以用来复活触手百合",
+    "Halves damage taken from a supereffective Fairy-type attack. Single use.":"受到效果绝佳的妖精属性招式攻击时伤害减半，使用后消失",
+    "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use.":"受到特殊招式攻击时对手损伤1/8的HP，使用后消失",
+    "If held by a Sableye, this item allows it to Mega Evolve in battle.":"勾魂眼携带可进行超级进化",
+    "A special Poke Ball that is used only in the Safari Zone and Great Marsh.":"仅能在狩猎地带和大湿地中使用的特殊的球,上面有迷彩花纹",
+    "Holder is immune to powder moves and damage from Sandstorm or Hail.":"免疫沙暴和冰雹天气造成的伤害",
+    "Raises holder's Speed by 1 stage when at 1/4 max HP or less. Single use.":"HP低于1/4时速度提升一级，使用后消失",
+    "If held by a Salamence, this item allows it to Mega Evolve in battle.":"暴飞龙携带可进行超级进化",
+    "If held by a Sceptile, this item allows it to Mega Evolve in battle.":"蜥蜴王携带可进行超级进化",
+    "If held by a Scizor, this item allows it to Mega Evolve in battle.":"巨钳螳螂携带可进行超级进化",
+    "Holder's Flying-type attacks have 1.2x power.":"飞行属性招式威力提升20%",
+    "If held by a Sharpedo, this item allows it to Mega Evolve in battle.":"巨牙鲨携带可进行超级进化",
+    "Holder may switch out even when trapped by another Pokemon, or by Ingrain.":"必定可以交换，无视任何禁止交换的特性或状态",
+    "After an attack, holder gains 1/8 of the damage in HP dealt to other Pokemon.":"造成伤害后回复伤害量的1/8HP",
+    "Holder's Techno Blast is Electric type.":"携带该道具的宝可梦的高科技光炮变为电属性",
+    "Halves damage taken from a supereffective Ground-type attack. Single use.":"受到效果绝佳的地面属性招式攻击时伤害减半，使用后消失",
+    "Holder's Normal-type attacks have 1.2x power.":"一般属性招式威力提升20%",
+    "Holder's Bug-type attacks have 1.2x power.":"虫属性招式威力提升20%",
+    "Restores 1/4 max HP when at 1/2 max HP or less. Single use.":"HP低于50%时回复最大HP的1/4，使用后消失",
+    "Can be revived into Cranidos.":"可以用来复活头盖龙",
+    "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.":"飞行属性招式威力提升20%，制裁光砾变为飞行属性",
+    "If held by a Slowbro, this item allows it to Mega Evolve in battle.":"呆河马携带可进行超级进化",
+    "Holder's use of Sandstorm lasts 8 turns instead of 5.":"引起的沙暴天气从5回合延长至8回合",
+    "If held by a Snorlax with Giga Impact, it can use Pulverizing Pancake.":"卡比兽携带后可以将超级冲击转化成Z招式：认真起来大爆击",
+    "Raises holder's Attack by 1 if hit by an Ice-type attack. Single use.":"受到冰属性招式攻击时攻击提升一级，使用后消失",
+    "Holder's Ground-type attacks have 1.2x power.":"地面属性招式威力提升20%",
+    "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.":"拉帝亚斯/拉帝欧斯携带后龙属性和超能力属性招式威力提升20%",
+    "Holder's Ghost-type attacks have 1.2x power.":"幽灵属性招式威力提升20%",
+    "Holder's Water-type attacks have 1.2x power. Judgment is Water type.":"水属性招式威力提升20%，制裁光砾变为水属性",
+    "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type.":"幽灵属性招式威力提升20%，制裁光砾变为幽灵属性",
+    "A special Poke Ball for the Bug-Catching Contest.":"在捕虫大赛上使用的特殊的球",
+    "Raises a random stat by 2 when at 1/4 max HP or less (not acc/eva). Single use.":"HP低于25%时随机提升一项能力两级，使用后消失",
+    "If held by a Steelix, this item allows it to Mega Evolve in battle.":"大钢蛇携带可进行超级进化",
+    "Holder's first successful Steel-type attack will have 1.3x power. Single use.":"使用钢属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Steel type.":"银伴战兽携带变成钢属性，携带该道具的宝可梦的多属性攻击变为钢属性",
+    "If holder has a Steel move, this item allows it to use a Steel Z-Move.":"拥有钢属性招式的携带者可以使用钢属性Z招式",
+    "If held by a Farfetch'd, its critical hit ratio is raised by 2 stages.":"大葱鸭携带后击中要害等级提升两级",
+    "Each turn, holder loses 1/8 max HP. An attacker making contact can receive it.":"每回合损失最大HP的1/8，受到接触类招式伤害时对方获得该道具",
+    "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.":"岩石属性招式威力提升20%，制裁光砾变为岩石属性",
+    "If held by a Swampert, this item allows it to Mega Evolve in battle.":"巨沼怪携带可进行超级进化",
+    "Halves damage taken from a supereffective Bug-type attack. Single use.":"受到效果绝佳的虫属性招式攻击时伤害减半，使用后消失",
+    "If held by a Tapu with Nature's Madness, it can use Guardian of Alola.":"守护神携带后可以将自然之怒转化成Z招式：巨人卫士·阿罗拉",
+    "Holder's use of Electric/Grassy/Misty/Psychic Terrain lasts 8 turns instead of 5.":"引起的场地从5回合延长至8回合",
+    "If held by a Cubone or a Marowak, its Attack is doubled.":"嘎啦嘎啦携带后攻击翻倍",
+    "A Poke Ball that becomes better the more turns there are in a battle.":"随着战斗回合数增加而变得更好的特殊的球",
+    "At the end of every turn, this item attempts to badly poison the holder.":"回合结束时进入剧毒状态",
+    "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type.":"毒属性招式威力提升20%，制裁光砾变为毒属性",
+    "If held by a Tyranitar, this item allows it to Mega Evolve in battle.":"班基拉斯携带可进行超级进化",
+    "An ultra-performance Ball that provides a higher catch rate than a Great Ball.":"比起超级球来更容易捉到宝可梦的，性能非常不错的球",
+    "If held by a Venusaur, this item allows it to Mega Evolve in battle.":"妙蛙花携带可进行超级进化",
+    "Halves damage taken from a supereffective Electric-type attack. Single use.":"受到效果绝佳的电属性招式攻击时伤害减半，使用后消失",
+    "Holder's first successful Water-type attack will have 1.3x power. Single use.":"使用水属性招式时提升本次攻击30%的威力，使用后消失",
+    "Holder's Multi-Attack is Water type.":"银伴战兽携带变成水属性，携带该道具的宝可梦的多属性攻击变为水属性",
+    "If holder has a Water move, this item allows it to use a Water Z-Move.":"拥有水属性招式的携带者可以使用水属性Z招式",
+    "If holder is hit super effectively, raises Attack, Sp. Atk by 2 stages. Single use.":"受到效果绝佳的伤害时攻击和特攻提升两级，使用后消失",
+    "Restores all lowered stat stages to 0 when one is less than 0. Single use.":"将所有能力等级低于0的能力回复至0，使用后消失",
+    "The accuracy of attacks by the holder is 1.1x.":"命中率提升10%",
+    "Holder's special attacks have 1.1x power.":"特殊招式威力提升10%",
+    "Used for Hyper Training. One of a Pokemon's stats is calculated with an IV of 31.":"用作极限特训，提升一项个体值到最大值",
+    "Used for Hyper Training. All of a Pokemon's stats are calculated with an IV of 31.":"用作极限特训，提升所有个体值到最大值",
+    "Halves damage taken from a supereffective Ice-type attack. Single use.":"受到效果绝佳的冰属性招式攻击时伤害减半，使用后消失",
+    "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type.":"电属性招式威力提升20%，制裁光砾变为电属性",
+    "The accuracy of attacks by the holder is 1.2x if it moves after its target.":"出招比目标慢时命中率提升20%",
+    "(Gen 2) On switch-in, raises holder's Attack by 2 and confuses it. Single use.":"（第二世代限定）出场时陷入混乱并提升两级攻击，使用后消失",
+    "(Gen 2) Restores 10 HP when at 1/2 max HP or less. Single use.":"（第二世代限定）HP低于50%时回复10HP，使用后消失",
+    "(Gen 2) Holder is cured if it is confused. Single use.":"（第二世代限定）解除混乱状态，使用后消失",
+    "(Gen 2) Holder is cured if it is frozen. Single use.":"（第二世代限定）解除冰冻状态，使用后消失",
+    "Holder's Dragon-type attacks have 1.1x power. Evolves Seadra (trade).":"龙属性招式威力提升10%,海刺龙携带后通信交换可以进化为刺龙王",
+    "(Gen 2) Restores 30 HP when at 1/2 max HP or less. Single use.":"（第二世代限定）HP低于50%时回复30HP，使用后消失",
+    "(Gen 2) Holder is cured if it is burned. Single use.":"（第二世代限定）解除灼伤状态，使用后消失",
+    "(Gen 2) Holder cures itself if it is confused or has a status condition. Single use.":"（第二世代限定）解除混乱状态，使用后消失",
+    "(Gen 2) Restores 5 PP to the first of the holder's moves to reach 0 PP. Single use.":"（第二世代限定）招式的PP降到0时恢复该招式10点PP，使用后消失",
+    "(Gen 2) Holder's Normal-type attacks have 1.1x power.":"（第二世代限定）一般属性技能威力提升10%",
+    "(Gen 2) Holder cures itself if it is paralyzed. Single use.":"（第二世代限定）解除麻痹状态，使用后消失",
+    "(Gen 2) Holder is cured if it is poisoned. Single use.":"（第二世代限定），解除中毒状态，使用后消失",
+    "(Gen 2) Holder wakes up if it is asleep. Single use.":"（第二世代限定）解除睡眠状态，使用后消失",
+    "If held by a Lycanroc forme with Stone Edge, it can use Splintered Stormshards.":"习得尖石攻击的鬃岩狼人可以使用狼啸石牙飓风暴。",
+    "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.":"习得嬉闹的谜拟Q可以使用亲密无间大乱揍。",
+    "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.":"习得鳞片噪音的杖尾鳞甲龙可以使用炽魂热舞烈音爆。",
+    "Solgaleo or Dusk Mane Necrozma with Sunsteel Strike can use a special Z-Move.":"习得流星闪冲的索尔迦雷欧或奈克洛兹玛-黃昏之鬃可以发动特殊Z技能。",
+    "Lunala or Dawn Wings Necrozma with Moongeist Beam can use a special Z-Move.":"习得暗影之光的露奈雅拉或奈克洛兹玛-可以发动特殊Z技能。",
+    "Dusk Mane/Dawn Wings Necrozma: Ultra Burst, then Z-Move w/ Photon Geyser.":"让奈克洛兹玛-黄昏之鬃/拂晓之翼究极爆发再配合光子喷涌使用Z技能。",
+    "Restores 33% max HP at 1/4 max HP or less; confuses if -Atk Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减攻击性格则会陷入混乱，使用后消失",
+    "Restores 33% max HP at 1/4 max HP or less; confuses if -Def Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减防御性格则会陷入混乱，使用后消失",
+    "Restores 33% max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减特攻性格则会陷入混乱，使用后消失",
+    "Restores 33% max HP at 1/4 max HP or less; confuses if -SpD Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减特防性格则会陷入混乱，使用后消失",
+    "Restores 33% max HP at 1/4 max HP or less; confuses if -Spe Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减速度性格则会陷入混乱，使用后消失",
+    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpD Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减特防性格的宝可梦则会陷入混乱，使用后消失",
+    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Atk Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减攻击性格的宝可梦则会陷入混乱，使用后消失",
+    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Def Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减防御性格的宝可梦则会陷入混乱，使用后消失",
+    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Spe Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减速度性格的宝可梦则会陷入混乱，使用后消失",
+    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use.":"HP低于25%时回复最大HP的一半，如果是减特攻性格的宝可梦则会陷入混乱，使用后消失",
+    "Evolves Electabuzz into Electivire when traded.":"电击兽携带后通信交换可进化为电击魔兽",
+    "Evolves Seadra into Kingdra when traded.":"海刺龙携带后通信交换可以进化为刺龙王",
+    "Evolves Milcery into Alcremie when held and spun around.":"小仙奶携带后滑动摇杆可以进化为霜奶仙",
+    "Evolves Sinistea into Polteageist when used.":"使用后可以让来悲茶进化为怖思壶",
+    "Evolves certain species of Pokemon when used.":"使用后可以让某些特定宝可梦的进化",
+    "Evolves Porygon2 into Porygon-Z when traded.":"多边兽Ⅱ携带后通信交换可以进化为多边兽Ｚ",
+    "Evolves Magmar into Magmortar when traded.":"鸭嘴火兽携带后通信交换可以进化为鸭嘴炎兽",
+    "Evolves Happiny into Chansey when held and leveled up during the day.":"小福蛋携带后在白天升级可以进化为吉利蛋",
+    "Evolves Feebas into Milotic when traded.":"丑丑鱼携带后通信交换可以进化为美纳斯",
+    "Evolves Rhydon into Rhyperior when traded.":"钻角犀兽携带后通信交换可以进化为超甲狂犀",
+    "Evolves Dusclops into Dusknoir when traded.":"彷徨夜灵携带后通信交换可以进化为黑夜魔灵",
+    "Evolves Spritzee into Aromatisse when traded.":"粉香香携带后通信交换可以进化为芳香精",
+    "Evolves Applin into Appletun when used.":"使用后可以让啃果虫进化为丰蜜龙",
+    "Evolves Applin into Flapple when used.":"使用后可以让啃果虫进化为苹裹龙",
+    "Evolves Porygon into Porygon2 when traded.":"多边兽携带后通信交换可以进化为多边兽Ⅱ",
+    "Evolves Swirlix into Slurpuff when traded.":"绵绵泡芙携带后通信交换可以进化为胖甜妮",
+    "Can be combined with certain fossils.":"可以和一些特定化石结合",
+    "If the holder misses because of accuracy, it raises Speed by 2 stages. Single use.":"招式因命中率影响而落空时，速度会提升二级",
+    "When the holder's stats are lowered, it will be switched out of battle.":"携带该道具的宝可梦能力下降时，自身下场与同伴进行替换",
+    "Prevents the effects of traps set on the battlefield.":"",
+    "If Trick Room is active, lowers holder's Speed by 1 stage. Single use.":"携带该道具的宝可梦在戏法空间下速度降低一级，使用后消失",
+    "If held by a Zacian, this item changes it to Crowned Forme.":"苍响携带会变为剑之王形态",
+    "If held by a Zamazenta, this item changes it to Crowned Forme.":"藏玛然特携带会变为盾之王形态",
+    "Raises holder's Special Attack by 1 stage after using a sound move. Single use.":"使用声音类招式时，特攻提升一级，使用后消失",
+    "If holder is a Sceptile, this item allows it to Mega Evolve in battle.":"蜥蜴王携带可进行超级进化",
+    "If holder is a Scizor, this item allows it to Mega Evolve in battle.":"巨钳螳螂携带可进行超级进化",
+    "If holder is a Sharpedo, this item allows it to Mega Evolve in battle.":"巨牙鲨携带可进行超级进化",
+    "If holder is a Slowbro, this item allows it to Mega Evolve in battle.":"呆河马携带可进行超级进化",
+    "If holder is a Snorlax with Giga Impact, it can use Pulverizing Pancake.":"卡比兽携带后可以将超级冲击转化成Z招式：认真起来大爆击",
+    "If holder is a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.":"拉帝亚斯/拉帝欧斯携带后龙属性和超能力属性招式威力提升20%",
+    "If holder is a Steelix, this item allows it to Mega Evolve in battle.":"大钢蛇携带可进行超级进化",
+    "If holder is a Farfetch'd, its critical hit ratio is raised by 2 stages.":"大葱鸭携带后击中要害等级提升两级",
+    "If holder is a Swampert, this item allows it to Mega Evolve in battle.":"巨沼怪携带可进行超级进化",
+    "If holder is a Tapu with Nature's Madness, it can use Guardian of Alola.":"守护神携带后可以将自然之怒转化成Z招式：巨人卫士·阿罗拉",
+    "If holder is a Cubone or a Marowak, its Attack is doubled.":"嘎啦嘎啦携带后攻击翻倍",
+    "If holder is a Tyranitar, this item allows it to Mega Evolve in battle.":"班基拉斯携带可进行超级进化",
+    "If holder is a Venusaur, this item allows it to Mega Evolve in battle.":"妙蛙花携带可进行超级进化",
+    "(Gen 2) Holder's Dragon-type attacks have 1.1x power. Evolves Seadra (trade).":"（第二世代限定）龙属性招式威力提升10%,海刺龙携带通信可以进化为刺龙王",
+    "Very high critical hit ratio.":"十分容易击中要害",
+    "User recovers 50% of the damage dealt.":"使用者将造成伤害的50%转化为自身的HP",
+    "Usually goes first.":"先制攻击",
+    "10% chance to lower the foe(s) Sp. Def by 1.":"10%几率令目标的特防降低1级",
+    "Raises the user's Defense by 2.":"令使用者的防御提升2级",
+    "Power is equal to the base move's Z-Power.":"威力会根据原来的招式而改变",
+    "100% chance to lower the target's Sp. Def by 2.":"100%几率令目标的特防降低2级",
+    "Power doubles if the user has no held item.":"在使用者不持有道具的时候给予双倍伤害",
+    "Raises a random stat of the user or an ally by 2.":"使自身或伙伴随机一项能力提升2级",
+    "High critical hit ratio.":"容易击中要害",
+    "The target makes its move right after the user.":"目标将会在使用者之后立刻行动",
+    "Raises the user's Speed by 2.":"令使用者的速度提升2级",
+    "High critical hit ratio. Hits adjacent foes.":"容易击中要害攻击邻近的对手",
+    "30% chance to flinch the target.":"有30%的几率使目标陷入畏缩状态",
+    "The user swaps positions with its ally.":"使用者与同伴交换位置",
+    "Raises the user's Sp. Def by 2.":"令使用者的特防提升2级",
+    "Prevents the target from switching out.":"阻止对手替换宝可梦",
+    "10% chance to raise all stats by 1 (not acc/eva).":"有10%的几率提升自身各项能力1级（除回避率，命中率）",
+    "User recovers 1/16 max HP per turn.":"使用者每回合回复自身1/16最大HP",
+    "No additional effect.":"攻击目标造成伤害",
+    "Hits 2-5 times in one turn.":"一回合内攻击2-5次",
+    "Cures the user's party of all status conditions.":"治愈使用者队伍中所有宝可梦的异常状态",
+    "Raises an ally's Sp. Def by 1.":"提升一名同伴的特防1级",
+    "Uses a random move known by a team member.":"随机使用队伍里一个成员已习得的招式",
+    "Power doubles if target was damaged this turn.":"如果使用者在这回合受到了攻击，威力翻倍",
+    "A target of the opposite gender gets infatuated.":"和使用者性别不同的对手会陷入着迷状态",
+    "For 5 turns, damage to allies is halved. Hail only.":"五回合内，同伴所受到的伤害为原来的一半只能在冰雹天气时使用成功",
+    "Raises the user's Speed by 2; user loses 100 kg.":"使用者体重减少100KG，速度提升两级",
+    "Power doubles if user is damaged by the target.":"如果被对手攻击的话，威力翻倍",
+    "Lowers the target's Attack by 1.":"使对手的攻击下降1级",
+    "Protects from moves. Contact: poison.":"使自己进入守住状态，接触到的对手会陷入中毒状态",
+    "User switches, passing stat changes and more.":"使用者和后备宝可梦替换，能够接力能力阶级变化等",
+    "Burns on contact with the user before it moves.":"在使用招式前接触到使用者的对手会陷入灼伤状态",
+    "All healthy allies aid in damaging the target.":"所有健康的己方宝可梦会一起攻击目标",
+    "Cannot be selected until the user eats a Berry.":"再使用者食用树果前不能被使用",
+    "User loses 50% max HP. Maximizes Attack.":"使用者失去自身50%最大HP，使攻击最大化",
+    "User passes its held item to the target.":"使用者将持有的道具移交给目标",
+    "Waits 2 turns; deals double the damage taken.":"等待两回合，之后将受到的伤害双倍奉还给对手",
+    "Traps and damages the target for 4-5 turns.":"困住并伤害目标4-5回合",
+    "User cannot move next turn.":"使用者下回合无法移动",
+    "High critical hit ratio. 10% chance to burn.":"容易击中要害有10%的几率使对手陷入灼伤状态",
+    "10% chance to freeze foe(s). Can't miss in hail.":"有10%的几率使对手陷入冰冻状态在冰雹天气时攻击不会被回避",
+    "20% chance to burn the target.":"有20%的几率使对手陷入灼伤状态",
+    "30% chance to paralyze the target.":"有30%的几率使对手陷入麻痹状态",
+    "20% chance to paralyze the target.":"有20%的几率使对手陷入麻痹状态",
+    "10% chance to flinch the target.":"有10%的几率使对手畏缩",
+    "Hits 2 times in one turn.":"一回合内攻击两次",
+    "No additional effect. Hits adjacent Pokemon.":"攻击目标造成伤害攻击邻近的宝可梦",
+    "Bounces turn 1. Hits turn 2. 30% paralyze.":"第一回合跃起，第二回合攻击有30%的几率使对手陷入麻痹状态",
+    "Has 33% recoil.":"有33%的反弹伤害",
+    "Destroys screens, unless the target is immune.":"摧毁目标队伍的墙，除非目标免疫此攻击",
+    "Power doubles if the target's HP is 50% or less.":"如果对手的HP为最大HP的一半或更少，此招式威力翻倍",
+    "10% chance to lower the foe(s) Speed by 1.":"有10%的几率使（所有）对手的速度下降1级",
+    "10% chance to lower the target's Speed by 1.":"有10%的几率使目标的速度下降1级",
+    "User steals and eats the target's Berry.":"使用者将窃取并食用目标的树果",
+    "10% chance to lower the target's Sp. Def by 1.":"有10%的几率使目标的特防下降1级",
+    "Raises the user's Attack and Defense by 1.":"提升使用者的供给和防御各1级",
+    "User's Fire type becomes typeless; must be Fire.":"使使用者的火属性消失，使用者必须为火属性",
+    "Raises the user's Sp. Atk and Sp. Def by 1.":"提升使用者的特攻和特防各1级",
+    "Changes user's type by terrain (default Normal).":"根据场地改变使用者的属性",
+    "Lowers the foe(s) Sp. Atk by 2 if opposite gender.":"如果目标的性别和使用者相反，目标的特攻下降两级",
+    "70% chance to raise the user's Sp. Atk by 1.":"有70%的几率使使用者的特攻上升1级",
+    "Lowers the target's Attack by 2.":"使目标的攻击下降两级",
+    "100% chance to confuse the target.":"100%使目标混乱",
+    "Ignores the target's stat stage changes.":"无视目标的能力阶级变化进行攻击",
+    "Forces the target to switch to a random ally.":"使目标和后备宝可梦替换",
+    "Lowers the user's Defense by 1.":"使目标的防御下降1级",
+    "Lowers the user's Defense and Sp. Def by 1.":"使使用者的防御和特防下降1级",
+    "Lowers the target's Sp. Atk by 1.":"使目标的特攻下降1级",
+    "Confuses the target.":"使目标陷入混乱状态",
+    "10% chance to confuse the target.":"有10%的几率使目标陷入混乱状态",
+    "Changes user's type to match its first move.":"使使用者的属性变的和自身已学会的第一个招式的属性相同",
+    "Changes user's type to resist target's last move.":"使自己的属性变的对目标最后使出的招式属性有抗性",
+    "Uses the last move used in the battle.":"使用上一个在对战中使用的招式",
+    "Raises the user's Defense and Sp. Def by 1.":"提升使用者的防御和特防各1级",
+    "Raises the user's Defense by 3.":"提升使用者的防御3级",
+    "Lowers the target's Speed by 2.":"使目标的速度下降两级",
+    "If hit by physical attack, returns double damage.":"如果被物理攻击伤害，则返还对手两倍的伤害",
+    "If the user has no item, it steals the target's.":"如果使用者没有持有道具，将会偷走目标的道具",
+    "Protects allies from Status moves this turn.":"保护所有同伴免收变化招式的影响",
+    "High critical hit ratio. 10% chance to poison.":"容易击中要害有10%的几率使对手中毒",
+    "50% chance to lower the target's Defense by 1.":"有50%的几率使对手的防御下降1级",
+    "More power the more HP the target has left.":"目标剩余的HP越多，此招式威力越高",
+    "20% chance to flinch the target.":"有20%的几率使目标畏缩",
+    "-1 evasion; clears user and target side's hazards.":"使目标的回避率下降1级，清除目标队伍的白雾",
+    "If an opponent knocks out the user, it also faints.":"如果对手使使用者陷入濒死状态，那么该对手同样也陷入濒死状态",
+    "Prevents moves from affecting the user this turn.":"本回合内，避免招式对使用者造成影响",
+    "50% chance to raise user's Def by 2 for each hit.":"每一次攻击都有50%的几率使使用者的防御提升两级",
+    "Digs underground turn 1, strikes turn 2.":"第一回合找个地缝钻进去，第二回合攻击",
+    "For 4 turns, disables the target's last move used.":"四回合内，目标最后使用的招式将无法再被使用",
+    "This move does not check accuracy. Hits foes.":"攻击一定会命中攻击所有对手",
+    "30% chance to paralyze adjacent Pokemon.":"有30%的几率使邻近的宝可梦陷入麻痹状态",
+    "Dives underwater turn 1, strikes turn 2.":"第一回合潜入水中，第二回合攻击",
+    "20% chance to confuse the target.":"有20%的几率使目标陷入混乱状态",
+    "Hits two turns after being used.":"使用该招式后，两回合后触发攻击效果",
+    "Raises the user's evasiveness by 1.":"使使用者的回避率上升以1级",
+    "Lowers the user's Sp. Atk by 2.":"使使用者的特攻下降两级",
+    "Raises the user's Attack and Speed by 1.":"提升使用者的攻击和速度各1级",
+    "User recovers 75% of the damage dealt.":"使用者将造成伤害的75%转化为自身的HP",
+    "User gains 1/2 HP inflicted. Sleeping target only.":"使用者将攻击造成伤害的1/2转化为自身的HP只对睡眠状态的宝可梦有效",
+    "Power increases when used on consecutive turns.":"如果连续使用此招式威力会上升",
+    "Lowers the target's Sp. Atk by 2.":"降低目标的特攻2级",
+    "5 turns. Grounded: +Electric power, can't sleep.":"五回合内，站在地上的宝可梦使用的电属性招式的威力上升，不能陷入睡眠状态",
+    "Changes the target's move to Electric this turn.":"使目标这回合使用的招式属性变为电属性",
+    "More power the faster the user is than the target.":"使用者比目标速度越快，此招式威力越高",
+    "100% chance to lower the foe(s) Speed by 1.":"100%使(所有)对手的速度下降1级",
+    "For 5 turns, the target's item has no effect.":"5回合内，目标的道具不会有任何效果",
+    "10% chance to burn the target.":"有10%的几率使目标陷入灼伤状态",
+    "Lowers the target's HP to the user's HP.":"使目标的HP降得和使用者的HP相同",
+    "The target's Ability changes to match the user's.":"目标的特性将会变得和使用者相同",
+    "Less power as user's HP decreases. Hits foe(s).":"使用者的HP剩下的越少，威力越小，攻击（所有）对手",
+    "Hits adjacent Pokemon. The user faints.":"攻击邻近的宝可梦使用者陷入濒死状态",
+    "Raises user's Atk, Def, SpA, SpD, and Spe by 2.":"提升使用者的攻击防御特攻特防速度各两级",
+    "Nearly always goes first.":"几乎总是先发制人",
+    "Power doubles if user is burn/poison/paralyzed.":"如果使用者处于灼伤/中毒/麻痹状态，招式威力为原来的两倍",
+    "Prevents all Pokemon from switching next turn.":"下一回合内，阻止所有宝可梦的替换",
+    "Hits first. First turn out only. 100% flinch chance.":"先制攻击，只能在出场后第一回合使用，100%使目标畏缩",
+    "Lowers the target's Sp. Def by 2.":"使目标的特防下降两级",
+    "Always leaves the target with at least 1 HP.":"总会使目标留下至少一点HP",
+    "Nullifies Detect, Protect, and Quick/Wide Guard.":"实施对手的见切，保护，和快速/广域防守",
+    "Raises user's Attack by 3 if this KOes the target.":"如果这一击击倒了目标，使用者的攻击提升3级",
+    "50% chance to raise the user's Sp. Atk by 1.":"有50%的几率使使用者的特攻上升1级",
+    "Does damage equal to the user's HP. User faints.":"造成的伤害和使用者留下的HP相同使用者陷入濒死状态",
+    "10% chance to burn. 10% chance to flinch.":"有10%的几率使目标陷入灼伤状态有10%的几率使目标畏缩",
+    "100% chance to lower the target's Defense by 1.":"100%使目标的防御下降1级",
+    "Use with Grass or Water Pledge for added effect.":"和草或水之誓言同时使用会有特效",
+    "Hits first. First turn out only.":"先制攻击，只能在出场后第一回合使用",
+    "OHKOs the target. Fails if user is a lower level.":"一击必杀如果使用者的等级低于目标则使用招式失败",
+    "More power the less HP the user has left.":"使用者的HP越少，招式威力越高",
+    "Damages Pokemon next to the target as well.":"击中目标的同时也会伤害到其身边的宝可梦",
+    "100% chance to raise the user's Speed by 1.":"100%使使用者的速度上升1级",
+    "10% chance to burn the target. Thaws user.":"10%使目标陷入灼伤状态能使使用者解除冰冻状态",
+    "Has 33% recoil. 10% chance to burn. Thaws user.":"有33%的反弹伤害10%使目标陷入灼伤状态能使使用者解除冰冻状态",
+    "Lowers the target's accuracy by 1.":"使目标的命中率下降1级",
+    "Raises the target's Sp. Atk by 1 and confuses it.":"使目标的特攻上升1级，使目标陷入混乱状态",
+    "Flings the user's item at the target. Power varies.":"使用者投掷携带的道具进行攻击威力会改变",
+    "Heals the target by 50% of its max HP.":"使目标回复其50%最大HP",
+    "Raises Defense by 1 of all active Grass types.":"使场上所有草属性宝可梦的防御提升1级",
+    "Flies up on first turn, then strikes the next turn.":"第一回合上天，第二回合攻击",
+    "Combines Flying in its type effectiveness.":"此招式同时也具备飞行属性",
+    "Raises the user's critical hit ratio by 2.":"使使用者的击中要害阶级提升两级",
+    "Fails if the user takes damage before it hits.":"如果在使用招式前受到攻击则招式使用失败",
+    "The foes' moves target the user on the turn used.":"所有对手使用的作用范围为单体选择的招式都会攻向自己",
+    "Fighting, Normal hit Ghost. Evasiveness ignored.":"格斗属性，一般属性招式能击中幽灵属性无视回避率变化",
+    "Adds Grass to the target's type(s).":"使目标拥有草属性",
+    "Uses target's Attack stat in damage calculation.":"使用目标的攻击代替使用者的攻击进行伤害计算",
+    "10% chance to freeze. Super effective on Water.":"有10%的几率使对手陷入冰冻状态对水属性效果拔群",
+    "Charges turn 1. Hits turn 2. 30% paralyze.":"第一回合充能，第二回合攻击有30%的几率使对手陷入麻痹状态",
+    "Always results in a critical hit.":"一定会造成击中要害",
+    "Max 102 power at minimum Happiness.":"当亲密值最低的时候达到最大威力102",
+    "Power doubles with each hit, up to 160.":"每一连续击都会使上一击的威力加倍最高为160",
+    "Power doubles if used after Fusion Flare.":"如果在攻击前被交织火焰击中的话威力加倍",
+    "Power doubles if used after Fusion Bolt.":"如果在攻击前被交织闪电击中的话威力加倍",
+    "Nullifies the target's Ability.":"使对手的特性消失",
+    "Raises Atk, Sp. Atk of allies with Plus/Minus by 1.":"提升特性为正电/负电的宝可梦的攻击和特攻各1级",
+    "Summons Psychic Terrain.":"散布精神场地",
+    "Charges, then raises SpA, SpD, Spe by 2 turn 2.":"先充能，然后提升使用者的特攻特防速度各两级",
+    "Paralyzes the target.":"使目标陷入麻痹状态",
+    "More power the heavier the target.":"目标越重，威力越大",
+    "Use with Fire or Water Pledge for added effect.":"和火或水之誓言同时使用会有特效",
+    "For 5 turns, negates all Ground immunities.":"五回合内无视所有对地上属性的免疫",
+    "Lowers the foe(s) Attack by 1.":"使（所有）对手的攻击下降1级",
+    "Raises user's Attack and Sp. Atk by 1; 2 in Sun.":"让使用者的攻击和特攻上升1级，大晴天上升两级",
+    "If the user faints, the attack used loses all its PP.":"如果使用者倒下，则对手最后使用的攻击失去所有PP",
+    "Averages Defense and Sp. Def stats with target.":"平分使用者和目标的防御和特防",
+    "Swaps Defense and Sp. Def changes with target.":"交换使用者和目标的防御和特防",
+    "Does damage equal to 3/4 target's current HP.":"目标失去3/4最大HP",
+    "More power the slower the user than the target.":"使用者速度比对手越慢，威力越大",
+    "For 5 turns, hail crashes down.":"5回合内为冰雹天气",
+    "Lowers the user's Speed by 1.":"使使用者的速度下降1级",
+    "No competitive use.":"没有实战用途",
+    "Raises the user's Defense by 1.":"使使用者的防御提升1级",
+    "Eliminates all stat changes.":"消除所有能力阶级变化",
+    "Has 1/4 recoil.":"有1/4的反弹伤害",
+    "Has 1/2 recoil.":"有1/2的反弹伤害",
+    "For 5 turns, the foe(s) is prevented from healing.":"5回合内，（所有）对手无法使用治愈招式",
+    "Heals the user by 50% of its max HP.":"使使用者回复自身50%最大HP",
+    "User faints. Replacement is fully healed.":"使用者陷入濒死状态替换上场的宝可梦会被完全治愈",
+    "Swaps all stat changes with target.":"交换自身和目标的能力阶级变化",
+    "More power the heavier the user than the target.":"使用者比目标越重，招式威力越大",
+    "10% chance to burn the foe(s).":"10%使目标陷入灼伤状态",
+    "One adjacent ally's move power is 1.5x this turn.":"一名邻近的同伴此回合使出的招式威力变为原来的1.5倍",
+    "Power doubles if the target has a status ailment.":"如果目标已经陷入负面状态则威力翻倍",
+    "Varies in type based on the user's IVs.":"招式属性和使用者的个体值有关",
+    "User is hurt by 50% of its max HP if it misses.":"如果招式未命中则使用者失去50%最大HP",
+    "Raises the user's Attack and accuracy by 1.":"使使用者的攻击和命中率上升1级",
+    "Raises the user's Attack by 1.":"使使用者的攻击上升1级",
+    "30% chance to confuse target. Can't miss in rain.":"30%使目标陷入混乱状态，在雨天不能被回避",
+    "Breaks the target's protection for this turn.":"这一回合能够破坏对手的守住状态",
+    "No additional effect. Hits adjacent foes.":"攻击对手造成伤害攻击邻近的宝可梦",
+    "Power doubles with each hit. Repeats for 5 turns.":"每一次攻击威力都会翻倍，连续攻击5次",
+    "10% chance to freeze the target.":"10%使目标陷入冰冻状态",
+    "Charges turn 1. Hits turn 2. 30% burn.":"第一回合充能，第二回合攻击有30%的几率使对手陷入灼伤状态",
+    "10% chance to freeze. 10% chance to flinch.":"10%使目标陷入冰冻状态10%使目标畏缩",
+    "No foe can use any move known by the user.":"对手将无法使用使用者已习得的招式",
+    "Destroys the foe(s) Berry/Gem.":"烧毁对手的树果和珠宝",
+    "100% chance to burn the target.":"100%使对手陷入灼伤状态",
+    "The target immediately uses its last used move.":"目标会立即使用其上次使用的招式",
+    "Normal moves become Electric type this turn.":"下一回合内一般属性招式会变为电属性招式",
+    "30% chance to lower the target's Defense by 1.":"30%使目标的防御下降1级",
+    "Type varies based on the held Plate.":"招式的属性会根据所持有的石板变化",
+    "1.5x damage if foe holds an item. Removes item.":"如果目标持有道具的话，招式威力为原来的1.5倍封住目标的道具",
+    "Fails unless each known move has been used.":"只有所有习得的其他招式被时出示才能使用该招式",
+    "30% chance to burn adjacent Pokemon.":"30%使邻近的宝可梦陷入灼伤状态",
+    "50% chance to lower the target's accuracy by 1.":"50%使目标的命中率下降1级",
+    "1/8 of target's HP is restored to user every turn.":"每回合吸取目标最大生命值的1/8",
+    "Lowers the foe(s) Defense by 1.":"使（所有）对手的防御下降1级",
+    "For 5 turns, special damage to allies is halved.":"5回合内，对同伴的特殊攻击伤害减半",
+    "20% chance to lower the target's Defense by 1.":"20%使目标的防御下降1级",
+    "User's next move will not miss the target.":"使用者下一回合对目标的攻击将不会被回避",
+    "100% chance to lower the target's Speed by 1.":"100%使目标的速度下降1级",
+    "For 5 turns, shields user's party from critical hits.":"5回合内，对手的攻击不会击中使用者的要害",
+    "User faints. Replacement is fully healed, with PP.":"使用者陷入濒死状态替换上场的宝可梦会被完全治愈包括回复PP",
+    "100% chance to lower the target's Attack by 1.":"100%使目标的攻击下降1级",
+    "50% chance to lower the target's Sp. Def by 1.":"50%使目标的特防下降1级",
+    "Bounces back certain non-damaging moves.":"将变化招式反弹回去",
+    "For 5 turns, all held items have no effect.":"5回合内，携带的道具将不会有效果",
+    "This move does not check accuracy.":"攻击一定会命中",
+    "Raises Def, Sp. Def of allies with Plus/Minus by 1.":"提升具有正电/负电特性宝可梦的防御和特防1级",
+    "Hits adjacent Pokemon. Power varies; 2x on Dig.":"攻击邻近的宝可梦威力随机变化，对挖洞的目标造成两倍伤害",
+    "Protects allies from attacks. First turn out only.":"防止同伴受到攻击，只能在出场后第一回合使用",
+    "Copies a foe at 1.5x power. User must be faster.":"抢先使出对手将要使出的招式使用者必须更快",
+    "Lowers target's Attack, Sp. Atk by 2. User faints.":"使目标的攻击和特攻下降两级，使用者陷入濒死状态",
+    "If hit by an attack, returns 1.5x damage.":"如果因攻击而受到伤害，则返还1.5倍的伤害",
+    "10% chance to raise the user's Attack by 1.":"10%使使用者的攻击上升1级",
+    "20% chance to raise the user's Attack by 1.":"20%使使用者的攻击上升1级",
+    "Picks a random move.":"根据使用者的rp随机使出一个招式",
+    "The last move the target used replaces this one.":"这个招式将会变成目标会后使出的招式",
+    "Raises the user's evasiveness by 2.":"使使用者的回避率上升2级",
+    "Psychic hits Dark. Evasiveness ignored.":"超能属性招式可以命中恶属性无视回避率变化",
+    "If hit by special attack, returns double damage.":"如果被特殊攻击伤害，则返还对手两倍的伤害",
+    "User uses the target's last used move against it.":"使用目标最后使用过的招式",
+    "30% chance to lower the target's accuracy by 1.":"30%使目标的命中率下降1级",
+    "For 5 turns, protects user's party from stat drops.":"在５回合内不会让对手降低自己队伍中宝可梦的能力",
+    "50% chance to lower the target's Sp. Atk by 1.":"50%使目标的特攻下降1级",
+    "5 turns. Can't status,-Dragon power vs grounded.":"五回合内，站在地上的宝可梦面不会陷入负面状态，且受到龙属性招式的伤害减半",
+    "30% chance to lower the target's Sp. Atk by 1.":"30%使目标的特攻下降1级",
+    "Ignores the Abilities of other Pokemon.":"无视目标的特性进行攻击",
+    "Heals the user by a weather-dependent amount.":"恢复使用者的HP，回复量随天气变化",
+    "100% chance to lower the target's accuracy by 1.":"100%使目标的命中率下降1级",
+    "For 5 turns, Electric-type attacks have 1/3 power.":"五回合内，电属性招式的威力变为原来的1/3",
+    "30% chance to lower the foe(s) accuracy by 1.":"30%使目标的命中率下降1级",
+    "Type varies based on the held Memory.":"招式属性和携带的储存碟有关",
+    "100% chance to lower the target's Sp. Atk by 1.":"100%下降目标的特攻1级",
+    "Raises the user's Sp. Atk by 2.":"使使用者的特攻上升两级",
+    "Power and type depends on the user's Berry.":"威力和属性基于使用者携带的树果",
+    "Attack depends on terrain (default Tri Attack).":"攻击随着场地变化而变化默认为三角攻击",
+    "Does damage equal to 1/2 target's current HP.":"攻击造成的伤害为目标剩下HP的50%",
+    "40% chance to lower the target's accuracy by 1.":"40%使目标的命中率下降1级",
+    "Does damage equal to the user's level.":"招式伤害和使用者的等级相同",
+    "A sleeping target is hurt by 1/4 max HP per turn.":"睡眠中的目标每回合失去其1/4最大HP",
+    "Lowers the target's Attack and Sp. Atk by 1.":"降低目标的攻击和特攻1级",
+    "Lasts 2-3 turns. Confuses the user afterwards.":"持续2-3回合，冷静下来后会混乱",
+    "Shares HP of user and target equally.":"平分使用者和目标的HP",
+    "Lowers target's Atk, Sp. Atk by 1. User switches.":"降低目标的攻击和特攻1级，使用者和后备宝可梦替换",
+    "Scatters coins.":"土豪来撒钱啦",
+    "Power doubles if the user moves after the target.":"如果在目标之后攻击，威力翻倍",
+    "All active Pokemon will faint in 3 turns.":"所有在场的宝可梦会在三回合内倒下",
+    "Disappears turn 1. Hits turn 2. Breaks protection.":"第一回合突然消失，第二回合攻击破坏目标的守住状态",
+    "10% chance to lower the target's Attack by 1.":"10%使目标的攻击下降1级",
+    "50% chance to badly poison the target.":"50%使目标中剧毒",
+    "Poisons the foe(s).":"使（所有）敌人中毒",
+    "30% chance to poison the target.":"30%使目标中毒",
+    "Poisons the target.":"使目标中毒",
+    "If the target is an ally, heals 50% of its max HP.":"如果目标是同伴则恢复其50%最大HP",
+    "If using a Fire move, target loses 1/4 max HP.":"如果目标使用了火属性招式则会失去1/4最大HP",
+    "10% chance to freeze the foe(s).":"10%使（所有）对手陷入冰冻状态",
+    "Averages Attack and Sp. Atk stats with target.":"和目标平分攻击和特攻",
+    "Swaps Attack and Sp. Atk stat stages with target.":"交换使用者和目标的基础攻击和特攻能力值",
+    "Switches user's Attack and Defense stats.":"交换使用者的攻击和防御基础能力值",
+    "+ 20 power for each of the user's stat boosts.":"每上升1级能力招式威力增加20点",
+    "100% chance to raise the user's Attack by 1.":"100%使使用者的攻击上升1级",
+    "Copies the target's current stat stages.":"复制对手的能力阶级变化",
+    "5 turns. Grounded: +Psychic power, priority-safe.":"5回合内站在地面上的宝可梦使用超能力招式威力为原来的1.5被，对他们使用的先制招式将会使用失败",
+    "Transfers the user's status ailment to the target.":"将使用者的负面状态转移给对手",
+    "Damages target based on Defense, not Sp. Def.":"计算伤害时按防守方的防御计算，不是特防",
+    "Random damage equal to 0.5x-1.5x user's level.":"伤害为0.5-1.5×使用者的等级",
+    "60 power +20 for each of the target's stat boosts.":"威力为60+20×目标的能力阶级上升总和",
+    "Power doubles if a foe is switching out.":"如果对手替换宝可梦，威力为原来的两倍",
+    "Forces the target to move last this turn.":"使目标在本回合最后行动",
+    "Protects allies from priority attacks this turn.":"保护同伴免受先制招式攻击",
+    "Raises the user's Sp. Atk, Sp. Def, Speed by 1.":"提升使用者的特攻特防速度各1级",
+    "Raises the user's Attack by 1 if hit during use.":"如果在使用招式时受到攻击，使用者的攻击上升1级",
+    "For 5 turns, heavy rain powers Water moves.":"5回合内，大雨增加水属性招式的威力",
+    "Charges, then hits foe(s) turn 2. High crit ratio.":"充能，第二回合攻击（所有）对手容易造成击中要害",
+    "Restores the item the user last used.":"回收使用者上一次使用的道具",
+    "For 5 turns, physical damage to allies is halved.":"5回合内，物理攻击对己方的伤害减半",
+    "User becomes the same type as the target.":"使用者变得和目标的属性相同",
+    "User cures its burn, poison, or paralysis.":"使用者能够治愈自身的灼伤中毒麻痹状态",
+    "10% chance to sleep foe(s). Meloetta transforms.":"10%使（所有）对手陷入睡眠状态梅洛耶塔能够变换形态",
+    "User sleeps 2 turns and restores HP and status.":"使用者睡眠两回合，回复所有的HP，治愈异常状态",
+    "Power doubles if an ally fainted last turn.":"如果上一回合有同伴倒下，招式威力翻倍",
+    "Max 102 power at maximum Happiness.":"当亲密值最高的时候达到最大威力102",
+    "Type varies based on the user's primary type.":"此招式的属性将变得和自己的第二属性相同",
+    "30% chance to flinch the foe(s).":"30%使(所有)对手畏缩",
+    "User replaces its Ability with the target's.":"使用者将自身的特性变得和目标一样",
+    "The user and the target trade Abilities.":"使用者和目标交换特性",
+    "Heals 50% HP. Flying-type removed 'til turn ends.":"回复50%最大HP，在回合结束前失去飞行属性",
+    "Power doubles if others used Round this turn.":"如果有其他宝可梦在这一回合使用了合唱，招式威力翻倍",
+    "50% chance to burn the target. Thaws user.":"50%使目标陷入灼伤状态能使使用者解除冰冻状态",
+    "For 5 turns, protects user's party from status.":"5回合内，保护己方所有宝可梦免受异常状态",
+    "For 5 turns, a sandstorm rages.":"5回合内，天气为沙暴天气",
+    "30% chance to burn the target. Thaws target.":"30%使目标陷入灼伤状态能使使用者解除冰冻状态",
+    "Lowers the target's Defense by 2.":"使目标的防御下降两级",
+    "Effect varies with terrain. (30% paralysis chance)":"效果随场地变化（默认30%麻痹几率）",
+    "40% chance to lower the target's Sp. Def by 2.":"40%使目标的特防下降两级",
+    "20% chance to lower the target's Sp. Def by 1.":"20%使目标的特防下降1级",
+    "OHKOs non-Ice targets. Fails if user's lower level.":"一击必杀非冰属性宝可梦如果使用者比目标等级低则使用招式失败",
+    "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.":"降低使用者的防御特防1级，提升使用者的攻击特攻速度各两级",
+    "User must take physical damage before moving.":"若受到对手物理攻击，就攻击目标造成伤害",
+    "Raises the user's Speed by 2 and Attack by 1.":"提升使用者的速度2级，攻击1级",
+    "User restores 1/2 its max HP; 2/3 in Sandstorm.":"使用者回复1/2最大HP，沙暴时回复2/3最大HP",
+    "The target's Ability becomes Simple.":"目标的特性变为单纯",
+    "Permanently copies the last move target used.":"抄袭目标最后使用的招式",
+    "Raises user's Defense by 1 on turn 1. Hits turn 2.":"第一回合提升1级防御，第二回合攻击",
+    "Charges, then hits turn 2. 30% flinch. High crit.":"第一回合充能第二回合攻击，容易击中要害",
+    "User and foe fly up turn 1. Damages on turn 2.":"使用者和对手第一回合一起上天，第二回合给对手造成伤害",
+    "Can hit Pokemon using Bounce, Fly, or Sky Drop.":"可以击中使用弹跳，飞空，自由落体的宝可梦",
+    "User must be asleep. Uses another known move.":"使用者必须处于睡眠状态使用一个已习得的招式",
+    "10% chance to poison adjacent Pokemon.":"10%使邻近的宝可梦中毒",
+    "Removes the target's Ground immunity.":"消除对手对地上属性的免疫力",
+    "Power doubles if target is paralyzed, and cures it.":"如果目标处于麻痹状态，威力翻倍，然后治愈其麻痹状态",
+    "40% chance to poison the target.":"40%使目标陷入中毒状态",
+    "100% chance to lower the foe(s) Sp. Atk by 1.":"100%使(所有)对手的特攻下降1级",
+    "User steals certain support moves to use itself.":"使用者窃取目标的有益招式化为己用",
+    "User must be asleep. 30% chance to flinch target.":"使用者必须处于睡眠状态30%使目标畏缩",
+    "Steals target's boosts before dealing damage.":"窃取对手的能力阶级变化",
+    "Swaps Speed stat with target.":"和目标交换速度",
+    "Protects from moves. Contact: loses 1/8 max HP.":"保护自己免受招式影响，接触到的对手会损失1/8最大HP",
+    "Changes the target's type to Water.":"将目标的属性变为水属性",
+    "Charges turn 1. Hits turn 2. No charge in sunlight.":"第一回合充能第二回合攻击，在大晴天不用充能",
+    "Always does 20 HP of damage.":"必定能造成20点伤害",
+    "The target is cured of its burn.":"目标的灼伤状态会被治愈",
+    "Hurts grounded foes on switch-in. Max 3 layers.":"伤害交换出的站在地面上的对手，最多累积三次撒菱",
+    "More power with more uses of Stockpile.":"能量积蓄得越多，威力越大",
+    "Lowers the PP of the target's last move by 4.":"使目标最后使用的招式PP减少4点",
+    "Target's foes' moves are redirected to it this turn.":"所有对手使用的作用范围为单体选择的招式都会攻向使用者",
+    "Hurts foes on switch-in. Factors Rock weakness.":"伤害交换出的站在地面上的对手，计算岩石属性相克",
+    "10% chance to raise the user's Defense by 1.":"10%使使用者的防御上升1级",
+    "Lowers Speed of grounded foes by 1 on switch-in.":"降低对手替换出的站在地面上的宝可梦的速度1级",
+    "Raises user's Defense, Sp. Def by 1. Max 3 uses.":"提升使用者的防御和特防各1级最多累积三次",
+    "100% chance to paralyze the target.":"100%使目标陷入麻痹状态",
+    "Power doubles if the user's last move failed.":"如果使用者的上一次攻击使用失败，这此招式威力翻倍",
+    "User heals HP=target's Atk stat. Lowers Atk by 1.":"使用者回复和对手初始攻击等同的HP，降低对手的攻击1级",
+    "Lowers the foe(s) Speed by 2.":"降低（所有）对手的速度2级",
+    "Usually goes first. Fails if target is not attacking.":"先制攻击，如果目标不使用攻击招式的话则使用失败",
+    "For 5 turns, intense sunlight powers Fire moves.":"5回合内，阳光增加了火属性招式的威力",
+    "Lowers the user's Attack and Defense by 1.":"降低使用者的攻击和防御各1级",
+    "Raises the target's Attack by 2 and confuses it.":"提升目标的攻击两级且使其混乱",
+    "Heals the user based on uses of Stockpile.":"回复量取决于蓄力的次数",
+    "User switches its held item with the target's.":"使用者和目标交换道具",
+    "Raises the user's Attack by 2.":"使使用者的攻击提升两级",
+    "Hits adjacent Pokemon sharing the user's type.":"攻击和使用者有相同属性的宝可梦",
+    "Raises the user's Sp. Atk by 3.":"提升使用者的特攻3级",
+    "For 4 turns, allies' Speed is doubled.":"四回合内同伴的速度翻倍",
+    "Type varies based on the held Drive.":"属性取决于所携带的卡带",
+    "Confuses adjacent Pokemon.":"使周围的宝可梦陷入混乱状态",
+    "For 3 turns, target floats but moves can't miss it.":"三回合内，目标漂浮起来，但招式一定会命中它",
+    "Grounds adjacent foes. First hit neutral on Flying.":"击落周围的宝可梦，第一击可以击中飞行属性宝可梦",
+    "Hits adjacent foes. Prevents them from switching.":"攻击周围的对手阻止他们替换下场",
+    "For 2 turns, the target cannot use sound moves.":"2回合内目标无法使用声音的招式",
+    "10% chance to paralyze. 10% chance to flinch.":"10%使目标麻痹，10%使目标畏缩",
+    "10% chance to paralyze the target.":"10%使目标麻痹",
+    "Lowers the target's Attack and Defense by 1.":"使目标的攻击和防御下降1级",
+    "Inverts the target's stat stages.":"将目标的全部能力阶级数值变为其相反数",
+    "Target can't select the same move twice in a row.":"目标不能连续使用同一招式",
+    "Poisons grounded foes on switch-in. Max 2 layers.":"使替换上场的对手中毒，最多累积2次",
+    "Lowers the target's Speed by 1 and poisons it.":"使目标速度下降1级并且中毒",
+    "Copies target's stats, moves, types, and Ability.":"复制对手的能力阶级变化，招式，属性，特性",
+    "20% chance to paralyze or burn or freeze target.":"20%使目标麻痹灼伤冰冻",
+    "Adds Ghost to the target's type(s).":"使目标具有幽灵属性",
+    "Hits 3 times. Each hit can miss, but power rises.":"连续攻击三次每一次都可以被回避，但击中的话威力会上升",
+    "More power the fewer PP this move has left.":"招式PP越少威力越大",
+    "Hits 2 times. Each hit has 20% chance to poison.":"攻击两次，每一次都有20%的几率使对手中毒",
+    "20% chance to flinch the foe(s).":"20%使(所有)对手畏缩",
+    "User switches out after damaging the target.":"使用者在攻击目标后会替换后备宝可梦上场",
+    "Lasts 3 turns. Active Pokemon cannot fall asleep.":"持续3回合，在场上的宝可梦不会陷入睡眠状态",
+    "Lowers the user's Defense, Sp. Def, Speed by 1.":"降低使用者的防御特防和速度各1级",
+    "Power doubles if the target is poisoned.":"如果对手已经中毒，招式威力翻倍",
+    "This move does not check accuracy. Goes last.":"招式一定会命中，最后行动",
+    "Has 33% recoil. 10% chance to paralyze target.":"有33%的反弹伤害，10%使目标陷入麻痹状态",
+    "Power doubles if target is asleep, and wakes it.":"如果目标处于睡眠状态，威力翻倍，然后拍醒它",
+    "Use with Grass or Fire Pledge for added effect.":"和草或火之誓言同时使用会有特效",
+    "For 5 turns, Fire-type attacks have 1/3 power.":"3回合内，火属性攻击威力为原来的1/3",
+    "Power doubles and type varies in each weather.":"有天气时招式威力会翻倍，属性会变化",
+    "Protects allies from multi-target moves this turn.":"保护所有同伴免受群体攻击的影响",
+    "Burns the target.":"使目标灼伤",
+    "Next turn, 50% of the user's max HP is restored.":"下一回合使用者回复50%最大HP",
+    "For 5 turns, all Defense and Sp. Def stats switch.":"5回合内所有防御和特防基础值交换",
+    "Raises the user's Attack and Sp. Atk by 1.":"提升使用者的攻击特攻各1级",
+    "The target's Ability becomes Insomnia.":"目标的特性变为不眠",
+    "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
+    "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失50%最大HP，攻击周围全体宝可梦",
+    "Physical if user's Atk > Sp. Atk. Ignores Abilities.":"使用者攻击数值高于特攻时，变为物理招式无视目标的特性",
+    "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.":"使用者全能力提升1级",
+    "Ends the effects of Terrain.":"清除场上的场地",
+    "100% chance to lower the target's Sp. Def by 1.":"降低目标1级特防",
+    "Morpeko: Electric; Hangry: Dark; 100% +1 Spe.":"提升1级速度，在满腹花纹时会变成电属性招式，空腹花纹时则为恶属性招式",
+    "Summons Reflect.":"使用后己方处于反射壁状态",
+    "Double damage against Dynamax/Gigantamax.":"对极巨化/超极巨化状态下的宝可梦伤害翻倍",
+    "Uses Def instead of Atk in damage calculation.":"以使用者的防御而不是攻击来计算伤害",
+    "Double power if the user moves first.":"如果使用者先攻击，威力翻倍",
+    "100% chance to lower adjacent foes' Atk by 1.":"降低对手全体1级攻击",
+    "100% chance lower adjacent Pkmn Speed by 1.":"令目标的速度降低1级",
+    "100% chance to paralyze the foe.":"令对手麻痹",
+    "+1 SpD, user's Electric move next turn 2x power.":"提升1级特防，下一回合电属性招式威力2倍",
+    "User loses 33% max HP. Raises all stats by 1.":"损失33%最大HP，提升所有能力1级",
+    "Resets all of the target's stat stages to 0.":"使用者所有能力阶级归零",
+    "Raises user's Attack, Defense, accuracy by 1.":"攻击，防御，命中提升1级",
+    "Nullifies the foe(s) Ability if the foe(s) move first.":"如果目标在该回合已使用过招式，使目标陷入无特性状态",
+    "Switches sides of field effects":"交换双方场地的状态效果",
+    "Curses if Ghost, else -1 Spe, +1 Atk, +1 Def.":"非幽灵属性使用者则速度降低1级，攻击防御提升1级，否则减少1/2最大HP，使目标进入诅咒状态",
+    "Darkrai: Causes the foe(s) to fall asleep.":"使对方全体陷入睡眠状态，仅在使用者为达克莱伊时奏效",
+    "Raises the target's Atk and Sp. Atk by 2.":"提升使用者攻击和特攻2级",
+    "Hits twice. 30% chance to flinch.":"攻击两次，每次30%几率令目标畏缩",
+    "Singles: Hits twice. Doubles: Hits each once.":"单打对战攻击两次，双打对战对两只宝可梦分别攻击一次",
+    "Deals 40 HP of damage to the target.":"造成40点固定伤害",
+    "Hits adjacent Pokemon. Double damage on Dig.":"攻击周围全体宝可梦，对挖洞状态的目标伤害翻倍",
+    "Target repeats its last move for its next 3 turns.":"目标接下来的 3 回合，只能使用其最后使用的招式",
+    "User survives attacks this turn with at least 1 HP.":"本回合结束时，自身保留至少1点HP",
+    "Summons Light Screen.":"使用后己方处于光墙状态",
+    "Causes the target to fall asleep.":"使目标陷入睡眠状态",
+    "5 turns. Grounded: +Grass power, +1/16 max HP.":"使场地变成青草场地，持续5回合",
+    "Power doubles during Bounce, Fly, and Sky Drop.":"如果目标处于飞翔状态，威力翻倍",
+    "Raises the user's and ally's Attack by 1.":"使用者和同伴的攻击提升1级",
+    "Hoopa-U: Lowers user's Def by 1; breaks protect.":"使用者自身防御降低1级，无视守住状态，仅在使用者为解放胡帕时奏效",
+    "Traps/grounds user; heals 1/16 max HP per turn.":"使自己进入扎根状态，无法交换每回合结束时回复1/16最大HP",
+    "Prevents the user and the target from switching out.":"使用者和目标都无法交换",
+    "Protects from attacks. Contact: lowers Atk by 1.":"完全抵挡对手的攻击。如果对手使用了接触类招式，攻击降低1级",
+    "Until the end of the next turn, user's moves crit.":"下回合结束前，招式必定会击中要害",
+    "Heals the user (and allies) by 1/4 amount.":"回复使用者和同伴1/4最大HP",
+    "Changes the target's type to Psychic.":"使用者自身属性变为超能",
+    "Does many things turn 1. Can't move turn 2.":"使用后下回合不能行动",
+    "For 5 turns, the user has immunity to Ground.":"5回合内使自身进入电磁飘浮状态，免疫地面属性招式",
+    "Damage doubles if the target used Minimize.":"对变小的目标伤害翻倍",
+    "User: +1 Speed. BP scales with base move's BP.":"提高我方全体的速度，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -1 Sp.Def. BP scales with base move's BP.":"降低对手全体的特防，根据原有招式的威力决定极巨招式的威力",
+    "Sets Sun. BP scales with base move's BP.":"使天气转为大晴天，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -1 Sp.Atk. BP scales with base move's BP.":"降低对手全体的特攻，根据原有招式的威力决定极巨招式的威力",
+    "Sets Rain. BP scales with base move's BP.":"使天气转为下雨，根据原有招式的威力决定极巨招式的威力",
+    "Prevents all moves from affecting the user this turn.":"挡下包括极巨招式在内的所有招式",
+    "Sets Hail. BP scales with base move's BP.":"使天气转为冰雹，根据原有招式的威力决定极巨招式的威力",
+    "User: +1 Attack. BP scales with base move's BP.":"提高我方全体的攻击，根据原有招式的威力决定极巨招式的威力",
+    "Sets Electric Terrain. BP scales with base move's BP.":"将场地变成电气场地，根据原有招式的威力决定极巨招式的威力",
+    "Sets Psychic Terrain. BP scales with base move's BP.":"将场地变成精神场地，根据原有招式的威力决定极巨招式的威力",
+    "User: +1 Sp.Atk. BP scales with base move's BP.":"提高我方全体的特攻，根据原有招式的威力决定极巨招式的威力",
+    "Sets Grassy Terrain. BP scales with base move's BP.":"将场地变成青草场地，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -1 Defense. BP scales with base move's BP.":"降低对手全体的防御，根据原有招式的威力决定极巨招式的威力",
+    "User: +1 Sp.Def. BP scales with base move's BP.":"提高我方全体的特防，根据原有招式的威力决定极巨招式的威力",
+    "Sets Sandstorm. BP scales with base move's BP.":"使天气转为沙暴，根据原有招式的威力决定极巨招式的威力",
+    "Sets Misty Terrain. BP scales with base move's BP.":"将场地变成薄雾场地，根据原有招式的威力决定极巨招式的威力",
+    "User: +1 Defense. BP scales with base move's BP.":"提高我方全体的防御，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -1 Speed. BP scales with base move's BP.":"降低对手全体的速度，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -1 Attack. BP scales with base move's BP.":"降低对手全体的攻击，根据原有招式的威力决定极巨招式的威力",
+    "Raises all stats by 1 (not acc/eva). Traps user.":"所有能力提升1级，目标无法交换",
+    "Protects from attacks. Contact: lowers Def by 2.":"抵挡对手的攻击。如果对手使用了接触类招式，防御降低2级",
+    "Foe can't switch. Lowers Def and SpD every turn.":"目标无法交换，每回合降低防御和特防",
+    "Max happiness: 102 power. Can't miss.":"最大亲密度对应威力102，不会落空",
+    "40, 80, 120 power, or heals target 1/4 max HP.":"威力随机为40，80，120或者回复目标1/4最大HP",
+    "Cures target's status; heals user 1/2 max HP if so.":"治愈目标的异常状态。如果成功治愈，使用者回复1/2最大HP",
+    "Free user from hazards/bind/Leech Seed; +1 Spe.":"提升1级速度，移除己方场地上的撒菱、隐形岩、毒菱和黏黏网；摆脱自身束缚，寄生种子状态",
+    "Raises Atk/Sp. Atk of grounded Grass types by 1.":"所有的地面上的草属性宝可梦的攻击，特攻提升1级",
+    "Summons Leech Seed.":"使用后对方处于寄生种子状态",
+    "100% chance to burn the foe.":"令对手陷入灼伤状态",
+    "30% chance to burn the target.":"30%几率使目标陷入灼伤状态",
+    "User loses 1/4 of its max HP.":"每次攻击自身损失1/4最大HP",
+    "Consumes berry and raises the user's Def. by 2.":"食用树果并且提升使用者防御2级",
+    "User takes 1/4 its max HP to put in a substitute.":"使用1/4最大HP制造一个替身",
+    "Causes the target to become confused.":"使目标混乱",
+    "Hits adjacent Pokemon. Double damage on Dive.":"攻击周围全体宝可梦，对潜水状态的目标伤害翻倍",
+    "Lowers the foe(s) evasiveness by 2.":"降低目标闪避率2级",
+    "Target gets -1 Spe and becomes weaker to Fire.":"目标速度降低1级并且增加火属性弱点",
+    "Target can't use status moves its next 3 turns.":"使目标接下来的3回合无法使用变化招式",
+    "All active Pokemon consume held Berries.":"在场上的宝可梦都会吃掉自己携带的树果",
+    "User switches out.":"使用者逃离战斗",
+    "30% chance to paralyze. Can't miss in rain.":"30%几率使目标麻痹，雨天下不会落空",
+    "Badly poisons the target. Poison types can't miss.":"使目标陷入剧毒状态，毒属性宝可梦使用不会落空",
+    "Goes last. For 5 turns, turn order is reversed.":"优先度最低，接下来5回合中，速度慢的宝可梦将比速度快的宝可梦先使用招式",
+    "Lowers Atk/Sp. Atk/Speed of poisoned foes by 1.":"令中毒的目标的攻击，特攻，速度降低1级",
+    "Usually goes first. Hits 2-5 times in one turn.":"先制攻击，攻击2-5次",
+    "Nearly always goes first. Always crits.":"先制攻击，必定击中对方的要害",
+    "Foes: SLP/PSN/PAR. BP scales with base move.":"使对手全体陷入中毒、麻痹或睡眠其中一种异常状态",
+    "Traps/damages foes. BP scales w/ base move.":"令对手无法交换并持续受到伤害，根据原有招式的威力决定极巨招式的威力",
+    "User side: Focus Energy. BP scales w/ base move.":"自己进入易中要害状态，根据原有招式的威力决定极巨招式的威力",
+    "Infatuates opponents. BP scales with base move.":"让对方所有性别不同的宝可梦陷入着迷状态，根据原有招式的威力决定极巨招式的威力",
+    "Foe: Lowers PP of last move. BP scales w/ base move.":"减少对手最后使用的招式的PP，根据原有招式的威力决定极巨招式的威力",
+    "Heals user and allies. BP scales with base move.":"回复我方所有宝可梦的HP，根据原有招式的威力决定极巨招式的威力",
+    "Foes: -2 Speed. BP scales with base move's BP.":"大幅降低对手的速度，根据原有招式的威力决定极巨招式的威力",
+    "Confuses foes. BP scales with base move's BP.":"使对手全体陷入混乱，根据原有招式的威力决定极巨招式的威力",
+    "Summons Gravity. BP scales with base move.":"使用后场地处于重力状态，根据原有招式的威力决定极巨招式的威力",
+    "Poisons opponents. BP scales with base move.":"使对手所有宝可梦陷入中毒状态，根据原有招式的威力决定极巨招式的威力",
+    "Restores user-side berries. BP scales w/ base move.":"获得使用过的树果，根据原有招式的威力决定极巨招式的威力",
+    "Summons Aurora Veil. BP scales w/ base move.":"使己方场地进入极光幕，根据原有招式的威力决定极巨招式的威力",
+    "Confuses opponents. BP scales with base move.":"让对手陷入混乱状态，根据原有招式的威力决定极巨招式的威力",
+    "Afflicts foes with Yawn. BP scales w/ base move.":"使目标陷入瞌睡状态，根据原有招式的威力决定极巨招式的威力",
+    "Sets Steel entry hazard. BP scales w/ base move.":"对方场地处于超极巨钢铁阵法状态，交换上场损失1/8最大HP×钢属性相性",
+    "Sets Stealth Rock. BP scales w/ base move's BP.":"使对方场地处于隐形岩状态，根据原有招式的威力决定极巨招式的威力",
+    "Foe(s): Par/Psn. BP scales with base move's BP.":"让对手所有宝可梦陷入中毒或麻痹状态，根据原有招式的威力决定极巨招式的威力",
+    "Foe(s): -1 evasion. BP scales with base move's BP.":"降低对手的闪避率1级，根据原有招式的威力决定极巨招式的威力",
+    "Traps foe(s). BP scales with base move's BP.":"使对方全体陷入无法逃跑状态，根据原有招式的威力决定极巨招式的威力",
+    "Damages foes for 4 turns. BP scales w/ base move.":"在4回合内持续对对方的宝可梦造成伤害，根据原有招式的威力决定极巨招式的威力",
+    "Paralyzes foe(s). BP scales with base move's BP.":"使对方全体陷入麻痹状态，根据原有招式的威力决定极巨招式的威力",
+    "Clears field. BP scales with base move's BP.":"消除反射壁、光墙、撒菱、超极巨钢铁阵法和场地型状态的效果，根据原有招式的威力决定极巨招式的威力",
+    "Applies Torment to foes. BP scales with base move.":"",
+    "Fails when used.":"与训练师的对战中使用会失败",
+    "Frees user from hazards, binding, Leech Seed.":"移除己方场地上的撒菱、隐形岩、毒菱和黏黏网；摆脱自身束缚，寄生种子状态",
+    "Protects from attacks. Contact: lowers Atk by 2.":"抵挡对手的攻击。如果对手使用了接触类招式，攻击降低2级",
+    "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.":"因接触类招式被击倒时，发动该攻击的宝可梦损失1/4最大HP",
+    "This Pokemon's Normal-type moves become Flying type and have 1.2x power.":"一般属性招式变为飞行属性招式，威力提升20%",
+    "While this Pokemon is active, the effects of weather conditions are disabled.":"该宝可梦在场时，所有天气的影响都会消失",
+    "This Pokemon's attacks have 1.3x power if it is the last to move in a turn.":"回合最后行动的话威力提升30%",
+    "If this Pokemon (not its substitute) takes a critical hit, its Attack is raised 12 stages.":"被击中要害的话攻击提升十二级，替身状态下不会发动",
+    "On switch-in, this Pokemon shudders if any foe has a supereffective or OHKO move.":"登场时可以预知对方的效果绝佳和一击必杀招式",
+    "Prevents adjacent foes from choosing to switch unless they are airborne.":"处于地面上的对方宝可梦进入无法逃走状态",
+    "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment.":"己方宝可梦不会受到迷人、定身法、再来一次、回复封锁、挑衅和无理取闹的影响",
+    "While this Pokemon is active, the Dark Aura and Fairy Aura power modifier is 0.75x.":"反转气场类特性，令其对恶属性和妖精属性的加成变为降低25%",
+    "Causes sleeping adjacent foes to lose 1/8 of their max HP at the end of each turn.":"回合结束时对方处于睡眠状态的宝可梦损失1/8最大HP",
+    "This Pokemon's allies have the power of their special attacks multiplied by 1.3.":"我方场上所有宝可梦使用特殊招式的威力增加30%",
+    "This Pokemon cannot be struck by a critical hit.":"不会被击中要害",
+    "After KOing a Pokemon: becomes Ash-Greninja, Water Shuriken: 20 power, hits 3x.":"甲贺忍蛙击倒对方一只宝可梦之后变身为小智版甲贺忍蛙，同时飞水手里剑威力变为20，固定命中三次",
+    "This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.":"击倒对方一只宝可梦之后最高一项能力提升一级",
+    "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.":"HP低于50%时特攻提升一级",
+    "Prevents other Pokemon from lowering this Pokemon's Defense stat stage.":"防御不会下降",
+    "Makes user immune to ballistic moves (Shadow Ball, Sludge Bomb, Focus Blast, etc).":"免疫球和弹类招式",
+    "If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect.":"食用树果触发效果之后额外回复1/3最大HP",
+    "If Sunny Day is active, this Pokemon's Speed is doubled.":"大晴天下速度翻倍",
+    "Prevents other Pokemon from lowering this Pokemon's stat stages.":"能力阶级不会被弱化",
+    "This Pokemon's type changes to the type of a move it's hit by, unless it has the type.":"受到伤害时若招式属性和宝可梦当前属性不同，则宝可梦在伤害结算后变为该属性",
+    "This Pokemon cannot be statused, and is considered to be asleep.":"不会陷入任何异常状态，始终视为处于睡眠状态",
+    "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.":"能力阶级被降低时特攻提升两级",
+    "This Pokemon's moves have their accuracy multiplied by 1.3.":"命中率提升30%",
+    "If this Pokemon has a stat stage raised it is lowered instead, and vice versa.":"能力阶级的下降变为上升，上升变为下降",
+    "This Pokemon can poison or badly poison other Pokemon regardless of their typing.":"无论对方什么属性都可以使其进入中毒或剧毒状态",
+    "If this Pokemon is hit by an attack, there is a 30% chance that move gets disabled.":"受到伤害时30%概率令对方进入定身法状态",
+    "30% chance of infatuating Pokemon of the opposite gender if they make contact.":"受到接触类伤害时30%概率令对方进入着迷状态",
+    "After another Pokemon uses a dance move, this Pokemon uses the same move.":"有其他宝可梦使用跳舞招式时，立即使用相同的招式",
+    "While this Pokemon is active, a Dark move used by any Pokemon has 1.33x power.":"场上所有恶属性招式威力提升33%",
+    "While this Pokemon is active, allies are protected from opposing priority moves.":"对方的可以影响到自己或己方宝可梦的先制招式无效",
+    "While this Pokemon has 1/2 or less of its max HP, its Attack and Sp. Atk are halved.":"HP低于50%时攻击和特攻减半",
+    "This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe.":"能力阶级被降低时攻击提升两级",
+    "On switch-in, strong winds begin until this Ability is not active in battle.":"登场时天气变为乱流，直到该宝可梦离场，除非天气被终结之地和始源之海更改",
+    "On switch-in, extremely harsh sunlight begins until this Ability is not active in battle.":"登场时天气变为大日照，直到该宝可梦离场，除非天气被德尔塔气流和始源之海更改",
+    "If this Pokemon is a Mimikyu, the first hit it takes in battle deals 0 neutral damage.":"谜拟Q受到的第一次伤害视为0",
+    "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.":"登场时，对方防御小于特防时，自身攻击提升一级；否则特攻提升一级",
+    "On switch-in, this Pokemon summons Rain Dance.":"登场时天气变为下雨",
+    "On switch-in, this Pokemon summons Sunny Day.":"登场时天气变为大晴天",
+    "This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun.":"免疫水属性招式伤害，受到水属性招式攻击时回复1/4最大HP；下雨天气下每回合回复1/8最大HP；受到火属性招式伤害增加25%；大晴天天气下每回合损失1/8最大HP",
+    "This Pokemon's sleep counter drops by 2 instead of 1.":"陷入睡眠的持续回合变为原来的一半",
+    "30% chance of poison/paralysis/sleep on others making contact with this Pokemon.":"受到接触类伤害时30%概率令对方陷入中毒/麻痹/睡眠状态",
+    "On switch-in, this Pokemon summons Electric Terrain.":"登场时释放电气场地",
+    "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.":"HP低于50%时自身退场",
+    "While this Pokemon is active, a Fairy move used by any Pokemon has 1.33x power.":"场上所有妖精属性招式威力提升33%",
+    "This Pokemon receives 3/4 damage from supereffective attacks.":"受到效果绝佳伤害时伤害降低25%",
+    "30% chance a Pokemon making contact with this Pokemon will be burned.":"受到接触类伤害时30%概率陷入灼伤状态",
+    "While this Pokemon is burned, its special attacks have 1.5x power.":"陷入灼伤状态时特攻提升50%",
+    "This Pokemon's Fire attacks do 1.5x damage if hit by one Fire move; Fire immunity.":"免疫火属性招式伤害，受到火属性招式攻击时火属性招式威力提升50%",
+    "If user is Cherrim and Sunny Day is active, it and allies' Attack and Sp. Def are 1.5x.":"在大晴天和大日照天气时己方所有宝可梦攻击和特防提升50%，樱花儿的形态会改变",
+    "This side's Grass types can't have stats lowered or status inflicted by other Pokemon.":"己方所有宝可梦草属性能力阶级不会被降低且不会进入异常状态",
+    "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.":"受到的接触类伤害减半，受到火属性招式伤害翻倍",
+    "Castform's type changes to the current weather condition's type, except Sandstorm.":"漂浮泡泡的形态和属性根据天气而变化",
+    "On switch-in, this Pokemon is alerted to the foes' move with the highest power.":"登场时可以预知对方威力最高的招式",
+    "This Pokemon's allies receive 3/4 damage from other Pokemon's attacks.":"己方其他宝可梦受到的伤害降低25%",
+    "On switch-in, this Pokemon identifies the held items of all opposing Pokemon.":"登场时可以预知对方所有宝可梦的道具",
+    "This Pokemon's Defense is doubled.":"防御翻倍",
+    "If this Pokemon is at full HP, its Flying-type moves have their priority increased by 1.":"HP全满时飞行属性招式优先度+1",
+    "This Pokemon's Normal-type moves become Electric type and have 1.2x power.":"一般属性招式变为电属性招式，威力提升20%",
+    "When this Pokemon has 1/2 or less of its maximum HP, it uses certain Berries early.":"HP低于50%时会提前使用特定的树果",
+    "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.":"受到接触伤害时对方速度降低一级",
+    "If Grassy Terrain is active, this Pokemon's Defense is multiplied by 1.5.":"青草场地下防御提升50%",
+    "On switch-in, this Pokemon summons Grassy Terrain.":"登场时释放青草场地",
+    "If this Pokemon is statused, its Attack is 1.5x; ignores burn halving physical damage.":"陷入异常状态时攻击提升50%，无视灼伤状态减半物理招式伤害效果",
+    "If last item used is a Berry, 50% chance to restore it each end of turn. 100% in Sun.":"使用树果后每回合50%概率回收该树果，大晴天和大日照天气下则必定回收",
+    "30% chance of curing an adjacent ally's status at the end of each turn.":"回合结束时30%概率回复同伴的异常状态",
+    "The power of Fire-type attacks against this Pokemon is halved; burn damage halved.":"火属性招式和灼伤伤害减半",
+    "This Pokemon's weight is doubled.":"体重翻倍",
+    "This Pokemon's Attack is doubled.":"攻击翻倍",
+    "This Pokemon's Attack is 1.5x and accuracy of its physical attacks is 0.8x.":"以物理招式的命中率降低20%为代价提升50%攻击",
+    "This Pokemon has its status cured at the end of each turn if Rain Dance is active.":"下雨和大雨天气下回合结束时恢复异常状态",
+    "Prevents other Pokemon from lowering this Pokemon's Attack stat stage.":"攻击能力不会被对方降低",
+    "If Hail is active, this Pokemon heals 1/16 of its max HP each turn; immunity to Hail.":"冰雹天气下每回合回复1/16最大HP，免疫冰雹伤害",
+    "This Pokemon appears as the last Pokemon in the party until it takes direct damage.":"受到伤害前始终显示为队伍中最后一个宝可梦的形象",
+    "This Pokemon cannot be poisoned. Gaining this Ability while poisoned cures it.":"不会陷入中毒和剧毒状态，获得状态时恢复中毒和剧毒状态",
+    "On switch-in, this Pokemon Transforms into the opposing Pokemon that is facing it.":"登场时以对应宝可梦为目标进入变身状态",
+    "Moves ignore substitutes and foe's Reflect/Light Screen/Safeguard/Mist/Aurora Veil.":"自身使用招式时无视对方的替身/反射壁/光墙/神秘守护/白雾/极光幕",
+    "If this Pokemon is KOed with a move, that move's user loses an equal amount of HP.":"被击倒时对方损失同样数量的HP",
+    "This Pokemon cannot fall asleep. Gaining this Ability while asleep cures it.":"不会陷入睡眠状态，获得这个特性时恢复睡眠状态",
+    "On switch-in, this Pokemon lowers the Attack of adjacent opponents by 1 stage.":"登场时对方全体宝可梦攻击降低一级",
+    "Pokemon making contact with this Pokemon lose 1/8 of their max HP.":"受到接触伤害时对方损失1/8最大HP",
+    "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.":"拳类招式威力提升20%",
+    "This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.":"受到恶属性招式攻击时攻击提升一级",
+    "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.":"命中率不会被下降，无视对方闪避率等级",
+    "This Pokemon's held item has no effect, except Macho Brace. Fling cannot be used.":"携带的道具无效，超级石、Z纯晶和影响基础点数、经验值和亲密度的携带物品除外，无法使用投掷",
+    "If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.":"大晴天和大日照天气下不会陷入异常状态，使用睡觉会无效",
+    "This Pokemon is immune to Ground; Gravity/Ingrain/Smack Down/Iron Ball nullify it.":"免疫地面属性伤害，但受到重力、扎根、击落和黑色铁球影响时仍会受到伤害",
+    "This Pokemon's weight is halved.":"体重减半",
+    "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity.":"自动成为对方电属性招式的攻击目标并提升一级特攻；免疫电属性攻击",
+    "This Pokemon cannot be paralyzed. Gaining this Ability while paralyzed cures it.":"不会陷入麻痹状态，获得状态时恢复麻痹状态",
+    "This Pokemon damages those draining HP from it for as much as they would heal.":"受到吸取HP的招式伤害时，对方本应吸取的体力会转为受到同等的伤害",
+    "This Pokemon's sound-based moves become Water type.":"声音的招式属性均变为水属性",
+    "This Pokemon's attacks do not make contact with the target.":"所有招式均视为非接触类招式",
+    "This Pokemon blocks certain status moves and bounces them back to the user.":"将对方以自身为目标的部分变化类招式无效化并反弹给招式的使用者",
+    "This Pokemon can only be damaged by direct attacks.":"免疫除攻击招式以外的一切造成的伤害",
+    "If this Pokemon has no item, it steals the item off a Pokemon it hits with an attack.":"造成伤害时，如果没有携带道具则获得对方道具",
+    "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.":"不会陷入冰冻状态，获得特性时恢复冰冻状态",
+    "Prevents adjacent Steel-type foes from choosing to switch.":"对方的钢属性宝可梦不能交换",
+    "If this Pokemon is statused, its Defense is 1.5x.":"异常状态下防御增加50%",
+    "This Pokemon's pulse moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.":"波动类和波导类招式威力提升50%，治愈波动回复量上升为3/4最大HP",
+    "This Pokemon's attacks are critical hits if the target is poisoned.":"此特性的宝可梦攻击处于中毒或剧毒状态的宝可梦必定会击中要害",
+    "On switch-in, this Pokemon summons Misty Terrain.":"登场时释放薄雾场地",
+    "This Pokemon's moves and their effects ignore the Abilities of other Pokemon.":"招式无视对方特性",
+    "This Pokemon's Speed is raised 1 stage if hit by an Electric move; Electric immunity.":"受到电属性招式攻击时速度提升一级；免疫电属性招式伤害",
+    "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.":"每击倒对方一只宝可梦攻击提升一级",
+    "If this Pokemon is at full HP, damage taken from attacks is halved.":"HP全满时受到的伤害减半",
+    "If this Pokemon is an Arceus, its type changes to match its held Plate or Z-Crystal.":"阿尔宙斯的属性随着它携带的石板或Z纯晶改变",
+    "Pokemon making contact with this Pokemon have their Ability changed to Mummy.":"受到接触类伤害时对方特性变为木乃伊",
+    "This Pokemon has its major status condition cured when it switches out.":"退场时恢复自身的异常状态",
+    "Every move used by or against this Pokemon will always hit.":"自身使用和以自身为目标的招式必定命中",
+    "This Pokemon's moves are changed to be Normal type and have 1.2x power.":"全部招式变为一般属性招式，威力提升20%",
+    "This Pokemon is immune to powder moves and damage from Sandstorm or Hail.":"免疫沙暴和冰雹天气带来的影响，对粉末类招式免疫",
+    "This Pokemon's damaging moves hit twice. The second hit has its damage quartered.":"攻击两次；第二次攻击伤害变为第一次的1/4",
+    "If this Pokemon has no item, it finds one used by an adjacent Pokemon this turn.":"回合结束时，若没有携带道具则获得本回合其他宝可梦使用或投掷过的道具",
+    "If this Pokemon has no item, it steals the item off a Pokemon making contact with it.":"受到接触伤害时，若没有携带道具则获得对方道具",
+    "This Pokemon's Normal-type moves become Fairy type and have 1.2x power.":"一般属性招式变为妖精属性招式，威力提升20%",
+    "This Pokemon is healed by 1/8 of its max HP each turn when poisoned; no HP loss.":"处于中毒或剧毒状态时不会损失HP，每回合回复1/8最大HP",
+    "30% chance a Pokemon making contact with this Pokemon will be poisoned.":"受到接触类伤害时30%令对方陷入中毒状态",
+    "This Pokemon's contact moves have a 30% chance of poisoning.":"接触类招式造成伤害时30%令对方陷入中毒状态",
+    "If Zygarde 10%/50%, changes to Complete if at 1/2 max HP or less at end of turn.":"基格尔德10%形态或50%的HP低于50%时在回合结束会变为完全体形态",
+    "This Pokemon copies the Ability of an ally that faints.":"同伴被击倒后自身特性变为与之相同",
+    "This Pokemon's Status moves have priority raised by 1, but Dark types are immune.":"变化招式的优先度+1，但对恶属性宝可梦无效",
+    "If this Pokemon is the target of a foe's move, that move loses one additional PP.":"对方以自身为目标的招式额外消耗1PP",
+    "On switch-in, heavy rain begins until this Ability is not active in battle.":"登场时天气变为大雨，直到该宝可梦离场，除非天气被德尔塔气流和终结之地更改",
+    "This Pokemon's type changes to match the type of the move it is about to use.":"自身属性变为即将使用的招式的属性",
+    "On switch-in, this Pokemon summons Psychic Terrain.":"登场时释放精神场地",
+    "If this Pokemon is statused, its Speed is 1.5x; ignores Speed drop from paralysis.":"异常状态下速度增加50%，无视麻痹带来的速度降低影响",
+    "If Rain Dance is active, this Pokemon heals 1/16 of its max HP each turn.":"下雨天气下每回合回复1/16最大HP",
+    "This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.":"使用具有反作用力伤害的招式时威力提升20%，挣扎除外",
+    "This Pokemon's Normal-type moves become Ice type and have 1.2x power.":"一般属性招式变为冰属性招式，威力提升20%",
+    "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.":"下场时回复1/3最大HP",
+    "This Pokemon's attacks do 1.25x on same gender targets; 0.75x on opposite gender.":"对方与自身性别相同时威力提升25%，性别不同时下降25%",
+    "If this Pokemon is a Silvally, its type changes to match its held Memory.":"银伴战兽的属性随着它携带的存储碟改变",
+    "This Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage.":"不会受到自身招式的反作用力伤害，挣扎、飞踢和飞膝踢除外；生命宝珠的副作用不受影响",
+    "This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm; immunity to it.":"沙暴天气下地面/岩石/钢属性招式威力提升30%；免疫沙暴伤害",
+    "If Sandstorm is active, this Pokemon's Speed is doubled; immunity to Sandstorm.":"沙暴天气下速度翻倍；免疫沙暴伤害",
+    "On switch-in, this Pokemon summons Sandstorm.":"登场时天气变为沙暴",
+    "If Sandstorm is active, this Pokemon's evasiveness is 1.25x; immunity to Sandstorm.":"沙暴天气下闪避率增加25%；免疫沙暴伤害",
+    "This Pokemon's Attack is raised 1 stage if hit by a Grass move; Grass immunity.":"受到草属性招式攻击时攻击提升一级；免疫草属性招式伤害",
+    "If user is Wishiwashi, changes to School Form if it has > 1/4 max HP, else Solo Form.":"弱丁鱼的HP高于1/4时变为鱼群的样子，否则变为单独的样子",
+    "This Pokemon's moves have their secondary effect chance doubled.":"招式的追加效果出现率翻倍",
+    "Prevents adjacent foes from choosing to switch unless they also have this Ability.":"除非对方拥有同样的特性，否则不能替换宝可梦",
+    "This Pokemon has a 33% chance to have its status cured at the end of each turn.":"回合结束时33%恢复异常状态",
+    "This Pokemon's attacks with secondary effects have 1.3x power; nullifies the effects.":"以无视招式的追加效果为代价，带有追加效果的招式的威力提升33%",
+    "This Pokemon is not affected by the secondary effect of another Pokemon's attack.":"受到攻击时对方招式的追加效果不会发动",
+    "If Minior, switch-in/end of turn it changes to Core at 1/2 max HP or less, else Meteor.":"小陨星HP大于50%时为流星的样子，否则为核心",
+    "This Pokemon's multi-hit attacks always hit the maximum number of times.":"使用连续招式时，攻击次数会固定在五次",
+    "On switch-in, this Pokemon's Attack and Speed are halved for 5 turns.":"登场之后的五回合内攻击和速度减半",
+    "If Hail is active, this Pokemon's Speed is doubled.":"冰雹下速度翻倍",
+    "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.":"击中要害的招式伤害变为1.5倍",
+    "If Hail is active, this Pokemon's evasiveness is 1.25x; immunity to Hail.":"冰雹天气下闪避率增加25%；免疫冰雹伤害",
+    "On switch-in, this Pokemon summons Hail.":"登场时天气变为冰雹",
+    "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.":"大晴天天气下特攻增加50%；大晴天天气下回合结束时损失1/8最大HP",
+    "This Pokemon's Sp. Atk is raised by 1 stage when another Pokemon faints.":"击倒对方时特攻提升一级",
+    "This Pokemon is immune to sound-based moves, including Heal Bell.":"免疫声音类招式",
+    "This Pokemon's Speed is raised 1 stage at the end of each full turn on the field.":"回合结束时速度提升一级",
+    "This Pokemon moves last among Pokemon using the same or greater priority moves.":"优先度相同时必定后出",
+    "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.":"受到伤害后防御提升一级",
+    "If Aegislash, changes Forme to Blade before attacks and Shield before King's Shield.":"坚盾剑怪使用攻击招式时会变为刀剑形态，使用王者盾牌时变为盾牌形态",
+    "30% chance a Pokemon making contact with this Pokemon will be paralyzed.":"受到接触伤害时对方30%陷入麻痹状态",
+    "If this Pokemon flinches, its Speed is raised by 1 stage.":"畏缩时提升一级速度",
+    "This Pokemon's attacks without a chance to flinch have a 10% chance to flinch.":"不会造成畏缩的招式造成伤害时10%造成对方畏缩",
+    "This Pokemon cannot lose its held item due to another Pokemon's attack.":"不会因对方招式失去携带的道具",
+    "This Pokemon draws Water moves to itself to raise Sp. Atk by 1; Water immunity.":"自动成为对方水属性招式的攻击目标并提升一级特攻；免疫电属性攻击",
+    "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.":"啃咬类招式威力提升50%，虫咬除外",
+    "If this Pokemon is at full HP, it survives one hit with at least 1 HP. Immune to OHKO.":"HP全满时受到致命伤害会保留1HP；免疫一击必杀招式",
+    "This Pokemon cannot be forced to switch out by another Pokemon's attack or item.":"不会因对方招式退场",
+    "This Pokemon's critical hit ratio is raised by 1 stage.":"击中要害等级提升一级",
+    "If Electric Terrain is active, this Pokemon's Speed is doubled.":"电气场地下速度翻倍",
+    "This Pokemon and its allies cannot fall asleep.":"己方所有宝可梦不会陷入睡眠状态",
+    "If Rain Dance is active, this Pokemon's Speed is doubled.":"下雨天气下速度翻倍",
+    "If an ally uses its item, this Pokemon gives its item to that ally immediately.":"使用道具后会立即将道具交给没有道具的同伴",
+    "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.":"如果因对方招式而陷入灼伤/中毒/麻痹状态，对方也同样陷入同样的状态",
+    "This Pokemon's evasiveness is doubled as long as it is confused.":"混乱状态下闪避率翻倍",
+    "This Pokemon's moves of 60 power or less have 1.5x power. Includes Struggle.":"使用威力低于60的招式时威力增加50%，挣扎除外",
+    "This Pokemon does not take damage from attacks made by its allies.":"不会受到同伴招式的伤害",
+    "Fire/Ice-type moves against this Pokemon deal damage with a halved attacking stat.":"受到火属性和冰属性招式造成的伤害减半",
+    "This Pokemon's attacks that are not very effective on a target deal double damage.":"造成的效果不理想的伤害翻倍",
+    "While this Pokemon is poisoned, its physical attacks have 1.5x power.":"中毒和剧毒状态下物理招式威力提升50%",
+    "This Pokemon's contact moves have their power multiplied by 1.3.":"接触类招式威力提升30%",
+    "On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability.":"登场时复制一个随机对方宝可梦的特性",
+    "This Pokemon's healing moves have their priority increased by 3.":"回复HP的招式优先度+3",
+    "This Pokemon skips every other turn instead of using a move.":"使用招式之后，下一回合不能使用招式",
+    "This Pokemon ignores other Pokemon's stat stages when taking or doing damage.":"使用或受到招式造成伤害时无视对方的能力阶级变化",
+    "Speed is doubled on held item loss; boost is lost if it switches, gets new item/Ability.":"失去道具时速度翻倍，退场或获得新道具后复原",
+    "While this Pokemon is active, it prevents opposing Pokemon from using their Berries.":"对方宝可梦不可使用树果",
+    "This Pokemon and its allies' moves have their accuracy multiplied by 1.1.":"场上己方所有宝可梦命中率提升10%",
+    "This Pokemon heals 1/4 of its max HP when hit by Electric moves; Electric immunity.":"受到电属性招式攻击时回复1/4最大HP；免疫电属性伤害",
+    "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.":"受到水属性招式攻击时回复1/4最大HP；免疫水属性伤害",
+    "This Pokemon's Water power is 2x; it can't be burned; Fire power against it is halved.":"水属性招式威力翻倍；不会陷入灼伤状态；受到的火属性招式伤害减半",
+    "This Pokemon's Defense is raised 2 stages after it is damaged by a Water-type move.":"受到水属性招式攻击时防御提升两级",
+    "This Pokemon cannot be burned. Gaining this Ability while burned cures it.":"不会陷入灼伤状态，获得特性时恢复灼伤状态",
+    "If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 2.":"受到物理招式伤害时防御降低一级，同时速度提升两级",
+    "This Pokemon can only be damaged by supereffective moves and indirect damage.":"只会受到效果绝佳招式的攻击伤害，天气、异常状态、附加伤害效果依然有效",
+    "Status moves with accuracy checks are 50% accurate when used on this Pokemon.":"变化招式对该特性的宝可梦命中率减半",
+    "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.":"HP不足一半时转变为达摩形态",
+    "This Pokemon's same-type attack bonus (STAB) is 2 instead of 1.5.":"与自身属性一致的招式威力由1.5倍变为2倍",
+    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Fire attacks.":"HP低于1/3时，火属性招式的威力变为1.5倍",
+    "Lowers Speed of all Pokemon except itself when hit by an attack.":"被攻击后，降低除自己以外的所有宝可梦的速度",
+    "Prevents Explosion/Mind Blown/Self-Destruct/Aftermath while this Pokemon is active.":"该特性会使自爆、大爆炸和惊爆大头会使用失败，引爆特性不发动",
+    "Boosts the Pokemon's Defense stat when the Pokemon enters a battle.":"出场时，防御会上升",
+    "Boosts the Pokemon's Attack stat when the Pokemon enters a battle.":"出场时，攻击会上升",
+    "Boosts the Pokemon's Attack stat but only allows the use of the first selected move.":"攻击获得提升，只能使用上场后使出的第一个招式",
+    "Get prey with Surf/Dive. When taking damage, prey is used to attack.":"使用冲浪/潜水后，如果受到攻击会进行反击",
+    "Changes between Full Belly and Hangry Mode at the end of each turn.":"每回合结束时会在饥饿花纹和饱腹花纹之间切换",
+    "Pokemon's head functions as substitute for a physical attack. Restored in hail.":"头部的冰会代替自己承受物理攻击，样子也会改变，下冰雹时恢复原状",
+    "Changes the Pokemon's type depending on the terrain.":"宝可梦的属性会随着场地变化而变化",
+    "If an active ally has this Ability or the Plus Ability, this Pokemon's Sp. Atk is 1.5x.":"场上己方同伴具有负电或正电特性时，特攻变为1.5倍",
+    "Bounces back only the stat-lowering effects that the Pokemon receives.":"只反弹自己受到的能力降低效果",
+    "This Pokemon's attacks that are super effective against the target do 1.25x damage.":"使用效果绝佳的招式，伤害变为1.25倍",
+    "Nullifies abilities while on the field.":"该特性宝可梦在场时，无效化所有其他宝可梦的特性",
+    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Grass attacks.":"HP低于1/3时，草属性招式的威力变为1.5倍",
+    "Protects the Pokemon and its ally Pokemon from being poisoned.":"自己和同伴都不会陷入中毒的异常状态",
+    "When hit by a contact move, the Pokemon and the attacker faint in 3 turns.":"受到接触攻击时，3回合后攻击者和自身都会倒下，交换解除效果",
+    "If an active ally has this Ability or the Minus Ability, this Pokemon's Sp. Atk is 1.5x.":"场上己方同伴具有负电或正电特性时，特攻变为1.5倍",
+    "Boosts sound move power, 0.5× damage from sound moves.":"提升声音类招式的威力，受到声音类招式的伤害减半",
+    "Ripens Berries and doubles their effect.":"树果的效果翻倍",
+    "The Pokemon creates a sandstorm when it's hit by an attack.":"受到攻击时使天气变为沙暴",
+    "Removes Screens and Veil Effects on switchin.":"出场时时我方和对方的反射壁、光墙和极光幕都会消失",
+    "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead.":"该特性宝可梦的能力变化会变为平时的２倍",
+    "This Pokemon's attacking stat is doubled against a target that switched in this turn.":"对替换出场的宝可梦以２倍的伤害进行攻击",
+    "This Pokemon's Speed is raised by 6 stages after it is damaged by Fire/Water moves.":"受到火属性或者水属性的招式攻击后，速度上升6级",
+    "This Pokemon's attacking stat is multiplied by 1.5 while using a Steel-type attack.":"使用钢属性的招式威力变为1.5倍",
+    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Bug attacks.":"HP低于1/3时，虫属性招式的威力变为1.5倍",
+    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Water attacks.":"HP低于1/3时，水属性招式的威力变为1.5倍",
+    "Exchanges abilities when hitting a Pokemon with a contact move.":"受到接触攻击时，与攻击方交换特性",
+    "Fighting, Normal moves hit Ghost. Immune to Intimidate.":"一般和格斗属性招式可以攻击到幽灵属性宝可梦，免疫威吓",
+    "This Pokemon cannot be made to flinch. Immune to Intimidate.":"不会陷入畏缩状态，免疫威吓",
+    "This Pokemon cannot be infatuated or taunted. Immune to Intimidate.":"不会陷入着迷和挑衅状态，免疫威吓",
+    "This Pokemon cannot be confused. Immune to Intimidate.":"不会陷入混乱状态，免疫威吓",
+    "This Pokemon and its allies' Steel-type moves have their BP mutiplied by 1.5.":"该特性的宝可梦和在场同伴使用钢属性招式时威力提升50%",
+    "This Pokemon's allies have the base power of their moves multiplied by 1.3.":"该特性的宝可梦和在场同伴招式威力提升30%",
+    "Ignores the effects of opposing Pokemon's Abilities and moves that draw in moves.":"能无视具有吸引对手招式效果的特性或招式的影响",
+    "Ignores the effects of opposing Pokemon's moves/Abilities that redirect move targets.":"能无视具有吸引对手招式效果的特性或招式的影响",
+    "This Pokemon's Special Defense is doubled.":"特防翻倍",
+    "The Pokemon is protected by ice scales, which halve the damage taken from special moves.":"受到特殊攻击的伤害减半",
+    "Boosts a random stat (except accuracy/evasion) +2 and another stat -1 every turn.":"每回合结束时随机降低一项能力等级并提升两项能力等级，闪避率/命中率除外",
+    "Speed is raised 1 stage if hit by a Bug-, Dark-, or Ghost-type attack, or Intimidated.":"受到虫/恶/幽灵属性招式攻击或者被威吓后速度提升一级",
+    "Raises a random stat by 2 and lowers another stat by 1 at the end of each turn.":"每回合结束时随机降低一项能力等级并提升两项能力等级",
+    "This Pokemon cannot be made to flinch.":"不会畏缩",
+    "This Pokemon cannot be infatuated or taunted. Gaining this Ability cures it.":"不会陷入着迷和挑衅状态",
+    "This Pokemon's Speed is raised 1 stage if hit by a Bug-, Dark-, or Ghost-type attack.":"受到虫/恶/幽灵属性招式攻击后速度提升一级",
+    "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.":"一般和格斗属性招式可以攻击到幽灵属性宝可梦",
+    "This Pokemon cannot be confused. Gaining this Ability while confused cures it.":"不会陷入混乱状态，获得特性时治愈混乱状态",
+    "When this Pokemon has 1/3 or less of its max HP, its Fire attacks do 1.5x damage.":"HP低于1/3时火属性招式威力提升50%",
+    "When this Pokemon has 1/3 or less of its max HP, its Bug attacks do 1.5x damage.":"HP低于1/3时虫属性招式威力提升50%",
+    "When this Pokemon has 1/3 or less of its max HP, its Water attacks do 1.5x damage.":"HP低于1/3时水属性招式威力提升50%",
+    "When this Pokemon has 1/3 or less of its max HP, its Grass attacks do 1.5x damage.":"HP低于1/3时，草属性招式威力增加50%",
+    "While this Pokemon is active, Self-Destruct, Explosion, and Aftermath have no effect.":"场上的所有自爆、大爆炸和引爆特性无效",
+    "had its HP restored.":"回复了它的HP！",
+    "The sunlight turned harsh!":"阳光变得刺眼了！",
+    "s Drought intensified the sun's rays!":"的日照加强了太阳的光芒！",
+    "The sunlight faded.":"阳光减弱了。",
+    "The sunlight turned extremely harsh!":"阳光变得非常刺眼！",
+    "The harsh sunlight faded.":"刺眼的阳光减弱了。",
+    "It started to rain!":"开始下雨了！",
+    "s Drizzle made it rain!":"的降雨引起了下雨！",
+    "The rain stopped.":"雨停了。",
+    "A heavy rain began to fall!":"开始下大雨了！",
+    "The heavy rain has lifted!":"大雨停了！",
+    "A sandstorm kicked up!":"刮起了沙暴！",
+    "s Sand Stream whipped up a sandstorm!":"的扬沙引起了沙暴！",
+    "The sandstorm is raging.":"沙暴正在肆虐。",
+    "The sandstorm subsided.":"沙暴平息了。",
+    "It started to hail!":"开始下冰雹了！",
+    "s Snow Warning whipped up a hailstorm!":"的降雪引起了冰雹",
+    "The hail is crashing down.":"冰雹正在砸落。",
+    "The hail stopped.":"冰雹停了。",
+    "Mysterious strong winds are protecting Flying-type Pok&eacute;mon!":"神秘的乱流正在保护飞行属性的宝可梦！",
+    "The mysterious strong winds have dissipated!":"神秘的乱流消散了！",
+    "unleashes its full-force Z-Move!":"释放了其全力的Z招式！",
+    "bounced the":"弹回了",
+    "back!":"！",
+    "Waggling a finger let it use":"摇摆着手指让它使用了",
+    "Nature Power turned into":"自然之力变成了",
+    "Breakneck Blitz turned into":"",
+    "s attack continues!":"的攻击持续着！",
+    "used Fissure!":"使用了地裂！",
+    "Just kidding! It was Earthquake!":"开玩笑的，是地震！",
+    "Sneaky Pebbles":"鬼鬼祟祟的卵石",
+    "Sly Rubble":"狡猾的瓦砾",
+    "Subtle Sediment":"微妙的沉积物",
+    "Buried Bedrock":"隐藏的基岩",
+    "Camouflaged Cinnabar":"隐秘的辰砂",
+    "Clandestine Cobblestones":"隐秘的鹅卵石",
+    "Cloaked Clay":"隐形黏土",
+    "Concealed Ore":"隐藏的矿石",
+    "Covert Crags":"隐蔽的峭壁",
+    "Crafty Coal":"狡诈的煤炭",
+    "Discreet Bricks":"小心的砖块",
+    "Disguised Debris":"伪装的瓦砾",
+    "Espionage Pebbles":"间谍卵石",
+    "Furtive Fortress":"鬼头鬼脑的堡垒",
+    "Hush-Hush Hardware":"秘密的硬件",
+    "Incognito Boulders":"匿名的巨石",
+    "Invisible Quartz":"无形的石英",
+    "Masked Minerals":"蒙面的矿物",
+    "Mischievous Masonry":"恶作剧石工",
+    "Obscure Ornaments":"隐晦的装饰品",
+    "Private Paragon":"私人的模范",
+    "Secret Solitaire":"秘密的接龙",
+    "Sheltered Sand":"被庇护的沙子",
+    "Surreptitious Sapphire":"诡秘的蓝宝石",
+    "Undercover Ultramarine":"隐秘的群青色",
+    "Yo mama so fat, she 4x resists Ice- and Fire-type attacks!":"你麻麻太胖了，她能四倍抵抗冰系和火系的攻击！",
+    "Yo mama so ugly, Captivate raises her opponent's Special Attack!":"你麻麻太丑了，她的诱惑提升了她对手的特攻！",
+    "Yo mama so dumb, she lowers her Special Attack when she uses Nasty Plot!":"你麻麻太蠢了，当她使用诡计的时候她降低了她的特攻！",
+    "Yo mama so dumb, she thought Sylveon would be Light Type!":"你麻麻太蠢了，她认为仙子伊布应该是光属性的！",
+    "was damaged by the recoil!":"受到了反弹伤害！",
+    "can't use":"不能使用",
+    "after the taunt!":"在被挑衅后！",
+    "because of gravity!":"因为重力的缘故",
+    "because of Heal Block!":"因为回复封锁的缘故",
+    "can't use its sealed":"不能使用它被封印的",
+    "The effects of Throat Chop prevent":"地狱突刺的效果阻止了",
+    "from using certain moves!":"使用特定的技能",
+    "is paralyzed! It can't move!":"麻痹了！它不能行动！",
+    "is frozen solid!":"被结实的冰冻着。",
+    "is fast asleep.":"正在熟睡。",
+    "Sky Drop won't let":"自由落体不放开",
+    "cannot use":"不能使用",
+    "is loafing around!":"正在四处散步",
+    "must recharge!":"必须充能！",
+    "lost its focus and couldn't move!":"失去了它的聚气并无法行动！",
+    "s shell trap didn't work!":"的陷阱甲壳没有生效！",
+    "flinched and couldn't move!":"畏缩了并无法行动！",
+    "is immobilized by love!":"陷入了爱河",
+    "But there was no PP left for the move!":"但技能已经没有PP了！",
+    "can't move":"无法行动",
+    "Automatic center!":"自动居中！",
+    "Pointed stones dug into":"尖锐的岩石扎进了",
+    "was hurt by the spikes!":"受到了撒菱的伤害！",
+    "was hurt by its burn!":"受到了灼伤的伤害！",
+    "was hurt by poison!":"受到了中毒的伤害！",
+    "lost some of its HP!":"损失了一部分HP！",
+    "is damaged by the recoil!":"受到了反作用力的伤害！",
+    "is buffeted by the sandstorm!":"被沙暴打击了！",
+    "is buffeted by the hail!":"被冰雹打击了！",
+    "is tormented!":"正在被折磨！",
+    "is afflicted by the curse!":"遭受着诅咒的痛苦！",
+    "is locked in a nightmare!":"被困在了恶梦之中！",
+    "was hurt!":"受到了伤害！",
+    "is hurt!":"受到了伤害！",
+    "sucked up the liquid ooze!":"吸到了污泥浆！",
+    "It hurt itself in its confusion!":"它在混乱中攻击了自己！",
+    "'s health is sapped by Leech Seed!":"受到了寄生种子的伤害！",
+    "The bursting flame hit":"溅射的火焰击中了",
+    "is hurt by the sea of fire!":"受到了火海的伤害！",
+    "kept going and crashed!":"摔了个狗啃泥！",
+    "is hurt by":"受到了伤害来自",
+    "is hurt by its":"受到了伤害来自",
+    "lost some HP because of":"损失了一部分HP由于",
+    "'s HP was restored by the Z-Power!":"的HP通过Z技能回复了！",
+    "absorbed nutrients with its roots!":"通过根吸取了营养！",
+    "A veil of water restored":"水幕回复了",
+    "'s HP!":"的HP！",
+    "The healing wish came true for":"治愈之愿降临在了",
+    "became cloaked in mystical moonlight!":"被神秘的月光笼罩！",
+    "s wish came true!":"的祈愿成真了！",
+    "had its energy drained!":"吸取了能量！",
+    "absorbs the attack!":"吸收了攻击！",
+    "restored HP using its":"回复了HP通过",
+    "restored its HP.":"回复了它的HP。",
+    "restored its HP using its Z-Power!":"通过Z技能回复了它的HP！",
+    "The battlers shared their pain!":"双方分担了痛楚！",
+    "won't go any higher!":"不能变得更高了！",
+    "raised":"提升了",
+    "boosted its stats":"提升了它的能力",
+    "using its Z-Power!":"通过Z技能！",
+    "boosted its":"提升了它的",
+    "won't go any lower!":"不能变得更低了！",
+    "lowered":"下降了",
+    "cut its own HP and maximized its Attack!":"舍弃了自己的HP并最大化了它的攻击！",
+    "'s Anger Point!":"的愤怒穴位！",
+    "maxed its Attack!":"最大化了它的攻击",
+    "switched all changes to its Defense and Sp. Def with its target!":"交换了它和目标间的所有防御和特防变化！",
+    "switched stat changes with its target!":"交换了它和目标间的能力变化！",
+    "switched all changes to its Attack and Sp. Atk with its target!":"交换了它和目标间的所有攻击和特攻变化！",
+    "stole the target's boosted stats!":"偷取了目标提升了的能力！",
+    "returned its decreased stats to normal using its Z-Power!":"通过Z技能将被降低的能力阶级恢复原状！",
+    "'s stat changes!":"的能力阶级变化了!",
+    "'s stat changes were removed!":"的能力阶级变化被重置了!",
+    "'s stat changes were inverted!":"的能力阶级变化被反转了!",
+    "All stat changes were eliminated!":"所有能力阶级恢复了原状！",
+    "A critical hit!":"击中了要害！",
+    "doesn't become confused!":"并没有混乱!",
+    "It doesn't affect":"这并没有影响到",
+    "It doesn't affect the opposing":"这并没有影响到对手的",
+    "It had no effect!":"这没有效果！",
+    "avoided the attack!":"回避了攻击!",
+    "'s attack missed!":"的攻击没有命中!",
+    "already has a burn.":"已经灼伤了.",
+    "is already poisoned.":"已经中毒了.",
+    "can't sleep in an uproar!":"在吵闹状态下无法陷入睡眠状态!",
+    "But the uproar kept":"但是吵闹使得",
+    "is already asleep!":"已经睡着了!",
+    "is already paralyzed.":"已经被麻痹了.",
+    "is already frozen solid!":"已经被冻住了!",
+    "can't use it the way it is now!":"",
+    "can't use the move!":"不能使用这个招式!",
+    "But it does not have enough HP left to make a substitute!":"然而它并没有足够的HP来制造一个替身！",
+    "already has a substitute!":"已经有一个替身了!",
+    "is too heavy to be lifted!":"太重了无法被提起!",
+    "But it failed!":"但是失败了！",
+    "The extremely harsh sunlight was not lessened at all!":"强烈的阳光丝毫没有被削弱！",
+    "There is no relief from this heavy rain!":"暴雨的势头不减！",
+    "The mysterious strong winds blow on regardless!":"神秘的乱流仍然在持续着！",
+    "surrounded itself with a veil of petals!":"用花幕包裹了自己!",
+    "stats were":"能力阶级",
+    "not lowered!":"没有被降低!",
+    "The Water-type attack evaporated in the harsh sunlight!":"水属性攻击在强烈的阳光中蒸发殆尽！",
+    "The Fire-type attack fizzled out in the heavy rain!":"火属性攻击在大雨中消耗殆尽！",
+    "But there was no target……":"然而攻击没有目标……",
+    "It's a one-hit KO!":"一击必杀！",
+    "But nothing happened!":"但什么也没有发生！",
+    "is waiting for":"在等待着",
+    "'s move...":"的行动……",
+    "The two moves have become one! It's a combined move!":"两个招式结合成为了合体招式！",
+    "surrounded itself with its Z-Power!":"用Z力量包裹了全身!",
+    "by the":"由于",
+    "was burned!":"被灼伤了！",
+    "was badly poisoned!":"中了剧毒！",
+    "was poisoned!":"中毒了!",
+    "slept and became healthy!":"睡着了并恢复了健康!",
+    "fell asleep!":"睡着了!",
+    "is paralyzed! It may be unable to move!":"被麻痹了!有可能无法行动!",
+    "was frozen solid!":"被冰冻了！",
+    "moved its status onto":"将它的异常状态转移给了",
+    "'s Natural Cure activated!":"的自然恢复生效了!",
+    "heals its status!":"治愈了它的异常状态!",
+    "healed its burn!":"治愈了它的灼伤状态!",
+    "'s burn was healed.":"的灼伤被治愈了.",
+    "cured its poison!":"治愈了它的中毒状态!",
+    "was cured of its poisoning.":"因为中毒而恢复了HP.",
+    "woke it up!":"使它醒来了!",
+    "woke up!":"醒来了!",
+    "cured its paralysis!":"治愈了它的麻痹状态!",
+    "defrosted it!":"解冻了它!",
+    "thawed out!":"解冻了!",
+    "'s status cleared!":"的异常状态被清除了!",
+    "A soothing aroma wafted through the area!":"沁人心脾的香气在场地上扩散开了！",
+    "A bell chimed!":"铃声响起！",
+    "'s team was cured!":"的队伍被治愈了!",
+    "found one":"回收了一个",
+    "frisked":"察觉到了",
+    "and found its":"的",
+    "frisked its target and found one":"察觉到了对手的",
+    "stole":"偷走了",
+    "harvested one":"收获了一个",
+    "obtained one":"得到了一个",
+    "floats in the air with its Air Balloon!":"靠着气球浮在了空中!",
+    "ate its":"吃掉了它的",
+    "flung its":"投掷了它的",
+    "knocked off":"拍落了",
+    "stole and ate its target's":"偷走并吃掉了对手的",
+    "strengthened":"增强了",
+    "'s power!":"的威力!",
+    "was burned up!":"被烧尽了!",
+    "lost its":"失去了它的",
+    "'s Air Balloon popped!":"的气球爆炸了!",
+    "hung on using its Focus Sash!":"靠着它的气势披带撑住了!",
+    "hung on using its Focus Band!":"靠着它的气势头带撑住了!",
+    "became fully charged due to its Power Herb!":"因为它的强力香草充满了力量!",
+    "returned its status to normal using its White Herb!":"使用它的白色香草回复了它的能力!",
+    "is switched out with the Eject Button!":"因为逃脱按键被换下了!",
+    "activated":"被触发了",
+    "traced":"复制了",
+    "was taken over!":"被继承了!",
+    "copied":"复制了",
+    "Ability!":"特性!",
+    "acquired":"获得了",
+    "The effects of the weather disappeared.":"天气的影响消失了。",
+    "shuddered!":"害怕得胆怯!",
+    "reversed all other Pokemon's auras!":"反转了所有其它宝可梦的气场!",
+    "is drowsing!":"正在打瞌睡!",
+    "is radiating a dark aura!":"正在释放暗黑气场!",
+    "is radiating a fairy aura!":"正在释放妖精气场!",
+    "breaks the mold!":"打破了常规!",
+    "is exerting its pressure!":"正在施加压迫感!",
+    "endured the hit!":"挺住了攻击!",
+    "is radiating a bursting aura!":"正在释放溅射气场!",
+    "is radiating a blazing aura!":"正在释放炽热气场!",
+    "is too nervous to eat Berries!":"太紧张以致于无法吃下树果!",
+    "was removed.)":"消失了.)",
+    "'s Ability was suppressed!":"的特性被抑制了!",
+    "transformed into":"变身成了",
+    "transformed!":"变身了!",
+    "Zen Mode triggered!":"达摩模式启动!",
+    "Zen Mode ended!":"达摩模式结束!",
+    "Changed to Blade Forme!":"变成了刀剑形态!",
+    "Changed to Shield Forme!":"变成了盾牌形态!",
+    "formed a school!":"形成了鱼群!",
+    "stopped schooling!":"的鱼群消失了!",
+    "Shields Down deactivated!":"界限盾壳被打破了!",
+    "Shields Down activated!":"界限盾壳启动!",
+    "'s fervent wish has reached":"热切的心意传达到了",
+    "has Mega Evolved into Mega":"超级进化为Mega",
+    "transformed into the":"变为了",
+    "type!":"属性!",
+    "'s type became the same as":"的属性变得和",
+    "'s type!":"一样了!",
+    "burned itself out!":"燃尽了自身!",
+    "made it the":"使它变成了",
+    "type was added to":"属性加在了",
+    "switched its Attack and Defense!":"交换了它的攻击和防御!",
+    "was identified!":"被识破了!",
+    "was hurled into the air!":"被投向了空中!",
+    "is already confused!":"已经混乱了!",
+    "became confused due to fatigue!":"因为劳累过度而混乱了!",
+    "became confused!":"混乱了!",
+    "was seeded!":"被种下了种子!",
+    "was prevented from healing!":"的回复被阻止了!",
+    "Electricity's power was weakened!":"电系招式的威力被减弱了！",
+    "Fire's power was weakened!":"火系招式的威力被减弱了！",
+    "grew drowsy!":"昏昏欲睡!",
+    "fell for the taunt!":"被挑衅了",
+    "sealed any moves its target shares with it!":"封印了所有和对手共有的招式!",
+    "was disabled!":"被定住了!",
+    "can't use items anymore!":"无法使用道具了!",
+    "was subjected to torment!":"受到了无理取闹!",
+    "planted its roots!":"扎下了根!",
+    "surrounded itself with a veil of water!":"用水幕包围了自己!",
+    "stockpiled 1!":"蓄力了1次!",
+    "stockpiled 2!":"蓄力了2次!",
+    "stockpiled 3!":"蓄力了3次!",
+    "'s perish count fell to 0.":"的灭亡还剩0回合.",
+    "'s perish count fell to 1.":"的灭亡还剩1回合.",
+    "'s perish count fell to 2.":"的灭亡还剩2回合.",
+    "'s perish count fell to 3.":"的灭亡还剩3回合.",
+    "received an encore!":"收到了再来一次!",
+    "is storing energy!":"正在贮存能量!",
+    "can't get it going!":"错失先机!",
+    "fell in love from the":"爱上了",
+    "became nimble!":"变得灵活了！",
+    "used the":"使用了",
+    "to get pumped!":"来变得兴奋！",
+    "boosted its critical-hit ratio using its Z-Power!":"通过使用Z力量使击中要害率获得爆发性的提升！",
+    "is getting pumped!":"正在变得兴奋！",
+    "cut its own HP and put a curse on":"缩减了自身的HP并且附加了诅咒给",
+    "levitated with electromagnetism!":"通过电磁力使自己悬浮了起来！",
+    "fell straight down!":"被击落！",
+    "The substitute took damage for":"替身承受了伤害保护了",
+    "put in a substitute!":"制造了一个替身！",
+    "is making an uproar!":"正在制造噪音！",
+    "caused an uproar!":"引发了噪音!",
+    "chose Doom Desire as its destiny!":"选择了破灭的未来作为它的命运！",
+    "learned":"学习了",
+    "became the center of attention!":"成为了视线的焦点！",
+    "is covered in powder!":"被粉尘包裹！",
+    "protected against special attacks!":"获得了对于特殊攻击的防护！",
+    "gained armor!":"获得了对于物理攻击的防护！",
+    "was freed from the telekinesis!":"从意念移物状态中逃脱了！",
+    "was freed from the Sky Drop!":"从自由落体状态中逃脱了！",
+    "snapped it out of its confusion!":"解除了混乱状态！",
+    "snapped out of its confusion!":"解除了混乱状态！",
+    "snapped out of confusion!":"解除了混乱状态！",
+    "was freed from Leech Seed!":"摆脱了寄生种子！",
+    "'s Heal Block wore off!":"的回复封印解除了！",
+    "got over its infatuation!":"不再迷恋对方了！",
+    "cured its infatuation status using its":"使用了xxx治愈了着迷状态",
+    "'s move is no longer disabled!":"的技能不再被封印了！",
+    "can use items again!":"可以再次使用道具了！",
+    "'s torment wore off!":"不再受对方无理取闹的影响了！",
+    "'s encore ended!":"的再来一次状态解除了！",
+    "unleashed its energy!":"释放了自身的能量！",
+    "'s illusion wore off!":"的幻象被识破了！",
+    "finally got its act together!":"最终聚集了它所有的力量！",
+    "The electromagnetism of":"xx的电磁浮游状态",
+    " calmed down.":"冷静下来了。",
+    "'s stockpiled effect wore off!":"力量储存的效果消失了！",
+    "was freed from":"从XX中脱身了",
+    "took the":"承受了",
+    "Quick Guard protected":"快速防守保护了",
+    "Wide Guard protected":"广域防守保护了",
+    "Crafty Shield protected":"戏法防守保护了",
+    "intends to flip up a mat and block incoming attacks!":"举起了一块榻榻米挡下了即将到来的攻击！",
+    "protected itself!":"保护了自身！",
+    "braced itself!":"支撑了下来！",
+    "is ready to help":"准备帮助",
+    "is tightening its focus!":"正在集中注意力！",
+    "set a shell trap!":"设置了一个甲壳陷阱！",
+    "waits for a target to make a move!":"等待一个目标来抢夺技能！",
+    "shrouded itself with Magic Coat!":"给自己裹上了一层魔术外衣！",
+    "'s moves have been electrified!":"的技能带电了！",
+    "became the center of attention using its Z-Power!":"使用了Z能量变成了焦点！",
+    "started heating up its beak!":"开始加热鸟喙！",
+    "wants its target to bear a grudge!":"想向对手释放怨念",
+    "is hoping to take its attacker down with it!":"想要和对手同归于尽了！",
+    "will restore its replacement's HP using its Z-Power!":"用Z力量恢复了生命值",
+    "is confused!":"陷入了混乱",
+    "took its attacker down with it!":"和对手同归于尽了",
+    "snatched":"抢夺了",
+    "'s move!":"的技能",
+    "lost all of its PP due to the grudge!":"因为怨恨失去了所有的PP",
+    "substitute faded!":"替身消失了！",
+    "is in love with":"爱上了",
+    "is protected by the mist!":"受到了白雾的保护",
+    "is protected by Safeguard!":"收到了神秘守护的保护",
+    "can no longer escape!":"不能逃脱！",
+    "was caught in a sticky web!":"陷入了粘网",
+    "Everyone is caught up in the happy atmosphere!":"“大家都沉浸在欢乐的气氛中！",
+    "Congratulations,":"祝贺",
+    "switched items with its target!":"交换了对方的道具",
+    "shattered":"击碎了",
+    "protections!":"保护",
+    "s attack!":"的攻击",
+    "is being withdrawn!":"准备回来",
+    "It broke through":"突破了",
+    "'s protection!":"的保护",
+    "fell for the feint!":"摔倒了",
+    "It reduced the PP of":"减少了PP",
+    "couldn't stay airborne because of gravity!":"因为重力不能停留空中",
+    "sketched":"素描",
+    "swapped Abilities with its target!":"与目标交换了特性",
+    "began charging power!":"开始充电",
+    "has no moves left!":"没有技能可以用",
+    "clamped down on":"夹住了",
+    "became trapped in the vortex!":"陷入了漩涡中！",
+    "became trapped in the fiery vortex!":"陷入了火焰漩涡中！",
+    "became trapped by swirling magma!":"被旋转的岩浆困住了！",
+    "became trapped by the quicksand!":"陷入了流沙中！",
+    "took the kind offer!":"接受了好意！",
+    "'s move was postponed!":"的行动延后了！",
+    "shared its power with the target!":"与目标平分了力量！",
+    "shared its guard with the target!":"与目标平分了防御！",
+    "switched Speed with its target!":"与目标交换了速度！",
+    "anchored itself with its roots!":"扎下了根！",
+    "was blocked by the kicked-up mat!":"被掀起的榻榻米挡住了！",
+    "When the flame touched the powder on the Pokemon, it exploded!":"当火焰接触到宝可梦身上的粉尘时发生了爆炸！",
+    "No one will be able to run away during the next turn!":"下一回合结束前双方均不可以交换！",
+    "took aim at":"瞄准了",
+    "surrounds itself with electrified terrain!":"的脚下电光飞闪！",
+    "surrounds itself with a protective mist!":"的脚下雾气缭绕！",
+    "surrounds itself with psychic terrain!":"的脚下传来了奇妙的感觉!",
+    "'s Wonder Guard evades the attack!":"的神奇守护抵御了攻击！",
+    "'s Forewarn alerted it to":"的预知梦预知到了",
+    "'s Ability became Mummy!":"的特性变成了木乃伊！",
+    "took the attack!":"吸收了攻击！",
+    " avoids attacks by its ally Pok&#xE9;mon!":"避免了友方的攻击！",
+    "'s item cannot be removed!":"的道具不可以被剥夺！",
+    "anchors itself!":"用吸盘粘在了地面上！",
+    "is protected by an aromatic veil!":"被芳香幕保护了！",
+    "surrounded itself with a veil of sweetness!":"被香气幕包围了！",
+    "became fully charged due to its bond with its Trainer!":"与训练师的羁绊使得它充满了力量！",
+    "Its disguise served it as a decoy!":"谜拟Ｑ的画皮抵挡了攻击！",
+    "You sense the presence of many!":"你感受到了一股强大的力量！",
+    "The mysterious strong winds weakened the attack!":"神秘的乱流减弱了攻击！",
+    "is already preparing its next move!":"已经准备好了下轮行动！",
+    "Aurora Veil made your team stronger against physical and special moves!":"极光幕使得你的队伍在面对物理和特殊攻击时更强了!",
+    "Aurora Veil made the opposing team stronger against physical and special moves!":"极光幕使得对方的队伍在面对物理和特殊攻击时更强了!",
+    "Reflect made your team stronger against physical moves!":"反射盾使得你的队伍在面对物理攻击时更强了!",
+    "Reflect made the opposing team stronger against physical moves!":"反射盾使得对方的队伍在面对物理攻击时更强了!",
+    "Light Screen made your team stronger against special moves!":"光墙使得你的队伍在面对特殊攻击时更强了!",
+    "Light Screen made the opposing team stronger against special moves!":"光墙使得对方的队伍在面对特殊攻击时更强了!",
+    "Your team cloaked itself in a mystical veil!":"你的队伍将自己包围在神秘的守护之中!",
+    "Your team became shrouded in mist!":"你的队伍被包围在了白雾之中!",
+    "Lucky Chant shielded your team from critical hits!":"幸运咒语保护你的队伍不会受到会心一击！",
+    "A sea of fire enveloped your team!":"一片火海包围了你的队伍！",
+    "A rainbow appeared in the sky on your team's side!":"彩虹出现在了你队伍的一边！",
+    "A swamp enveloped your team!":"一片沼泽包围了你的队伍！",
+    "Your team's Tailwind petered out!":"你队伍的顺风停止了!",
+    "Your team's Aurora Veil wore off!":"你队伍的极光幕消失了!",
+    "Your team's Reflect wore off!":"你队伍的反射盾消失了!",
+    "Your team's Light Screen wore off!":"你队伍的光墙消失了!",
+    "Your team is no longer protected by Safeguard!":"你的队伍不再受神秘守护的保护！",
+    "Your team is no longer protected by mist!":"你的队伍不再受白雾的保护！",
+    "Your team's Lucky Chant wore off!":"你队伍的幸运咒语结束了!",
+    "The opposing team cloaked itself in a mystical veil!":"对方的队伍将自己包围在神秘的守护之中!",
+    "The opposing team became shrouded in mist!":"对方的队伍被包围在了白雾之中!",
+    "Lucky Chant shielded the opposing team from critical hits!":"幸运咒语保护对方的队伍不会受到会心一击！",
+    "A sea of fire enveloped the opposing team!":"一片火海包围了对方的队伍！",
+    "A rainbow appeared in the sky on the opposing team's side!":"彩虹出现在了对方队伍的一边！",
+    "A swamp enveloped the opposing team!":"一片沼泽包围了对方的队伍！",
+    "The opposing team's Tailwind petered out!":"对方队伍的顺风停止了!",
+    "The opposing team's Aurora Veil wore off!":"对方队伍的极光幕消失了!",
+    "The opposing team's Reflect wore off!":"对方队伍的反射盾消失了!",
+    "The opposing team's Light Screen wore off!":"对方队伍的光墙消失了!",
+    "The opposing team is no longer protected by Safeguard!":"对方的队伍不再受神秘守护的保护！",
+    "The opposing team is no longer protected by mist!":"对方的队伍不再受白雾的保护！",
+    "The opposing team's Lucky Chant wore off!":"对方队伍的幸运咒语结束了!",
+    "disappeared!":"消失了!",
+    "twisted the dimensions!":"扭曲了时空!",
+    "It created a bizarre area in which Defense and Sp. Def stats are swapped!":"制造出了防御与特防能力值互换的奇妙空间！",
+    "It created a bizarre area in which Pok&#xE9;mon's held items lose their effects!":"制造出了道具无效的魔法空间!",
+    "Gravity intensified!":"重力变强了！",
+    "Grass grew to cover the battlefield!":"脚下绿草如茵！",
+    "Mist swirls around the battlefield!":"脚下雾气缭绕!",
+    "An electric current runs across the battlefield!":"脚下电光飞闪!",
+    "The battlefield got weird!":"脚下传来了奇妙的感觉！",
+    "The twisted dimensions returned to normal!":"扭曲的时空恢复了！",
+    "Wonder Room wore off, and Defense and Sp. Def stats returned to normal!":"奇妙空间结束了,防御与特防能力值恢复了正常！",
+    "Magic Room wore off, and held items' effects returned to normal!":"魔法空间结束了,道具效果恢复了正常！",
+    "Gravity returned to normal!":"重力恢复了正常！",
+    "The effects of Mud Sport have faded.":"玩泥巴的效果消失了。",
+    "The effects of Water Sport have faded.":"玩水的效果消失了。",
+    "The grass disappeared from the battlefield.":"脚下的青草不见了。",
+    "The mist disappeared from the battlefield.":"脚下的雾气不见了。",
+    "The electricity disappeared from the battlefield.":"脚下的电光不见了。",
+    "The weirdness disappeared from the battlefield!":"脚下奇妙的感觉不见了！",
+    "All Pok&#xE9;mon that heard the song will faint in three turns!":"所有听见歌声的宝可梦都将在三回合后倒下!",
+    "Coins were scattered everywhere!":"金币撒的到处都是！",
+    "A deluge of ions showers the battlefield!":"离子风暴正在肆虐！",
+    "regained its true power through Ultra Burst!":"通过究极爆发出现了新的样子!",
+    "Pointed stones float in the air around your team!":"尖锐的岩石漂浮在了你的队伍周围！",
+    "Pointed stones float in the air around the opposing team!":"尖锐的岩石漂浮在了对方的队伍周围！",
+    "Spikes were scattered on the ground all around your team!":"地菱布满在了你的队伍周围！",
+    "Spikes were scattered on the ground all around the opposing team!":"地菱布满在了对方的队伍周围！",
+    "Poison spikes were scattered on the ground all around your team!":"毒菱布满在了你的队伍周围！",
+    "Poison spikes were scattered on the ground all around the opposing team!":"毒菱布满在了对方的队伍周围！",
+    "A sticky web has been laid out on the ground around your team!":"一张黏网展开在了你的队伍周围！",
+    "A sticky web has been laid out on the ground around the opposing team!":"一张黏网展开在了对方的队伍场地周围！",
+    "The Tailwind blew from behind your team!":"顺风在你的队伍身后展开了！",
+    "The pointed stones disappeared from around your team!":"尖锐的岩石从你的队伍场地周围消失了！",
+    "The spikes disappeared from the ground around your team!":"地菱从你的队伍周围消失了！",
+    "The poison spikes disappeared from the ground around your team!":"毒菱从你的队伍周围消失了！",
+    "The sticky web has disappeared from the ground around your team!":"黏网从你的队伍周围消失了！",
+    "The Tailwind blew from behind the opposing team!":"顺风在对方的队伍身后展开了！",
+    "The pointed stones disappeared from around the opposing team!":"尖锐的岩石从对方的队伍场地周围消失了！",
+    "The spikes disappeared from the ground around the opposing team!":"地菱从对方的队伍周围消失了！",
+    "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",
+    "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",
+    "Waiting for opponent...":"等待对手行动...",
+    "Pointed stones dug into the opposing":"锋利的岩石扎进了对手的",
+    "It's super effective! A critical hit!":"这非常有效！会心一击！",
+    "It's not very effective... A critical hit!":"这不是很有效...会心一击！",
+    "evasiveness fell!":"的回避率下降了!",
+    "evasiveness rose!":"的回避率提升了!",
+    "evasiveness fell harshly!":"的回避率大幅下降了!",
+    "evasiveness rose sharply!":"的回避率大幅提升了!",
+    "evasiveness fell severely!":"的回避率巨幅下降了!",
+    "evasiveness rose drastically!":"的回避率巨幅提升了!",
+    "Attack fell!":"的攻击下降了!",
+    "Attack rose!":"的攻击提升了!",
+    "Attack fell harshly!":"的攻击大幅下降了!",
+    "Attack rose sharply!":"的攻击大幅提升了!",
+    "Attack fell severely!":"的攻击巨幅下降了!",
+    "Attack rose drastically!":"是攻击巨幅提升了!",
+    "Defense fell!":"的物防下降了!",
+    "Defense rose!":"的物防提升了!",
+    "Defense fell harshly!":"的物防大幅下降了!",
+    "Defense rose sharply!":"的物防大幅提升了!",
+    "Defense fell severely!":"的物防巨幅下降了!",
+    "Defense rose drastically!":"的物防巨幅提升了!",
+    "Special Attack fell!":"的特攻下降了!",
+    "Special Attack rose!":"的特攻提升了!",
+    "Special Attack fell harshly!":"的特攻大幅下降了!",
+    "Special Attack rose sharply!":"的特攻大幅提升了!",
+    "Special Attack fell severely!":"的特攻巨幅下降了!",
+    "Special Attack rose drastically!":"的特攻巨幅提升了!",
+    "Special Defense fell!":"的特防下降了!",
+    "Special Defense rose!":"的特防提升了!",
+    "Special Defense fell harshly!":"的特防大幅下降了!",
+    "Special Defense rose sharply!":"的特防大幅提升了!",
+    "Special Defense fell severely!":"的特防巨幅下降了!",
+    "Special Defense rose drastically!":"的特防巨幅提升了!",
+    "Speed fell!":"的速度下降了!",
+    "Speed rose!":"的速度提升了!",
+    "Speed fell harshly!":"的速度大幅下降了!",
+    "Speed rose sharply!":"的速度大幅提升了!",
+    "Speed fell severely!":"的速度巨幅下降了!",
+    "Speed rose drastically!":"的速度巨幅提升了!",
+    "accuracy fell!":"的命中率下降了!",
+    "accuracy rose!":"的命中率提升了!",
+    "accuracy fell harshly!":"的命中率大幅下降了!",
+    "accuracy rose sharply!":"的命中率大幅提升了!",
+    "accuracy fell severely!":"的命中率巨幅下降了!",
+    "accuracy rose drastically!":"的命中率巨幅提升了!",
+    "became Ash-Greninja!":"变成了小智-甲贺忍蛙！",
+    "It's super effective! The opposing":"这非常有效！对手的",
+    "restored a little HP using its Black Sludge!":"使用黑色淤泥恢复了少量HP！",
+    "restored HP using its Grassy Terrain!":"因为青草场地恢复了少量HP！",
+    "Instant replay":" 即时回放",
+    "Download replay":" 下载回放",
+    "Switch sides":" 切换视角",
+    "Upload and share replay":" 上传并分享回放",
+    "knocked off the opposing":"打落了对手的",
+    "taunt":"挑拨",
+    "wore off":"无效了",
+    "is hurt by the opposing":"受到了伤害来自对手",
+    "All Pokemon that heard the song will faint in three turns!":"所有听到歌声的宝可梦将在3回合后倒下！",
+    "was badly poisoned by the Toxic Orb!":"因为剧毒珠中了剧毒！",
+    "the Normal type":"普通属性",
+    "the Fighting type":"格斗属性",
+    "the Flying type":"飞行属性",
+    "the Poison type":"毒属性",
+    "the Ground type":"地面属性",
+    "the Rock type":"岩石属性",
+    "the Bug type":"虫属性",
+    "the Ghost type":"幽灵属性",
+    "the Steel type":"钢属性",
+    "the Fire type":"火属性",
+    "the Water type":"水属性",
+    "the Grass type":"草属性",
+    "the Psychic type":"超能属性",
+    "the Dragon type":"龙属性",
+    "the Ice type":"冰属性",
+    "the Dark type":"恶属性",
+    "the Fairy type":"妖精属性",
+    "BrightPowder":"光粉",
+    "SilverPowder":"银粉",
+    "Register":"注册",
+    "Register your account:":"注册你的账号：",
+    "Username:":"用户名：",
+    "Password:":"密码：",
+    "Password (confirm):":"确认密码",
+    "What is this pokemon?":"在下面的输入框中输入pikachu",
+    "Cancel":"取消",
+    "Disconnected":"已断开连接",
+    "Reconnect":"重新连接",
+    "Charizardite X is reacting to the Key Stone!":"的喷火龙进化石X对钥石有反应！",
+    "Charizardite Y is reacting to the Key Stone!":"的喷火龙进化石Y对钥石有反应！",
+    "Blastoisinite is reacting to the Key Stone!":"的水箭龟进化石对钥石有反应！",
+    "Beedrillite is reacting to the Key Stone!":"的大针蜂进化石对钥石有反应！",
+    "Pidgeotite is reacting to the Key Stone!":"的大比鸟进化石对钥石有反应！",
+    "Alakazite is reacting to the Key Stone!":"的胡地进化石对钥石有反应！",
+    "Slowbronite is reacting to the Key Stone!":"的呆壳兽进化石对钥石有反应！",
+    "Gengarite is reacting to the Key Stone!":"的耿鬼进化石对钥石有反应！",
+    "Kangaskhanite is reacting to the Key Stone!":"的袋兽进化石对钥石有反应！",
+    "Pinsirite is reacting to the Key Stone!":"的凯罗斯进化石对钥石有反应！",
+    "Gyaradosite is reacting to the Key Stone!":"的暴鲤龙进化石对钥石有反应！",
+    "Aerodactylite is reacting to the Key Stone!":"的化石翼龙进化石对钥石有反应！",
+    "Mewtwonite X is reacting to the Key Stone!":"的超梦进化石X对钥石有反应！",
+    "Mewtwonite Y is reacting to the Key Stone!":"的超梦进化石Y对钥石有反应！",
+    "Ampharosite is reacting to the Key Stone!":"的电龙进化石对钥石有反应！",
+    "Steelixite is reacting to the Key Stone!":"的大钢蛇进化石对钥石有反应！",
+    "Scizorite is reacting to the Key Stone!":"的巨钳螳螂进化石对钥石有反应！",
+    "Heracronite is reacting to the Key Stone!":"的赫拉克罗斯进化石对钥石有反应！",
+    "Houndoominite is reacting to the Key Stone!":"的黑鲁加进化石对钥石有反应！",
+    "Tyranitarite is reacting to the Key Stone!":"的班基拉斯进化石对钥石有反应！",
+    "Sceptilite is reacting to the Key Stone!":"的蜥蜴王进化石对钥石有反应！",
+    "Blazikenite is reacting to the Key Stone!":"的火焰鸡进化石对钥石有反应！",
+    "Swampertite is reacting to the Key Stone!":"的巨沼怪进化石对钥石有反应！",
+    "Gardevoirite is reacting to the Key Stone!":"的沙奈朵进化石对钥石有反应！",
+    "Sablenite is reacting to the Key Stone!":"的勾魂眼进化石对钥石有反应！",
+    "Mawilite is reacting to the Key Stone!":"的大嘴娃进化石对钥石有反应！",
+    "Aggronite is reacting to the Key Stone!":"的波士可多拉进化石对钥石有反应！",
+    "Medichamite is reacting to the Key Stone!":"的恰雷姆进化石对钥石有反应！",
+    "Manectite is reacting to the Key Stone!":"的雷电兽进化石对钥石有反应！",
+    "Sharpedonite is reacting to the Key Stone!":"的巨牙鲨进化石对钥石有反应！",
+    "Cameruptite is reacting to the Key Stone!":"的喷火驼进化石对钥石有反应！",
+    "Altarianite is reacting to the Key Stone!":"的七夕青鸟进化石对钥石有反应！",
+    "Banettite is reacting to the Key Stone!":"的诅咒娃娃进化石对钥石有反应！",
+    "Absolite is reacting to the Key Stone!":"的阿勃梭鲁进化石对钥石有反应！",
+    "Glalitite is reacting to the Key Stone!":"的冰鬼护进化石对钥石有反应！",
+    "Salamencite is reacting to the Key Stone!":"的暴飞龙进化石对钥石有反应！",
+    "Metagrossite is reacting to the Key Stone!":"的巨金怪进化石对钥石有反应！",
+    "Latiasite is reacting to the Key Stone!":"的拉帝亚斯进化石对钥石有反应！",
+    "Latiosite is reacting to the Key Stone!":"的拉帝欧斯进化石对钥石有反应！",
+    "Lopunnite is reacting to the Key Stone!":"的长耳兔进化石对钥石有反应！",
+    "Garchompite is reacting to the Key Stone!":"的烈咬陆鲨进化石对钥石有反应！",
+    "Lucarionite is reacting to the Key Stone!":"的路卡利欧进化石对钥石有反应！",
+    "Abomasite is reacting to the Key Stone!":"的暴雪王进化石对钥石有反应！",
+    "Galladite is reacting to the Key Stone!":"的艾路雷朵进化石对钥石有反应！",
+    "Audinite is reacting to the Key Stone!":"的差不多娃娃进化石对钥石有反应！",
+    "Diancite is reacting to the Key Stone!":"的蒂安希进化石对钥石有反应！",
+    "was cured of paralysis!":"的麻痹被治愈了。",
+    "was cured of its poisoning!":"的中毒被治愈了。",
+    "was cured of Freeze!":"的冰冻被治愈了。",
+    "was cured of Burn!":"的烧伤被治愈了。",
+    "was cured of Sleep!":"的睡眠被治愈了。",
+    "is hurt by Magma Storm!":"受到了熔岩风暴的伤害！",
+    "was freed from Magma Storm!":"摆脱了熔岩风暴！",
+    "'s taunt wore off!":"的挑衅消失了！",
+    " won the battle!":"获得了胜利！",
+    "must do an encore!":"必须再来一次！",
+    "of its health!)":"的生命值！",
+    "cut its own HP to power up its move!":"减少了它的HP来强化技能！",
+    "loses Flying type this turn.":"在本回合失去了飞行属性。",
+    "returned to normal!":"恢复正常了！",
+    "was hurt by its Dry Skin.":"因为干燥皮肤受到了伤害。",
+    "was hurt by its Solar Power.":"因为太阳能量受到了伤害。",
+    "absorbed light!":"吸收了阳光!",
+    "is being withdrawn...":"正在撤退…",
+    "(A Pokemon can't switch between when it runs out of HP and when it faints)":"（当宝可梦失去所有HP倒下时，无法交换）",
+    "shook off the taunt!":"从挑拨状态中解除了！",
+    "was hurt by the Rocky Helmet!":"受到了凸凸头盔的伤害！",
+    "(Rain continues to fall!)":"(雨还在下！)",
+    "(The sunlight is strong!)":"(阳光很强烈！)",
+    "All Pokémon that heard the song will faint in three turns!":"所有听到歌声的宝可梦将在3回合后倒下！",
+    "An electric current ran across the battlefield!":"脚下电光飞闪",
+    "But there was no target...":"但没有目标……",
+    "It created a bizarre area in which Pokémon's held items lose their effects!":"制造出了使所有宝可梦携带道具效果消失的魔法空间！",
+    "Mist swirled around the battlefield!":"脚下雾气缭绕！",
+    "Mysterious strong winds are protecting Flying-type Pokémon!":"神秘的乱流正在保护飞行属性的宝可梦！",
+    "The Pokémon was hit 1 time!":"击中一次！",
+    "The extremely harsh sunlight faded.":"强烈的阳光被减弱了！",
+    "The move was blocked by the power of Dynamax!":"因为极巨化的力量，招式使用失败了！",
+    "When the flame touched the powder on the Pokémon, it exploded!":"火焰接触到宝可梦身上的粉尘，引发了爆炸！",
+    "Primal Reversion! It reverted to its primal state!":"回归原始！它回到了最初的样子！",
+    "is absorbing power!":"正在吸收力量！",
+    "Bright light is about to burst out of Necrozma!":"奈克洛兹玛的身上开始溢出耀眼的光芒！",
+    "health is sapped by Leech Seed!":"生命值被寄生种子吸取了！",
+    "couldn't fully protect itself and got hurt!":"无法完全守住，依然受到了伤害！",
+    "(Dynamax ended.)":"(极巨化结束了。)",
+    "the opposing":"对手的"
 
-        "Venusaur-Mega":"超级妙蛙花",
-        "Charizard-Mega-X":"超级喷火龙X",
-        "Charizard-Mega-Y":"超级喷火龙Y",
-        "Charizard-Gmax":"喷火龙-超极巨化",
-        "Blastoise-Mega":"超级水箭龟",
-        "Butterfree-Gmax":"巴大蝶-超极巨化",
-        "Beedrill-Mega":"超级大针蜂",
-        "Pidgeot-Mega":"超级大比鸟",
-        "Rattata-Alola":"小拉达-阿罗拉",
-        "Raticate-Alola":"拉达-阿罗拉",
-        "Raticate-Alola-Totem":"霸主拉达-阿罗拉",
-        "Pikachu-Cosplay":"换装皮卡丘",
-        "Pikachu-Rock-Star":"硬摇滚皮卡丘",
-        "Pikachu-Belle":"贵妇皮卡丘",
-        "Pikachu-Pop-Star":"偶像皮卡丘",
-        "Pikachu-PhD":"博士皮卡丘",
-        "Pikachu-Libre":"面罩摔角手皮卡丘",
-        "Pikachu-Original":"皮卡丘-初始帽子",
-        "Pikachu-Hoenn":"皮卡丘-丰缘帽子",
-        "Pikachu-Sinnoh":"皮卡丘-神奥帽子",
-        "Pikachu-Unova":"皮卡丘-合众帽子",
-        "Pikachu-Kalos":"皮卡丘-卡洛斯帽子",
-        "Pikachu-Alola":"皮卡丘-阿罗拉帽子",
-        "Pikachu-Partner":"皮卡丘-就决定是你了之帽子",
-        "Pikachu-Starter":"搭档皮卡丘",
-        "Pikachu-Gmax":"皮卡丘-超极巨化",
-        "Raichu-Alola":"雷丘-阿罗拉",
-        "Sandshrew-Alola":"穿山鼠-阿罗拉",
-        "Sandslash-Alola":"穿山王-阿罗拉",
-        "Vulpix-Alola":"六尾-阿罗拉",
-        "Ninetales-Alola":"九尾-阿罗拉",
-        "Diglett-Alola":"地鼠-阿罗拉",
-        "Dugtrio-Alola":"三地鼠-阿罗拉",
-        "Meowth-Alola":"喵喵-阿罗拉",
-        "Meowth-Galar":"喵喵-伽勒尔",
-        "Meowth-Gmax":"喵喵-超极巨化",
-        "Persian-Alola":"猫老大-阿罗拉",
-        "Alakazam-Mega":"超级胡地",
-        "Machamp-Gmax":"怪力-超极巨化",
-        "Geodude-Alola":"小拳石-阿罗拉",
-        "Graveler-Alola":"隆隆石-阿罗拉",
-        "Golem-Alola":"隆隆岩-阿罗拉",
-        "Ponyta-Galar":"小火马-伽勒尔",
-        "Rapidash-Galar":"烈焰马-伽勒尔",
-        "Slowbro-Mega":"超级呆壳兽",
-        "Farfetch'd-Galar":"大葱鸭-伽勒尔",
-        "Grimer-Alola":"臭泥-阿罗拉",
-        "Muk-Alola":"臭臭泥-阿罗拉",
-        "Gengar-Mega":"超级耿鬼",
-        "Gengar-Gmax":"耿鬼-超极巨化",
-        "Kingler-Gmax":"巨钳蟹-超极巨化",
-        "Exeggutor-Alola":"椰蛋树-阿罗拉",
-        "Marowak-Alola":"嘎啦嘎啦-阿罗拉",
-        "Marowak-Alola-Totem":"霸主嘎啦嘎啦-阿罗拉",
-        "Weezing-Galar":"双弹瓦斯-伽勒尔",
-        "Kangaskhan-Mega":"超级袋兽",
-        "Mr. Mime-Galar":"魔墙人偶-伽勒尔",
-        "Pinsir-Mega":"超级凯罗斯",
-        "Gyarados-Mega":"超级暴鲤龙",
-        "Lapras-Gmax":"拉普拉斯-超极巨化",
-        "Eevee-Starter":"搭档伊布",
-        "Eevee-Gmax":"伊布-超极巨化",
-        "Aerodactyl-Mega":"超级化石翼龙",
-        "Snorlax-Gmax":"卡比兽-超极巨化",
-        "Mewtwo-Mega-X":"超级超梦X",
-        "Mewtwo-Mega-Y":"超级超梦Y",
-        "Pichu-Spiky-eared":"刺刺耳皮丘",
-        "Ampharos-Mega":"超级电龙",
-        "Steelix-Mega":"超级大钢蛇",
-        "Scizor-Mega":"超级巨钳螳螂",
-        "Heracross-Mega":"超级赫拉克罗斯",
-        "Corsola-Galar":"太阳珊瑚-伽勒尔",
-        "Houndoom-Mega":"超级黑鲁加",
-        "Tyranitar-Mega":"超级班基拉斯",
-        "Sceptile-Mega":"超级蜥蜴王",
-        "Blaziken-Mega":"超级火焰鸡",
-        "Swampert-Mega":"超级巨沼怪",
-        "Zigzagoon-Galar":"蛇纹熊-伽勒尔",
-        "Linoone-Galar":"直冲熊-伽勒尔",
-        "Gardevoir-Mega":"超级沙奈朵",
-        "Sableye-Mega":"超级勾魂眼",
-        "Mawile-Mega":"超级大嘴娃",
-        "Aggron-Mega":"超级波士可多拉",
-        "Medicham-Mega":"超级恰雷姆",
-        "Manectric-Mega":"超级雷电兽",
-        "Sharpedo-Mega":"超级巨牙鲨",
-        "Camerupt-Mega":"超级喷火驼",
-        "Altaria-Mega":"超级七夕青鸟",
-        "Castform-Sunny":"飘浮泡泡-太阳",
-        "Castform-Rainy":"飘浮泡泡-雨水",
-        "Castform-Snowy":"飘浮泡泡-雪云",
+};
+function trans_from_dict(a){
+    var b=translations[a];
+    if(b)return b;
+    return a;
+}
+var QQ=$.noConflict();
+var regex_ability=new RegExp(/Ability: ([A-z- ]+[A-z])$/);
+var regex_possible_ability=new RegExp(/Possible abilities: ([A-z- ]+[A-z])$/);
+var regex_possible_ability2=new RegExp(/Possible abilities: ([A-z- ]+[A-z]), ([A-z- ]+[A-z])$/);
+var regex_Item=new RegExp(/Item: ([(A-z- ]+[A-z)])$/);
+// 's match
+var regex_stat_change=new RegExp(/(The opposing )*(.+)'s ([A-z !]+)/);
+var regex_magic_bounce=new RegExp(/bounced the ([A-z -]+) back!/);
+var regex_start_battle=new RegExp(/Battle started between (.+) and (.+)!/);
+var regex_uturn=new RegExp(/(The opposing )*([A-z -']+[A-z]) went back to (.*)!/);
+var regex_gems=new RegExp(/The ([A-z ]+) strengthened ([A-z- ]+)'s power!/);
+var regex_eat=new RegExp(/(The opposing )*([A-z -']+[A-z]) (ate|used) its ([A-z ]+)!/);
+var regex_restorehp=new RegExp(/restored HP using its ([A-z ]+)!/);
+var regex_knock=new RegExp(/(The opposing )*(.+) knocked off (the opposing )*(.+)\'s (.+)!/);
+var regex_sent_out = new RegExp(/(.+) sent out /);
+var regex_lost_health = new RegExp(/\((The opposing )*(.+) lost ([0-9\.]+)% of its health!\)/);
+var regex_lost_health2 = new RegExp(/\((The opposing )*(.+) lost /);
+var regex_mega = new RegExp(/(The opposing )*([A-z-']+) has Mega Evolved into Mega ([A-z -]+)!/);
+var regex_come_back = new RegExp(/(.+), come back!/);
+var single_word_pm = new RegExp(/(The opposing )*([A-z-']+) (.+)/);
+
+var double_word_pm = new RegExp(/(The opposing )*([A-z:\.]+ [A-z]+) (.+)/);
+var bracket_single_word_pm = new RegExp(/\((The opposing )*([A-z-']+) (.+)\)/);
+var bracket_double_word_pm = new RegExp(/\((The opposing )*([A-z:\.]+ [A-z]+) (.+)\)/);
+var regex_max_guard = new RegExp(/\(Max Guard started on (the opposing) (.+)!\)/);
+//var regex_key_stone = new RegExp(/(The opposing )*(.+)'s (.+) is reacting to the Key Stone!/)
+var regex_ability_act = new RegExp(/\[(The opposing )*([A-z -']+[A-z])'s (.+)\]/);
+var regex_move_no_effect = new RegExp(/\((The opposing )*([A-z -']+[A-z]) blocked the effect!\)/);
+var regex_pointed_stones = new RegExp(/Pointed stones dug into (the opposing )*([A-z -']+[A-z])!/);
+var regex_after_taunt = new RegExp(/(The opposing )*([A-z -']+[A-z]) can't use ([A-z- ]+) after the taunt!/);
+var regex_obtained = new RegExp(/(The opposing )*([A-z -']+[A-z]) obtained one ([A-z- ]+)\./);
+var regex_chn = new RegExp(/[\u4E00-\u9FA5]+/);
+var regex_go = new RegExp(/Go! (.+)\(/);
+var regex_item_pokemon = new RegExp(/The ([A-z]+ [A-z]+) weakened (the)* damage to ([A-z -']+[A-z])!/);
+var regex_g6_mega = new RegExp(/(The opposing )*([A-z -']+[A-z])'s ([A-z]+) is reacting to (.+)'s Mega Bracelet!/);
+var regex_dynamax = new RegExp(/(The opposing )*([A-z -']+[A-z])'s Dynamax!/);
+var regex_disable = new RegExp(/(The opposing )*([A-z -']+[A-z])'s ([A-z -']+[A-z]) was disabled!/);
+var regex_cannot_use = new RegExp(/(The opposing )*([A-z -']+[A-z]) can't use ([A-z -']+[A-z])!/);
+var regex_trace = new RegExp(/(The opposing )*(.+) traced (the opposing )*(.+)\'s (.+)!/)
+var t= function(originalStr){
+    var tmp=originalStr.trim();
+    if(translations[tmp])
+        return translations[tmp];
+    if(originalStr.match(regex_chn))
+        return originalStr;
+    if(originalStr.match(regex_sent_out)){
+        return RegExp.$1+" 放出了 ";
+    }
+    if(originalStr.match(regex_lost_health)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"失去了 "+RegExp.$3+"% 的生命值！";
+    }
+    if(originalStr.match(regex_lost_health2)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"失去了 ";
+    }
+    if(tmp.indexOf("'s ")!=-1&&tmp.indexOf("!]")!=-1){
+        tmp=tmp.replace("'s ","").replace("!]","");
+        return "的"+translations[tmp]+"!]";
+    }
+    if(tmp.indexOf(" withdrew ")!=-1){
+        var splitted=tmp.split(" withdrew ");
+        return splitted[0]+"收回了"+trans_from_dict(splitted[1].replace("!",""))+"！";
+    }
+    if(originalStr.match(regex_come_back)){
+        return trans_from_dict(RegExp.$1)+"，回来吧！";
+    }
+    if(originalStr.match(regex_go)){
+        return "去吧，"+trans_from_dict(RegExp.$1)+"(";
+    }
+    if(originalStr.match(regex_stat_change)){
+        if(trans_from_dict(RegExp.$3)!=RegExp.$3)
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_from_dict(RegExp.$3);
+    }
+    //preview
+    if((originalStr.match(/ \/ /g) || []).length>2){
+        var pokes=originalStr.split(" / ");
+        var ret=translations[pokes[0]];
+        var pos=1;
+        while(pokes[pos]){
+            ret+=" / "+translations[pokes[pos]];
+            pos++;
+            if(pos>=6)break;
+        }
+        return ret;
+    }
+    if(originalStr.match(regex_mega)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"超级进化为Mega"+translations[RegExp.$3]+"！";
+    }
+    if(originalStr.match(regex_g6_mega)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的"+translations[RegExp.$3]+"响应了"+RegExp.$4+"的Mega手环！";
+    }
+    if(originalStr.match(regex_disable)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的"+translations[RegExp.$3]+"无法使用！";
+    }
+    if(originalStr.match(regex_cannot_use)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"不能使用"+translations[RegExp.$3]+"！";
+    }
+    if(originalStr.match(single_word_pm)){
+        var trans_3 = trans_from_dict(RegExp.$3);
+        if(trans_3!=RegExp.$3){
+            return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_3;
+        }
+    }
+    if(originalStr.match(double_word_pm)){
+        var trans_3 = trans_from_dict(RegExp.$3);
+        if(trans_3!=RegExp.$3){
+            return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_3;
+        }
+    }
+    if(originalStr.match(bracket_single_word_pm)){
+        var trans_3 = trans_from_dict(RegExp.$3);
+        if(trans_3!=RegExp.$3){
+            return "("+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_3+")";
+        }
+    }
+    if(originalStr.match(bracket_double_word_pm)){
+        var trans_3 = trans_from_dict(RegExp.$3);
+        if(trans_3!=RegExp.$3){
+            return "("+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_3+")";
+        }
+    }
+    if(originalStr.match(regex_item_pokemon)){
+        return trans_from_dict(RegExp.$1)+"降低了对"+trans_from_dict(RegExp.$3)+"造成的伤害！";
+    }
+    if(originalStr.match(regex_eat)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+(RegExp.$3=="used"?"使用了":"吃掉了")+"它的"+trans_from_dict(RegExp.$4)+"！";
+    }
+    if(originalStr.match(regex_ability_act)){
+            return "["+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的"+trans_from_dict(RegExp.$3)+"]";
+    }
+    if(originalStr.match(regex_move_no_effect)){
+        return "(这对"+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"没有效果)";
+    }
+    if(originalStr.match(regex_obtained)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"获得了"+trans_from_dict(RegExp.$3)+"。";
+    }
+    if(originalStr.match(regex_max_guard)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"展开了极巨防壁！";
+    }
+    if(originalStr.match(regex_pointed_stones)){
+        return "锋利的岩石扎进了"+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的身体！";
+    }
+    if(originalStr.match(regex_ability)){
+        originalStr=originalStr.replace(regex_ability,"特性: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
+    if(originalStr.match(regex_possible_ability)){
+        originalStr=originalStr.replace(regex_possible_ability,"可能的特性: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
+
+    if(originalStr.match(regex_knock)){
+       return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"打落了"+trans_from_dict(RegExp.$3)+trans_from_dict(RegExp.$4)+"的"+trans_from_dict(RegExp.$5)+"!";
+    }
+    if(originalStr.match(regex_trace)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"复制了"+trans_from_dict(RegExp.$3)+trans_from_dict(RegExp.$4)+"的"+trans_from_dict(RegExp.$5)+"!";
+     }
+    if(originalStr.match(regex_possible_ability2)){
+        originalStr=originalStr.replace(regex_possible_ability2,"可能的特性: ");
+        if(translations[RegExp.$1]&&translations[RegExp.$2]){
+            originalStr=originalStr+translations[RegExp.$1]+"，"+translations[RegExp.$2];
+        }
+        return originalStr;
+    }
+
+
+
+    if(originalStr.match(regex_Item)){
+        originalStr=originalStr.replace(regex_Item,"道具: ");
+        if(translations[RegExp.$1]){
+            originalStr+=translations[RegExp.$1];
+        }
+        return originalStr;
+    }
+    
+    if(originalStr.match(regex_start_battle)){
+        return RegExp.$1+" 与 "+RegExp.$2+" 的对战开始了！";
+    }
+    if(originalStr.match(/^\((.*)\)$/)){
+        if(translations[RegExp.$1])
+            return "("+translations[RegExp.$1]+")";
+    }
+    if(originalStr.match(/transformed into ([A-z -]+)!/)){
+        return "变成了"+translations[RegExp.$1]+"！";
+    }
+    if(originalStr.match(regex_uturn)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"回到了"+RegExp.$3+"的身边！";
+    }
+    if(originalStr.match(regex_magic_bounce)){
+        return "把"+translations[RegExp.$1]+"反弹回去了！";
+    }
+    if(originalStr.match(regex_dynamax)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的极巨化！";
+    }
+    if(originalStr.match(regex_after_taunt)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"因为挑拨不能使用"+translations[RegExp.$3]+"！";
+    }
+    if(originalStr.match(regex_gems)){
+        return translations[RegExp.$1]+"提升了"+translations[RegExp.$2]+"的威力!";
+    }
+    //else
+        return originalStr;
+            
+            //.replace(/Ability: ([A-z ]+)/,"特性: "+translate(RegExp.$1))
+            //.replace(/Ability: \/ Item: ([A-z ]+)/,"特性: "++"/ 道具:"+translate("$2"))
+
+        ;
+}
+function translateElement(element){
+    var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
+    var node=null;
+    var translate=t;
+    while((node=elTW.nextNode())!=null){
+        if(node.nodeValue){
+            //console.log(QQ(node).text());
+            //QQ(node).text(transl)
+            //console.log(node.nodeValue+" "+node.parentNode.getAttribute("class"));
+            //console.log();
+            var value=node.nodeValue;
+            if(value.indexOf('•')!=-1){     //技能名在鼠标移入的状态
+                value=value.replace('•',"");
+                value=translate(value);
+                node.nodeValue="• "+value;
+                continue;
+            }
+            else
+                node.nodeValue=translate(node.nodeValue
+
+            );
+            //node=elTW.previousNode();
+            //QQ(t).remove();
+        }
+    }
+}
+
+(function() {
+    'use strict';
+    if(document.getElementById('room-'))
+        translateElement(document.getElementById('room-'));
+    QQ(document).on('DOMNodeInserted',function(e){
+        translateElement(e.target);
+    });
+    // Your code here...
+})();
+wy":"飘浮泡泡-雪云",
         "Banette-Mega":"超级诅咒娃娃",
         "Absol-Mega":"超级阿勃梭鲁",
         "Glalie-Mega":"超级冰鬼护",
@@ -3208,2177 +5461,4 @@ var translations={
     "Holder's Multi-Attack is Poison type.":"银伴战兽携带变成毒属性，携带该道具的宝可梦的多属性攻击变为毒属性",
     "If holder has a Poison move, this item allows it to use a Poison Z-Move.":"拥有毒属性招式的携带者可以使用毒属性Z招式",
     "A device for catching wild Pokemon. It is designed as a capsule system.":"胶囊样式的用于投向野生宝可梦并将其捕捉的球",
-    "Holder's two-turn moves complete in one turn (except Sky Drop). Single use.":"使蓄力招式时消除蓄力回合直接发动效果（自由落体除外），使用后消失",
-    "A rare Poke Ball that has been crafted to commemorate an event.":"为了纪念某些事件的稀有的精灵球",
-    "If held by a Primarina with Sparkling Aria, it can use Oceanic Operetta.":"西施海壬携带后可以将泡影的咏叹调转化成Z招式：海神庄严交响乐",
-    "Holder's moves are protected from adverse contact effects, except Pickpocket.":"使用接触类招式攻击时，不会受到本应受到的效果，对顺手牵羊特性无效",
-    "Holder's first successful Psychic-type attack will have 1.3x power. Single use.":"使用超能力属性招式时提升本次攻击30%的威力，使用后消失",
-    "Holder's Multi-Attack is Psychic type.":"银伴战兽携带变成超能力属性，携带该道具的宝可梦的多属性攻击变为超能力属性",
-    "If the terrain is Psychic Terrain, raises holder's Sp. Def by 1 stage. Single use.":"当场地为精神场地时特防提升一级，使用后消失",
-    "If holder has a Psychic move, this item allows it to use a Psychic Z-Move.":"拥有超能力属性招式的携带者可以使用超能力属性Z招式",
-    "A Poke Ball that provides a better catch rate at the start of a wild encounter.":"在战斗开始时使用捕获成功率更高的特殊的精灵球",
-    "Each turn, holder has a 20% chance to move first in its priority bracket.":"20%概率优先使用招式",
-    "If held by a Ditto that hasn't Transformed, its Speed is doubled.":"未变身前的百变怪携带后速度翻倍",
-    "No competitive use other than when used with Fling.":"在宝可梦考古学上非常贵重的骨头，可以在商店高价出售",
-    "Holder is cured if it is burned. Single use.":"解除灼伤状态，使用后消失",
-    "Holder's critical hit ratio is raised by 1 stage.":"击中要害等级提升一级",
-    "If holder survives a hit, attacker is forced to switch to a random ally. Single use.":"受到伤害后攻击方随机交换任意宝可梦，使用后消失",
-    "If held by a Groudon, this item triggers its Primal Reversion in battle.":"固拉多携带在对战中原始回归为原始固拉多",
-    "A Poke Ball that works well on Pokemon species that were previously caught.":"对于以前捕获过的宝可梦效果特别好的特殊的球",
-    "Halves damage taken from a supereffective Grass-type attack. Single use.":"受到效果绝佳的草属性招式攻击时伤害减半，使用后消失",
-    "The holder's type immunities granted solely by its typing are negated.":"受到攻击时，不会出现因属性相性引发的没有效果",
-    "Holder's first successful Rock-type attack will have 1.3x power. Single use.":"使用岩石属性招式时提升本次攻击30%的威力，使用后消失",
-    "Holder's Multi-Attack is Rock type.":"银伴战兽携带变成岩石属性，携带该道具的宝可梦的多属性攻击变为岩石属性",
-    "If holder has a Rock move, this item allows it to use a Rock Z-Move.":"拥有岩石属性招式的携带者可以使用岩石属性Z招式",
-    "If holder is hit by a contact move, the attacker loses 1/6 of its max HP.":"受到接触类招式时对方失去1/6最大HP",
-    "Can be revived into Lileep.":"可以用来复活触手百合",
-    "Halves damage taken from a supereffective Fairy-type attack. Single use.":"受到效果绝佳的妖精属性招式攻击时伤害减半，使用后消失",
-    "If holder is hit by a special move, attacker loses 1/8 of its max HP. Single use.":"受到特殊招式攻击时对手损伤1/8的HP，使用后消失",
-    "If held by a Sableye, this item allows it to Mega Evolve in battle.":"勾魂眼携带可进行超级进化",
-    "A special Poke Ball that is used only in the Safari Zone and Great Marsh.":"仅能在狩猎地带和大湿地中使用的特殊的球,上面有迷彩花纹",
-    "Holder is immune to powder moves and damage from Sandstorm or Hail.":"免疫沙暴和冰雹天气造成的伤害",
-    "Raises holder's Speed by 1 stage when at 1/4 max HP or less. Single use.":"HP低于1/4时速度提升一级，使用后消失",
-    "If held by a Salamence, this item allows it to Mega Evolve in battle.":"暴飞龙携带可进行超级进化",
-    "If held by a Sceptile, this item allows it to Mega Evolve in battle.":"蜥蜴王携带可进行超级进化",
-    "If held by a Scizor, this item allows it to Mega Evolve in battle.":"巨钳螳螂携带可进行超级进化",
-    "Holder's Flying-type attacks have 1.2x power.":"飞行属性招式威力提升20%",
-    "If held by a Sharpedo, this item allows it to Mega Evolve in battle.":"巨牙鲨携带可进行超级进化",
-    "Holder may switch out even when trapped by another Pokemon, or by Ingrain.":"必定可以交换，无视任何禁止交换的特性或状态",
-    "After an attack, holder gains 1/8 of the damage in HP dealt to other Pokemon.":"造成伤害后回复伤害量的1/8HP",
-    "Holder's Techno Blast is Electric type.":"携带该道具的宝可梦的高科技光炮变为电属性",
-    "Halves damage taken from a supereffective Ground-type attack. Single use.":"受到效果绝佳的地面属性招式攻击时伤害减半，使用后消失",
-    "Holder's Normal-type attacks have 1.2x power.":"一般属性招式威力提升20%",
-    "Holder's Bug-type attacks have 1.2x power.":"虫属性招式威力提升20%",
-    "Restores 1/4 max HP when at 1/2 max HP or less. Single use.":"HP低于50%时回复1/4最大HP，使用后消失",
-    "Can be revived into Cranidos.":"可以用来复活头盖龙",
-    "Holder's Flying-type attacks have 1.2x power. Judgment is Flying type.":"飞行属性招式威力提升20%，制裁光砾变为飞行属性",
-    "If held by a Slowbro, this item allows it to Mega Evolve in battle.":"呆河马携带可进行超级进化",
-    "Holder's use of Sandstorm lasts 8 turns instead of 5.":"引起的沙暴天气从5回合延长至8回合",
-    "If held by a Snorlax with Giga Impact, it can use Pulverizing Pancake.":"卡比兽携带后可以将超级冲击转化成Z招式：认真起来大爆击",
-    "Raises holder's Attack by 1 if hit by an Ice-type attack. Single use.":"受到冰属性招式攻击时攻击提升一级，使用后消失",
-    "Holder's Ground-type attacks have 1.2x power.":"地面属性招式威力提升20%",
-    "If held by a Latias/Latios, its Dragon- and Psychic-type moves have 1.2x power.":"拉帝亚斯/拉帝欧斯携带后龙属性和超能力属性招式威力提升20%",
-    "Holder's Ghost-type attacks have 1.2x power.":"幽灵属性招式威力提升20%",
-    "Holder's Water-type attacks have 1.2x power. Judgment is Water type.":"水属性招式威力提升20%，制裁光砾变为水属性",
-    "Holder's Ghost-type attacks have 1.2x power. Judgment is Ghost type.":"幽灵属性招式威力提升20%，制裁光砾变为幽灵属性",
-    "A special Poke Ball for the Bug-Catching Contest.":"在捕虫大赛上使用的特殊的球",
-    "Raises a random stat by 2 when at 1/4 max HP or less (not acc/eva). Single use.":"HP低于25%时随机提升一项能力两级，使用后消失",
-    "If held by a Steelix, this item allows it to Mega Evolve in battle.":"大钢蛇携带可进行超级进化",
-    "Holder's first successful Steel-type attack will have 1.3x power. Single use.":"使用钢属性招式时提升本次攻击30%的威力，使用后消失",
-    "Holder's Multi-Attack is Steel type.":"银伴战兽携带变成钢属性，携带该道具的宝可梦的多属性攻击变为钢属性",
-    "If holder has a Steel move, this item allows it to use a Steel Z-Move.":"拥有钢属性招式的携带者可以使用钢属性Z招式",
-    "If held by a Farfetch'd, its critical hit ratio is raised by 2 stages.":"大葱鸭携带后击中要害等级提升两级",
-    "Each turn, holder loses 1/8 max HP. An attacker making contact can receive it.":"每回合损失1/8最大HP，受到接触类招式伤害时对方获得该道具",
-    "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.":"岩石属性招式威力提升20%，制裁光砾变为岩石属性",
-    "If held by a Swampert, this item allows it to Mega Evolve in battle.":"巨沼怪携带可进行超级进化",
-    "Halves damage taken from a supereffective Bug-type attack. Single use.":"受到效果绝佳的虫属性招式攻击时伤害减半，使用后消失",
-    "If held by a Tapu with Nature's Madness, it can use Guardian of Alola.":"守护神携带后可以将自然之怒转化成Z招式：巨人卫士·阿罗拉",
-    "Holder's use of Electric/Grassy/Misty/Psychic Terrain lasts 8 turns instead of 5.":"引起的场地从5回合延长至8回合",
-    "If held by a Cubone or a Marowak, its Attack is doubled.":"嘎啦嘎啦携带后攻击翻倍",
-    "A Poke Ball that becomes better the more turns there are in a battle.":"随着战斗回合数增加而变得更好的特殊的球",
-    "At the end of every turn, this item attempts to badly poison the holder.":"回合结束时进入剧毒状态",
-    "Holder's Poison-type attacks have 1.2x power. Judgment is Poison type.":"毒属性招式威力提升20%，制裁光砾变为毒属性",
-    "If held by a Tyranitar, this item allows it to Mega Evolve in battle.":"班基拉斯携带可进行超级进化",
-    "An ultra-performance Ball that provides a higher catch rate than a Great Ball.":"比起超级球来更容易捉到宝可梦的，性能非常不错的球",
-    "If held by a Venusaur, this item allows it to Mega Evolve in battle.":"妙蛙花携带可进行超级进化",
-    "Halves damage taken from a supereffective Electric-type attack. Single use.":"受到效果绝佳的电属性招式攻击时伤害减半，使用后消失",
-    "Holder's first successful Water-type attack will have 1.3x power. Single use.":"使用水属性招式时提升本次攻击30%的威力，使用后消失",
-    "Holder's Multi-Attack is Water type.":"银伴战兽携带变成水属性，携带该道具的宝可梦的多属性攻击变为水属性",
-    "If holder has a Water move, this item allows it to use a Water Z-Move.":"拥有水属性招式的携带者可以使用水属性Z招式",
-    "If holder is hit super effectively, raises Attack, Sp. Atk by 2 stages. Single use.":"受到效果绝佳的伤害时攻击和特攻提升两级，使用后消失",
-    "Restores all lowered stat stages to 0 when one is less than 0. Single use.":"将所有能力等级低于0的能力回复至0，使用后消失",
-    "The accuracy of attacks by the holder is 1.1x.":"命中率提升10%",
-    "Holder's special attacks have 1.1x power.":"特殊招式威力提升10%",
-    "Used for Hyper Training. One of a Pokemon's stats is calculated with an IV of 31.":"用作极限特训，提升一项个体值到最大值",
-    "Used for Hyper Training. All of a Pokemon's stats are calculated with an IV of 31.":"用作极限特训，提升所有个体值到最大值",
-    "Halves damage taken from a supereffective Ice-type attack. Single use.":"受到效果绝佳的冰属性招式攻击时伤害减半，使用后消失",
-    "Holder's Electric-type attacks have 1.2x power. Judgment is Electric type.":"电属性招式威力提升20%，制裁光砾变为电属性",
-    "The accuracy of attacks by the holder is 1.2x if it moves after its target.":"出招比目标慢时命中率提升20%",
-    "If held by a Lycanroc forme with Stone Edge, it can use Splintered Stormshards.":"习得尖石攻击的鬃岩狼人可以使用狼啸石牙飓风暴",
-    "If held by a Mimikyu with Play Rough, it can use Let's Snuggle Forever.":"习得嬉闹的谜拟Q可以使用亲密无间大乱揍",
-    "If held by a Kommo-o with Clanging Scales, it can use Clangorous Soulblaze.":"习得鳞片噪音的杖尾鳞甲龙可以使用炽魂热舞烈音爆",
-    "Solgaleo or Dusk Mane Necrozma with Sunsteel Strike can use a special Z-Move.":"习得流星闪冲的索尔迦雷欧或奈克洛兹玛-黃昏之鬃可以发动特殊Z招式",
-    "Lunala or Dawn Wings Necrozma with Moongeist Beam can use a special Z-Move.":"习得暗影之光的露奈雅拉或奈克洛兹玛-拂晓之翼可以发动特殊Z招式",
-    "Dusk Mane/Dawn Wings Necrozma: Ultra Burst, then Z-Move w/ Photon Geyser.":"让奈克洛兹玛-黄昏之鬃/拂晓之翼究极爆发再配合光子喷涌使用Z招式",
-    "Restores 33% max HP at 1/4 max HP or less; confuses if -Atk Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减攻击性格则会陷入混乱，使用后消失",
-    "Restores 33% max HP at 1/4 max HP or less; confuses if -Def Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减防御性格则会陷入混乱，使用后消失",
-    "Restores 33% max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减特攻性格则会陷入混乱，使用后消失",
-    "Restores 33% max HP at 1/4 max HP or less; confuses if -SpD Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减特防性格则会陷入混乱，使用后消失",
-    "Restores 33% max HP at 1/4 max HP or less; confuses if -Spe Nature. Single use.":"HP低于25%时回复33%最大HP，如果是减速度性格则会陷入混乱，使用后消失",
-    "Evolves Electabuzz into Electivire when traded.":"电击兽携带后通信交换可进化为电击魔兽",
-    "Evolves Seadra into Kingdra when traded.":"海刺龙携带后通信交换可以进化为刺龙王",
-    "Evolves Milcery into Alcremie when held and spun around.":"小仙奶携带后滑动摇杆可以进化为霜奶仙",
-    "Evolves Sinistea into Polteageist when used.":"使用后可以让来悲茶进化为怖思壶",
-    "Evolves certain species of Pokemon when used.":"使用后可以让某些特定宝可梦的进化",
-    "Evolves Porygon2 into Porygon-Z when traded.":"多边兽Ⅱ携带后通信交换可以进化为多边兽Ｚ",
-    "Evolves Magmar into Magmortar when traded.":"鸭嘴火兽携带后通信交换可以进化为鸭嘴炎兽",
-    "Evolves Happiny into Chansey when held and leveled up during the day.":"小福蛋携带后在白天升级可以进化为吉利蛋",
-    "Evolves Feebas into Milotic when traded.":"丑丑鱼携带后通信交换可以进化为美纳斯",
-    "Evolves Rhydon into Rhyperior when traded.":"钻角犀兽携带后通信交换可以进化为超甲狂犀",
-    "Evolves Dusclops into Dusknoir when traded.":"彷徨夜灵携带后通信交换可以进化为黑夜魔灵",
-    "Evolves Spritzee into Aromatisse when traded.":"粉香香携带后通信交换可以进化为芳香精",
-    "Evolves Applin into Appletun when used.":"使用后可以让啃果虫进化为丰蜜龙",
-    "Evolves Applin into Flapple when used.":"使用后可以让啃果虫进化为苹裹龙",
-    "Evolves Porygon into Porygon2 when traded.":"多边兽携带后通信交换可以进化为多边兽Ⅱ",
-    "Evolves Swirlix into Slurpuff when traded.":"绵绵泡芙携带后通信交换可以进化为胖甜妮",
-    "Can be combined with certain fossils.":"可以和一些特定化石结合",
-    "If the holder misses because of accuracy, it raises Speed by 2 stages. Single use.":"招式因命中率影响而落空时，速度会提升二级",
-    "When the holder's stats are lowered, it will be switched out of battle.":"携带该道具的宝可梦能力下降时，自身下场与同伴进行替换",
-    "Prevents the effects of traps set on the battlefield.":"防止携带者受到场地上的陷阱效果",
-    "If Trick Room is active, lowers holder's Speed by 1 stage. Single use.":"携带该道具的宝可梦在戏法空间下速度降低一级，使用后消失",
-    "If held by a Zacian, this item changes it to Crowned Forme.":"苍响携带会变为剑之王形态",
-    "If held by a Zamazenta, this item changes it to Crowned Forme.":"藏玛然特携带会变为盾之王形态",
-    "Raises holder's Special Attack by 1 stage after using a sound move. Single use.":"使用声音类招式时，特攻提升一级，使用后消失",
-    "Blocks the holder from receiving any effects of Sunny Day/Rain Dance.":"阻止使用者从大晴天/下雨天中获得任何效果",
-
-    // Gen 7 
-    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpD Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减特防性格的宝可梦则会陷入混乱，使用后消失",
-    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Atk Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减攻击性格的宝可梦则会陷入混乱，使用后消失",
-    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Def Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减防御性格的宝可梦则会陷入混乱，使用后消失",
-    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -Spe Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减速度性格的宝可梦则会陷入混乱，使用后消失",
-    "Restores 1/2 max HP at 1/4 max HP or less; confuses if -SpA Nature. Single use.":"HP低于25%时回复1/2最大HP，如果是减特攻性格的宝可梦则会陷入混乱，使用后消失",
-	
-    // Moves Desc Translation
-
-    "Very high critical hit ratio.":"十分容易击中要害",
-    "User recovers 50% of the damage dealt.":"使用者将造成伤害的50%转化为自身的HP",
-    "Usually goes first.":"先制攻击",
-    "10% chance to lower the foe(s) Sp. Def by 1.":"10%几率令目标的特防降低1级",
-    "Raises the user's Defense by 2.":"令使用者的防御提升2级",
-    "Power is equal to the base move's Z-Power.":"威力会根据原来的招式而改变",
-    "100% chance to lower the target's Sp. Def by 2.":"100%几率令目标的特防降低2级",
-    "Power doubles if the user has no held item.":"在使用者不持有道具的时候给予双倍伤害",
-    "Raises a random stat of the user or an ally by 2.":"使自身或伙伴随机一项能力提升2级",
-    "High critical hit ratio.":"容易击中要害",
-    "The target makes its move right after the user.":"目标将会在使用者之后立刻行动",
-    "Raises the user's Speed by 2.":"令使用者的速度提升2级",
-    "High critical hit ratio. Hits adjacent foes.":"容易击中要害攻击邻近的对手",
-    "30% chance to flinch the target.":"有30%的几率使目标陷入畏缩状态",
-    "The user swaps positions with its ally.":"使用者与同伴交换位置",
-    "Raises the user's Sp. Def by 2.":"令使用者的特防提升2级",
-    "Prevents the target from switching out.":"阻止对手替换宝可梦",
-    "10% chance to raise all stats by 1 (not acc/eva).":"有10%的几率提升自身各项能力1级（除回避率，命中率）",
-    "User recovers 1/16 max HP per turn.":"使用者每回合回复自身1/16最大HP",
-    "No additional effect.":"攻击目标造成伤害",
-    "Hits 2-5 times in one turn.":"一回合内攻击2-5次",
-    "Cures the user's party of all status conditions.":"治愈使用者队伍中所有宝可梦的异常状态",
-    "Raises an ally's Sp. Def by 1.":"提升一名同伴的特防1级",
-    "Uses a random move known by a team member.":"随机使用队伍里一个成员已习得的招式",
-    "Power doubles if target was damaged this turn.":"如果使用者在这回合受到了攻击，威力翻倍",
-    "A target of the opposite gender gets infatuated.":"和使用者性别不同的对手会陷入着迷状态",
-    "For 5 turns, damage to allies is halved. Hail only.":"五回合内，同伴所受到的伤害为原来的一半只能在冰雹天气时使用成功",
-    "Raises the user's Speed by 2; user loses 100 kg.":"使用者体重减少100KG，速度提升两级",
-    "Power doubles if user is damaged by the target.":"如果被对手攻击的话，威力翻倍",
-    "Lowers the target's Attack by 1.":"使对手的攻击下降1级",
-    "Protects from moves. Contact: poison.":"使自己进入守住状态，接触到的对手会陷入中毒状态",
-    "User switches, passing stat changes and more.":"使用者和后备宝可梦替换，能够接力能力阶级变化等",
-    "Burns on contact with the user before it moves.":"在使用招式前接触到使用者的对手会陷入灼伤状态",
-    "All healthy allies aid in damaging the target.":"所有健康的己方宝可梦会一起攻击目标",
-    "Cannot be selected until the user eats a Berry.":"再使用者食用树果前不能被使用",
-    "User loses 50% max HP. Maximizes Attack.":"使用者失去自身50%最大HP，使攻击最大化",
-    "User passes its held item to the target.":"使用者将持有的道具移交给目标",
-    "Waits 2 turns; deals double the damage taken.":"等待两回合，之后将受到的伤害双倍奉还给对手",
-    "Traps and damages the target for 4-5 turns.":"困住并伤害目标4-5回合",
-    "User cannot move next turn.":"使用者下回合无法移动",
-    "High critical hit ratio. 10% chance to burn.":"容易击中要害有10%的几率使对手陷入灼伤状态",
-    "10% chance to freeze foe(s). Can't miss in hail.":"有10%的几率使对手陷入冰冻状态在冰雹天气时攻击不会被回避",
-    "20% chance to burn the target.":"有20%的几率使对手陷入灼伤状态",
-    "30% chance to paralyze the target.":"有30%的几率使对手陷入麻痹状态",
-    "20% chance to paralyze the target.":"有20%的几率使对手陷入麻痹状态",
-    "10% chance to flinch the target.":"有10%的几率使对手畏缩",
-    "Hits 2 times in one turn.":"一回合内攻击两次",
-    "No additional effect. Hits adjacent Pokemon.":"攻击目标造成伤害攻击邻近的宝可梦",
-    "Bounces turn 1. Hits turn 2. 30% paralyze.":"第一回合跃起，第二回合攻击有30%的几率使对手陷入麻痹状态",
-    "Has 33% recoil.":"有33%的反弹伤害",
-    "Destroys screens, unless the target is immune.":"摧毁目标队伍的墙，除非目标免疫此攻击",
-    "Power doubles if the target's HP is 50% or less.":"如果对手的HP为最大HP的一半或更少，此招式威力翻倍",
-    "10% chance to lower the foe(s) Speed by 1.":"有10%的几率使（所有）对手的速度下降1级",
-    "10% chance to lower the target's Speed by 1.":"有10%的几率使目标的速度下降1级",
-     "User steals and eats the target's Berry.":"使用者将窃取并食用目标的树果",
-     "10% chance to lower the target's Sp. Def by 1.":"有10%的几率使目标的特防下降1级",
-     "Raises the user's Attack and Defense by 1.":"提升使用者的供给和防御各1级",
-     "User's Fire type becomes typeless; must be Fire.":"使使用者的火属性消失，使用者必须为火属性",
-     "Raises the user's Sp. Atk and Sp. Def by 1.":"提升使用者的特攻和特防各1级",
-     "Changes user's type by terrain (default Normal).":"根据场地改变使用者的属性",
-     "Lowers the foe(s) Sp. Atk by 2 if opposite gender.":"如果目标的性别和使用者相反，目标的特攻下降两级",
-     "70% chance to raise the user's Sp. Atk by 1.":"有70%的几率使使用者的特攻上升1级",
-     "Lowers the target's Attack by 2.":"使目标的攻击下降两级",
-     "100% chance to confuse the target.":"100%使目标混乱",
-     "Ignores the target's stat stage changes.":"无视目标的能力阶级变化进行攻击",
-     "Forces the target to switch to a random ally.":"使目标和后备宝可梦替换",
-     "Lowers the user's Defense by 1.":"使目标的防御下降1级",
-     "Lowers the user's Defense and Sp. Def by 1.":"使使用者的防御和特防下降1级",
-     "Lowers the target's Sp. Atk by 1.":"使目标的特攻下降1级",
-     "Confuses the target.":"使目标陷入混乱状态",
-     "10% chance to confuse the target.":"有10%的几率使目标陷入混乱状态",
-     "Changes user's type to match its first move.":"使使用者的属性变的和自身已学会的第一个招式的属性相同",
-     "Changes user's type to resist target's last move.":"使自己的属性变的对目标最后使出的招式属性有抗性",
-     "Uses the last move used in the battle.":"使用上一个在对战中使用的招式",
-     "Raises the user's Defense and Sp. Def by 1.":"提升使用者的防御和特防各1级",
-     "Raises the user's Defense by 3.":"提升使用者的防御3级",
-     "Lowers the target's Speed by 2.":"使目标的速度下降两级",
-     "If hit by physical attack, returns double damage.":"如果被物理攻击伤害，则返还对手两倍的伤害",
-     "If the user has no item, it steals the target's.":"如果使用者没有持有道具，将会偷走目标的道具",
-     "Protects allies from Status moves this turn.":"保护所有同伴免收变化招式的影响",
-     "High critical hit ratio. 10% chance to poison.":"容易击中要害有10%的几率使对手中毒",
-     "50% chance to lower the target's Defense by 1.":"有50%的几率使对手的防御下降1级",
-     "More power the more HP the target has left.":"目标剩余的HP越多，此招式威力越高",
-     "20% chance to flinch the target.":"有20%的几率使目标畏缩",
-     "-1 evasion; clears user and target side's hazards.":"使目标的回避率下降1级，清除目标队伍的白雾",
-     "If an opponent knocks out the user, it also faints.":"如果对手使使用者陷入濒死状态，那么该对手同样也陷入濒死状态",
-     "Prevents moves from affecting the user this turn.":"本回合内，避免招式对使用者造成影响",
-     "50% chance to raise user's Def by 2 for each hit.":"每一次攻击都有50%的几率使使用者的防御提升两级",
-     "Digs underground turn 1, strikes turn 2.":"第一回合找个地缝钻进去，第二回合攻击",
-     "For 4 turns, disables the target's last move used.":"四回合内，目标最后使用的招式将无法再被使用",
-     "This move does not check accuracy. Hits foes.":"攻击一定会命中攻击所有对手",
-     "30% chance to paralyze adjacent Pokemon.":"有30%的几率使邻近的宝可梦陷入麻痹状态",
-     "Dives underwater turn 1, strikes turn 2.":"第一回合潜入水中，第二回合攻击",
-     "20% chance to confuse the target.":"有20%的几率使目标陷入混乱状态",
-     "Hits two turns after being used.":"使用该招式后，两回合后触发攻击效果",
-     "Raises the user's evasiveness by 1.":"使使用者的回避率上升以1级",
-     "Lowers the user's Sp. Atk by 2.":"使使用者的特攻下降两级",
-     "Raises the user's Attack and Speed by 1.":"提升使用者的攻击和速度各1级",
-     "User recovers 75% of the damage dealt.":"使用者将造成伤害的75%转化为自身的HP",
-     "User gains 1/2 HP inflicted. Sleeping target only.":"使用者将攻击造成伤害的1/2转化为自身的HP只对睡眠状态的宝可梦有效",
-     "Power increases when used on consecutive turns.":"如果连续使用此招式威力会上升",
-     "Lowers the target's Sp. Atk by 2.":"降低目标的特攻2级",
-     "5 turns. Grounded: +Electric power, can't sleep.":"五回合内，站在地上的宝可梦使用的电属性招式的威力上升，不能陷入睡眠状态",
-     "Changes the target's move to Electric this turn.":"使目标这回合使用的招式属性变为电属性",
-     "More power the faster the user is than the target.":"使用者比目标速度越快，此招式威力越高",
-     "100% chance to lower the foe(s) Speed by 1.":"100%使(所有)对手的速度下降1级",
-     "For 5 turns, the target's item has no effect.":"5回合内，目标的道具不会有任何效果",
-     "10% chance to burn the target.":"有10%的几率使目标陷入灼伤状态",
-     "Lowers the target's HP to the user's HP.":"使目标的HP降得和使用者的HP相同",
-     "The target's Ability changes to match the user's.":"目标的特性将会变得和使用者相同",
-     "Less power as user's HP decreases. Hits foe(s).":"使用者的HP剩下的越少，威力越小，攻击（所有）对手",
-     "Hits adjacent Pokemon. The user faints.":"攻击邻近的宝可梦使用者陷入濒死状态",
-     "Raises user's Atk, Def, SpA, SpD, and Spe by 2.":"提升使用者的攻击防御特攻特防速度各两级",
-     "Nearly always goes first.":"几乎总是先发制人",
-     "Power doubles if user is burn/poison/paralyzed.":"如果使用者处于灼伤/中毒/麻痹状态，招式威力为原来的两倍",
-     "Prevents all Pokemon from switching next turn.":"下一回合内，阻止所有宝可梦的替换",
-     "Hits first. First turn out only. 100% flinch chance.":"先制攻击，只能在出场后第一回合使用，100%使目标畏缩",
-     "Lowers the target's Sp. Def by 2.":"使目标的特防下降两级",
-     "Always leaves the target with at least 1 HP.":"总会使目标留下至少一点HP",
-     "Nullifies Detect, Protect, and Quick/Wide Guard.":"实施对手的见切，保护，和快速/广域防守",
-     "Raises user's Attack by 3 if this KOes the target.":"如果这一击击倒了目标，使用者的攻击提升3级",
-     "50% chance to raise the user's Sp. Atk by 1.":"有50%的几率使使用者的特攻上升1级",
-     "Does damage equal to the user's HP. User faints.":"造成的伤害和使用者留下的HP相同使用者陷入濒死状态",
-     "10% chance to burn. 10% chance to flinch.":"有10%的几率使目标陷入灼伤状态有10%的几率使目标畏缩",
-     "100% chance to lower the target's Defense by 1.":"100%使目标的防御下降1级",
-     "Use with Grass or Water Pledge for added effect.":"和草或水之誓言同时使用会有特效",
-     "Hits first. First turn out only.":"先制攻击，只能在出场后第一回合使用",
-     "OHKOs the target. Fails if user is a lower level.":"一击必杀如果使用者的等级低于目标则使用招式失败",
-     "More power the less HP the user has left.":"使用者的HP越少，招式威力越高",
-     "Damages Pokemon next to the target as well.":"击中目标的同时也会伤害到其身边的宝可梦",
-     "100% chance to raise the user's Speed by 1.":"100%使使用者的速度上升1级",
-     "10% chance to burn the target. Thaws user.":"10%使目标陷入灼伤状态能使使用者解除冰冻状态",
-     "Has 33% recoil. 10% chance to burn. Thaws user.":"有33%的反弹伤害10%使目标陷入灼伤状态能使使用者解除冰冻状态",
-     "Lowers the target's accuracy by 1.":"使目标的命中率下降1级",
-     "Raises the target's Sp. Atk by 1 and confuses it.":"使目标的特攻上升1级，使目标陷入混乱状态",
-     "Flings the user's item at the target. Power varies.":"使用者投掷携带的道具进行攻击威力会改变",
-     "Heals the target by 50% of its max HP.":"使目标回复其50%最大HP",
-     "Raises Defense by 1 of all active Grass types.":"使场上所有草属性宝可梦的防御提升1级",
-     "Flies up on first turn, then strikes the next turn.":"第一回合上天，第二回合攻击",
-     "Combines Flying in its type effectiveness.":"此招式同时也具备飞行属性",
-     "Raises the user's critical hit ratio by 2.":"使使用者的击中要害阶级提升两级",
-     "Fails if the user takes damage before it hits.":"如果在使用招式前受到攻击则招式使用失败",
-     "The foes' moves target the user on the turn used.":"所有对手使用的作用范围为单体选择的招式都会攻向自己",
-     "Fighting, Normal hit Ghost. Evasiveness ignored.":"格斗属性，一般属性招式能击中幽灵属性无视回避率变化",
-     "Adds Grass to the target's type(s).":"使目标拥有草属性",
-     "Uses target's Attack stat in damage calculation.":"使用目标的攻击代替使用者的攻击进行伤害计算",
-     "10% chance to freeze. Super effective on Water.":"有10%的几率使对手陷入冰冻状态对水属性效果拔群",
-     "Charges turn 1. Hits turn 2. 30% paralyze.":"第一回合充能，第二回合攻击有30%的几率使对手陷入麻痹状态",
-     "Always results in a critical hit.":"一定会造成击中要害",
-     "Max 102 power at minimum Happiness.":"当亲密值最低的时候达到最大威力102",
-     "Power doubles with each hit, up to 160.":"每一连续击都会使上一击的威力加倍最高为160",
-     "Power doubles if used after Fusion Flare.":"如果在攻击前被交织火焰击中的话威力加倍",
-     "Power doubles if used after Fusion Bolt.":"如果在攻击前被交织闪电击中的话威力加倍",
-     "Nullifies the target's Ability.":"使对手的特性消失",
-     "Raises Atk, Sp. Atk of allies with Plus/Minus by 1.":"提升特性为正电/负电的宝可梦的攻击和特攻各1级",
-     "Summons Psychic Terrain.":"散布精神场地",
-     "Charges, then raises SpA, SpD, Spe by 2 turn 2.":"先充能，然后提升使用者的特攻特防速度各两级",
-     "Paralyzes the target.":"使目标陷入麻痹状态",
-     "More power the heavier the target.":"目标越重，威力越大",
-     "Use with Fire or Water Pledge for added effect.":"和火或水之誓言同时使用会有特效",
-     "For 5 turns, negates all Ground immunities.":"五回合内无视所有对地上属性的免疫",
-     "Lowers the foe(s) Attack by 1.":"使（所有）对手的攻击下降1级",
-     "Raises user's Attack and Sp. Atk by 1; 2 in Sun.":"让使用者的攻击和特攻上升1级，大晴天上升两级",
-     "If the user faints, the attack used loses all its PP.":"如果使用者倒下，则对手最后使用的攻击失去所有PP",
-     "Averages Defense and Sp. Def stats with target.":"平分使用者和目标的防御和特防",
-     "Swaps Defense and Sp. Def changes with target.":"交换使用者和目标的防御和特防",
-     "Does damage equal to 3/4 target's current HP.":"目标失去3/4最大HP",
-     "More power the slower the user than the target.":"使用者速度比对手越慢，威力越大",
-     "For 5 turns, hail crashes down.":"5回合内为冰雹天气",
-     "Lowers the user's Speed by 1.":"使使用者的速度下降1级",
-     "Raises the user's Defense by 1.":"使使用者的防御提升1级",
-     "Eliminates all stat changes.":"消除所有能力阶级变化",
-     "Has 1/4 recoil.":"有1/4的反弹伤害",
-     "Has 1/2 recoil.":"有1/2的反弹伤害",
-     "For 5 turns, the foe(s) is prevented from healing.":"5回合内，（所有）对手无法使用治愈招式",
-     "Heals the user by 50% of its max HP.":"使使用者回复自身50%最大HP",
-     "User faints. Replacement is fully healed.":"使用者陷入濒死状态替换上场的宝可梦会被完全治愈",
-     "Swaps all stat changes with target.":"交换自身和目标的能力阶级变化",
-     "More power the heavier the user than the target.":"使用者比目标越重，招式威力越大",
-     "10% chance to burn the foe(s).":"10%使目标陷入灼伤状态",
-     "One adjacent ally's move power is 1.5x this turn.":"一名邻近的同伴此回合使出的招式威力变为原来的1.5倍",
-     "Power doubles if the target has a status ailment.":"如果目标已经陷入负面状态则威力翻倍",
-     "Varies in type based on the user's IVs.":"招式属性和使用者的个体值有关",
-     "User is hurt by 50% of its max HP if it misses.":"如果招式未命中则使用者失去50%最大HP",
-     "Raises the user's Attack and accuracy by 1.":"使使用者的攻击和命中率上升1级",
-     "Raises the user's Attack by 1.":"使使用者的攻击上升1级",
-     "30% chance to confuse target. Can't miss in rain.":"30%使目标陷入混乱状态，在雨天不能被回避",
-     "Breaks the target's protection for this turn.":"这一回合能够破坏对手的守住状态",
-     "No additional effect. Hits adjacent foes.":"攻击对手造成伤害攻击邻近的宝可梦",
-     "Power doubles with each hit. Repeats for 5 turns.":"每一次攻击威力都会翻倍，连续攻击5次",
-     "10% chance to freeze the target.":"10%使目标陷入冰冻状态",
-     "Charges turn 1. Hits turn 2. 30% burn.":"第一回合充能，第二回合攻击有30%的几率使对手陷入灼伤状态",
-     "10% chance to freeze. 10% chance to flinch.":"10%使目标陷入冰冻状态10%使目标畏缩",
-     "No foe can use any move known by the user.":"对手将无法使用使用者已习得的招式",
-     "Destroys the foe(s) Berry/Gem.":"烧毁对手的树果和珠宝",
-     "100% chance to burn the target.":"100%使对手陷入灼伤状态",
-     "The target immediately uses its last used move.":"目标会立即使用其上次使用的招式",
-     "Normal moves become Electric type this turn.":"下一回合内一般属性招式会变为电属性招式",
-     "30% chance to lower the target's Defense by 1.":"30%使目标的防御下降1级",
-     "Type varies based on the held Plate.":"招式的属性会根据所持有的石板变化",
-     "1.5x damage if foe holds an item. Removes item.":"如果目标持有道具的话，招式威力为原来的1.5倍封住目标的道具",
-     "Fails unless each known move has been used.":"只有所有习得的其他招式被时出示才能使用该招式",
-     "30% chance to burn adjacent Pokemon.":"30%使邻近的宝可梦陷入灼伤状态",
-     "50% chance to lower the target's accuracy by 1.":"50%使目标的命中率下降1级",
-     "1/8 of target's HP is restored to user every turn.":"每回合吸取目标最大生命值的1/8",
-     "Lowers the foe(s) Defense by 1.":"使（所有）对手的防御下降1级",
-     "For 5 turns, special damage to allies is halved.":"5回合内，对同伴的特殊攻击伤害减半",
-     "20% chance to lower the target's Defense by 1.":"20%使目标的防御下降1级",
-     "User's next move will not miss the target.":"使用者下一回合对目标的攻击将不会被回避",
-     "100% chance to lower the target's Speed by 1.":"100%使目标的速度下降1级",
-     "For 5 turns, shields user's party from critical hits.":"5回合内，对手的攻击不会击中使用者的要害",
-     "User faints. Replacement is fully healed, with PP.":"使用者陷入濒死状态替换上场的宝可梦会被完全治愈包括回复PP",
-     "100% chance to lower the target's Attack by 1.":"100%使目标的攻击下降1级",
-     "50% chance to lower the target's Sp. Def by 1.":"50%使目标的特防下降1级",
-     "Bounces back certain non-damaging moves.":"将变化招式反弹回去",
-     "For 5 turns, all held items have no effect.":"5回合内，携带的道具将不会有效果",
-     "This move does not check accuracy.":"攻击一定会命中",
-     "Raises Def, Sp. Def of allies with Plus/Minus by 1.":"提升具有正电/负电特性宝可梦的防御和特防1级",
-     "Hits adjacent Pokemon. Power varies; 2x on Dig.":"攻击邻近的宝可梦威力随机变化，对挖洞的目标造成两倍伤害",
-     "Protects allies from attacks. First turn out only.":"防止同伴受到攻击，只能在出场后第一回合使用",
-     "Copies a foe at 1.5x power. User must be faster.":"抢先使出对手将要使出的招式使用者必须更快",
-     "Lowers target's Attack, Sp. Atk by 2. User faints.":"使目标的攻击和特攻下降两级，使用者陷入濒死状态",
-     "If hit by an attack, returns 1.5x damage.":"如果因攻击而受到伤害，则返还1.5倍的伤害",
-     "10% chance to raise the user's Attack by 1.":"10%使使用者的攻击上升1级",
-     "20% chance to raise the user's Attack by 1.":"20%使使用者的攻击上升1级",
-     "Picks a random move.":"根据使用者的rp随机使出一个招式",
-     "The last move the target used replaces this one.":"这个招式将会变成目标会后使出的招式",
-     "Raises the user's evasiveness by 2.":"使使用者的回避率上升2级",
-     "Psychic hits Dark. Evasiveness ignored.":"超能属性招式可以命中恶属性无视回避率变化",
-     "If hit by special attack, returns double damage.":"如果被特殊攻击伤害，则返还对手两倍的伤害",
-     "User uses the target's last used move against it.":"使用目标最后使用过的招式",
-     "30% chance to lower the target's accuracy by 1.":"30%使目标的命中率下降1级",
-     "For 5 turns, protects user's party from stat drops.":"在５回合内不会让对手降低自己队伍中宝可梦的能力",
-     "50% chance to lower the target's Sp. Atk by 1.":"50%使目标的特攻下降1级",
-     "5 turns. Can't status,-Dragon power vs grounded.":"五回合内，站在地上的宝可梦面不会陷入负面状态，且受到龙属性招式的伤害减半",
-     "30% chance to lower the target's Sp. Atk by 1.":"30%使目标的特攻下降1级",
-     "Ignores the Abilities of other Pokemon.":"无视目标的特性进行攻击",
-     "Heals the user by a weather-dependent amount.":"恢复使用者的HP，回复量随天气变化",
-     "100% chance to lower the target's accuracy by 1.":"100%使目标的命中率下降1级",
-     "For 5 turns, Electric-type attacks have 1/3 power.":"五回合内，电属性招式的威力变为原来的1/3",
-     "30% chance to lower the foe(s) accuracy by 1.":"30%使目标的命中率下降1级",
-     "Type varies based on the held Memory.":"招式属性和携带的储存碟有关",
-     "100% chance to lower the target's Sp. Atk by 1.":"100%下降目标的特攻1级",
-     "Raises the user's Sp. Atk by 2.":"使使用者的特攻上升两级",
-     "Power and type depends on the user's Berry.":"威力和属性基于使用者携带的树果",
-     "Attack depends on terrain (default Tri Attack).":"攻击随着场地变化而变化默认为三角攻击",
-     "Does damage equal to 1/2 target's current HP.":"攻击造成的伤害为目标剩下HP的50%",
-     "40% chance to lower the target's accuracy by 1.":"40%使目标的命中率下降1级",
-     "Does damage equal to the user's level.":"招式伤害和使用者的等级相同",
-     "A sleeping target is hurt by 1/4 max HP per turn.":"睡眠中的目标每回合失去其1/4最大HP",
-     "Lowers the target's Attack and Sp. Atk by 1.":"降低目标的攻击和特攻1级",
-     "Lasts 2-3 turns. Confuses the user afterwards.":"持续2-3回合，冷静下来后会混乱",
-     "Shares HP of user and target equally.":"平分使用者和目标的HP",
-     "Lowers target's Atk, Sp. Atk by 1. User switches.":"降低目标的攻击和特攻1级，使用者和后备宝可梦替换",
-     "Scatters coins.":"土豪来撒钱啦",
-     "Power doubles if the user moves after the target.":"如果在目标之后攻击，威力翻倍",
-     "All active Pokemon will faint in 3 turns.":"所有在场的宝可梦会在三回合内倒下",
-     "Disappears turn 1. Hits turn 2. Breaks protection.":"第一回合突然消失，第二回合攻击破坏目标的守住状态",
-     "10% chance to lower the target's Attack by 1.":"10%使目标的攻击下降1级",
-     "50% chance to badly poison the target.":"50%使目标中剧毒",
-     "Poisons the foe(s).":"使（所有）敌人中毒",
-     "30% chance to poison the target.":"30%使目标中毒",
-     "Poisons the target.":"使目标中毒",
-     "If the target is an ally, heals 50% of its max HP.":"如果目标是同伴则恢复其50%最大HP",
-     "If using a Fire move, target loses 1/4 max HP.":"如果目标使用了火属性招式则会失去1/4最大HP",
-     "10% chance to freeze the foe(s).":"10%使（所有）对手陷入冰冻状态",
-     "Averages Attack and Sp. Atk stats with target.":"和目标平分攻击和特攻",
-     "Swaps Attack and Sp. Atk stat stages with target.":"交换使用者和目标的基础攻击和特攻能力值",
-     "Switches user's Attack and Defense stats.":"交换使用者的攻击和防御基础能力值",
-     "+ 20 power for each of the user's stat boosts.":"每上升1级能力招式威力增加20点",
-     "100% chance to raise the user's Attack by 1.":"100%使使用者的攻击上升1级",
-     "Copies the target's current stat stages.":"复制对手的能力阶级变化",
-     "5 turns. Grounded: +Psychic power, priority-safe.":"5回合内站在地面上的宝可梦使用超能力招式威力为原来的1.5被，对他们使用的先制招式将会使用失败",
-     "Transfers the user's status ailment to the target.":"将使用者的负面状态转移给对手",
-     "Damages target based on Defense, not Sp. Def.":"计算伤害时按防守方的防御计算，不是特防",
-     "Random damage equal to 0.5x-1.5x user's level.":"伤害为0.5-1.5×使用者的等级",
-     "60 power +20 for each of the target's stat boosts.":"威力为60+20×目标的能力阶级上升总和",
-     "Power doubles if a foe is switching out.":"如果对手替换宝可梦，威力为原来的两倍",
-     "Forces the target to move last this turn.":"使目标在本回合最后行动",
-     "Protects allies from priority attacks this turn.":"保护同伴免受先制招式攻击",
-     "Raises the user's Sp. Atk, Sp. Def, Speed by 1.":"提升使用者的特攻特防速度各1级",
-     "Raises the user's Attack by 1 if hit during use.":"如果在使用招式时受到攻击，使用者的攻击上升1级",
-     "For 5 turns, heavy rain powers Water moves.":"5回合内，大雨增加水属性招式的威力",
-     "Charges, then hits foe(s) turn 2. High crit ratio.":"充能，第二回合攻击（所有）对手容易造成击中要害",
-     "Restores the item the user last used.":"回收使用者上一次使用的道具",
-     "For 5 turns, physical damage to allies is halved.":"5回合内，物理攻击对己方的伤害减半",
-     "User becomes the same type as the target.":"使用者变得和目标的属性相同",
-     "User cures its burn, poison, or paralysis.":"使用者能够治愈自身的灼伤中毒麻痹状态",
-     "10% chance to sleep foe(s). Meloetta transforms.":"10%使（所有）对手陷入睡眠状态梅洛耶塔能够变换形态",
-     "User sleeps 2 turns and restores HP and status.":"使用者睡眠两回合，回复所有的HP，治愈异常状态",
-     "Power doubles if an ally fainted last turn.":"如果上一回合有同伴倒下，招式威力翻倍",
-     "Max 102 power at maximum Happiness.":"当亲密值最高的时候达到最大威力102",
-     "Type varies based on the user's primary type.":"此招式的属性将变得和自己的第二属性相同",
-     "30% chance to flinch the foe(s).":"30%使(所有)对手畏缩",
-     "User replaces its Ability with the target's.":"使用者将自身的特性变得和目标一样",
-     "The user and the target trade Abilities.":"使用者和目标交换特性",
-     "Heals 50% HP. Flying-type removed 'til turn ends.":"回复50%最大HP，在回合结束前失去飞行属性",
-     "Power doubles if others used Round this turn.":"如果有其他宝可梦在这一回合使用了合唱，招式威力翻倍",
-     "50% chance to burn the target. Thaws user.":"50%使目标陷入灼伤状态能使使用者解除冰冻状态",
-     "For 5 turns, protects user's party from status.":"5回合内，保护己方所有宝可梦免受异常状态",
-     "For 5 turns, a sandstorm rages.":"5回合内，天气为沙暴天气",
-     "30% chance to burn the target. Thaws target.":"30%使目标陷入灼伤状态能使使用者解除冰冻状态",
-    "Lowers the target's Defense by 2.":"使目标的防御下降两级",
-    "Effect varies with terrain. (30% paralysis chance)":"效果随场地变化（默认30%麻痹几率）",
-    "40% chance to lower the target's Sp. Def by 2.":"40%使目标的特防下降两级",
-    "20% chance to lower the target's Sp. Def by 1.":"20%使目标的特防下降1级",
-    "OHKOs non-Ice targets. Fails if user's lower level.":"一击必杀非冰属性宝可梦如果使用者比目标等级低则使用招式失败",
-    "Lowers Def, SpD by 1; raises Atk, SpA, Spe by 2.":"降低使用者的防御特防1级，提升使用者的攻击特攻速度各两级",
-    "User must take physical damage before moving.":"若受到对手物理攻击，就攻击目标造成伤害",
-    "Raises the user's Speed by 2 and Attack by 1.":"提升使用者的速度2级，攻击1级",
-    "User restores 1/2 its max HP; 2/3 in Sandstorm.":"使用者回复1/2最大HP，沙暴时回复2/3最大HP",
-    "The target's Ability becomes Simple.":"目标的特性变为单纯",
-    "Permanently copies the last move target used.":"抄袭目标最后使用的招式",
-    "Raises user's Defense by 1 on turn 1. Hits turn 2.":"第一回合提升1级防御，第二回合攻击",
-    "Charges, then hits turn 2. 30% flinch. High crit.":"第一回合充能第二回合攻击，容易击中要害",
-    "User and foe fly up turn 1. Damages on turn 2.":"使用者和对手第一回合一起上天，第二回合给对手造成伤害",
-    "Can hit Pokemon using Bounce, Fly, or Sky Drop.":"可以击中使用弹跳，飞空，自由落体的宝可梦",
-    "User must be asleep. Uses another known move.":"使用者必须处于睡眠状态使用一个已习得的招式",
-    "10% chance to poison adjacent Pokemon.":"10%使邻近的宝可梦中毒",
-    "Removes the target's Ground immunity.":"消除对手对地上属性的免疫力",
-    "Power doubles if target is paralyzed, and cures it.":"如果目标处于麻痹状态，威力翻倍，然后治愈其麻痹状态",
-    "40% chance to poison the target.":"40%使目标陷入中毒状态",
-    "100% chance to lower the foe(s) Sp. Atk by 1.":"100%使(所有)对手的特攻下降1级",
-    "User steals certain support moves to use itself.":"使用者窃取目标的有益招式化为己用",
-    "User must be asleep. 30% chance to flinch target.":"使用者必须处于睡眠状态30%使目标畏缩",
-    "Steals target's boosts before dealing damage.":"窃取对手的能力阶级变化",
-    "Swaps Speed stat with target.":"和目标交换速度",
-    "Protects from moves. Contact: loses 1/8 max HP.":"保护自己免受招式影响，接触到的对手会损失1/8最大HP",
-    "Changes the target's type to Water.":"将目标的属性变为水属性",
-    "Charges turn 1. Hits turn 2. No charge in sunlight.":"第一回合充能第二回合攻击，在大晴天不用充能",
-    "Always does 20 HP of damage.":"必定能造成20点伤害",
-    "The target is cured of its burn.":"目标的灼伤状态会被治愈",
-    "Hurts grounded foes on switch-in. Max 3 layers.":"伤害交换出的站在地面上的对手，最多累积三次撒菱",
-    "More power with more uses of Stockpile.":"能量积蓄得越多，威力越大",
-    "Lowers the PP of the target's last move by 4.":"使目标最后使用的招式PP减少4点",
-    "Target's foes' moves are redirected to it this turn.":"所有对手使用的作用范围为单体选择的招式都会攻向使用者",
-    "Hurts foes on switch-in. Factors Rock weakness.":"伤害交换出的站在地面上的对手，计算岩石属性相克",
-    "10% chance to raise the user's Defense by 1.":"10%使使用者的防御上升1级",
-    "Lowers Speed of grounded foes by 1 on switch-in.":"降低对手替换出的站在地面上的宝可梦的速度1级",
-    "Raises user's Defense, Sp. Def by 1. Max 3 uses.":"提升使用者的防御和特防各1级最多累积三次",
-    "100% chance to paralyze the target.":"100%使目标陷入麻痹状态",
-    "Power doubles if the user's last move failed.":"如果使用者的上一次攻击使用失败，这此招式威力翻倍",
-    "User heals HP=target's Atk stat. Lowers Atk by 1.":"使用者回复和对手初始攻击等同的HP，降低对手的攻击1级",
-    "Lowers the foe(s) Speed by 2.":"降低（所有）对手的速度2级",
-    "Usually goes first. Fails if target is not attacking.":"先制攻击，如果目标不使用攻击招式的话则使用失败",
-    "For 5 turns, intense sunlight powers Fire moves.":"5回合内，阳光增加了火属性招式的威力",
-    "Lowers the user's Attack and Defense by 1.":"降低使用者的攻击和防御各1级",
-    "Raises the target's Attack by 2 and confuses it.":"提升目标的攻击两级且使其混乱",
-    "Heals the user based on uses of Stockpile.":"回复量取决于蓄力的次数",
-    "User switches its held item with the target's.":"使用者和目标交换道具",
-    "Raises the user's Attack by 2.":"使使用者的攻击提升两级",
-    "Hits adjacent Pokemon sharing the user's type.":"攻击和使用者有相同属性的宝可梦",
-    "Raises the user's Sp. Atk by 3.":"提升使用者的特攻3级",
-    "For 4 turns, allies' Speed is doubled.":"四回合内同伴的速度翻倍",
-    "Type varies based on the held Drive.":"属性取决于所携带的卡带",
-    "Confuses adjacent Pokemon.":"使周围的宝可梦陷入混乱状态",
-    "For 3 turns, target floats but moves can't miss it.":"三回合内，目标漂浮起来，但招式一定会命中它",
-    "Grounds adjacent foes. First hit neutral on Flying.":"击落周围的宝可梦，第一击可以击中飞行属性宝可梦",
-    "Hits adjacent foes. Prevents them from switching.":"攻击周围的对手阻止他们替换下场",
-    "For 2 turns, the target cannot use sound moves.":"2回合内目标无法使用声音的招式",
-    "10% chance to paralyze. 10% chance to flinch.":"10%使目标麻痹，10%使目标畏缩",
-    "10% chance to paralyze the target.":"10%使目标麻痹",
-    "Lowers the target's Attack and Defense by 1.":"使目标的攻击和防御下降1级",
-    "Inverts the target's stat stages.":"将目标的全部能力阶级数值变为其相反数",
-    "Target can't select the same move twice in a row.":"目标不能连续使用同一招式",
-    "Poisons grounded foes on switch-in. Max 2 layers.":"使替换上场的对手中毒，最多累积2次",
-    "Lowers the target's Speed by 1 and poisons it.":"使目标速度下降1级并且中毒",
-    "Copies target's stats, moves, types, and Ability.":"复制对手的能力阶级变化，招式，属性，特性",
-    "20% chance to paralyze or burn or freeze target.":"20%使目标麻痹灼伤冰冻",
-    "Adds Ghost to the target's type(s).":"使目标具有幽灵属性",
-    "Hits 3 times. Each hit can miss, but power rises.":"连续攻击三次每一次都可以被回避，但击中的话威力会上升",
-    "More power the fewer PP this move has left.":"招式PP越少威力越大",
-    "Hits 2 times. Each hit has 20% chance to poison.":"攻击两次，每一次都有20%的几率使对手中毒",
-    "20% chance to flinch the foe(s).":"20%使(所有)对手畏缩",
-    "User switches out after damaging the target.":"使用者在攻击目标后会替换后备宝可梦上场",
-    "Lasts 3 turns. Active Pokemon cannot fall asleep.":"持续3回合，在场上的宝可梦不会陷入睡眠状态",
-    "Lowers the user's Defense, Sp. Def, Speed by 1.":"降低使用者的防御特防和速度各1级",
-    "Power doubles if the target is poisoned.":"如果对手已经中毒，招式威力翻倍",
-    "This move does not check accuracy. Goes last.":"招式一定会命中，最后行动",
-    "Has 33% recoil. 10% chance to paralyze target.":"有33%的反弹伤害，10%使目标陷入麻痹状态",
-    "Power doubles if target is asleep, and wakes it.":"如果目标处于睡眠状态，威力翻倍，然后拍醒它",
-    "Use with Grass or Fire Pledge for added effect.":"和草或火之誓言同时使用会有特效",
-    "For 5 turns, Fire-type attacks have 1/3 power.":"3回合内，火属性攻击威力为原来的1/3",
-    "Power doubles and type varies in each weather.":"有天气时招式威力会翻倍，属性会变化",
-    "Protects allies from multi-target moves this turn.":"保护所有同伴免受群体攻击的影响",
-    "Burns the target.":"使目标灼伤",
-    "Next turn, 50% of the user's max HP is restored.":"下一回合使用者回复50%最大HP",
-    "For 5 turns, all Defense and Sp. Def stats switch.":"5回合内所有防御和特防基础值交换",
-    "Raises the user's Attack and Sp. Atk by 1.":"提升使用者的攻击特攻各1级",
-    "The target's Ability becomes Insomnia.":"目标的特性变为不眠",
-    "Puts the target to sleep after 1 turn.":"下一回合目标会陷入睡眠状态",
-    "User loses 50% max HP. Hits adjacent Pokemon.":"使用者损失50%最大HP，攻击周围全体宝可梦",
-    "Physical if user's Atk > Sp. Atk. Ignores Abilities.":"使用者攻击数值高于特攻时，变为物理招式无视目标的特性",
-    "Raises the user's Atk/Def/SpAtk/SpDef/Spe by 1.":"使用者全能力提升1级",
-    "Ends the effects of Terrain.":"清除场上的场地",
-    "100% chance to lower the target's Sp. Def by 1.":"降低目标1级特防",
-    "Morpeko: Electric; Hangry: Dark; 100% +1 Spe.":"提升1级速度，在满腹花纹时会变成电属性招式，空腹花纹时则为恶属性招式",
-    "Summons Reflect.":"使用后己方处于反射壁状态",
-    "Double damage against Dynamax/Gigantamax.":"对极巨化/超极巨化状态下的宝可梦伤害翻倍",
-    "Uses Def instead of Atk in damage calculation.":"以使用者的防御而不是攻击来计算伤害",
-    "Double power if the user moves first.":"如果使用者先攻击，威力翻倍",
-    "100% chance to lower adjacent foes' Atk by 1.":"降低对手全体1级攻击",
-    "100% chance lower adjacent Pkmn Speed by 1.":"令目标的速度降低1级",
-    "100% chance to paralyze the foe.":"令对手麻痹",
-    "+1 SpD, user's Electric move next turn 2x power.":"提升1级特防，下一回合电属性招式威力2倍",
-    "User loses 33% max HP. Raises all stats by 1.":"损失33%最大HP，提升所有能力1级",
-    "Resets all of the target's stat stages to 0.":"使用者所有能力阶级归零",
-    "Raises user's Attack, Defense, accuracy by 1.":"攻击，防御，命中提升1级",
-    "Nullifies the foe(s) Ability if the foe(s) move first.":"如果目标在该回合已使用过招式，使目标陷入无特性状态",
-    "Switches sides of field effects":"交换双方场地的状态效果",
-    "Curses if Ghost, else -1 Spe, +1 Atk, +1 Def.":"非幽灵属性使用者则速度降低1级，攻击防御提升1级，否则减少1/2最大HP，使目标进入诅咒状态",
-    "Darkrai: Causes the foe(s) to fall asleep.":"使对方全体陷入睡眠状态，仅在使用者为达克莱伊时奏效",
-    "Raises the target's Atk and Sp. Atk by 2.":"提升使用者攻击和特攻2级",
-    "Hits twice. 30% chance to flinch.":"攻击两次，每次30%几率令目标畏缩",
-    "Singles: Hits twice. Doubles: Hits each once.":"单打对战攻击两次，双打对战对两只宝可梦分别攻击一次",
-    "Deals 40 HP of damage to the target.":"造成40点固定伤害",
-    "Hits adjacent Pokemon. Double damage on Dig.":"攻击周围全体宝可梦，对挖洞状态的目标伤害翻倍",
-    "Target repeats its last move for its next 3 turns.":"目标接下来的 3 回合，只能使用其最后使用的招式",
-    "User survives attacks this turn with at least 1 HP.":"本回合结束时，自身保留至少1点HP",
-    "Summons Light Screen.":"使用后己方处于光墙状态",
-    "Causes the target to fall asleep.":"使目标陷入睡眠状态",
-    "5 turns. Grounded: +Grass power, +1/16 max HP.":"使场地变成青草场地，持续5回合",
-    "Power doubles during Bounce, Fly, and Sky Drop.":"如果目标处于飞翔状态，威力翻倍",
-    "Raises the user's and ally's Attack by 1.":"使用者和同伴的攻击提升1级",
-    "Hoopa-U: Lowers user's Def by 1; breaks protect.":"使用者自身防御降低1级，无视守住状态，仅在使用者为解放胡帕时奏效",
-    "Traps/grounds user; heals 1/16 max HP per turn.":"使自己进入扎根状态，无法交换每回合结束时回复1/16最大HP",
-    "Prevents the user and the target from switching out.":"使用者和目标都无法交换",
-    "Protects from attacks. Contact: lowers Atk by 1.":"完全抵挡对手的攻击。如果对手使用了接触类招式，攻击降低1级",
-    "Until the end of the next turn, user's moves crit.":"下回合结束前，招式必定会击中要害",
-    "Heals the user (and allies) by 1/4 amount.":"回复使用者和同伴1/4最大HP",
-    "Changes the target's type to Psychic.":"使用者自身属性变为超能",
-    "Does many things turn 1. Can't move turn 2.":"使用后下回合不能行动",
-    "For 5 turns, the user has immunity to Ground.":"5回合内使自身进入电磁飘浮状态，免疫地面属性招式",
-    "Damage doubles if the target used Minimize.":"对变小的目标伤害翻倍",
-    "User/allies: +1 Spe. BP scales w/ base move.":"提高我方全体的速度",
-    "Foes: -1 Sp.Def. BP scales with base move's BP.":"降低对手全体的特防",
-    "Sets Sun. BP scales with base move's BP.":"使天气转为大晴天",
-    "Foes: -1 Sp.Atk. BP scales with base move's BP.":"降低对手全体的特攻",
-    "Sets Rain. BP scales with base move's BP.":"使天气转为下雨",
-    "Prevents all moves from affecting the user this turn.":"挡下包括极巨招式在内的所有招式",
-    "Sets Hail. BP scales with base move's BP.":"使天气转为冰雹",
-    "User/allies: +1 Atk. BP scales w/ base move.":"提高我方全体的攻击",
-    "Sets Electric Terrain. BP scales with base move's BP.":"将场地变成电气场地",
-    "Sets Psychic Terrain. BP scales with base move's BP.":"将场地变成精神场地",
-    "User/allies: +1 SpA. BP scales w/ base move.":"提高我方全体的特攻",
-    "Sets Grassy Terrain. BP scales with base move's BP.":"将场地变成青草场地",
-    "Foes: -1 Defense. BP scales with base move's BP.":"降低对手全体的防御",
-    "User/allies: +1 SpD. BP scales w/ base move.":"提高我方全体的特防",
-    "Sets Sandstorm. BP scales with base move's BP.":"使天气转为沙暴",
-    "Sets Misty Terrain. BP scales with base move's BP.":"将场地变成薄雾场地",
-    "User/allies: +1 Def. BP scales w/ base move.":"提高我方全体的防御",
-    "Foes: -1 Speed. BP scales with base move's BP.":"降低对手全体的速度",
-    "Foes: -1 Attack. BP scales with base move's BP.":"降低对手全体的攻击",
-    "Raises all stats by 1 (not acc/eva). Traps user.":"所有能力提升1级，目标无法交换",
-    "Protects from attacks. Contact: lowers Def by 2.":"抵挡对手的攻击。如果对手使用了接触类招式，防御降低2级",
-    "Foe can't switch. Lowers Def and SpD every turn.":"目标无法交换，每回合降低防御和特防",
-    "Max happiness: 102 power. Can't miss.":"最大亲密度对应威力102，不会落空",
-    "40, 80, 120 power, or heals target 1/4 max HP.":"威力随机为40，80，120或者回复目标1/4最大HP",
-    "Cures target's status; heals user 1/2 max HP if so.":"治愈目标的异常状态。如果成功治愈，使用者回复1/2最大HP",
-    "Free user from hazards/bind/Leech Seed; +1 Spe.":"提升1级速度，移除己方场地上的撒菱、隐形岩、毒菱和黏黏网；摆脱自身束缚，寄生种子状态",
-    "Raises Atk/Sp. Atk of grounded Grass types by 1.":"所有的地面上的草属性宝可梦的攻击，特攻提升1级",
-    "Summons Leech Seed.":"使用后对方处于寄生种子状态",
-    "100% chance to burn the foe.":"令对手陷入灼伤状态",
-    "30% chance to burn the target.":"30%几率使目标陷入灼伤状态",
-    "User loses 1/4 of its max HP.":"每次攻击自身损失1/4最大HP",
-    "Consumes berry and raises the user's Def. by 2.":"食用树果并且提升使用者防御2级",
-    "User takes 1/4 its max HP to put in a substitute.":"使用1/4最大HP制造一个替身",
-    "Causes the target to become confused.":"使目标混乱",
-    "Hits adjacent Pokemon. Double damage on Dive.":"攻击周围全体宝可梦，对潜水状态的目标伤害翻倍",
-    "Lowers the foe(s) evasiveness by 2.":"降低目标闪避率2级",
-    "Target gets -1 Spe and becomes weaker to Fire.":"目标速度降低1级并且增加火属性弱点",
-    "Target can't use status moves its next 3 turns.":"使目标接下来的3回合无法使用变化招式",
-    "All active Pokemon consume held Berries.":"在场上的宝可梦都会吃掉自己携带的树果",
-    "User switches out.":"使用者逃离战斗",
-    "30% chance to paralyze. Can't miss in rain.":"30%几率使目标麻痹，雨天下不会落空",
-    "Badly poisons the target. Poison types can't miss.":"使目标陷入剧毒状态，毒属性宝可梦使用不会落空",
-    "Goes last. For 5 turns, turn order is reversed.":"优先度最低，接下来5回合中，速度慢的宝可梦将比速度快的宝可梦先使用招式",
-    "Lowers Atk/Sp. Atk/Speed of poisoned foes by 1.":"令中毒的目标的攻击，特攻，速度降低1级",
-    "Usually goes first. Hits 2-5 times in one turn.":"先制攻击，攻击2-5次",
-    "Nearly always goes first. Always crits.":"先制攻击，必定击中对方的要害",
-    "Foes: SLP/PSN/PAR. BP scales with base move.":"使对手全体陷入中毒、麻痹或睡眠其中一种异常状态",
-    "Traps/damages foes. BP scales w/ base move.":"令对手无法交换并持续受到伤害",
-    "User side: Focus Energy. BP scales w/ base move.":"自己进入易中要害状态",
-    "Infatuates opponents. BP scales with base move.":"让对方所有性别不同的宝可梦陷入着迷状态",
-    "Foe: Lowers PP of last move. BP scales w/ base move.":"减少对手最后使用的招式的PP",
-    "Heals user and allies. BP scales with base move.":"回复我方所有宝可梦的HP",
-    "Foes: -2 Speed. BP scales with base move's BP.":"大幅降低对手的速度",
-    "Confuses foes. BP scales with base move's BP.":"使对手全体陷入混乱",
-    "Summons Gravity. BP scales with base move.":"使用后场地处于重力状态",
-    "Poisons opponents. BP scales with base move.":"使对手所有宝可梦陷入中毒状态",
-    "Restores user-side berries. BP scales w/ base move.":"获得使用过的树果",
-    "Summons Aurora Veil. BP scales w/ base move.":"使己方场地进入极光幕",
-    "Confuses opponents. BP scales with base move.":"让对手陷入混乱状态",
-    "Afflicts foes with Yawn. BP scales w/ base move.":"使目标陷入瞌睡状态",
-    "Sets Steel entry hazard. BP scales w/ base move.":"对方场地处于超极巨钢铁阵法状态，交换上场损失1/8最大HP×钢属性相性",
-    "Sets Stealth Rock. BP scales w/ base move's BP.":"使对方场地处于隐形岩状态",
-    "Foe(s): Par/Psn. BP scales with base move's BP.":"让对手所有宝可梦陷入中毒或麻痹状态",
-    "Foe(s): -1 evasion. BP scales with base move's BP.":"降低对手的闪避率1级",
-    "Traps foe(s). BP scales with base move's BP.":"使对方全体陷入无法逃跑状态",
-    "Damages foes for 4 turns. BP scales w/ base move.":"在4回合内持续对对方的宝可梦造成伤害",
-    "Paralyzes foe(s). BP scales with base move's BP.":"使对方全体陷入麻痹状态",
-    "Clears field. BP scales with base move's BP.":"消除反射壁、光墙、撒菱、超极巨钢铁阵法和场地型状态的效果",
-    "Applies Torment to foes. BP scales with base move.":"使对手陷入无理取闹状态",
-    "User loses 50% max HP.":"使用后损失1/2最大HP",
-        
-    // USUM Moves
-        
-    "Fails when used.":"与训练师的对战中使用会失败",
-    "Frees user from hazards, binding, Leech Seed.":"移除己方场地上的撒菱、隐形岩、毒菱和黏黏网；摆脱自身束缚，寄生种子状态",
-    "Protects from attacks. Contact: lowers Atk by 2.":"抵挡对手的攻击。如果对手使用了接触类招式，攻击降低2级",
-
-    // Abilities Description
-	
-    "If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.":"因接触类招式被击倒时，发动该攻击的宝可梦损失1/4最大HP",
-    "This Pokemon's Normal-type moves become Flying type and have 1.2x power.":"一般属性招式变为飞行属性招式，威力提升20%",
-    "While this Pokemon is active, the effects of weather conditions are disabled.":"该宝可梦在场时，所有天气的影响都会消失",
-    "This Pokemon's attacks have 1.3x power if it is the last to move in a turn.":"回合最后行动的话威力提升30%",
-    "If this Pokemon (not its substitute) takes a critical hit, its Attack is raised 12 stages.":"被击中要害的话攻击提升十二级，替身状态下不会发动",
-    "On switch-in, this Pokemon shudders if any foe has a supereffective or OHKO move.":"登场时可以预知对方的效果绝佳和一击必杀招式",
-    "Prevents adjacent foes from choosing to switch unless they are airborne.":"处于地面上的对方宝可梦进入无法逃走状态",
-    "Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment.":"己方宝可梦不会受到迷人、定身法、再来一次、回复封锁、挑衅和无理取闹的影响",
-    "While this Pokemon is active, the Dark Aura and Fairy Aura power modifier is 0.75x.":"反转气场类特性，令其对恶属性和妖精属性的加成变为降低25%",
-    "Causes sleeping adjacent foes to lose 1/8 of their max HP at the end of each turn.":"回合结束时对方处于睡眠状态的宝可梦损失1/8最大HP",
-    "This Pokemon's allies have the power of their special attacks multiplied by 1.3.":"我方场上所有宝可梦使用特殊招式的威力增加30%",
-    "This Pokemon cannot be struck by a critical hit.":"不会被击中要害",
-    "After KOing a Pokemon: becomes Ash-Greninja, Water Shuriken: 20 power, hits 3x.":"甲贺忍蛙击倒对方一只宝可梦之后变身为小智版甲贺忍蛙，同时飞水手里剑威力变为20，固定命中三次",
-    "This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.":"击倒对方一只宝可梦之后最高一项能力提升一级",
-    "This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.":"HP低于50%时特攻提升一级",
-    "Prevents other Pokemon from lowering this Pokemon's Defense stat stage.":"防御不会下降",
-    "Makes user immune to ballistic moves (Shadow Ball, Sludge Bomb, Focus Blast, etc).":"免疫球和弹类招式",
-    "If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect.":"食用树果触发效果之后额外回复1/3最大HP",
-    "If Sunny Day is active, this Pokemon's Speed is doubled.":"大晴天下速度翻倍",
-    "Prevents other Pokemon from lowering this Pokemon's stat stages.":"能力阶级不会被弱化",
-    "This Pokemon's type changes to the type of a move it's hit by, unless it has the type.":"受到伤害时若招式属性和宝可梦当前属性不同，则宝可梦在伤害结算后变为该属性",
-    "This Pokemon cannot be statused, and is considered to be asleep.":"不会陷入任何异常状态，始终视为处于睡眠状态",
-    "This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.":"能力阶级被降低时特攻提升两级",
-    "This Pokemon's moves have their accuracy multiplied by 1.3.":"命中率提升30%",
-    "If this Pokemon has a stat stage raised it is lowered instead, and vice versa.":"能力阶级的下降变为上升，上升变为下降",
-    "This Pokemon can poison or badly poison other Pokemon regardless of their typing.":"无论对方什么属性都可以使其进入中毒或剧毒状态",
-    "If this Pokemon is hit by an attack, there is a 30% chance that move gets disabled.":"受到伤害时30%概率令对方进入定身法状态",
-    "30% chance of infatuating Pokemon of the opposite gender if they make contact.":"受到接触类伤害时30%概率令对方进入着迷状态",
-    "After another Pokemon uses a dance move, this Pokemon uses the same move.":"有其他宝可梦使用跳舞招式时，立即使用相同的招式",
-    "While this Pokemon is active, a Dark move used by any Pokemon has 1.33x power.":"场上所有恶属性招式威力提升33%",
-    "While this Pokemon is active, allies are protected from opposing priority moves.":"对方的可以影响到自己或己方宝可梦的先制招式无效",
-    "While this Pokemon has 1/2 or less of its max HP, its Attack and Sp. Atk are halved.":"HP低于50%时攻击和特攻减半",
-    "This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe.":"能力阶级被降低时攻击提升两级",
-    "On switch-in, strong winds begin until this Ability is not active in battle.":"登场时天气变为乱流，直到该宝可梦离场，除非天气被终结之地和始源之海更改",
-    "On switch-in, extremely harsh sunlight begins until this Ability is not active in battle.":"登场时天气变为大日照，直到该宝可梦离场，除非天气被德尔塔气流和始源之海更改",
-    "(Mimikyu only) The first hit it takes is blocked, and it takes 1/8 HP damage instead.":"首次受到的伤害改为损失1/8最大HP，该特性只对谜拟Q有效",
-    "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.":"登场时，对方防御小于特防时，自身攻击提升一级；否则特攻提升一级",
-    "On switch-in, this Pokemon summons Rain Dance.":"登场时天气变为下雨",
-    "On switch-in, this Pokemon summons Sunny Day.":"登场时天气变为大晴天",
-    "This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun.":"免疫水属性招式伤害，受到水属性招式攻击时回复1/4最大HP；下雨天气下每回合回复1/8最大HP；受到火属性招式伤害增加25%；大晴天天气下每回合损失1/8最大HP",
-    "This Pokemon's sleep counter drops by 2 instead of 1.":"陷入睡眠的持续回合变为原来的一半",
-    "30% chance of poison/paralysis/sleep on others making contact with this Pokemon.":"受到接触类伤害时30%概率令对方陷入中毒/麻痹/睡眠状态",
-    "On switch-in, this Pokemon summons Electric Terrain.":"登场时释放电气场地",
-    "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.":"HP低于50%时自身退场",
-    "While this Pokemon is active, a Fairy move used by any Pokemon has 1.33x power.":"场上所有妖精属性招式威力提升33%",
-    "This Pokemon receives 3/4 damage from supereffective attacks.":"受到效果绝佳伤害时伤害降低25%",
-    "30% chance a Pokemon making contact with this Pokemon will be burned.":"受到接触类伤害时30%概率陷入灼伤状态",
-    "While this Pokemon is burned, its special attacks have 1.5x power.":"陷入灼伤状态时特攻提升50%",
-    "This Pokemon's Fire attacks do 1.5x damage if hit by one Fire move; Fire immunity.":"免疫火属性招式伤害，受到火属性招式攻击时火属性招式威力提升50%",
-    "If user is Cherrim and Sunny Day is active, it and allies' Attack and Sp. Def are 1.5x.":"在大晴天和大日照天气时己方所有宝可梦攻击和特防提升50%，樱花儿的形态会改变",
-    "This side's Grass types can't have stats lowered or status inflicted by other Pokemon.":"己方所有宝可梦草属性能力阶级不会被降低且不会进入异常状态",
-    "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.":"受到的接触类伤害减半，受到火属性招式伤害翻倍",
-    "Castform's type changes to the current weather condition's type, except Sandstorm.":"漂浮泡泡的形态和属性根据天气而变化",
-    "On switch-in, this Pokemon is alerted to the foes' move with the highest power.":"登场时可以预知对方威力最高的招式",
-    "This Pokemon's allies receive 3/4 damage from other Pokemon's attacks.":"己方其他宝可梦受到的伤害降低25%",
-    "On switch-in, this Pokemon identifies the held items of all opposing Pokemon.":"登场时可以预知对方所有宝可梦的道具",
-    "This Pokemon's Defense is doubled.":"防御翻倍",
-    "If this Pokemon is at full HP, its Flying-type moves have their priority increased by 1.":"HP全满时飞行属性招式优先度+1",
-    "This Pokemon's Normal-type moves become Electric type and have 1.2x power.":"一般属性招式变为电属性招式，威力提升20%",
-    "When this Pokemon has 1/2 or less of its maximum HP, it uses certain Berries early.":"HP低于50%时会提前使用特定的树果",
-    "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.":"受到接触伤害时对方速度降低一级",
-    "If Grassy Terrain is active, this Pokemon's Defense is multiplied by 1.5.":"青草场地下防御提升50%",
-    "On switch-in, this Pokemon summons Grassy Terrain.":"登场时释放青草场地",
-    "If this Pokemon is statused, its Attack is 1.5x; ignores burn halving physical damage.":"陷入异常状态时攻击提升50%，无视灼伤状态减半物理招式伤害效果",
-    "If last item used is a Berry, 50% chance to restore it each end of turn. 100% in Sun.":"使用树果后每回合50%概率回收该树果，大晴天和大日照天气下则必定回收",
-    "30% chance of curing an adjacent ally's status at the end of each turn.":"回合结束时30%概率回复同伴的异常状态",
-    "The power of Fire-type attacks against this Pokemon is halved; burn damage halved.":"火属性招式和灼伤伤害减半",
-    "This Pokemon's weight is doubled.":"体重翻倍",
-    "This Pokemon's Attack is doubled.":"攻击翻倍",
-    "This Pokemon's Attack is 1.5x and accuracy of its physical attacks is 0.8x.":"以物理招式的命中率降低20%为代价提升50%攻击",
-    "This Pokemon has its status cured at the end of each turn if Rain Dance is active.":"下雨和大雨天气下回合结束时恢复异常状态",
-    "Prevents other Pokemon from lowering this Pokemon's Attack stat stage.":"攻击能力不会被对方降低",
-    "If Hail is active, this Pokemon heals 1/16 of its max HP each turn; immunity to Hail.":"冰雹天气下每回合回复1/16最大HP，免疫冰雹伤害",
-    "This Pokemon appears as the last Pokemon in the party until it takes direct damage.":"受到伤害前始终显示为队伍中最后一个宝可梦的形象",
-    "This Pokemon cannot be poisoned. Gaining this Ability while poisoned cures it.":"不会陷入中毒和剧毒状态，获得状态时恢复中毒和剧毒状态",
-    "On switch-in, this Pokemon Transforms into the opposing Pokemon that is facing it.":"登场时以对应宝可梦为目标进入变身状态",
-    "Moves ignore substitutes and foe's Reflect/Light Screen/Safeguard/Mist/Aurora Veil.":"自身使用招式时无视对方的替身/反射壁/光墙/神秘守护/白雾/极光幕",
-    "If this Pokemon is KOed with a move, that move's user loses an equal amount of HP.":"被击倒时对方损失同样数量的HP",
-    "This Pokemon cannot fall asleep. Gaining this Ability while asleep cures it.":"不会陷入睡眠状态，获得这个特性时恢复睡眠状态",
-    "On switch-in, this Pokemon lowers the Attack of adjacent opponents by 1 stage.":"登场时对方全体宝可梦攻击降低一级",
-    "Pokemon making contact with this Pokemon lose 1/8 of their max HP.":"受到接触伤害时对方损失1/8最大HP",
-    "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.":"拳类招式威力提升20%",
-    "This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.":"受到恶属性招式攻击时攻击提升一级",
-    "This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.":"命中率不会被下降，无视对方闪避率等级",
-    "This Pokemon's held item has no effect, except Macho Brace. Fling cannot be used.":"携带的道具无效，超级石、Z纯晶和影响基础点数、经验值和亲密度的携带物品除外，无法使用投掷",
-    "If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.":"大晴天和大日照天气下不会陷入异常状态，使用睡觉会无效",
-    "This Pokemon is immune to Ground; Gravity/Ingrain/Smack Down/Iron Ball nullify it.":"免疫地面属性伤害，但受到重力、扎根、击落和黑色铁球影响时仍会受到伤害",
-    "This Pokemon's weight is halved.":"体重减半",
-    "This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity.":"自动成为对方电属性招式的攻击目标并提升一级特攻；免疫电属性攻击",
-    "This Pokemon cannot be paralyzed. Gaining this Ability while paralyzed cures it.":"不会陷入麻痹状态，获得状态时恢复麻痹状态",
-    "This Pokemon damages those draining HP from it for as much as they would heal.":"受到吸取HP的招式伤害时，对方本应吸取的体力会转为受到同等的伤害",
-    "This Pokemon's sound-based moves become Water type.":"声音的招式属性均变为水属性",
-    "This Pokemon's attacks do not make contact with the target.":"所有招式均视为非接触类招式",
-    "This Pokemon blocks certain status moves and bounces them back to the user.":"将对方以自身为目标的部分变化类招式无效化并反弹给招式的使用者",
-    "This Pokemon can only be damaged by direct attacks.":"免疫除攻击招式以外的一切造成的伤害",
-    "If this Pokemon has no item, it steals the item off a Pokemon it hits with an attack.":"造成伤害时，如果没有携带道具则获得对方道具",
-    "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.":"不会陷入冰冻状态，获得特性时恢复冰冻状态",
-    "Prevents adjacent Steel-type foes from choosing to switch.":"对方的钢属性宝可梦不能交换",
-    "If this Pokemon is statused, its Defense is 1.5x.":"异常状态下防御增加50%",
-    "This Pokemon's pulse moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.":"波动类和波导类招式威力提升50%，治愈波动回复量上升为3/4最大HP",
-    "This Pokemon's attacks are critical hits if the target is poisoned.":"此特性的宝可梦攻击处于中毒或剧毒状态的宝可梦必定会击中要害",
-    "On switch-in, this Pokemon summons Misty Terrain.":"登场时释放薄雾场地",
-    "This Pokemon's moves and their effects ignore the Abilities of other Pokemon.":"招式无视对方特性",
-    "This Pokemon's Speed is raised 1 stage if hit by an Electric move; Electric immunity.":"受到电属性招式攻击时速度提升一级；免疫电属性招式伤害",
-    "This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.":"每击倒对方一只宝可梦攻击提升一级",
-    "If this Pokemon is at full HP, damage taken from attacks is halved.":"HP全满时受到的伤害减半",
-    "If this Pokemon is an Arceus, its type changes to match its held Plate or Z-Crystal.":"阿尔宙斯的属性随着它携带的石板或Z纯晶改变",
-    "Pokemon making contact with this Pokemon have their Ability changed to Mummy.":"受到接触类伤害时对方特性变为木乃伊",
-    "This Pokemon has its major status condition cured when it switches out.":"退场时恢复自身的异常状态",
-    "Every move used by or against this Pokemon will always hit.":"自身使用和以自身为目标的招式必定命中",
-    "This Pokemon's moves are changed to be Normal type and have 1.2x power.":"全部招式变为一般属性招式，威力提升20%",
-    "This Pokemon is immune to powder moves and damage from Sandstorm or Hail.":"免疫沙暴和冰雹天气带来的影响，对粉末类招式免疫",
-    "This Pokemon's damaging moves hit twice. The second hit has its damage quartered.":"攻击两次；第二次攻击伤害变为第一次的1/4",
-    "If this Pokemon has no item, it finds one used by an adjacent Pokemon this turn.":"回合结束时，若没有携带道具则获得本回合其他宝可梦使用或投掷过的道具",
-    "If this Pokemon has no item, it steals the item off a Pokemon making contact with it.":"受到接触伤害时，若没有携带道具则获得对方道具",
-    "This Pokemon's Normal-type moves become Fairy type and have 1.2x power.":"一般属性招式变为妖精属性招式，威力提升20%",
-    "This Pokemon is healed by 1/8 of its max HP each turn when poisoned; no HP loss.":"处于中毒或剧毒状态时不会损失HP，每回合回复1/8最大HP",
-    "30% chance a Pokemon making contact with this Pokemon will be poisoned.":"受到接触类伤害时30%令对方陷入中毒状态",
-    "This Pokemon's contact moves have a 30% chance of poisoning.":"接触类招式造成伤害时30%令对方陷入中毒状态",
-    "If Zygarde 10%/50%, changes to Complete if at 1/2 max HP or less at end of turn.":"基格尔德10%形态或50%的HP低于50%时在回合结束会变为完全体形态",
-    "This Pokemon copies the Ability of an ally that faints.":"同伴被击倒后自身特性变为与之相同",
-    "This Pokemon's Status moves have priority raised by 1, but Dark types are immune.":"变化招式的优先度+1，但对恶属性宝可梦无效",
-    "If this Pokemon is the target of a foe's move, that move loses one additional PP.":"对方以自身为目标的招式额外消耗1PP",
-    "On switch-in, heavy rain begins until this Ability is not active in battle.":"登场时天气变为大雨，直到该宝可梦离场，除非天气被德尔塔气流和终结之地更改",
-    "This Pokemon's type changes to match the type of the move it is about to use.":"自身属性变为即将使用的招式的属性",
-    "On switch-in, this Pokemon summons Psychic Terrain.":"登场时释放精神场地",
-    "If this Pokemon is statused, its Speed is 1.5x; ignores Speed drop from paralysis.":"异常状态下速度增加50%，无视麻痹带来的速度降低影响",
-    "If Rain Dance is active, this Pokemon heals 1/16 of its max HP each turn.":"下雨天气下每回合回复1/16最大HP",
-    "This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.":"使用具有反作用力伤害的招式时威力提升20%，挣扎除外",
-    "This Pokemon's Normal-type moves become Ice type and have 1.2x power.":"一般属性招式变为冰属性招式，威力提升20%",
-    "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.":"下场时回复1/3最大HP",
-    "This Pokemon's attacks do 1.25x on same gender targets; 0.75x on opposite gender.":"对方与自身性别相同时威力提升25%，性别不同时下降25%",
-    "If this Pokemon is a Silvally, its type changes to match its held Memory.":"银伴战兽的属性随着它携带的存储碟改变",
-    "This Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage.":"不会受到自身招式的反作用力伤害，挣扎、飞踢和飞膝踢除外；生命宝珠的副作用不受影响",
-    "This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm; immunity to it.":"沙暴天气下地面/岩石/钢属性招式威力提升30%；免疫沙暴伤害",
-    "If Sandstorm is active, this Pokemon's Speed is doubled; immunity to Sandstorm.":"沙暴天气下速度翻倍；免疫沙暴伤害",
-    "On switch-in, this Pokemon summons Sandstorm.":"登场时天气变为沙暴",
-    "If Sandstorm is active, this Pokemon's evasiveness is 1.25x; immunity to Sandstorm.":"沙暴天气下闪避率增加25%；免疫沙暴伤害",
-    "This Pokemon's Attack is raised 1 stage if hit by a Grass move; Grass immunity.":"受到草属性招式攻击时攻击提升一级；免疫草属性招式伤害",
-    "If user is Wishiwashi, changes to School Form if it has > 1/4 max HP, else Solo Form.":"弱丁鱼的HP高于1/4时变为鱼群的样子，否则变为单独的样子",
-    "This Pokemon's moves have their secondary effect chance doubled.":"招式的追加效果出现率翻倍",
-    "Prevents adjacent foes from choosing to switch unless they also have this Ability.":"除非对方拥有同样的特性，否则不能替换宝可梦",
-    "This Pokemon has a 33% chance to have its status cured at the end of each turn.":"回合结束时33%恢复异常状态",
-    "This Pokemon's attacks with secondary effects have 1.3x power; nullifies the effects.":"以无视招式的追加效果为代价，带有追加效果的招式的威力提升33%",
-    "This Pokemon is not affected by the secondary effect of another Pokemon's attack.":"受到攻击时对方招式的追加效果不会发动",
-    "If Minior, switch-in/end of turn it changes to Core at 1/2 max HP or less, else Meteor.":"小陨星HP大于50%时为流星的样子，否则为核心",
-    "This Pokemon's multi-hit attacks always hit the maximum number of times.":"使用连续招式时，攻击次数会固定在五次",
-    "On switch-in, this Pokemon's Attack and Speed are halved for 5 turns.":"登场之后的五回合内攻击和速度减半",
-    "If Hail is active, this Pokemon's Speed is doubled.":"冰雹下速度翻倍",
-    "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.":"击中要害的招式伤害变为1.5倍",
-    "If Hail is active, this Pokemon's evasiveness is 1.25x; immunity to Hail.":"冰雹天气下闪避率增加25%；免疫冰雹伤害",
-    "On switch-in, this Pokemon summons Hail.":"登场时天气变为冰雹",
-    "If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.":"大晴天天气下特攻增加50%；大晴天天气下回合结束时损失1/8最大HP",
-    "This Pokemon's Sp. Atk is raised by 1 stage when another Pokemon faints.":"击倒对方时特攻提升一级",
-    "This Pokemon is immune to sound-based moves, including Heal Bell.":"免疫声音类招式",
-    "This Pokemon's Speed is raised 1 stage at the end of each full turn on the field.":"回合结束时速度提升一级",
-    "This Pokemon moves last among Pokemon using the same or greater priority moves.":"优先度相同时必定后出",
-    "This Pokemon's Defense is raised by 1 stage after it is damaged by a move.":"受到伤害后防御提升一级",
-    "If Aegislash, changes Forme to Blade before attacks and Shield before King's Shield.":"坚盾剑怪使用攻击招式时会变为刀剑形态，使用王者盾牌时变为盾牌形态",
-    "30% chance a Pokemon making contact with this Pokemon will be paralyzed.":"受到接触伤害时对方30%陷入麻痹状态",
-    "If this Pokemon flinches, its Speed is raised by 1 stage.":"畏缩时提升一级速度",
-    "This Pokemon's attacks without a chance to flinch have a 10% chance to flinch.":"不会造成畏缩的招式造成伤害时10%造成对方畏缩",
-    "This Pokemon cannot lose its held item due to another Pokemon's attack.":"不会因对方招式失去携带的道具",
-    "This Pokemon draws Water moves to itself to raise Sp. Atk by 1; Water immunity.":"自动成为对方水属性招式的攻击目标并提升一级特攻；免疫电属性攻击",
-    "This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.":"啃咬类招式威力提升50%，虫咬除外",
-    "If this Pokemon is at full HP, it survives one hit with at least 1 HP. Immune to OHKO.":"HP全满时受到致命伤害会保留1HP；免疫一击必杀招式",
-    "This Pokemon cannot be forced to switch out by another Pokemon's attack or item.":"不会因对方招式退场",
-    "This Pokemon's critical hit ratio is raised by 1 stage.":"击中要害等级提升一级",
-    "If Electric Terrain is active, this Pokemon's Speed is doubled.":"电气场地下速度翻倍",
-    "This Pokemon and its allies cannot fall asleep.":"己方所有宝可梦不会陷入睡眠状态",
-    "If Rain Dance is active, this Pokemon's Speed is doubled.":"下雨天气下速度翻倍",
-    "If an ally uses its item, this Pokemon gives its item to that ally immediately.":"使用道具后会立即将道具交给没有道具的同伴",
-    "If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.":"如果因对方招式而陷入灼伤/中毒/麻痹状态，对方也同样陷入同样的状态",
-    "This Pokemon's evasiveness is doubled as long as it is confused.":"混乱状态下闪避率翻倍",
-    "This Pokemon's moves of 60 power or less have 1.5x power. Includes Struggle.":"使用威力低于60的招式时威力增加50%，挣扎除外",
-    "This Pokemon does not take damage from attacks made by its allies.":"不会受到同伴招式的伤害",
-    "Fire/Ice-type moves against this Pokemon deal damage with a halved attacking stat.":"受到火属性和冰属性招式造成的伤害减半",
-    "This Pokemon's attacks that are not very effective on a target deal double damage.":"造成的效果不理想的伤害翻倍",
-    "While this Pokemon is poisoned, its physical attacks have 1.5x power.":"中毒和剧毒状态下物理招式威力提升50%",
-    "This Pokemon's contact moves have their power multiplied by 1.3.":"接触类招式威力提升30%",
-    "On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability.":"登场时复制一个随机对方宝可梦的特性",
-    "This Pokemon's healing moves have their priority increased by 3.":"回复HP的招式优先度+3",
-    "This Pokemon skips every other turn instead of using a move.":"使用招式之后，下一回合不能使用招式",
-    "This Pokemon ignores other Pokemon's stat stages when taking or doing damage.":"使用或受到招式造成伤害时无视对方的能力阶级变化",
-    "Speed is doubled on held item loss; boost is lost if it switches, gets new item/Ability.":"失去道具时速度翻倍，退场或获得新道具后复原",
-    "While this Pokemon is active, it prevents opposing Pokemon from using their Berries.":"对方宝可梦不可使用树果",
-    "This Pokemon and its allies' moves have their accuracy multiplied by 1.1.":"场上己方所有宝可梦命中率提升10%",
-    "This Pokemon heals 1/4 of its max HP when hit by Electric moves; Electric immunity.":"受到电属性招式攻击时回复1/4最大HP；免疫电属性伤害",
-    "This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.":"受到水属性招式攻击时回复1/4最大HP；免疫水属性伤害",
-    "This Pokemon's Water power is 2x; it can't be burned; Fire power against it is halved.":"水属性招式威力翻倍；不会陷入灼伤状态；受到的火属性招式伤害减半",
-    "This Pokemon's Defense is raised 2 stages after it is damaged by a Water-type move.":"受到水属性招式攻击时防御提升两级",
-    "This Pokemon cannot be burned. Gaining this Ability while burned cures it.":"不会陷入灼伤状态，获得特性时恢复灼伤状态",
-    "If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 2.":"受到物理招式伤害时防御降低一级，同时速度提升两级",
-    "This Pokemon can only be damaged by supereffective moves and indirect damage.":"只会受到效果绝佳招式的攻击伤害，天气、异常状态、附加伤害效果依然有效",
-    "Status moves with accuracy checks are 50% accurate when used on this Pokemon.":"变化招式对该特性的宝可梦命中率减半",
-    "If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.":"HP不足一半时转变为达摩形态",
-    "This Pokemon's same-type attack bonus (STAB) is 2 instead of 1.5.":"与自身属性一致的招式威力由1.5倍变为2倍",
-    "No competitive use.":"没有实战用途",
-    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Fire attacks.":"HP低于1/3时，火属性招式的威力变为1.5倍",
-    "Lowers Speed of all Pokemon except itself when hit by an attack.":"被攻击后，降低除自己以外的所有宝可梦的速度",
-    "Prevents Explosion/Mind Blown/Self-Destruct/Aftermath while this Pokemon is active.":"该特性会使自爆、大爆炸和惊爆大头会使用失败，引爆特性不发动",
-    "On switch-in, this Pokemon's Defense is raised by 1 stage.":"出场时，防御上升1级",
-    "On switch-in, this Pokemon's Attack is raised by 1 stage.":"出场时，攻击上升1级",
-    "Boosts the Pokemon's Attack stat but only allows the use of the first selected move.":"攻击获得提升，只能使用上场后使出的第一个招式",
-    "Get prey with Surf/Dive. When taking damage, prey is used to attack.":"使用冲浪/潜水后，如果受到攻击会进行反击",
-    "Changes between Full Belly and Hangry Mode at the end of each turn.":"每回合结束时会在饥饿花纹和饱腹花纹之间切换",
-    "Pokemon's head functions as substitute for a physical attack. Restored in hail.":"头部的冰会代替自己承受物理攻击，样子也会改变，下冰雹时恢复原状",
-    "Changes the Pokemon's type depending on the terrain.":"宝可梦的属性会随着场地变化而变化",
-    "If an active ally has this Ability or the Plus Ability, this Pokemon's Sp. Atk is 1.5x.":"场上己方同伴具有负电或正电特性时，特攻变为1.5倍",
-    "Bounces back only the stat-lowering effects that the Pokemon receives.":"只反弹自己受到的能力降低效果",
-    "This Pokemon's attacks that are super effective against the target do 1.25x damage.":"使用效果绝佳的招式，伤害变为1.25倍",
-    "Nullifies abilities while on the field.":"该特性宝可梦在场时，无效化所有其他宝可梦的特性",
-    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Grass attacks.":"HP低于1/3时，草属性招式的威力变为1.5倍",
-    "Protects the Pokemon and its ally Pokemon from being poisoned.":"自己和同伴都不会陷入中毒的异常状态",
-    "When hit by a contact move, the Pokemon and the attacker faint in 3 turns.":"受到接触攻击时，3回合后攻击者和自身都会倒下，交换解除效果",
-    "If an active ally has this Ability or the Minus Ability, this Pokemon's Sp. Atk is 1.5x.":"场上己方同伴具有负电或正电特性时，特攻变为1.5倍",
-    "Boosts sound move power, 0.5× damage from sound moves.":"提升声音类招式的威力，受到声音类招式的伤害减半",
-    "Ripens Berries and doubles their effect.":"树果的效果翻倍",
-    "The Pokemon creates a sandstorm when it's hit by an attack.":"受到攻击时使天气变为沙暴",
-    "Removes Screens and Veil Effects on switchin.":"出场时时我方和对方的反射壁、光墙和极光幕都会消失",
-    "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead.":"该特性宝可梦的能力变化会变为平时的２倍",
-    "This Pokemon's attacking stat is doubled against a target that switched in this turn.":"对替换出场的宝可梦以２倍的伤害进行攻击",
-    "This Pokemon's Speed is raised by 6 stages after it is damaged by Fire/Water moves.":"受到火属性或者水属性的招式攻击后，速度上升6级",
-    "This Pokemon's attacking stat is multiplied by 1.5 while using a Steel-type attack.":"使用钢属性的招式威力变为1.5倍",
-    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Bug attacks.":"HP低于1/3时，虫属性招式的威力变为1.5倍",
-    "At 1/3 or less of its max HP, this Pokemon's attacking stat is 1.5x with Water attacks.":"HP低于1/3时，水属性招式的威力变为1.5倍",
-    "Exchanges abilities when hitting a Pokemon with a contact move.":"受到接触攻击时，与攻击方交换特性",
-    "Fighting, Normal moves hit Ghost. Immune to Intimidate.":"一般和格斗属性招式可以攻击到幽灵属性宝可梦，免疫威吓",
-    "This Pokemon cannot be made to flinch. Immune to Intimidate.":"不会陷入畏缩状态，免疫威吓",
-    "This Pokemon cannot be infatuated or taunted. Immune to Intimidate.":"不会陷入着迷和挑衅状态，免疫威吓",
-    "This Pokemon cannot be confused. Immune to Intimidate.":"不会陷入混乱状态，免疫威吓",
-    "This Pokemon and its allies' Steel-type moves have their BP mutiplied by 1.5.":"该特性的宝可梦和在场同伴使用钢属性招式时威力提升50%",
-    "This Pokemon's allies have the base power of their moves multiplied by 1.3.":"该特性的宝可梦和在场同伴招式威力提升30%",
-    "Ignores the effects of opposing Pokemon's Abilities and moves that draw in moves.":"能无视具有吸引对手招式效果的特性或招式的影响",
-    "Ignores the effects of opposing Pokemon's moves/Abilities that redirect move targets.":"能无视具有吸引对手招式效果的特性或招式的影响",
-    "This Pokemon's Special Defense is doubled.":"特防翻倍",
-    "Boosts a random stat (except accuracy/evasion) +2 and another stat -1 every turn.":"每回合结束时随机降低一项能力等级并提升两项能力等级，闪避率/命中率除外",
-    "Speed is raised 1 stage if hit by a Bug-, Dark-, or Ghost-type attack, or Intimidated.":"受到虫/恶/幽灵属性招式攻击或者被威吓后速度提升一级",
-    "Does nothing.":"没有任何用途",
- 
-    // USUM Move Desc
-    "Raises a random stat by 2 and lowers another stat by 1 at the end of each turn.":"每回合结束时随机降低一项能力等级并提升两项能力等级",
-    "This Pokemon cannot be made to flinch.":"不会畏缩",
-    "This Pokemon cannot be infatuated or taunted.":"不会陷入着迷和挑衅状态",
-    "This Pokemon's Speed is raised 1 stage if hit by a Bug-, Dark-, or Ghost-type attack.":"受到虫/恶/幽灵属性招式攻击后速度提升一级",
-    "This Pokemon can hit Ghost types with Normal- and Fighting-type moves.":"一般和格斗属性招式可以攻击到幽灵属性宝可梦", 
-    "This Pokemon cannot be confused.":"不会陷入混乱状态",
-    "(Mimikyu only) First hit deals 0 damage, breaks disguise.":"首次伤害视为0，并改变样子，该特性只对谜拟Q有效",
-	
-    //battle.js start
-
-    "The sunlight turned harsh!":"阳光变得刺眼了！",
-    "s Drought intensified the sun's rays!":"的日照加强了太阳的光芒！",
-    "The sunlight faded.":"阳光减弱了。",
-    "The sunlight turned extremely harsh!":"样本变得异常刺眼了！",
-    "The harsh sunlight faded.":"刺眼的阳光减弱了。",
-    "It started to rain!":"开始下雨了！",
-    "s Drizzle made it rain!":"的降雨引起了下雨！",
-    "The rain stopped.":"雨停了。",
-    "A heavy rain began to fall!":"开始下大雨了！",
-    "The heavy rain has lifted!":"大雨停了！",
-    "A sandstorm kicked up!":"刮起了沙暴！",
-    "s Sand Stream whipped up a sandstorm!":"的扬沙引起了沙暴！",
-    "The sandstorm is raging.":"沙暴正在肆虐。",
-    "The sandstorm subsided.":"沙暴平息了。",
-    "It started to hail!":"开始下冰雹了！",
-    "s Snow Warning whipped up a hailstorm!":"的降雪引起了冰雹",
-    "The hail is crashing down.":"冰雹正在砸落。",
-    "The hail stopped.":"冰雹停止了。",
-    "Mysterious strong winds are protecting Flying-type Pok&eacute;mon!":"神秘的乱流正在保护飞行属性的宝可梦！",
-    "The mysterious strong winds have dissipated!":"神秘的乱流消散了！",
-    "unleashes its full-force Z-Move!":"释放了其全力的Z招式！",
-    "bounced the":"弹回了",
-    "back!":"！",
-    "Waggling a finger let it use":"摇摆着手指让它使用了",
-    "Nature Power turned into":"自然之力变成了",
-    "Breakneck Blitz turned into":"",
-    "s attack continues!":"的攻击持续着！",
-    "used Fissure!":"使用了地裂！",
-    "Just kidding! It was Earthquake!":"开玩笑的，是地震！",
-    "Sneaky Pebbles":"鬼鬼祟祟的卵石",
-    "Sly Rubble":"狡猾的瓦砾",
-    "Subtle Sediment":"微妙的沉积物",
-    "Buried Bedrock":"隐藏的基岩",
-    "Camouflaged Cinnabar":"隐秘的辰砂",
-    "Clandestine Cobblestones":"隐秘的鹅卵石",
-    "Cloaked Clay":"隐形黏土",
-    "Concealed Ore":"隐藏的矿石",
-    "Covert Crags":"隐蔽的峭壁",
-    "Crafty Coal":"狡诈的煤炭",
-    "Discreet Bricks":"小心的砖块",
-    "Disguised Debris":"伪装的瓦砾",
-    "Espionage Pebbles":"间谍卵石",
-    "Furtive Fortress":"鬼头鬼脑的堡垒",
-    "Hush-Hush Hardware":"秘密的硬件",
-    "Incognito Boulders":"匿名的巨石",
-    "Invisible Quartz":"无形的石英",
-    "Masked Minerals":"蒙面的矿物",
-    "Mischievous Masonry":"恶作剧石工",
-    "Obscure Ornaments":"隐晦的装饰品",
-    "Private Paragon":"私人的模范",
-    "Secret Solitaire":"秘密的接龙",
-    "Sheltered Sand":"被庇护的沙子",
-    "Surreptitious Sapphire":"诡秘的蓝宝石",
-    "Undercover Ultramarine":"隐秘的群青色",
-    "Yo mama so fat, she 4x resists Ice- and Fire-type attacks!":"你麻麻太胖了，她能四倍抵抗冰系和火系的攻击！",
-    "Yo mama so ugly, Captivate raises her opponent's Special Attack!":"你麻麻太丑了，她的诱惑提升了她对手的特攻！",
-    "Yo mama so dumb, she lowers her Special Attack when she uses Nasty Plot!":"你麻麻太蠢了，当她使用诡计的时候她降低了她的特攻！",
-    "Yo mama so dumb, she thought Sylveon would be Light Type!":"你麻麻太蠢了，她认为仙子伊布应该是光属性的！",
-    "can't use":"不能使用",
-    "after the taunt!":"在被挑衅后！",
-    "because of gravity!":"因为重力的缘故",
-    "because of Heal Block!":"因为回复封锁的缘故",
-    "can't use its sealed":"不能使用它被封印的",
-    "The effects of Throat Chop prevent":"地狱突刺的效果阻止了",
-    "from using certain moves!":"使用特定的技能",
-    "is paralyzed! It can't move!":"麻痹了！它不能行动！",
-    "is frozen solid!":"被结实地冰冻着。",
-    "is fast asleep.":"正在熟睡。",
-    "Sky Drop won't let":"自由落体不放开",
-    "go!":"！",
-    "cannot use":"不能使用",
-    "is loafing around!":"正在四处散步",
-    "must recharge!":"必须充能！",
-    "lost its focus and couldn't move!":"失去了它的聚气并无法行动！",
-    "s shell trap didn't work!":"的陷阱甲壳没有生效！",
-    "flinched and couldn\'t move!":"畏缩了并无法行动！",
-    "is immobilized by love!":"陷入了爱河",
-    "But there was no PP left for the move!":"但技能已经没有PP了！",
-    "can't move":"无法行动",
-    "Automatic center!":"自动的中心！",
-    "Pointed stones dug into":"尖锐的岩石扎进了",
-    "is hurt by the spikes!":"受到了撒菱的伤害！",
-    "was hurt by its burn!":"受到了灼伤的伤害！",
-    "was hurt by poison!":"受到了中毒的伤害！",
-    "lost some of its HP!":"损失了一部分HP！",
-    "is damaged by the recoil!":"受到了反作用力的伤害！",
-    "is buffeted by the sandstorm!":"被沙暴打击了！",
-    "is buffeted by the hail!":"被冰雹打击了！",
-    "is tormented!":"正在被折磨！",
-    "is afflicted by the curse!":"遭受着诅咒的痛苦！",
-    "is locked in a nightmare!":"被困在了恶梦之中！",
-    "was hurt!":"受到了伤害！",
-    "is hurt!":"受到了伤害！",
-    "sucked up the liquid ooze!":"吸到了污泥浆！",
-    "It hurt itself in its confusion!":"它在混乱中攻击了自己！",
-    "'s health is sapped by Leech Seed!":"的生命值被寄生种子吸取了！",
-    "The bursting flame hit":"溅射的火焰击中了",
-    "is hurt by the sea of fire!":"受到了火海的伤害！",
-    "kept going and crashed!":"摔了个狗啃泥！",
-    "is hurt by":"受到了伤害来自",
-    "is hurt by its":"受到了伤害来自",
-    "lost some HP because of":"损失了一部分HP由于",
-    "'s HP was restored by the Z-Power!":"的HP通过Z技能回复了！",
-    "absorbed nutrients with its roots!":"通过根吸取了营养！",
-    "A veil of water restored":"水幕回复了",
-    "'s HP!":"的HP！",
-    "The healing wish came true for":"治愈之愿降临在了",
-    "became cloaked in mystical moonlight!":"被神秘的月光笼罩！",
-    "s wish came true!":"的祈愿成真了！",
-    "had its energy drained!":"吸取了能量！",
-    "restored a little HP using its":"回复了一点HP通过",
-    "absorbs the attack!":"吸收了攻击！",
-    "restored HP using its":"回复了HP通过",
-    "restored its HP.":"回复了它的HP。",
-    "restored its HP using its Z-Power!":"通过Z技能回复了它的HP！",
-    "The battlers shared their pain!":"战斗者分担了他们的痛楚！",
-    "won't go any higher!":"不能变得更高了！",
-    "raised":"提升了",
-    "boosted its stats":"提升了它的能力",
-    "using its Z-Power!":"通过Z技能！",
-    "boosted its":"提升了它的",
-    "won't go any lower!":"不能变得更低了！",
-    "lowered":"下降了",
-    "cut its own HP and maximized its Attack!":"舍弃了自己的HP并最大化了它的攻击！",
-    "'s Anger Point!":"的愤怒穴位！",
-    "maxed its Attack!":"最大化了它的攻击",
-    "switched all changes to its Defense and Sp. Def with its target!":"交换了它和目标间的所有防御和特防变化！",
-    "switched stat changes with its target!":"交换了它和目标间的能力变化！",
-    "switched all changes to its Attack and Sp. Atk with its target!":"交换了它和目标间的所有攻击和特攻变化！",
-    "stole the target's boosted stats!":"偷取了目标提升了的能力！",
-    "returned its decreased stats to normal using its Z-Power!":"通过Z技能将被降低的能力阶级恢复原状！",
-
-    "'s stat changes!":"的能力阶级变化了!",
-    "'s stat changes were removed!":"的能力阶级变化被重置了!",
-    "'s stat changes were inverted!":"的能力阶级变化被反转了!",
-    "All stat changes were eliminated!":"所有能力阶级变化都被消除了!",
-    "A critical hit!":"击中了要害！",
-    "doesn't become confused!":"并没有混乱!",
-    "It doesn't affect":"这并没有影响到",
-    "It doesn't affect the opposing":"这并没有影响到对手的",
-    "It had no effect!":"这没有任何效果!",
-    "avoided the attack!":"回避了攻击!",
-    "'s attack missed!":"的攻击没有命中!",
-    "already has a burn.":"已经灼伤了.",
-    "is already poisoned.":"已经中毒了.",
-    "can't sleep in an uproar!":"在吵闹状态下无法陷入睡眠状态!",
-    "But the uproar kept":"但是吵闹使得",
-    "is already asleep!":"已经睡着了!",
-    "is already paralyzed.":"已经被麻痹了.",
-    "is already frozen solid!":"已经被冻住了!",
-    "can\'t use it the way it is now!":"",
-    "can\'t use the move!":"不能使用这个招式!",
-    "But it does not have enough HP left to make a substitute!":"然而它并没有足够的HP来制造一个替身!",
-    "already has a substitute!":"已经有一个替身了!",
-    "is too heavy to be lifted!":"太重了无法被提起!",
-    "But it failed!":"但是失败了!",
-    "The extremely harsh sunlight was not lessened at all!":"强烈的阳光丝毫没有被削弱!",
-    "There is no relief from this heavy rain!":"这场大雨仍然在倾泻着!",
-    "The mysterious strong winds blow on regardless!":"神秘的气流仍然在持续着!",
-    "surrounded itself with a veil of petals!":"用花幕包裹了自己!",
-    "'s":"的",
-    "stats were":"能力阶级",
-    "not lowered!":"没有被降低!",
-    "The Water-type attack evaporated in the harsh sunlight!":"水属性攻击在强烈的阳光中蒸发殆尽!",
-    "The Fire-type attack fizzled out in the heavy rain!":"火属性攻击在大雨中消耗殆尽!",
-    "But there was no target……":"然而攻击没有目标……",
-    "It's a one-hit KO!":"一击必杀!",
-    "But nothing happened!":"然而什么事也没有发生!",
-    "is waiting for":"在等待着",
-    "'s move...":"的行动……",
-    "The two moves have become one! It's a combined move!":"这两个招式合并为了一个招式!这是一个合体招式!",
-    "surrounded itself with its Z-Power!":"用Z力量包裹了全身!",
-    "by the":"由于",
-    "was burned!":"被灼伤了！",
-    "was badly poisoned!":"中了剧毒！",
-    "was poisoned!":"中毒了!",
-    "slept and became healthy!":"睡着了并恢复了健康!",
-    "fell asleep!":"睡着了!",
-    "is paralyzed! It may be unable to move!":"被麻痹了!有可能无法行动!",
-    "was frozen solid!":"被冻住了!",
-    "moved its status onto":"将它的异常状态转移给了",
-    "'s Natural Cure activated!":"的自然恢复生效了!",
-    "heals its status!":"治愈了它的异常状态!",
-    "healed its burn!":"治愈了它的灼伤状态!",
-    "'s burn was healed.":"的灼伤被治愈了.",
-    "cured its poison!":"治愈了它的中毒状态!",
-    "was cured of its poisoning.":"因为中毒而恢复了HP.",
-    "woke it up!":"使它醒来了!",
-    "woke up!":"醒来了!",
-    "cured its paralysis!":"治愈了它的麻痹状态!",
-    "defrosted it!":"解冻了它!",
-    "thawed out!":"解冻了!",
-    "'s status cleared!":"的异常状态被清除了!",
-    "A soothing aroma wafted through the area!":"沁人心脾的香气在场地上扩散开了!",
-    "A bell chimed!":"铃声响起!",
-    "'s team was cured!":"的队伍被治愈了!",
-    "found one":"回收了一个",
-    "frisked":"察觉到了",
-    "and found its":"的",
-    "frisked its target and found one":"察觉到了对手的",
-    "stole":"偷走了",
-    "harvested one":"收获了一个",
-
-    "obtained one":"得到了一个",
-    "floats in the air with its Air Balloon!":"靠着气球浮在了空中!",
-    "ate its":"吃掉了它的",
-
-    "flung its":"投掷了它的",
-    "knocked off":"拍落了",
-    "stole and ate its target\'s":"偷走并吃掉了对手的",
-    "strengthened":"增强了",
-    "\'s power!":"的威力!",
-    "was burned up!":"被烧尽了!",
-    "lost its":"失去了它的",
-    "'s Air Balloon popped!":"的气球爆炸了!",
-    "hung on using its Focus Sash!":"靠着它的气势披带撑住了!",
-    "hung on using its Focus Band!":"靠着它的气势头带撑住了!",
-    "became fully charged due to its Power Herb!":"因为它的强力香草充满了力量!",
-    "returned its status to normal using its White Herb!":"使用它的白色香草回复了它的能力!",
-    "is switched out with the Eject Button!":"因为逃脱按键被换下了!",
-    "activated":"被触发了",
-    "traced":"复制了",
-    "was taken over!":"被继承了!",
-    "copied":"复制了",
-    "Ability!":"特性!",
-    "acquired":"获得了",
-    "The effects of the weather disappeared.":"天气的影响消失了.",
-    "shuddered!":"害怕得胆怯!",
-    "reversed all other Pokemon's auras!":"反转了所有其它宝可梦的气场!",
-    "is drowsing!":"正在打瞌睡!",
-    "is radiating a dark aura!":"正在释放暗黑气场!",
-    "is radiating a fairy aura!":"正在释放妖精气场!",
-    "breaks the mold!":"打破了常规!",
-    "is exerting its pressure!":"正在施加压迫感!",
-    "endured the hit!":"挺住了攻击!",
-    "is radiating a bursting aura!":"正在释放溅射气场!",
-    "is radiating a blazing aura!":"正在释放炽热气场!",
-    "is too nervous to eat Berries!":"太紧张以致于无法吃下树果!",
-    "was removed.)":"消失了.)",
-    "\'s Ability was suppressed!":"的特性被抑制了!",
-    "transformed into":"变身成了",
-    "transformed!":"变身了!",
-    "Zen Mode triggered!":"达摩模式启动!",
-    "Zen Mode ended!":"达摩模式结束!",
-    "Changed to Blade Forme!":"变成了刀剑形态!",
-    "Changed to Shield Forme!":"变成了盾牌形态!",
-    "formed a school!":"形成了鱼群!",
-    "stopped schooling!":"的鱼群消失了!",
-    "Shields Down deactivated!":"界限盾壳被打破了!",
-    "Shields Down activated!":"界限盾壳启动!",
-    "'s fervent wish has reached":"热切的心意传达到了",
-
-    "has Mega Evolved into Mega":"超级进化为Mega",
-    "'s Primal Reversion! It reverted to its primal state!":"的原始回归!它回归为了原始状态!",
-    "transformed into the":"变为了",
-    "type!":"属性!",
-    "'s type became the same as":"的属性变得和",
-    "'s type!":"一样了!",
-    "burned itself out!":"燃尽了自身!",
-    "made it the":"使它变成了",
-    "type was added to":"属性加在了",
-    "switched its Attack and Defense!":"交换了它的攻击和防御!",
-    "was identified!":"被识破了!",
-    "was hurled into the air!":"被投向了空中!",
-    "is already confused!":"已经混乱了!",
-    "became confused due to fatigue!":"因为劳累过度而混乱了!",
-    "became confused!":"混乱了!",
-    "was seeded!":"被种下了种子!",
-    "was prevented from healing!":"的回复被阻止了!",
-    "Electricity's power was weakened!":"电的威力减轻了!",
-    "Fire's power was weakened!":"火的威力减轻了!",
-    "grew drowsy!":"昏昏欲睡!",
-
-    "fell for the taunt!":"因为挑衅而失败了!",
-    "sealed any moves its target shares with it!":"封印了所有和对手共有的招式!",
-    "was disabled!":"被定住了!",
-    "can't use items anymore!":"无法使用道具了!",
-    "was subjected to torment!":"受到了无理取闹!",
-    "planted its roots!":"扎下了根!",
-    "surrounded itself with a veil of water!":"用水幕包围了自己!",
-    "stockpiled 1!":"蓄力了1次!",
-    "stockpiled 2!":"蓄力了2次!",
-    "stockpiled 3!":"蓄力了3次!",
-    "'s perish count fell to 0.":"的灭亡还剩0回合.",
-    "'s perish count fell to 1.":"的灭亡还剩1回合.",
-    "'s perish count fell to 2.":"的灭亡还剩2回合.",
-    "'s perish count fell to 3.":"的灭亡还剩3回合.",
-    "received an encore!":"收到了再来一次!",
-    "is storing energy!":"正在贮存能量!",
-    "can't get it going!":"错失先机!",
-    "fell in love from the":"爱上了",
-    "became nimble!":"变得灵活了！",
-    "used the":"使用了",
-    "to get pumped!":"来变得兴奋！",
-    "boosted its critical-hit ratio using its Z-Power!":"通过使用Z力量使击中要害率获得爆发性的提升！",
-    "is getting pumped!":"正在变得兴奋！",
-    "cut its own HP and put a curse on":"缩减了自身的HP并且附加了诅咒给",
-    "levitated with electromagnetism!":"通过电磁力使自己悬浮了起来！",
-    "fell straight down!":"被击落！",
-    "The substitute took damage for":"替身承受了伤害保护了",
-    "put in a substitute!":"制造了一个替身！",
-    "is making an uproar!":"正在制造噪音！",
-    "caused an uproar!":"引发了噪音!",
-    "chose Doom Desire as its destiny!":"选择了破灭的未来作为它的命运！",
-    "learned":"学习了",
-    "became the center of attention!":"成为了视线的焦点！",
-    "is covered in powder!":"被粉尘包裹！",
-    "protected against special attacks!":"获得了对于特殊攻击的防护！",
-    "gained armor!":"获得了对于物理攻击的防护！",
-    "was freed from the telekinesis!":"从意念移物状态中逃脱了！",
-    "was freed from the Sky Drop!":"从自由落体状态中逃脱了！",
-    "snapped it out of its confusion!":"解除了混乱状态！",
-    "snapped out of its confusion!":"解除了混乱状态！",
-    "snapped out of confusion!":"解除了混乱状态！",
-    "was freed from Leech Seed!":"摆脱了寄生种子！",
-    "'s Heal Block wore off!":"的回复封印解除了！",
-    "got over its infatuation!":"不再迷恋对方了！",
-    "cured its infatuation status using its":"使用了xxx治愈了着迷状态",
-    "'s move is no longer disabled!":"的技能不再被封印了！",
-    "can use items again!":"可以再次使用道具了！",
-    "'s torment wore off!":"不再受对方无理取闹的影响了！",
-    "'s encore ended!":"的再来一次状态解除了！",
-    "unleashed its energy!":"释放了自身的能量！",
-    "'s illusion wore off!":"的幻象被识破了！",
-    "finally got its act together!":"最终聚集了它所有的力量！",
-    "The electromagnetism of":"xx的电磁浮游状态",
-    " calmed down.":"冷静下来了。",
-    "'s stockpiled effect wore off!":"力量储存的效果消失了！",
-    "was freed from":"从XX中脱身了",
-    "took the":"承受了",
-    "Quick Guard protected":"快速防守保护了",
-    "Wide Guard protected":"广域防守保护了",
-    "Crafty Shield protected":"戏法防守保护了",
-    "intends to flip up a mat and block incoming attacks!":"举起了一块榻榻米挡下了即将到来的攻击！",
-    "protected itself!":"保护了自身！",
-    "braced itself!":"支撑了下来！",
-    "is ready to help":"准备帮助",
-    "is tightening its focus!":"正在集中注意力！",
-    "set a shell trap!":"设置了一个甲壳陷阱！",
-    "waits for a target to make a move!":"等待一个目标来抢夺技能！",
-    "shrouded itself with Magic Coat!":"给自己裹上了一层魔术外衣！",
-    "'s moves have been electrified!":"的技能带电了！",
-    "became the center of attention using its Z-Power!":"使用了Z能量变成了焦点！",
-    "started heating up its beak!":"开始加热鸟喙！",
-    "wants its target to bear a grudge!":"想向对手释放怨念",
-    "is hoping to take its attacker down with it!":"想和对手同归于尽",
-    "will restore its replacement's HP using its Z-Power!":"用Z力量恢复了生命值",
-    "is confused!":"陷入了混乱",
-    "took its attacker down with it!":"和对手同归于尽了",
-    "snatched" :"抢夺了",
-    "'s move!":"的技能",
-    "lost all of its PP due to the grudge!":"因为怨恨失去了所有的PP",
-    "'s substitute faded!":"替身消失了！",
-    "is in love with":"爱上了",
-    "is protected by the mist!":"受到了白雾的保护",
-    "is protected by Safeguard!":"收到了神秘守护的保护",
-    "can no longer escape!":"不能逃脱！",
-    "was caught in a sticky web!":"陷入了粘网",
-    "Everyone is caught up in the happy atmosphere!":"大家被欢乐的气氛包围了",
-    "Congratulations,":"祝贺",
-    "switched items with its target!":"交换了对方的道具",
-    "shattered":"击碎了",
-    "protections!":"保护",
-    "s attack!":"的攻击",
-    "is being withdrawn!":"准备回来",
-    "It broke through" :"突破了",
-    "'s protection!":"的保护",
-    "fell for the feint!":"摔倒了",
-    "It reduced the PP of":"减少了PP",
-    "couldn't stay airborne because of gravity!":"因为重力不能停留空中",
-    "sketched":"素描",
-    "swapped Abilities with its target!":"与目标交换了特性",
-    "began charging power!":"开始充电",
-    "has no moves left!":"没有技能可以用",
-    "clamped down on":"夹住了",
-    "became trapped in the vortex!":"陷入了漩涡中！",
-    "became trapped in the fiery vortex!":"陷入了火焰漩涡中！",
-    "became trapped by swirling magma!":"陷入了岩浆的漩涡中！",
-    "became trapped by the quicksand!":"陷入了流沙中！",
-
-    "took the kind offer!":"接受了好意！",
-    "'s move was postponed!":"的行动延后了！",
-    "shared its power with the target!":"与目标平分了力量！",
-    "shared its guard with the target!":"与目标平分了防御！",
-    "switched Speed with its target!":"与目标交换了速度！",
-    "anchored itself with its roots!":"扎下了根！",
-    "was blocked by the kicked-up mat!":"被掀起的榻榻米挡住了！",
-    "When the flame touched the powder on the Pokemon, it exploded!":"当火焰接触到宝可梦身上的粉尘时发生了爆炸！",
-    "No one will be able to run away during the next turn!":"下一回合结束前所有宝可梦都不能交换！",
-    "took aim at":"瞄准了",
-    "surrounds itself with electrified terrain!":"的脚下电光飞闪！",
-    "surrounds itself with a protective mist!":"的脚下雾气缭绕！",
-    "surrounds itself with psychic terrain!":"的脚下传来了奇妙的感觉!",
-    "'s Wonder Guard evades the attack!":"的神奇守护抵御了攻击！",
-    "'s Forewarn alerted it to":"的预知梦预知到了",
-    "'s Ability became Mummy!":"的特性变成了木乃伊！",
-    "took the attack!":"吸收了攻击！",
-    " avoids attacks by its ally Pok&#xE9;mon!":"避免了友方的攻击！",
-    "'s item cannot be removed!":"的道具不可以被剥夺！",
-    "anchors itself!":"用吸盘粘在了地面上！",
-    "is protected by an aromatic veil!":"被芳香幕保护了！",
-    "surrounded itself with a veil of sweetness!":"被香气幕包围了！",
-    "became fully charged due to its bond with its Trainer!":"与训练师的羁绊使得它充满了力量！",
-    "Its disguise served it as a decoy!":"画皮脱落了！",
-    "You sense the presence of many!":"你感受到了一股强大力量的存在！",
-    "The mysterious strong winds weakened the attack!":"神秘的乱流减弱了攻击！",
-    "is already preparing its next move!":"已经准备好了下轮行动！",
-
-    "Aurora Veil made your team stronger against physical and special moves!":"极光幕使得你的队伍在面对物理和特殊攻击时更强了!",
-    "Aurora Veil made the opposing team stronger against physical and special moves!":"极光幕使得对方的队伍在面对物理和特殊攻击时更强了!",
-    "Reflect made your team stronger against physical moves!":"反射盾使得你的队伍在面对物理攻击时更强了!",
-    "Reflect made the opposing team stronger against physical moves!":"反射盾使得对方的队伍在面对物理攻击时更强了!",
-    "Light Screen made your team stronger against special moves!":"光墙使得你的队伍在面对特殊攻击时更强了!",
-    "Light Screen made the opposing team stronger against special moves!":"光墙使得对方的队伍在面对特殊攻击时更强了!",
-
-
-    "Your team cloaked itself in a mystical veil!":"你的队伍将自己包围在神秘的守护之中!",
-    "Your team became shrouded in mist!":"你的队伍被包围在了白雾之中!",
-    "Lucky Chant shielded your team from critical hits!":"幸运咒语保护你的队伍不会受到会心一击！",
-    "A sea of fire enveloped your team!":"一片火海包围了你的队伍！",
-    "A rainbow appeared in the sky on your team's side!":"彩虹出现在了你队伍的一边！",
-    "A swamp enveloped your team!":"一片沼泽包围了你的队伍！",
-    "Your team's Tailwind petered out!":"你队伍的顺风停止了!",
-    "Your team's Aurora Veil wore off!":"你队伍的极光幕消失了!",
-    "Your team's Reflect wore off!":"你队伍的反射盾消失了!",
-    "Your team's Light Screen wore off!":"你队伍的光墙消失了!",
-    "Your team is no longer protected by Safeguard!":"你的队伍不再受神秘守护的保护！",
-    "Your team is no longer protected by mist!":"你的队伍不再受白雾的保护！",
-    "Your team's Lucky Chant wore off!":"你队伍的幸运咒语结束了!",
-
-    "The opposing team cloaked itself in a mystical veil!":"对方的队伍将自己包围在神秘的守护之中!",
-    "The opposing team became shrouded in mist!":"对方的队伍被包围在了白雾之中!",
-    "Lucky Chant shielded the opposing team from critical hits!":"幸运咒语保护对方的队伍不会受到会心一击！",
-    "A sea of fire enveloped the opposing team!":"一片火海包围了对方的队伍！",
-    "A rainbow appeared in the sky on the opposing team's side!":"彩虹出现在了对方队伍的一边！",
-    "A swamp enveloped the opposing team!":"一片沼泽包围了对方的队伍！",
-    "The opposing team's Tailwind petered out!":"对方队伍的顺风停止了!",
-    "The opposing team's Aurora Veil wore off!":"对方队伍的极光幕消失了!",
-    "The opposing team's Reflect wore off!":"对方队伍的反射盾消失了!",
-    "The opposing team's Light Screen wore off!":"对方队伍的光墙消失了!",
-    "The opposing team is no longer protected by Safeguard!":"对方的队伍不再受神秘守护的保护！",
-    "The opposing team is no longer protected by mist!":"对方的队伍不再受白雾的保护！",
-    "The opposing team's Lucky Chant wore off!":"对方队伍的幸运咒语结束了!",
-
-    "disappeared!":"消失了!",
-
-
-    "twisted the dimensions!":"扭曲了时空!",
-    "It created a bizarre area in which Defense and Sp. Def stats are swapped!":"制造出了防御与特防能力值互换的奇妙空间!",
-    "It created a bizarre area in which Pok&#xE9;mon's held items lose their effects!":"制造出了道具无效的魔法空间!",
-    "Gravity intensified!":"重力变强了!",
-    "Grass grew to cover the battlefield!":"脚下绿草如茵!",
-    "Mist swirls around the battlefield!":"脚下雾气缭绕!",
-    "An electric current runs across the battlefield!":"脚下电光飞闪!",
-    "The battlefield got weird!":"脚下传来了奇妙的感觉!",
-    "The twisted dimensions returned to normal!":"扭曲的时空恢复了!",
-    "Wonder Room wore off, and Defense and Sp. Def stats returned to normal!":"奇妙空间结束了,防御与特防能力值恢复了正常!",
-    "Magic Room wore off, and held items' effects returned to normal!":"魔法空间结束了,道具效果恢复了正常!",
-    "Gravity returned to normal!":"重力恢复了正常!",
-    "The effects of Mud Sport have faded.":"玩泥的效果消失了!",
-    "The effects of Water Sport have faded.":"玩水的效果消失了!",
-    "The grass disappeared from the battlefield.":"脚下的青草不见了!",
-    "The mist disappeared from the battlefield.":"脚下的雾气不见了!",
-    "The electricity disappeared from the battlefield.":"脚下的电光不见了!",
-    "The weirdness disappeared from the battlefield!":"脚下奇妙的感觉消失了!",
-    "All Pok&#xE9;mon that heard the song will faint in three turns!":"所有听见歌声的宝可梦都将在三回合后倒下!",
-    "Coins were scattered everywhere!":"金币撒得到处都是!",
-    "A deluge of ions showers the battlefield!":"离子风暴正在肆虐!",
-    "regained its true power through Ultra Burst!":"通过究极爆发出现了新的样子!",
-
-
-    // Extra
-
-    "[Opposing":"[对手",
-    "Pointed stones float in the air around your team!":"尖锐的岩石漂浮在了你的队伍周围！",
-    "Pointed stones float in the air around the opposing team!":"尖锐的岩石漂浮在了对方的队伍周围！",
-    "Spikes were scattered on the ground all around your team!":"地菱布满在了你的队伍周围！",
-    "Spikes were scattered on the ground all around the opposing team!":"地菱布满在了对方的队伍周围！",
-    "Poison spikes were scattered on the ground all around your team!":"毒菱布满在了你的队伍周围！",
-    "Poison spikes were scattered on the ground all around the opposing team!":"毒菱布满在了对方的队伍周围！",
-    "A sticky web spreads out on the ground around your team!":"一张黏网展开在了你的队伍周围！",
-    "A sticky web spreads out on the ground around the opposing team!":"一张黏网展开在了对方的队伍场地周围！",
-    "The Tailwind blew from behind your team!":"顺风在你的队伍身后展开了！",
-    "The pointed stones disappeared from around your team!":"尖锐的岩石从你的队伍场地周围消失了！",
-    "The spikes disappeared from the ground around your team!":"地菱从你的队伍周围消失了！",
-    "The poison spikes disappeared from the ground around your team!":"毒菱从你的队伍周围消失了！",
-    "The sticky web has disappeared from the ground around your team!":"黏网从你的队伍周围消失了！",
-    "The Tailwind blew from behind the opposing team!":"顺风在对方的队伍身后展开了！",
-    "The pointed stones disappeared from around the opposing team!":"尖锐的岩石从对方的队伍场地周围消失了！",
-    "The spikes disappeared from the ground around the opposing team!":"地菱从对方的队伍周围消失了！",
-    "The poison spikes disappeared from the ground around the opposing team!":"毒菱从对方的队伍周围消失了！",
-    "The sticky web has disappeared from the ground around the opposing team!":"黏网从对方的队伍周围消失了！",
-    "Waiting for opponent...":"等待对手行动...",
-    "Pointed stones dug into the opposing":"锋利的岩石扎进了对手的",
-    "It's super effective! A critical hit!":"这非常有效！会心一击！",
-    "It's not very effective... A critical hit!":"这不是很有效...会心一击！",
-    "evasiveness":"回避率",
-    "Attack":"攻击",
-    "Defense":"防御",
-    "Special Attack":"特攻",
-    "Special Defense":"特防",
-    "Speed":"速度",
-    "accuracy":"命中率",
-    "fell":"下降了",
-    "rose":"提升了",
-    "fell harshly":"大幅下降了",
-    "fell severely":"巨幅下降了",
-    "rose sharply":"大幅提升了",
-    "rose drastically":"巨幅提升了",
-    "is reacting to the Key Stone":"对钥石起了反应",
-    "became Ash-Greninja!":"变成了小智-甲贺忍蛙！",
-    "It's super effective! The opposing":"这非常有效！对手的",
-    "restored a little HP using its Black Sludge!":"使用黑色淤泥恢复了少量HP！",
-    "restored HP using its Grassy Terrain!":"因为青草场地恢复了少量HP！",
-    "Instant replay":" 即时回放",
-    "Download replay":" 下载回放",
-    "Switch sides":" 切换视角",
-    "Upload and share replay":" 上传并分享回放",
-    "knocked off the opposing":"打落了对手的",
-    "taunt":"挑拨",
-    "wore off":"无效了",
-    "is hurt by the opposing":"受到了伤害来自对手",
-    "All Pokemon that heard the song will faint in three turns!":"所有听到歌声的宝可梦将在3回合后倒下！",
-    "was badly poisoned by the Toxic Orb!":"因为剧毒珠中了剧毒！",
-    "the Normal type":"普通属性",
-    "the Fighting type":"格斗属性",
-    "the Flying type":"飞行属性",
-    "the Poison type":"毒属性",
-    "the Ground type":"地面属性",
-    "the Rock type":"岩石属性",
-    "the Bug type":"虫属性",
-    "the Ghost type":"幽灵属性",
-    "the Steel type":"钢属性",
-    "the Fire type":"火属性",
-    "the Water type":"水属性",
-    "the Grass type":"草属性",
-    "the Psychic type":"超能属性",
-    "the Dragon type":"龙属性",
-    "the Ice type":"冰属性",
-    "the Dark type":"恶属性",
-    "the Fairy type":"妖精属性",
-
-    "Register":"注册",
-    "Register your account:":"注册你的账号：",
-    "Username:":"用户名：",
-    "Password:":"密码：",
-    "Password (confirm):":"确认密码",
-    "What is this pokemon?":"在下面的输入框中输入pikachu",
-    "Cancel":"取消",
-    "Disconnected":"已断开连接",
-    "Reconnect":"重新连接",
-};
-function trans_from_dict(a){
-    var b=translations[a];
-    if(b)return b;
-    return a;
-}
-var QQ=$.noConflict();
-var regex_ability=new RegExp(/Ability: ([A-za-z- ]+[A-za-z])$/);
-var regex_possible_ability=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z])$/);
-var regex_possible_ability2=new RegExp(/Possible abilities: ([A-za-z- ]+[A-za-z]), ([A-za-z- ]+[A-za-z])$/);
-var regex_Item=new RegExp(/Item: ([(A-za-z- ]+[A-za-z)])$/);
-var regex_stat_change=new RegExp(/^'s ([A-za-z ]+)!/);
-var regex_magic_bounce=new RegExp(/bounced the ([A-za-z -]+) back!/);
-var regex_preview=new RegExp(/^([A-za-z* -]+ \/ )+([A-za-z* -]+)$/);
-var regex_start_battle=new RegExp(/Battle started between (.+) and (.+)!/);
-var regex_uturn=new RegExp(/went back to (.*)!/);
-var regex_hurtby=new RegExp(/is hurt by ([A-Za-z- ]+)!/);
-var regex_gems=new RegExp(/The ([A-za-z ]+) strengthened ([A-za-z- ]+)'s power!/);
-var regex_eat=new RegExp(/ate its ([A-Za-z ]+)!/);
-var regex_restorehp=new RegExp(/restored HP using its ([A-Za-z ]+)!/);
-var regex_knock=new RegExp(/(The opposing )*(.+) knocked off (the opposing )*(.+)\'s (.+)!/);
-var t_= function(a){return a;}
-var t= function(originalStr){
-    var tmp=originalStr.trim();
-    if(translations[tmp])
-        return translations[tmp];
-    if(tmp.indexOf("'s ")!=-1&&tmp.indexOf("!]")!=-1){
-        tmp=tmp.replace("'s ","").replace("!]","");
-        return "的"+translations[tmp]+"!]";
-    }
-    if(tmp.indexOf(" withdrew ")!=-1){
-        var splitted=tmp.split(" withdrew ");
-        return splitted[0]+"收回了"+trans_from_dict(splitted[1].replace("!",""))+"！";
-    }
-    //var regex=new RegExp(/(/)
-    if(originalStr.match(regex_stat_change)){
-        console.log(originalStr);
-        var splitted=RegExp.$1.split(' ');
-        var pos=splitted.length-1;
-        var str2=splitted[pos--];
-        while(!translations[str2]){
-            str2=splitted[pos--]+" "+str2;
-            if(pos<=0)break;
-        }
-        var str1=splitted[pos--];
-        if(pos>=0)
-            str1=splitted[pos--]+" "+str1;
-        var ret="的";
-        var trans1=translations[str1];
-        var trans2=translations[str2];
-        if(trans1)
-            ret+=trans1;
-        if(trans2)
-            ret+=trans2;
-        ret+="！";
-        if(originalStr.indexOf("The opposing")!=-1)
-            ret+=" 对手的";
-        return ret;
-    }
-    if(originalStr.match(regex_ability)){
-        originalStr=originalStr.replace(regex_ability,"特性: ");
-        if(translations[RegExp.$1]){
-            originalStr+=translations[RegExp.$1];
-        }
-        return originalStr;
-    }
-    if(originalStr.match(regex_possible_ability)){
-        originalStr=originalStr.replace(regex_possible_ability,"可能的特性: ");
-        if(translations[RegExp.$1]){
-            originalStr+=translations[RegExp.$1];
-        }
-        return originalStr;
-    }
-
-    if(originalStr.match(regex_knock)){
-       return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"打落了"+trans_from_dict(RegExp.$3)+trans_from_dict(RegExp.$4)+"的"+trans_from_dict(RegExp.$5)+"!";
-    }
-    if(originalStr.match(regex_possible_ability2)){
-        originalStr=originalStr.replace(regex_possible_ability2,"可能的特性: ");
-        if(translations[RegExp.$1]&&translations[RegExp.$2]){
-            originalStr=originalStr+translations[RegExp.$1]+"，"+translations[RegExp.$2];
-        }
-        return originalStr;
-    }
-
-
-
-    if(originalStr.match(regex_Item)){
-        originalStr=originalStr.replace(regex_Item,"道具: ");
-        if(translations[RegExp.$1]){
-            originalStr+=translations[RegExp.$1];
-        }
-        return originalStr;
-    }
-    if(originalStr.match(regex_preview)){
-        var pokes=originalStr.split(" / ");
-        var ret=translations[pokes[0]];
-        var pos=1;
-        while(pokes[pos]){
-            ret+=" / "+translations[pokes[pos]];
-            pos++;
-            if(pos>=6)break;
-        }
-        return ret;
-    }
-    if(originalStr.match(regex_start_battle)){
-        return RegExp.$1+" 与 "+RegExp.$2+" 的对战开始了！";
-    }
-    if(originalStr.match(/^\((.*)\)$/)){
-        if(translations[RegExp.$1])
-            return "("+translations[RegExp.$1]+")";
-    }
-    if(originalStr.match(/has Mega Evolved into Mega ([A-za-z -]+)!/)){
-        return "超级进化为Mega"+translations[RegExp.$1]+"！";
-    }
-    if(originalStr.match(/transformed into ([A-za-z -]+)!/)){
-        return "变成了"+translations[RegExp.$1]+"！";
-    }
-    if(originalStr.match(regex_uturn)){
-        return "回到了"+RegExp.$1+"的身边！";
-    }
-    if(originalStr.match(regex_hurtby)){
-        var str1="因为";
-        if(originalStr.indexOf("opposing"))
-        return "因为"+translations[RegExp.$1]+"而受到了伤害！";
-    }
-    if(originalStr.match(regex_magic_bounce)){
-        return "把"+translations[RegExp.$1]+"反弹回去了！";
-    }
-    if(originalStr.match(regex_magic_bounce)){
-        return "把"+translations[RegExp.$1]+"反弹回去了！";
-    }
-    if(originalStr.match(/can't use ([A-za-z- ]+) after the taunt!/)){
-        return "因为挑拨不能使用"+translations[RegExp.$1]+"！";
-    }
-    if(originalStr.match(regex_gems)){
-        return translations[RegExp.$1]+"提升了"+translations[RegExp.$2]+"的威力!";
-    }
-    //else
-        return originalStr
-            .replace(/lost ([0-9]+)% of its health!/,"失去了$1%的生命值!")
-            .replace(" sent out ","放出了 ")
-            .replace("won the battle","获得了胜利")
-            .replace(" withdrew ","收回了 ")
-            .replace("forfeited","认输了")
-            .replace(" restored its HP","恢复了生命值")
-            .replace ("Random Battles","随机对战")
-            .replace("fainted","倒下了")
-            .replace("'s team","的队伍")
-            .replace("Battle timer is ON:","战斗计时器打开:")
-            .replace("inactive players will automatically lose when time's up.","当时间到了，不活跃的玩家会自动投降。")
-            .replace("requested by","要求人")
-            .replace("'s rating","的分数")
-            .replace("lost due to inactivity.","因为不活跃而失败了")
-            .replace("come back!","回来!")
-            .replace("Go!","去吧!")
-            .replace("knocked off","打落了")
-            .replace("avoided the attack!","躲避了攻击")
-            .replace("Challenge","挑战")
-            .replace("absorbed light!","吸收了阳光!")
-            .replace("'s evasiveness fell!","的回避率下降了!")
-            .replace("'s evasiveness rose!","的回避率提升了!")
-            .replace("'s evasiveness fell harshly!","的回避率大幅下降了!")
-            .replace("'s evasiveness rose sharply!","的回避率大幅提升了!")
-            .replace("'s evasiveness fell severely!","的回避率巨幅下降了!")
-            .replace("'s evasiveness rose drastically!","的回避率巨幅提升了!")
-            .replace("'s Attack fell!","的攻击下降了!")
-            .replace("'s Attack rose!","的攻击提升了!")
-            .replace("'s Attack fell harshly!","的攻击大幅下降了!")
-            .replace("'s Attack rose sharply!","的攻击大幅提升了!")
-            .replace("'s Attack fell severely!","的攻击巨幅下降了!")
-            .replace("'s Attack rose drastically!","是攻击巨幅提升了!")
-            .replace("'s Defense fell!","的物防下降了!")
-            .replace("'s Defense rose!","的物防提升了!")
-            .replace("'s Defense fell harshly!","的物防大幅下降了!")
-            .replace("'s Defense rose sharply!","的物防大幅提升了!")
-            .replace("'s Defense fell severely!","的物防巨幅下降了!")
-            .replace("'s Defense rose drastically!","的物防巨幅提升了!")
-            .replace("'s Special Attack fell!","的特攻下降了!")
-            .replace("'s Special Attack rose!","的特攻提升了!")
-            .replace("'s Special Attack fell harshly!","的特攻大幅下降了!")
-            .replace("'s Special Attack rose sharply!","的特攻大幅提升了!")
-            .replace("'s Special Attack fell severely!","的特攻巨幅下降了!")
-            .replace("'s Special Attack rose drastically!","的特攻巨幅提升了!")
-            .replace("'s Special Defense fell!","的特防下降了!")
-            .replace("'s Special Defense rose!","的特防提升了!")
-            .replace("'s Special Defense fell harshly!","的特防大幅下降了!")
-            .replace("'s Special Defense rose sharply!","的特防大幅提升了!")
-            .replace("'s Special Defense fell severely!","的特防巨幅下降了!")
-            .replace("'s Special Defense rose drastically!","的特防巨幅提升了!")
-            .replace("'s Speed fell!","的速度下降了!")
-            .replace("'s Speed rose!","的速度提升了!")
-            .replace("'s Speed fell harshly!","的速度大幅下降了!")
-            .replace("'s Speed rose sharply!","的速度大幅提升了!")
-            .replace("'s Speed fell severely!","的速度巨幅下降了!")
-            .replace("'s Speed rose drastically!","的速度巨幅提升了!")
-            .replace("'s accuracy fell!","的命中率下降了!")
-            .replace("'s accuracy rose!","的命中率提升了!")
-            .replace("'s accuracy fell harshly!","的命中率大幅下降了!")
-            .replace("'s accuracy rose sharply!","的命中率大幅提升了!")
-            .replace("'s accuracy fell severely!","的命中率巨幅下降了!")
-            .replace("'s accuracy rose drastically!","的命中率巨幅提升了!")
-            .replace("The sunlight turned harsh!","阳光变得刺眼了!")
-            .replace("s Drought intensified the sun's rays!","的日照加强了太阳的光芒!")
-            .replace("The sunlight faded.","阳光减弱了。")
-            .replace("The sunlight turned extremely harsh!","样本变得异常刺眼了!")
-            .replace("The harsh sunlight faded.","刺眼的阳光减弱了。")
-            .replace("The sunlight is strong!","阳光很强烈!")
-            .replace("It started to rain!","开始下雨了!")
-            .replace("s Drizzle made it rain!","的降雨引起了下雨!")
-            .replace("The rain stopped.","雨停了。")
-            .replace("A heavy rain began to fall!","开始下大雨了!")
-            .replace("The heavy rain has lifted!","大雨停了!")
-            .replace("A sandstorm kicked up!","刮起了沙暴!")
-            .replace("s Sand Stream whipped up a sandstorm!","的扬沙引起了沙暴!")
-            .replace("The sandstorm is raging.","沙暴正在肆虐。")
-            .replace("The sandstorm subsided.","沙暴平息了。")
-            .replace("It started to hail!","开始下冰雹了!")
-            .replace("s Snow Warning whipped up a hailstorm!","的降雪引起了冰雹")
-            .replace("The hail is crashing down.","冰雹正在砸落。")
-            .replace("The hail stopped.","冰雹停止了。")
-            .replace("surrounded itself with its Z-Power!","用Z力量包裹了全身!")
-            .replace("No battles are going on right now.","没有正在进行的对战。")
-            .replace("Turn","回合")
-            .replace("Hide","隐藏")
-            .replace("The substitute took damage for the opposing ","对手的替身为它低挡了伤害")
-            .replace("Dark mode","夜间模式")
-            .replace(" transformed!","转化了！")
-            .replace("Join other room","加入其他房间")
-            .replace("Chatrooms","聊天室")
-            .replace("Private rooms","隐藏房间")
-            .replace("Battles","战斗")
-            .replace("Congratulations to","恭喜")
-            .replace("for winning the game of UNO!","在本次UNO比赛获得了胜利")
-            .replace("Players","玩家")
-            .replace("Player","玩家")
-            .replace("Searching","匹配中")
-            .replace("Connecting","正在连接")
-            .replace("Join lobby chat","加入聊天室")
-            .replace("active battle","正在对局")
-            .replace(" woke up!","苏醒了！")
-            .replace("is hurt!","受伤了！")
-            .replace(" ate its ","吃了它的")
-            .replace("reversed all other Pokemon's auras!","反转了所有其它宝可梦的气场!")
-            .replace("is drowsing!","正在打瞌睡!")
-            .replace("is radiating a dark aura!","正在释放暗黑气场!",)
-            .replace("is radiating a fairy aura!","正在释放妖精气场!",)
-            .replace("breaks the mold!","打破了常规!")
-            .replace("team is too nervous to eat Berries!","队伍太紧张了，无法食用树果！")
-            .replace(" was seeded!","被种子寄生了！")
-            .replace(" slept and became healthy!","因为睡觉，它身体恢复了健康！")
-            .replace(" harvested one ","收获了一个")
-            .replace(" Pidgeot loses Flying type this turn.","在本回合失去了飞行系。")
-            .replace(" is damaged by the recoil!","受到了反冲的伤害！")
-            .replace(" Air Balloon popped!","气球爆了！")
-            .replace(" became confused due to fatigue!","因为疲劳而陷入了混乱！")
-            .replace(" snapped out of its confusion!","从混乱中振作了起来！")
-            .replace(" is exerting its pressure!","正在施加压力！")
-            .replace(" floats in the air with its Air Balloon!","用气球漂浮在了空中！")
-            .replace(" was dragged out!","被拉了出来！")
-            .replace("Bright light is about to burst out of Necrozma!","奈克洛兹玛的身上开始溢出耀眼的光芒！")
-            .replace("Necrozma regained its true power through Ultra Burst!","奈克洛兹玛通过究极爆发现出了新的样子！")
-            .replace("The challenge was cancelled.","挑战被取消。")
-            .replace("Select a format","选择一种分级")
-               .replace(" switched items with its target!","与对方交换了持有物！")
-            .replace("s Quick Claw let it move first!","先制之爪让他优先行动了")
-            .replace("I hope playing on Pokemon Showdown today can help cheer you up!","我希望今天在Pokemon Showdown上的比赛能让你振作起来！")
-            .replace("empty team","无队伍")
-            .replace(" grew drowsy!","变得昏昏欲睡！")
-            .replace("Untitled","无标题")
-            .replace("returned its status to normal using its White Herb!","使用白色药草使下降的能力恢复了正常！")
-            .replace("Copy of","复制一份")
-            .replace("See a user's ranking with","查看用户排名")
-            .replace("User lookup","查找用户")
-            .replace("You are disconnected and cannot chat.","你已断开连接，无法聊天。")
-            .replace("Import from text","从文本导入")
-            .replace("You joined","你加入了")
-            .replace(" joined","加入")
-             .replace("disconnected and has no disconnection time left","断开且没有断开时间")
-            .replace(/reconnected and has ([0-9]+) seconds left/,"重新连接，还剩$1秒")
-            .replace(/has ([0-9]+) seconds to reconnect!/,"有$1秒的时间重新连接！")
-            .replace("All players are inactive.","所有玩家都不活跃。")
-            .replace(/has ([0-9]+) seconds left\./,"还有$1秒。")
-            .replace(/has ([0-9]+) seconds left this turn\./,"当前回合还有$1秒。")
-            .replace(" left","退出")
-            .replace(" used ","使用了")
-            .replace("'s Primal Reversion! It reverted to its primal state!","回归原始！它回到了最初的样子！")
-             .replace(" to challenge you.","挑战你。")
-            .replace("disconnected and has a minute to reconnect!","断开连接，有一分钟时间重新连接")
-            .replace("The opposing ","对手的")
-            .replace("reconnected.","重新连接")
-            .replace("muted","静音")
-            .replace(" obtained one ","获得一个")
-            .replace("Music volume","音乐音量")
-            .replace("Effect volume","叫声音量")
-            .replace("Notification volume","通知音量")
-            .replace("Mute sounds","全部静音")
-            .replace("Battle Options","战斗选项")
-            .replace("In this battle","在这场战斗中")
-            .replace("Ignore Spectators","忽略观战")
-            .replace("Ignore Opponent","忽略对手")
-            .replace("All battles","在所有战斗中")
-            .replace("Ignore nicknames","忽略昵称")
-            .replace("Hardcore mode","硬核模式")
-            .replace("hide info not shown in-game","隐藏游戏中未显示的信息")
-            .replace("beta","测试")
-            .replace("How will you start the battle?","你将如何战斗？")
-            .replace(" restored a little HP using its Leftovers!","通过吃剩的东西回复了一点HP！")
-            .replace("Pointed stones dug into the opposing ","尖锐的岩石扎进了对手的")
-            .replace("Pointed stones dug into ","尖锐的岩石扎进了")
-            .replace(" is paralyzed! It can't move!","麻痹了！不能动弹！")
-            .replace("restored HP using its Grassy Terrain!","通过青草场地回复了一点HP！")
-            .replace("This room is expired","这个房间过期了")
-            .replace("'s Magic Guard","的魔法防守特性")
-            .replace(" traced the opposing ","复制了对手")
-             .replace("search teams","搜索队伍")
-            .replace("Undo Delete","撤销删除")
-            .replace("Locked","锁定")
-            .replace(" is being withdrawn...","正在撤退…")
-            .replace(" twisted the dimensions!","扭曲了时空！")
-            .replace(" lost ","失去了")
-            .replace(" was badly poisoned!","中毒了！")
-            .replace(" was hurt by poison!","受到了毒素的伤害！")
-            .replace(" protected itself!","保护了自己！")
-            .replace("Your searches and challenges have been cancelled because you changed your username.","您的搜索和挑战已被取消，因为您更改了用户名。")
-            .replace(" of its health!","的生命值！")
-            .replace("was hurt by its burn!","被灼伤造成了伤害！")
-            .replace(" was burned!","被灼伤了")
-            .replace(" fell asleep!","睡着了！")
-            .replace(" is fast asleep.","睡得很熟")
-            .replace(" is tightening its focus!","正在蓄力！")
-            .replace(" put in a substitute!","制造了一个替身！")
-            .replace("'s substitute faded!","的替身消失了！")
-            .replace(" had its energy drained!","被吸收了能量！")
-            .replace("Rain continues to fall!","雨还在下！")
-            .replace(" was caught in a sticky web!","被粘在了一张网上！")
-            .replace("is paralyzed! It may be unable to move!","麻痹了！它可能无法行动！")
-            .replace("Battle timer is now OFF.","战斗计时器现在已经关闭。")
-            .replace(" is buffeted by the sandstorm!","受到了沙暴的攻击！")
-            .replace(" flinched and couldn't move!","害怕了，不能动弹！")
-            .replace("some of its HP!","它的一些HP")
-            .replace("'s Water Absorb","的储水")
-             .replace(" was poisoned!","中毒了！")
-            .replace("'s perish count fell to ([0-9]).","的灭亡还剩$1回合。")
-            .replace("Offline","离线")
-            .replace("Accept","接受")
-            .replace("Reject","拒绝")
-            .replace(" restored a little HP using its Black Sludge!","使用黑色淤泥恢复了少量HP！")
-            .replace(" wants to battle!","想战斗！")
-            .replace("Waiting for ","等待")
-            .replace(" was cured of paralysis.","它的麻痹被治愈了。")
-            .replace(" was cured of its poisoning.","它的中毒被治愈了。")
-            .replace(" was cures of Freeze.","它的冰冻被治愈了。")
-            .replace(" was cures of Burn.","它的烧伤被治愈了。")
-            .replace(" was cures of Sleep","它的睡眠被治愈了。")
-            .replace(" is hurt by Magma Storm!","受到了熔岩风暴的伤害！")
-            .replace(" was freed from Magma Storm!","摆脱了熔岩风暴！")
-            .replace(" is buffeted by the hail!","被冰雹打击了！")
-            .replace(" became trapped by swirling magma!","被旋转的岩浆困住了！")
-            .replace(" was frozen solid!","被冰冻了！")
-            .replace(" is hoping to take its attacker down with it!","想要和对手同归于尽了！")
-            .replace("'s health is sapped by Leech Seed!","受到了寄生种子的伤害！")
-            .replace(" is frozen solid!","被结实的冰冻着")
-            .replace("'s taunt wore off!","的挑衅消失了！")
-            .replace(" fell for the taunt!","被挑衅了")
-            .replace("'s stats were not lowered!","的能力没有被降低")
-             .replace("It doesn't affect","这没有影响到")
-            .replace("its Electric Seed!","它的电气种子")
-            .replace(" the opposing ","对方的")
-            .replace(" will use ","将使用")
-            .replace("Online","在线")
-            .replace("Forfeiting makes you lose the battle. Are you sure?","这样做会使你输掉战斗。你确定吗？")
-            .replace("Replace Player","更换玩家")
-            .replace("Forfeit","投降")
-            .replace("Replace Player","投降后并关闭")
-            .replace(" was hurt!","受到了伤害")
-            .replace(" loses Flying type this turn.","本回合失去飞行系。")
-            .replace("is hurt by the spikes!","受到了撒菱的伤害！")
-            .replace("Away","离开")
-            .replace("In gen 7, Dark is immune to Prankster moves.","在第七世代中，恶作剧之心的效果对恶系无效。")
-            .replace("already has a burn.","已经灼伤了.")
-            .replace("is already poisoned.","已经中毒了.")
-            .replace("can't sleep in an uproar!","在吵闹状态下无法陷入睡眠状态!",)
-            .replace("But the uproar kept","但是吵闹使得")
-            .replace("is already asleep!","已经睡着了!")
-            .replace("is already paralyzed.","已经被麻痹了.")
-            .replace("is already frozen solid!","已经被冻住了!")
-            .replace("Close after forfeiting","投降后关闭")
-            .replace("Forfeiting makes you lose the battle. Are you sure?","你确定要向对方投降吗?")
-            .replace(" will switch in, replacing ","将进场，替换掉场上的")
-            .replace(" cut its own HP to power up its move!","以自己的HP为代价强化了技能威力！")
-            .replace(" is cured by its Natural Cure!","由于自然回复特性它异常状态被治愈了！")
-            .replace(" wish came true!","的愿望实现了！")
-            .replace(" was hurt by the Rocky Helmet!","受到了凸凸头盔的伤害！")
-             .replace(" is radiating a bursting aura!","正在释放溅射气场")
-            .replace("Timer","计时器")
-            .replace("Start timer","开启计时器")
-            .replace("Stop timer","关闭计时器")
-            .replace("Forfeiting makes you lose the battle. Are you sure?","这样做会使你输掉战斗。你确定吗？")
-            .replace(" hung on using its Focus Sash!","使用气息腰带撑住了！")
-            .replace("Replace player","投降后关闭")
-            .replace("Ladder (probably) updated, but score could not be retrieved (Response not received).","天梯（可能）已更新，但无法找到分数（未收到响应）。")
-            .replace("Your replay has been uploaded! It's available at:","您的战斗回放已上传！可从以下网址获取：")
-            .replace("'s Charizardite X is reacting to the Key Stone!","的喷火龙进化石X对钥石有反应！")
-            .replace("'s Charizardite Y is reacting to the Key Stone!","的喷火龙进化石Y对钥石有反应！")
-            .replace("'s Blastoisinite is reacting to the Key Stone!","的水箭龟进化石对钥石有反应！")
-            .replace("'s Beedrillite is reacting to the Key Stone!","的大针蜂进化石对钥石有反应！")
-            .replace("'s Pidgeotite is reacting to the Key Stone!","的大比鸟进化石对钥石有反应！")
-            .replace("'s Alakazite is reacting to the Key Stone!","的胡地进化石对钥石有反应！")
-            .replace("'s Slowbronite is reacting to the Key Stone!","的呆壳兽进化石对钥石有反应！")
-            .replace("'s Gengarite is reacting to the Key Stone!","的耿鬼进化石对钥石有反应！")
-            .replace("'s Kangaskhanite is reacting to the Key Stone!","的袋兽进化石对钥石有反应！")
-            .replace("'s Pinsirite is reacting to the Key Stone!","的凯罗斯进化石对钥石有反应！")
-            .replace("'s Gyaradosite is reacting to the Key Stone!","的暴鲤龙进化石对钥石有反应！")
-            .replace("'s Aerodactylite is reacting to the Key Stone!","的化石翼龙进化石对钥石有反应！")
-            .replace("'s Mewtwonite X is reacting to the Key Stone!","的超梦进化石X对钥石有反应！")
-            .replace("'s Mewtwonite Y is reacting to the Key Stone!","的超梦进化石Y对钥石有反应！")
-            .replace("'s Ampharosite is reacting to the Key Stone!","的电龙进化石对钥石有反应！")
-            .replace("'s Steelixite is reacting to the Key Stone!","的大钢蛇进化石对钥石有反应！")
-            .replace("'s Scizorite is reacting to the Key Stone!","的巨钳螳螂进化石对钥石有反应！")
-            .replace("'s Heracronite is reacting to the Key Stone!","的赫拉克罗斯进化石对钥石有反应！")
-            .replace("'s Houndoominite is reacting to the Key Stone!","的黑鲁加进化石对钥石有反应！")
-            .replace("'s Tyranitarite is reacting to the Key Stone!","的班基拉斯进化石对钥石有反应！")
-            .replace("'s Sceptilite is reacting to the Key Stone!","的蜥蜴王进化石对钥石有反应！")
-            .replace("'s Blazikenite is reacting to the Key Stone!","的火焰鸡进化石对钥石有反应！")
-            .replace("'s Swampertite is reacting to the Key Stone!","的巨沼怪进化石对钥石有反应！")
-            .replace("'s Gardevoirite is reacting to the Key Stone!","的沙奈朵进化石对钥石有反应！")
-            .replace("'s Sablenite is reacting to the Key Stone!","的勾魂眼进化石对钥石有反应！")
-            .replace("'s Mawilite is reacting to the Key Stone!","的大嘴娃进化石对钥石有反应！")
-            .replace("'s Aggronite is reacting to the Key Stone!","的波士可多拉进化石对钥石有反应！")
-            .replace("'s Medichamite is reacting to the Key Stone!","的恰雷姆进化石对钥石有反应！")
-            .replace("'s Manectite is reacting to the Key Stone!","的雷电兽进化石对钥石有反应！")
-            .replace("'s Sharpedonite is reacting to the Key Stone!","的巨牙鲨进化石对钥石有反应！")
-            .replace("'s Cameruptite is reacting to the Key Stone!","的喷火驼进化石对钥石有反应！")
-            .replace("'s Altarianite is reacting to the Key Stone!","的七夕青鸟进化石对钥石有反应！")
-            .replace("'s Banettite is reacting to the Key Stone!","的诅咒娃娃进化石对钥石有反应！")
-            .replace("'s Absolite is reacting to the Key Stone!","的阿勃梭鲁进化石对钥石有反应！")
-            .replace("'s Glalitite is reacting to the Key Stone!","的冰鬼护进化石对钥石有反应！")
-            .replace("'s Salamencite is reacting to the Key Stone!","的暴飞龙进化石对钥石有反应！")
-            .replace("'s Metagrossite is reacting to the Key Stone!","的巨金怪进化石对钥石有反应！")
-            .replace("'s Latiasite is reacting to the Key Stone!","的拉帝亚斯进化石对钥石有反应！")
-            .replace("'s Latiosite is reacting to the Key Stone!","的拉帝欧斯进化石对钥石有反应！")
-            .replace("'s Lopunnite is reacting to the Key Stone!","的长耳兔进化石对钥石有反应！")
-            .replace("'s Garchompite is reacting to the Key Stone!","的烈咬陆鲨进化石对钥石有反应！")
-            .replace("'s Lucarionite is reacting to the Key Stone!","的路卡利欧进化石对钥石有反应！")
-            .replace("'s Abomasite is reacting to the Key Stone!","的暴雪王进化石对钥石有反应！")
-            .replace("'s Galladite is reacting to the Key Stone!","的艾路雷朵进化石对钥石有反应！")
-             .replace("'s Audinite is reacting to the Key Stone!","的差不多娃娃进化石对钥石有反应！")
-            .replace("'s Diancite is reacting to the Key Stone!","的蒂安希进化石对钥石有反应！")
-            .replace("'s Stench","的恶臭")
-            .replace("'s Drizzle","的降雨")
-            .replace("'s Speed Boost","的加速")
-            .replace("'s Battle Armor","的战斗盔甲")
-            .replace("'s Sturdy","的结实")
-            .replace("'s Damp","的湿气")
-            .replace("'s Limber","的柔软")
-            .replace("'s Sand Veil","的沙隐")
-            .replace("'s Static","的静电")
-            .replace("'s Volt Absorb","的蓄电")
-            .replace("'s Water Absorb","的储水")
-            .replace("'s Oblivious","的迟钝")
-            .replace("'s Cloud Nine","的无关天气")
-            .replace("'s Compound Eyes","的复眼")
-            .replace("'s Insomnia","的不眠")
-            .replace("'s Color Change","的变色")
-            .replace("'s Immunity","的免疫")
-            .replace("'s Flash Fire","的引火")
-            .replace("'s Shield Dust","的鳞粉")
-            .replace("'s Own Tempo","的我行我素")
-            .replace("'s Suction Cups","的吸盘")
-            .replace("'s Intimidate","的威吓")
-            .replace("'s Shadow Tag","的踩影")
-            .replace("'s Rough Skin","的粗燥皮肤")
-            .replace("'s Wonder Guard","的神秘守护")
-            .replace("'s Levitate","的漂浮")
-              .replace("'s Effect Spore","的孢子")
-            .replace("'s Synchronize","的同步")
-            .replace("'s Clear Body","的恒净之躯")
-            .replace("'s Natural Cure","的自然回复")
-            .replace("'s Lightning Rod","的避雷针")
-            .replace("'s Serene Grace","的天恩")
-            .replace("'s Swift Swim","的悠游自如")
-            .replace("'s Chlorophyll","的叶绿素")
-            .replace("'s Illuminate","的发光")
-            .replace("'s Trace","的复制")
-            .replace("'s Huge Power","的大力士")
-            .replace("'s Poison Point","的毒刺")
-            .replace("'s Inner Focus","的精神力")
-            .replace("'s Magma Armor","的熔岩铠甲")
-            .replace("'s Water Veil","的水幕")
-            .replace("'s Magnet Pull","的磁力")
-            .replace("'s Soundproof","的隔音")
-            .replace("'s Rain Dish","的雨盘")
-            .replace("'s Sand Stream","的扬沙")
-            .replace("'s Pressure","的压迫感")
-            .replace("'s Thick Fat","的厚脂肪")
-            .replace("'s Early Bird","的早起")
-            .replace("'s Flame Body","的火焰之躯")
-            .replace("'s Run Away","的逃跑")
-            .replace("'s Keen Eye","的锐利目光")
-            .replace("'s Hyper Cutter","的怪力钳")
-            .replace("'s Pickup","的捡拾")
-            .replace("'s Truant","的懒惰")
-            .replace("'s Hustle","的活力")
-            .replace("'s Cute Charm","的迷人之躯")
-            .replace("'s Plus","的正电")
-            .replace("'s Minus","的负电")
-            .replace("'s Forecast","的阴晴不定")
-            .replace("'s Sticky Hold","的粘着")
-            .replace("'s Shed Skin","的蜕皮")
-            .replace("'s Guts","的毅力")
-            .replace("'s Marvel Scale","的神奇鳞片")
-            .replace("'s Liquid Ooze","的污泥浆")
-            .replace("'s Overgrow","的茂盛")
-            .replace("'s Blaze","的猛火")
-            .replace("'s Torrent","的激流")
-            .replace("'s Swarm","的虫之预感")
-            .replace("'s Rock Head","的坚硬脑袋")
-            .replace("'s Drought","的日照")
-            .replace("'s Arena Trap","的沙穴")
-            .replace("'s Vital Spirit","的干劲")
-            .replace("'s White Smoke","的白色烟雾")
-            .replace("'s Pure Power","的瑜伽之力")
-            .replace("'s Shell Armor","的硬壳盔甲")
-            .replace("'s Air Lock","的气闸")
-            .replace("'s Tangled Feet","的蹒跚")
-            .replace("'s Motor Drive","的电气引擎")
-            .replace("'s Rivalry","的斗争心")
-            .replace("'s Steadfast","的不屈之心")
-            .replace("'s Snow Cloak","的雪隐")
-            .replace("'s Gluttony","的贪吃鬼")
-            .replace("'s Anger Point","的愤怒穴位")
-            .replace("'s Unburden","的轻装")
-            .replace("'s Heatprot","的耐热")
-            .replace("'s Simple","的单纯")
-            .replace("'s Dry Skin","的干燥皮肤")
-            .replace("'s Download","的下载")
-            .replace("'s Iron Fist","的铁拳")
-            .replace("'s Poison Heal","的毒疗")
-            .replace("'s Adaptability","的适应力")
-            .replace("'s Skill Link","的连续攻击")
-            .replace("'s Hydration","的湿润之躯")
-            .replace("'s Solar Power","的太阳之力")
-            .replace("'s Quick Feet","的飞毛腿")
-            .replace("'s Normalize","的一般皮肤")
-            .replace("'s Sniper","的狙击手")
-            .replace("'s Magic Guard","的魔法防守")
-            .replace("'s No Guard","的无防守")
-            .replace("'s Stall","的慢出")
-            .replace("'s Technician","的技术高手")
-            .replace("'s Leaf Guard","的叶子防守")
-            .replace("'s Klutz","的笨拙")
-            .replace("'s Mold Breaker","的破格")
-            .replace("'s Super Luck","的超幸运")
-            .replace("'s Aftermath","的引爆")
-            .replace("'s Anticipation","的危险预知")
-            .replace("'s Forewarn","的预知梦")
-            .replace("'s Unaware","的纯朴")
-             .replace("'s Tinted Lens","的有色眼镜")
-            .replace("'s Filter","的过滤")
-            .replace("'s Slow Start","的慢启动")
-            .replace("'s Scrappy","的胆量")
-            .replace("'s Storm Drain","的引水")
-            .replace("'s Ics Body","的冰冻之躯")
-            .replace("'s Solid Rock","的坚硬岩石")
-            .replace("'s Snow Warning","的降雪")
-            .replace("'s Honey Gather","的采蜜")
-            .replace("'s Frisk","的察觉")
-            .replace("'s Reckless","的舍身")
-            .replace("'s Multitype","的多属性")
-            .replace("'s Flower Gift","的花之礼")
-            .replace("'s Bad Dreams","的梦魇")
-            .replace("'s Pickpocket","的顺手牵羊")
-            .replace("'s Sheer Force","的强行")
-            .replace("'s Contrary","的唱反调")
-            .replace("'s Unnerve","的紧张感")
-            .replace("'s Defiant","的不服输")
-            .replace("'s Defeatist","的软弱")
-            .replace("'s Cursed Body","的诅咒之躯")
-            .replace("'s Healer","的治愈之心")
-            .replace("'s Friend Guard","的友情防守")
-            .replace("'s Weak Armor","的破裂铠甲")
-            .replace("'s Heavy Metal","的重金属")
-            .replace("'s Light Metal","的轻金属")
-            .replace("'s Multiscale","的多重鳞片")
-            .replace("'s Toxic Boost","的中毒激升")
-             .replace("'s Flare Boost","的受热激升")
-            .replace("'s Harvest","的收获")
-            .replace("'s Telepathy","的心灵感应")
-            .replace("'s Moody","的心情不定")
-            .replace("'s Overcoat","的防尘")
-            .replace("'s Poison Touch","的毒手")
-            .replace("'s Regenerator","的再生力")
-            .replace("'s BigPecks","的健壮胸肌")
-            .replace("'s Sand Rush","的泼沙")
-            .replace("'s Wonder Skin","的奇迹皮肤")
-            .replace("'s Analytic","的分析")
-            .replace("'s Illusion","的幻觉")
-            .replace("'s Imposter","的变身者")
-            .replace("'s Infiltrator","的穿透")
-            .replace("'s Mummy","的木乃伊")
-            .replace("'s Moxie","的自信过度")
-            .replace("'s Justified","的正义之心")
-            .replace("'s Rattled","的胆怯")
-            .replace("'s Magic Bounce","的魔法镜")
-            .replace("'s Sap Sipper","的食草")
-            .replace("'s Prankster","的恶作剧之心")
-            .replace("'s Sand Force","的沙之力")
-            .replace("'s Iron Barbs","的铁刺")
-            .replace("'s Zen Mode","的达摩模式")
-            .replace("'s Victory Star","的胜利之星")
-            .replace("'s Turboblaze","的涡轮火焰")
-            .replace("'s Teravolt","的兆级电压")
-            .replace("'s Fairy Aura","的妖精气场")
-            .replace("'s Dark Aura","的黑暗气场")
-            .replace("'s Aura Break","的气场破坏")
-            .replace("'s Sweet Veil","的甜幕")
-            .replace("'s Cheek Pouch","的颊囊")
-            .replace("'s Parental Bond","的亲子爱")
-            .replace("'s Mega Launcher","的超级发射器")
-            .replace("'s Fur Coat","的毛皮大衣")
-            .replace("'s Strong Jaw","的强壮之颚")
-            .replace("'s Refrigerate","的冰冻皮肤")
-            .replace("'s Tough Claws","的硬爪")
-            .replace("'s Bulletproof","的防弹")
-            .replace("'s Magician","的魔术师")
-            .replace("'s Protean","的变幻自如")
-            .replace("'s Gale Wings","的疾风之翼")
-            .replace("'s Flower Veil","的花幕")
-            .replace("'s Aroma Veil","的芳香幕")
-            .replace("'s Symbiosis","的共生")
-            .replace("'s Grass Pelt","的草之毛皮")
-            .replace("'s Competitive","的好胜")
-            .replace("'s Pixilate","的妖精皮肤")
-            .replace("'s Gooey","的黏滑")
-            .replace("'s Stance Change","的战斗切换")
-            .replace("'s Aerilate","的飞行皮肤")
-            .replace("'s Primordial Sea","的始源之海")
-            .replace("'s Desolate Land","的终结大地")
-            .replace("'s Delta Stream","的德尔塔气流")
-            .replace("'s Stamina","的持久力")
-            .replace("'s Wimp Out","的跃跃欲逃")
-             .replace("'s Emergency Exit","的危险回避")
-            .replace("'s Water Compaction","的遇水凝固")
-            .replace("'s Merciless","的不仁不义")
-            .replace("'s Shields Down","的界限盾壳")
-            .replace("'s Stakeout","的蹲守")
-            .replace("'s Water Bubble","的水泡")
-            .replace("'s Steelworker","的钢能力者")
-            .replace("'s Berserk","的怒火冲天")
-            .replace("'s Slush Rush","的拨雪")
-            .replace("'s Long Reach","的远隔")
-            .replace("'s Liquid Voice","的湿润之声")
-            .replace("'s Triage","的先行治疗")
-            .replace("'s Galvanize","的电气皮肤")
-            .replace("'s Surge Surfer","的冲浪之尾")
-            .replace("'s Schooling","的鱼群")
-            .replace("'s Disguise","的画皮")
-            .replace("'s Battle Bond","的牵绊变身")
-            .replace("'s Power Construct","的群聚变形")
-            .replace("'s Corrosion","的腐蚀")
-            .replace("'s Comatose","的绝对睡眠")
-            .replace("'s Queenly Majesty","的女王的威严")
-            .replace("'s Innards Out","的飞出的内在物")
-            .replace("'s Dancer","的舞者")
-            .replace("'s Battery","的蓄电池")
-            .replace("'s Fluffy","的毛茸茸")
-            .replace("'s Dazzling","的鲜艳之躯")
-            .replace("'s Soul-Heart","的魂心")
-            .replace("'s Tangling Hair","的卷发")
-             .replace("'s Receiver","的接球手")
-            .replace("'s Power of Alchemy","的化学之力")
-            .replace("'s Beast Boost","的异兽提升")
-            .replace("'s RKS Systeam","的AR系统")
-            .replace("'s Electric Surge","的的电气制造者")
-            .replace("'s Psychic Surge","的精神制造者")
-            .replace("'s Misty Surge","的薄雾制造者")
-            .replace("'s Grassy Surge","的青草制造者")
-            .replace("'s Full Metal Body","的金属防护")
-            .replace("'s Shadow Shield","的幻影防守")
-            .replace("'s Prism Armor","的棱镜装甲")
-            .replace("'s Neuroforce","的脑核之力")
-            .replace(" became fully charged due to its bond with its Trainer!","借助与训练家的羁绊而变身了！")
-             .replace(" became ","变成了")
-             .replace(" took the Future Sight attack!","发动了预知未来攻击")
-             .replace(" cut its own HP and maximized its Attack!","舍弃了自己的HP并最大化了它的攻击！")
-            //.replace(/Ability: ([A-za-z ]+)/,"特性: "+translate(RegExp.$1))
-            //.replace(/Ability: \/ Item: ([A-za-z ]+)/,"特性: "++"/ 道具:"+translate("$2"))
-
-        ;
-}
-function translateElement(element){
-    var elTW = document.createTreeWalker(element, NodeFilter.SHOW_Element, null, false);
-    var node=null;
-    var translate=t;
-    while((node=elTW.nextNode())!=null){
-        if(node.nodeValue){
-            //console.log(QQ(node).text());
-            //QQ(node).text(transl)
-            //console.log(node.nodeValue+" "+node.parentNode.getAttribute("class"));
-            //console.log();
-            var value=node.nodeValue;
-            if(value.indexOf('•')!=-1){     //技能名在鼠标移入的状态
-                value=value.replace('•',"");
-                value=translate(value);
-                node.nodeValue="• "+value;
-                continue;
-            }
-            else
-                node.nodeValue=translate(node.nodeValue.replace("é","e")
-
-            );
-            //node=elTW.previousNode();
-            //QQ(t).remove();
-        }
-    }
-}
-
-(function() {
-    'use strict';
-    if(document.getElementById('room-'))
-        translateElement(document.getElementById('room-'));
-    QQ(document).on('DOMNodeInserted',function(e){
-        translateElement(e.target);
-    });
-    // Your code here...
-})();
+    
