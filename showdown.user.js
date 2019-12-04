@@ -15,7 +15,10 @@
 // @run-at       document-end
 // ==/UserScript==
 var translations={
-    "Sort:":"排序方式"
+    "Sort:":"排序方式",
+    "you have no pokemon lol":"你的队伍里还没有宝可梦",
+    "Import from text":"从文本导入",
+    "Select a format":"选择一个分级",
     "Backup/Restore all teams":"备份所有队伍",
     "Backup all teams from this folder":"备份该文件夹里的所有队伍",
     "Base":"种族值",
