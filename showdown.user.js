@@ -4892,7 +4892,9 @@ var t= function(originalStr){
     //preview
     if((originalStr.match(/ \/ /g) || []).length>2){
         var pokes=originalStr.split(" / ");
-        var ret=translations[pokes[0]];
+        var ret=trans_from_dict(pokes[0]);
+        if(ret==pokes[0])
+            return originalStr;
         var pos=1;
         while(pokes[pos]){
             ret+=" / "+translations[pokes[pos]];
@@ -4910,9 +4912,7 @@ var t= function(originalStr){
     if(originalStr.match(regex_disable)){
         return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的"+translations[RegExp.$3]+"无法使用！";
     }
-    if(originalStr.match(regex_cannot_use)){
-        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"不能使用"+translations[RegExp.$3]+"！";
-    }
+    
     if(originalStr.match(single_word_pm)){
         var trans_3 = trans_from_dict(RegExp.$3);
         if(trans_3!=RegExp.$3){
@@ -4936,6 +4936,12 @@ var t= function(originalStr){
         if(trans_3!=RegExp.$3){
             return "("+trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+trans_3+")";
         }
+    }
+    if(originalStr.match(regex_after_taunt)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"因为挑拨不能使用"+translations[RegExp.$3]+"！";
+    }
+    if(originalStr.match(regex_cannot_use)){
+        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"不能使用"+translations[RegExp.$3]+"！";
     }
     if(originalStr.match(regex_item_pokemon)){
         return trans_from_dict(RegExp.$1)+"降低了对"+trans_from_dict(RegExp.$3)+"造成的伤害！";
@@ -5016,9 +5022,7 @@ var t= function(originalStr){
     if(originalStr.match(regex_dynamax)){
         return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"的极巨化！";
     }
-    if(originalStr.match(regex_after_taunt)){
-        return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"因为挑拨不能使用"+translations[RegExp.$3]+"！";
-    }
+    
     if(originalStr.match(regex_gems)){
         return translations[RegExp.$1]+"提升了"+translations[RegExp.$2]+"的威力!";
     }
