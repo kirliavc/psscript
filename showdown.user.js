@@ -15,6 +15,7 @@
 // @run-at       document-end
 // ==/UserScript==
 var translations={
+    "Sort:":"排序方式"
     "Backup/Restore all teams":"备份所有队伍",
     "Backup all teams from this folder":"备份该文件夹里的所有队伍",
     "Base":"种族值",
@@ -3040,6 +3041,8 @@ var translations={
     "Silvally-*":"银伴战兽-未知属性",
     "Arceus-*":"阿尔宙斯-未知属性",
     "Genesect-*":"盖诺赛克特-未知卡带",
+    "Gourgeist-*":"南瓜怪人-未知大小",
+    "Pumpkaboo-*":"南瓜精-未知大小",
 
     // Items Description
 
@@ -4863,7 +4866,7 @@ var t= function(originalStr){
     if(originalStr.match(regex_chn))
         return originalStr;
     if(originalStr.match(regex_sent_out)){
-        return RegExp.$1+" 放出了 ";
+        return RegExp.$1+"放出了";
     }
     if(originalStr.match(regex_lost_health)){
         return trans_from_dict(RegExp.$1)+trans_from_dict(RegExp.$2)+"失去了 "+RegExp.$3+"% 的生命值！";
